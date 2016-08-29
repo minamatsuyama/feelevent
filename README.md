@@ -1,24 +1,13 @@
-# README
+# FG-Event
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System Requirements
 
-Things you may want to cover:
+- Ruby: 2.3.1
 
-* Ruby version
+TODO:
 
-* System dependencies
+  - [ ] MySQL: 決める
 
-* Configuration
+## Getting Development Started
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    bin/setup
