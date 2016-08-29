@@ -48,3 +48,5 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+.rubocop_todo.yml
