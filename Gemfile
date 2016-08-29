@@ -34,6 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'acts-as-list'
 gem 'acts-as-taggable-on'
+gem 'devise'
 gem 'enumerize'
 gem 'kaminari'
 gem 'ransack'
