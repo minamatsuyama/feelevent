@@ -32,6 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'acts-as-list'
+gem 'acts-as-taggable-on'
+gem 'kaminari'
+gem 'ransack'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
