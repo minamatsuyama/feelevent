@@ -39,6 +39,10 @@ gem 'enumerize'
 gem 'kaminari'
 gem 'ransack'
 
+gem 'cells'
+gem 'cells-rails'
+gem 'cells-erb'
+
 gem 'carrierwave'
 gem 'fog'
 
