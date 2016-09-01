@@ -77,6 +77,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rails-controller-testing', require: false
   gem 'database_rewinder'
   gem 'shoulda-matchers'
 end
