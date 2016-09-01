@@ -79,6 +79,7 @@ end
 group :test do
   gem 'rails-controller-testing', require: false
   gem 'rspec-its'
+  gem 'rspec-request_describer'
   gem 'database_rewinder'
   gem 'shoulda-matchers'
 end
