@@ -83,6 +83,7 @@ group :test do
   gem 'json_spec'
   gem 'database_rewinder'
   gem 'shoulda-matchers'
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
