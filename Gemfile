@@ -86,8 +86,13 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rails-controller-testing', require: false
+  gem 'rspec-its'
+  gem 'rspec-request_describer'
+  gem 'json_spec'
   gem 'database_rewinder'
   gem 'shoulda-matchers'
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
