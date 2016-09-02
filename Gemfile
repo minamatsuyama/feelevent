@@ -59,6 +59,11 @@ group :development do
   gem 'rubocop', '~> 0.42.0', require: false
   gem 'rails_best_practices', require: false
   gem 'brakeman', require: false
+
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
+  gem 'guard-rails_best_practices', github: 'logankoester/guard-rails_best_practices'
+  gem 'guard-brakeman'
 end
 
 group :development, :test do
