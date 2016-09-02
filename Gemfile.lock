@@ -62,6 +62,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
     byebug (9.0.5)
+    callsite (0.0.11)
     carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -289,6 +290,10 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    meta_request (0.4.0)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.1.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -332,6 +337,8 @@ GEM
       pry (>= 0.9.11)
     puma (3.6.0)
     rack (2.0.1)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -506,6 +513,7 @@ DEPENDENCIES
   json_spec
   kaminari
   listen (~> 3.0.5)
+  meta_request
   mysql2 (>= 0.3.18, < 0.5)
   pry-byebug
   pry-coolline
