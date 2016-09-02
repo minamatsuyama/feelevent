@@ -72,6 +72,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
