@@ -30,6 +30,8 @@ build/
 /.yardoc/
 /_yardoc/
 /rdoc/
+/doc/*/vendor
+/doc/*/.bundle/
 
 ## Environment normalisation:
 /.bundle/
