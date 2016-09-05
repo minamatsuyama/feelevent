@@ -32,9 +32,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'acts-as-list'
 gem 'acts-as-taggable-on'
-gem 'devise' # or 'sorcery'
+gem 'devise'
+gem 'draper', '>= 3.0.0.pre1'
 gem 'enumerize'
 gem 'kaminari'
 gem 'ransack'
