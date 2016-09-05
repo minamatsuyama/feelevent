@@ -23,3 +23,5 @@ include::src/frontend_site/ja/07_javascript_basic_design.adoc[]
 
 - TODO:HTML基本設計書
 - TODO:画面設計書
+
+include::src/frontend_site/ja/A-1.adoc[]
