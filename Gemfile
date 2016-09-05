@@ -65,6 +65,8 @@ group :development do
   gem 'guard-rubocop'
   gem 'guard-rails_best_practices', github: 'logankoester/guard-rails_best_practices'
   gem 'guard-brakeman'
+
+  gem 'rack-mini-profiler'
 end
 
 group :development, :test do
@@ -87,8 +89,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
-
-  # gem 'rack-mini-profiler'
 end
 
 group :test do
