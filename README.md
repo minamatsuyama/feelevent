@@ -17,10 +17,7 @@
 ## System Requirements
 
 - Ruby: 2.3.1
-
-TODO:
-
-  - [ ] MySQL: 決める
+- MySQL: 5.7.X
 
 ## Getting Development Started
 
