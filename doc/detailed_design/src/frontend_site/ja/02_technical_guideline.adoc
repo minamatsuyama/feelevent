@@ -1,0 +1,129 @@
+== 技術仕様書
+
+=== 機能要件
+
+==== 対応環境について
+
+PC::
+* Windows 7 以上
+** Mozilla FireFox 最新版
+** Google Chrome 最新版
+** Internet Explorer 11 以上
+** Edge 最新版
+
+* MacOSX 10.9 Mavericks 以上
+** Safari 最新版
+** Mozilla FireFox 最新版
+** Google Chrome 最新版
+
+SP::
+* iOS 9以上
+* Android 4.4.4以上
+
+- ex. https://support.microsoft.com/ja-jp/gp/lifeselect?target=lifecycle&c1=509&=GSSProdSelMore509#gp/Microsoft-Internet-Explorer
+- ex. http://qiita.com/yunano/items/4757f86f9e92bb4f503f#ios
+
+==== 利用可能だが注意が必要な技術トピック
+
+後方互換または代替手段が用意されていれば利用可能なものや、実装に注意が必要な技術
+
+* Data URIs
+** http://caniuse.com/#feat=datauri[IE 10-11でデータサイズの上限が4MB]
+//* ::placeholder CSS pseudo-element
+//** http://caniuse.com/#feat=css-placeholder[vendor-prefixが必要]
+* CSS initial value
+** http://caniuse.com/#feat=css-initial-value[IE10-11が非対応]
+* Promises
+** http://caniuse.com/#feat=promises[IE10-11が非対応]
+//* rem (root em) units
+//** IE10でfontプロパティをショートハンドで利用するか、擬似要素に指定する場合動かない
+* audio、video要素
+** https://developer.mozilla.org/ja/docs/Web/HTML/Supported_media_formats[HTML5 の audio 要素と video 要素でサポートされているメディアフォーマット]
+//* pointer-events
+//** http://caniuse.com/#feat=pointer[IE10の対応]
+* position:fixed
+** iOS、Androidにおいてバグがあるので都度応じて対策する必要がある
+* iOSのhover指定
+** opacity指定があると2回タップしないとリンク遷移しない
+
+* svg
+** aタグ内に入れるときの注意
+*** <object>タグで埋め込んだsvgに<a>タグでリンクを設定すると、リンクがクリッカブルにならない
+//*** IE9はポインターがカーソルにならない
+** svgタグ直書き以外の表示方法をした際、CSSのtranslate等当てると色のレンダリングが失敗する時がある(黒になる)
+*** svgファイルの読み込みをJSで行い、svgタグを埋め込む
+
+==== 利用しないほうがいいもの
+
+* http://caniuse.com/#feat=css-touch-action[CSS touch-action property]
+** 端末により挙動に大きな差がある
+
+==== その他
+
+link:http://caniuse.com/#compare=ie+10,ie+11,edge+14,firefox+48,chrome+52,safari+9.1,ios_saf+8.1-8.4,android+4.4.3-4.4.4[閲覧環境の実装状況]に応じて採用する方法を選択してください。
+
+==== ブレイクポイント
+
+※デザインで定義する
+
+==== プリント対応の有無
+
+* (ポートフォリオの件があるので確認する)
+
+// * 背景や画像の表示など、基本的にはブラウザの設定に準じる
+
+==== アクセス解析サービス
+
+* (GoogleAnalytics等何を使うかを確認する)
+// * GoogleAnalytics
+
+=== その他
+
+[options="header"]
+|=================
+|要件|詳細要件|内容|備考
+|既存のHTML/CSSの制約||なし|
+|アクセシビリティ／ユーザビリティ対応|対象外環境の対応|なし|
+||JSオフ環境対応|なし|
+||画像オフ環境対応|図版にはalt属性を設定する|装飾用や説明的でない画像については alt="" を許容
+||音声ブラウザ対応|なし|
+||テキスト拡大縮小対応|ブラウザ標準のみ|
+|CMSの利用|利用有無|なし|
+||採用するCMSとバージョン||
+||ユーザエージェント判定|PC、iOS、Androidの判定を行いbodyタグにクラス名にて登録する|端末環境のバグに個別に対応するため
+|SEO対応|HTML5構文|アウトライン正規化 +
+タイトル/ヘッディングの正しい設定|
+||title, description|対応する|
+||keyword|対応しない|Google等ロボットが meta:keywordを対応しなくなったため
+|=================
+
+== フロントエンド仕様
+
+[options="header"]
+|================
+|要件|詳細要件|内容|備考
+|SSL|SSLの有無|HTTPSのみ|
+|HTMLの文書型|ドキュメント規格|HTML5|
+|CSSのバージョン||CSS3 / CSS2.1|
+|XML宣言の有無(XHTMLの場合)||なし|
+|文字コード||UTF-8|
+|改行コード||LF|
+|画像||JPEG, GIF, PNG, SVG|
+|開発環境|パッケージ管理|npm|
+||モジュール管理ツール|なし|
+||タスクランナー|grunt|
+|CSS|開発で使用する技術|SASS(scss記法)|
+||バージョン|CSS3/CSS2.1|閲覧環境にはsassを利用してコンパイルしたCSSを配備する。
+|JavaScript|使用有無|あり|
+||バージョン|ES5|
+||使用するHTML5 API|HTML5 Semantic Elements|
+||使用するJSのフレームワーク・ライブラリ| jQuery 3.1.0 |
+|Webフォント|使用するサービス名||
+||使用するフォント||
+|ソーシャル連携用タグ|OGP|og:title, og:type, og:url, og:image, og:description(optional)|
+||Twitter card|なし|
+|Viewport設定||width=device-width,minimum-scale=1.0,initial-scale=1|
+|互換性対応|外部ライブラリ||
+||IE互換モード設定(X-UA-Compatible)|IE-edge|
+|その他、既存のシステムや技術的な制約||なし|
+|================

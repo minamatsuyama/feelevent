@@ -1,0 +1,714 @@
+
+# HTMLとCSSのスタイルガイド
+
+## はじめに
+
+**一貫性を保て**
+
+もしあなたがコードを編集しているなら、周辺のコードを熟視する時間をとり、スタイルを決定しなさい。すべての算術演算子にスペースが使われていれば、あなたもそうしなさい。コメントの周りにハッシュマークで小さなボックスを作っていれば、あなたのコメントにも同じようにハッシュマークボックスをつけなさい。
+
+スタイルガイドを採用するポイントは、コーディングの共通ボギャブラリーを持つこと。そうすれば、メンバーはコードがどう使われているかではなく、何を意味しているかということに集中して取り組めます。私たちはこのドキュメントで、みなさんが語彙を得るためのグローバルなスタイルルールを提供しますが、ローカルスタイルもまた重要なのです。もしあなたが加えたコードが現在のコードと大いに違っていれば、読み手を彼らのリズムから外してしまうでしょう。それは避けるべきです。
+
+## 1,汎用スタイルルール
+
+### 1-1,プロトコル
+
+埋め込むリソースからプロトコルは省略する
+
+どうしても２つのプロコトル(http:/ https:)をまたがって使わざるを得ない限り、画像や他のメディアファイル、スタイルシート、スクリプトのURLからプロコトル部分を省いてください。関連URLを作り得るプロコトルを省くことは、コンテンツが混ざってしまう問題を防ぐ上に、ファイルサイズをより小さく保つことにも繋がります。
+x
+※ただしリソース（URL）によって明確にHTTPしか使用しないなどの指示がある場合はこれに則らない
+
+```
+<!-- Not recommended -->
+<script src="https://www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+
+```
+<!-- Recommended -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+
+```
+/* Not recommended */
+.example {
+  background: url(https://www.google.com/images/example);
+}
+
+```
+```
+/* Recommended */
+.example {
+  background: url(//www.google.com/images/example);
+}
+```
+
+## 2,基本の書式ルール
+
+### 2-1,インデント
+
+インデントはスペース2つ
+
+タブやタブとスペースをインデントで利用しないでください。
+
+```
+<ul>
+  <li>Fantastic</li>
+  <li>Great</li>
+</ul>
+```
+
+```
+.example {
+  color: blue;
+}
+```
+
+### 2-2,大文字と小文字
+
+小文字のみ使用
+
+HTML要素、属性、属性値（text/CDATAでなければ）、CSSセレクタ、プロパティやプロパティ値には全て小文字を使用します。
+
+```
+<!-- Not recommended -->
+<A HREF="/">Home</A>
+```
+
+```
+<!-- Recommended -->
+<img src="google.png" alt="Google">
+```
+
+```
+/* Not recommended */
+color: #E5E5E5;
+```
+
+```
+/* Recommended */
+color: #e5e5e5;
+```
+
+### 2-3,末尾のスペース
+
+末尾のスペースは消す
+
+末尾のスペースは不要ですし、差分を複雑にするので。
+
+```
+<!-- Not recommened -->
+<p>What?_</p>
+```
+
+```
+<!-- Recommended -->
+<p>Yes please.</p>
+```
+
+## 3,基本のメタルール
+
+### 3-1,エンコーディング
+
+BOM無しのUTF-8を使用
+
+お使いのエディタが、BOM無しのUTF-8になっているか確認してください。HTMLのテンプレートやドキュメントに<meta charset=”utf-8″>とエンコーディングを明記してください。スタイルシートにエンコーディングの明記は必要ありません。 (エンコーディングについてもっと正確に知りたい方は、Handling character encodings in HTML and CSS(https://www.w3.org/International/tutorials/tutorial-char-enc/)をご参照ください。)
+
+### 3-2,コメント
+
+可能な限り必要に応じてコードを説明する
+
+コードを説明するコメントを書きましょう：どこを司るのか、書かれた目的は何か、それぞれのソリューションがなぜ使われたのか？ 常にすべて文章化されたコードが現場で必要とされない場合、この項目は任意です。プロジェクトの複雑さによって、コメントの有用性は大いに変化するでしょう。
+
+### 3-3,アクション項目
+
+アクション項目には「TODO」をつける
+
+todoには「TODO」というキーワードのみでハイライトします。「@@」のような他の共通書式を用いてはいけません。「TODO(contact)」という形で、括弧内にcontact（ユーザーネームやメーリングリスト）を追記します。「TODO:action item」という形で、コロンの後にaction itemを追記します。
+
+```
+{# TODO(john.doe): revisit centering #}
+<center>Test</center>
+<!-- TODO: remove optional tags -->
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+</ul>
+```
+
+## 4,HTMLスタイルルール
+
+### 4-1,ドキュメントタイプ
+
+可能な限り正しいHTML5を使用する
+
+HTMLドキュメントでは、HTML5（HTML syntax）が推奨されています：
+
+（text/htmlとしてのHTMLを使うことが推奨されています。XHTMLを使わないように。application/xhtml+xmlであるXHTMLは、ブラウザとインフラストラクチャどちらのサポートも十分ではありません。HTMLと比べ、容量の最適化という点でも劣ります。）HTMLとしては正しいとしても、void要素は閉じないように。すなわち、<br />ではなく<br>を使います。
+
+### 4-2,HTML Validity
+
+可能な限り正しいHTMLを使用する
+
+ファイルサイズのパフォーマンスゴールなど、それを不可能とする目的が他にない限り、正しいHTMLを使ってください。W3C HTML validator(https://validator.w3.org/) のようなバリデーションツールを使いましょう。正しいHTMLを使うことで、コードの基本的な質を保てますし、技術的な要求と制約を学ぶことにもつながります。また、あるべきHTMLの使い方を確かにします。
+
+```
+<!-- Not recommended -->
+<title>Test</title>
+<article>This is only a test.
+```
+
+```
+<!-- Recommended -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test</title>
+<article>This is only a test.</article>
+```
+
+### 4-3,Semantics
+
+要素の目的に沿ったHTMLを使用する
+
+要素は（しばしば「タグ」と呼ばれますが、間違いです）それらが作られた目的通りに使います。例えばheader要素はheaderに、p要素は段落に、a要素はアンカーリンクに、など。本来の目的に沿ってHTMLを使うことは、アクセシビリティ・再利用性・効率化といった点で重要です。
+
+```
+<!-- Not recommended -->
+<div onclick="goToRecommendations();">All recommendations</div>
+```
+
+```
+<!-- Recommended -->
+<a href="recommendations/">All recommendations</a>
+```
+
+### 4-4,マルチメディアの代替
+
+マルチメディアには代替内容を用意すること
+
+画像、動画、canvasを使ったアニメーションをいったマルチメディアには、別のアクセス方法を確保すること。可能であれば、画像には意味のある代替テキスト（alt）、動画と音声にはtranscriptとcaption、といったふうに。
+
+```
+<!-- Not recommended -->
+<img src="spreadsheet.png">
+```
+
+```
+<!-- Recommended -->
+<img src="spreadsheet.png" alt="Spreadsheet screenshot.">
+```
+
+### 4-5,構造の分離
+
+プレゼンテーション（スタイル）と振る舞い（スクリプト）は、ストラクチャ（マークアップ）から厳密に分けます。３者間の相互作用は、絶対的に少なく保つよう努めてください。HTMLのみをドキュメントやテンプレートに含めます。このHTMLは、単純にストラクチャを構成するためのものです。プレゼンテーションはスタイルシートに、振る舞いはスクリプトに、すべて分けましょう。ドキュメントやテンプレートにおいて、リンクによるスタイルシートやスクリプトとの関わりはできるだけ少なくします。
+
+構造の分離は、メンテナンス性において重要です。HTMLドキュメントやテンプレートを書き換えることは、いつだってスタイルシートやスクリプトを更新するより大変なんですから。
+
+```
+<!-- Not recommended -->
+<!DOCTYPE html>
+<title>HTML sucks</title>
+<link rel="stylesheet" href="base.css" media="screen">
+<link rel="stylesheet" href="grid.css" media="screen">
+<link rel="stylesheet" href="print.css" media="print">
+<h1 style="font-size: 1em;">HTML sucks</h1>
+<p>I’ve read about this on a few sites but now I’m sure:
+  <u>HTML is stupid!!1</u>
+<center>I can’t believe there’s no way to control the styling of
+  my website without doing everything all over again!</center>
+```
+
+```
+<!-- Recommended -->
+<!DOCTYPE html>
+<title>My first CSS-only redesign</title>
+<link rel="stylesheet" href="default.css">
+<h1>My first CSS-only redesign</h1>
+<p>I’ve read about this on a few sites but today I’m actually
+  doing it: separating concerns and avoiding anything in the HTML of
+  my website that is presentational.</p>
+<p>It’s awesome!</p>
+```
+
+### 4-6,文字参照
+
+文字参照は使用しない
+
+ファイルやエディタではもちろんチーム間でも同じエンコーディング（UTF-8）を使っていれば、—、 ”、☺のような文字参照は必要ありません。
+「<」や「&」のようにHTMLで特別な意味を持つものや、特殊スペースのような「見えないもの」に限っては特別にOKです。
+
+```
+<!-- Not recommended -->
+The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+```
+
+```
+<!-- Recommended -->
+The currency symbol for the Euro is “€”.
+```
+
+### 4-7,タイプ属性
+
+スタイルシートとスクリプトのタイプ属性を省略する
+
+CSS以外のスタイルシート、またはjavascript以外のスクリプトを使わない限り、type属性を省いてください。HTML5では、text/cssとtext/javascriptがデフォルトになっているので、type属性は必要ありません。これは、古いブラウザでも問題ありません。
+
+```
+<!-- Not recommended -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css"
+  type="text/css">
+```
+
+```
+<!-- Recommended -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css">
+```
+
+```
+<!-- Not recommended -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"
+  type="text/javascript"></script>
+```
+
+```
+<!-- Recommended -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+
+## 5,HTMLの書式ルール
+
+### 5-1,一般的な書式
+
+基本的に無駄にインデントは使用しない。
+
+ただし可読性が落ちそうな場合は使用してもよい。
+
+※ネストが深くなる場合は閉じタグの前にコメントをつけるなどする
+
+```
+<!-- Not recommended -->
+<section>
+   <h1>H1Title</h1>
+   <div class=”row”>
+      <div class=”col”>
+          <div class=”image-left”>
+             <p class=”image”>
+                <img src=”aaa.gif”>
+             </p>
+             <div class=”text”>
+                <p class=”message”>message text</p>
+             </div>
+           </div>
+      </div>
+    </div>
+</section>
+```
+
+```
+<!-- Recommended -->
+<div class=”row”>
+<div class=”col”>
+<section class=”module”>
+<h1>Title</h1>
+<p>Description</p>
+<ul>
+  <li>Hoge</li>
+  <li>Fuga</li>
+  <li>Bar</li>
+</ul>
+</section>
+</div>
+</div>
+```
+
+### 5-2,HTMLクォテーションマーク
+
+属性値にはダブルクォテーションを使用する
+
+属性値に使うクォテーションはシングル(')よりもダブル{"}が好ましいです。
+
+```
+<!-- Not recommended -->
+<a class='maia-button maia-button-secondary'>Sign in</a>
+```
+
+```
+<!-- Recommended -->
+<a class="maia-button maia-button-secondary">Sign in</a>
+```
+
+## 6,CSSスタイルルール
+
+### 6-1,CSS Validity
+
+可能な限り正しいCSSを使う
+
+CSSバリデーターのバグ対応または特有のシンタックスが必要でない限り、正しいCSSを使ってください。W3C CSS validator(https://jigsaw.w3.org/css-validator/)のようなツールでテストするといいでしょう。正しいCSSを使えば、ある程度基本的な品質を保てます。一部のCSSが他から影響を受けづらくなったり、動かしやすくなったりしす。CSSがふさわしい使用法をされていると保証されます。
+
+### 6-2,IDとクラス名
+
+IDとクラス名には、意味があるまたは一般的な名前を使う
+
+表現的な、もしくはわけのわからない名前にしてはいけません。常に要素の目的を反映した名前か、一般的な名前にしましょう。明確で要素の目的を反映した、もっとも理解しやすく、もっとも後に変更する必要がないであろう名前にしましょう。
+
+一般的な名前とは、例えば特別な意味が無い要素や、兄弟要素と異なる要因のない要素の代替としてつけるものです。概して、「ヘルパー」として名前が必要とされる場合です。機能的または一般的な名前を使うことは、不必要なドキュメントやテンプレート変更を減らすことに繋がります。
+
+```
+/* Not recommended: meaningless */
+#yee-1901 {}
+```
+
+```
+/* Not recommended: presentational */
+.button-green {}
+.clear {}
+```
+
+```
+/* Recommended: specific */
+#gallery {}
+#login {}
+.video {}
+```
+
+```
+/* Recommended: generic */
+.aux {}
+.alt {}
+```
+
+### 6-3,IDとクラス名のスタイル
+
+IDとクラス名は、できるだけ短くするが必要なだけ長くする
+
+できるだけシンプルなIDとクラス名にするよう心掛けてください。この方法で名づけをすれば、理解しやすい良レベルのコードに繋がりますし、コードを効率よく書けます。
+
+```
+/* Not recommended */
+#navigation {}
+.atr {}
+```
+
+```
+/* Recommended */
+#nav {}
+.author {}
+```
+
+### 6-4,タイプセレクター
+
+タイプセレクタによってIDとクラスを制限しない
+
+（例えばヘルパークラスとして使うなど）必要に迫られない限り、IDとクラスの前に要素名をつけてはいけません。不必要な先祖セレクタを使わないことは、パフォーマンス的にも良いことです。
+
+```
+/* Not recommended */
+ul#example {}
+div.error {}
+```
+
+```
+/* Recommended */
+#example {}
+.error {}
+```
+
+### 6-5,ショートハンドプロパティ
+
+可能な限りショートハンドプロパティを使う
+
+Use CSSは様々なショートハンドプロパティ（fontとか）を用意しています。これはたとえ値が一つしかセットされていなくても、できるだけ使うべきです。ショートハンドプロパティを使うことはコードを読みやすく、効率的にします。
+
+```
+/* Not recommended */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+```
+
+```
+/* Recommended */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+```
+
+
+### 6-6,0と単位
+
+「0」の値に続く単位を省く
+
+特に必要でないかぎり、「0」に単位をつけません。
+
+```
+margin: 0;
+padding: 0;
+```
+
+### 6-7,先頭ゼロ
+
+値から先頭の「0」を省く
+
+-1から１の間の数字では、先頭の0を表しません。
+
+```
+font-size: .8em;
+```
+
+### 6-8,16進数
+
+可能な限り3文字の16進数を使う
+
+カラー値を3文字で表すことができるのであれば、16進数をより短く簡潔に表現します。
+
+```
+/* Not recommended */
+color: #eebbcc;
+```
+
+```
+/* Recommended */
+color: #ebc;
+```
+
+### 6-9,プリフィックス（接頭辞）
+
+セレクタにはアプリケーションを明確にするプリフィックスを付ける（オプション）
+
+規模の大きいプロジェクト内や、他のプロジェクトまたは外部サイトに埋め込まれたコードには、（ネームスペースとしての）プリフィックスをIDとクラス名に加えます。短く、ユニークな識別子をハイフンでつなぐこと。 ネームスペースを使うことは、名前のコンフリクトを防ぎます。また、たとえば検索・置換機能が使えるように、メンテンナンスを容易にします。
+
+```
+.adw-help {} /* AdWords */
+#maia-note {} /* Maia */
+```
+
+### 6-10,IDとクラス名の区切り文字
+
+IDとクラス名の単語はハイフンで区切る
+
+理解しやすく読みやすいものにするため、ハイフンでセレクターの単語や略語を鎖状につなぎます。（間に何も置かないことも含め）他の文字を使ってはいけません。
+
+※案件によって明確な指示がある場合はルールが変わる可能性があります
+
+```
+/* Not recommended: does not separate the words “demo” and “image” */
+.demoimage {}
+```
+
+```
+/* Not recommended: uses underscore instead of hyphen */
+.error_status {}
+```
+
+```
+/* Recommended */
+#video-id {}
+.ads-sample {}
+```
+
+### 6-11,ハック
+
+ユーザーエージェント検出や、CSS「ハック」の使用を避ける-まずは別の手段をさがすこと
+
+ユーザーエージェント検知やCSSの特別なフィルター、回避策、そしてハックといった相違点を埋めるスタイリングには魅力があります。効率的でマネジメントしやすいベースコードのためには、これらの手法を最後の手段として熟考すること。
+
+他の手段をとりましょう。プロジェクトとは、楽なほうへ楽なほうへと流れがちなもの。長い目で見ると、検知やハックというフリーパスはプロジェクトを蝕むでしょう。つまり、一度の使用は数度の使用につながり―数度の使用はより頻繁な使用へと繋がっていくからです。
+
+## 7,CSS書式のルール
+
+### 7-1、ブロックコンテンツのインデント
+
+全てのブロックコンテンツをインデントする
+
+すべてのブロックコンテンツはインデントします。これはルールごとはもちろん宣言ごとに適応され、上下関係を反映しわかりやすいコードを作ります。
+
+
+```
+@media screen, projection {
+
+  html {
+    background: #fff;
+    color: #444;
+  }
+
+}
+```
+
+### 7-2、宣言の終わり
+
+全ての宣言の後セミコロンをつける
+
+一貫性・拡張性という視点から、すべての宣言の終わりにセミコロンをつけます。
+
+```
+/* Not recommended */
+.test {
+  display: block;
+  height: 100px
+}
+```
+
+```
+/* Recommended */
+.test {
+  display: block;
+  height: 100px;
+}
+```
+
+### 7-3,プロパティ名の終わり
+
+プロパティ名のコロンの後ろにスペースを入れる
+
+一貫性を保つため、常にプロパティと値の間にシングルスペースを入れます（しかし、プロパティとコロンの間には入れない）。
+
+```
+/* Not recommended */
+h3 {
+  font-weight:bold;
+}
+```
+
+```
+/* Recommended */
+h3 {
+  font-weight: bold;
+}
+```
+
+### 7-4,宣言ブロックのセパレーション
+
+最後のセレクターと宣言ブロックの間にはスペースを入れる
+
+最後のセレクターと宣言ブロックの最初のカッコ”{“との間に常にスペースを入れます。最後のセレクタと”{“は改行せず、同じラインに書くように。
+
+```
+/* Not recommended: missing space */
+#video{
+  margin-top: 1em;
+}
+```
+
+```
+/* Not recommended: unnecessary line break */
+#video
+{
+  margin-top: 1em;
+}
+```
+
+```
+/* Recommended */
+#video {
+  margin-top: 1em;
+}
+```
+
+### 7-5,セレクターと宣言ブロックのセパレーション
+
+複数のセレクターと宣言ブロックは新しい行で区切る
+
+複数のセレクタそれぞれと、宣言ブロックは常に新しい行で書き出します。
+
+```
+/* Not recommended */
+a:focus, a:active {
+  position: relative; top: 1px;
+}
+```
+
+```
+/* Recommended */
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+```
+
+### 7-6,ルールのセパレーション
+
+ルールごとに新しい行で区切る
+
+ルールの間は常に一行開けます（つまり2回改行しています）。
+
+
+```
+html {
+  background: #fff;
+}
+
+body {
+  margin: auto;
+  width: 50%;
+}
+```
+
+### 7-7,CSSクォテーションマーク
+
+属性セレクターとプロパティ値にシングルクォテーションを使う
+
+ダブルクオテーション(“”)より、シングルクオテーション(”)を使いましょう。URI値（URL()）にクオテーションは使えません。例外：もし@charsetを使う必要があれば、ダブルクオテーションを使いましょう…シングルクオテーションは使えません。
+
+```
+/* Not recommended */
+@import url("//www.google.com/css/maia.css");
+
+html {
+  font-family: "open sans", arial, sans-serif;
+}
+```
+
+```
+/* Recommended */
+@import url(//www.google.com/css/maia.css);
+
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+```
+
+## 8,CSSメタルール
+
+### 8-1,セクションのコメント
+
+コメントによってセクションを分ける（オプション）
+
+もし可能なら、 コメントを使ってスタイルシートのセクションをグループ化しましょう。それぞれのセクションを新しい行で区切ります。
+
+```
+/* Header */
+
+#adw-header {}
+
+/* Footer */
+
+#adw-footer {}
+
+/* Gallery */
+
+.adw-gallery {}
+```
+
+
+## 引用
+
+- Google HTML/CSS Style Guide(https://google.github.io/styleguide/htmlcssguide.xml)
+- Google HTML/CSS Style Guideを全部日本語に訳してみた【HTML編】(http://buchineko.website/google_styleguide_html/)
+- Google HTML/CSS Style Guideを全部日本語に訳してみた【CSS編】(http://buchineko.website/google_styleguide_css/)
+
+=== JavaScript(ES6/ES2015)コーディングガイドライン
+
+* https://google.github.io/styleguide/javascriptguide.xml[Google JavaScript Style Guide +
+(https://google.github.io/styleguide/javascriptguide.xml)] +
+に従う
+
+==== ファイルの命名規則
+
+* 外部ライブラリは名前を変更せず、そのまま⽤いること。

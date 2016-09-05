@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "php -S localhost:8000 -t ../public",
+    "server": "php -S localhost:8000 -t ./public",
     "build":  "grunt build",
     "watch":  "grunt watch",
     "test":   "grunt test",
