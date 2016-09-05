@@ -1,0 +1,15 @@
+== はじめに
+本アプリケーションは `Feelnote` から派生して構築される *イベント情報サイト* のバックエンド詳細設計書になります。
+
+=== 技術的備考
+* `Feelnote` 側でもイベント情報を利用するため、テーブルはすべて `Feelnote DB` 内に構築します。
+* `Feelnote` のサービス画面は `SPA (SinglePageApplication)` として提供しておりますが、
+本アプリケーションはイベント情報ページを一般公開するため SEO の観点から従来の
+`MPA (Multi Page Application)` タイプとして実装します。
+
+=== System requirements
+* Nginx
+* Ruby 2.3.1
+* Ruby on Rails 5.0.0.1
+* MySQL 5.7系
+* Redis

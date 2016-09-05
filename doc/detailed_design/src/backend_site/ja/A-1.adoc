@@ -1,0 +1,40 @@
+== A-1 ログイン
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET\|POST /signin
+| コントローラ,アクション | sessions#signin
+| ルート名                | new_user_session
+| ビュー                  | devise/sessions/new.html.erb
+|=====
+
+=== リクエスト
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| event_user[email]       | メールアドレス | ◯ |
+| event_user[password]    | パスワード | ◯ |
+| event_user[remember_me] | ログイン情報の保持 |  |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+image::../assets/A-1.png[]
+. メールアドレス
+** `email` フィールドとして input タグを出力
+. パスワード
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+. 自動ログイン
+** `checkbox` として input タグを出力
+** デフォルトは未選択状態
+. ログインボタン
+** ログイン成功時
+*** セッション発行などの処理は `Devise` の処理に任せる
+*** `B-1` へリダイレクトする
+** ログイン失敗時
+*** 同画面を表示し、適宜エラーを表示する
