@@ -1,0 +1,29 @@
+== Tips
+前章の Cells の他に利用している `Gem` の概要を説明します。
+
+=== Decorator (Draper)
+Model と View の間に Presenter(Draper) という中間層を設け、
+Model や View に余計なロジックが増えることをさけるための Gem です。
+
+==== Example
+===== app/decorators/user_decorator.rb
+[source, ruby]
+----
+class UserDecorator < Draper::Decorator
+  delegate_all
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+end
+----
+
+===== app/views/me/sample.html.erb
+[source, ruby]
+----
+<h1><%= @user.full_name %></h1>
+----
+
+[NOTE]
+Draper については下記 Github を参考 +
+https://github.com/drapergem/draper
