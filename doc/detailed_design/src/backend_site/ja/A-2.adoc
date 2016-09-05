@@ -1,0 +1,20 @@
+== A-2 ログアウト
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | DELETE /signout
+| コントローラ,アクション | sessions#destroy
+| ルート名                | destroy_user_session
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+* なし
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+. 全体仕様
+** セッション終了などの処理は `Devise` の処理に任せる
+** `B-1` へリダイレクトする

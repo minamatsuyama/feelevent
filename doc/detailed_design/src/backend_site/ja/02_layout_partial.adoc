@@ -1,0 +1,39 @@
+== レイアウト、パーシャル
+
+=== レイアウト
+`Rails` が提供するレイアウトテンプレートを利用します。 +
+本アプリケーションはシンプルな構成となるためデフォルトである `application` レイアウトのみを利用します。
+
+* レイアウト格納ディレクトリ
+** app/views/layouts/
+* レイアウトテンプレート
+** application.html.erb
+
+
+=== パーシャル
+ヘッダー、フッターなどの共通で利用する主なパーシャルファイルを説明します。
+
+* 共通利用のパーシャルファイル格納ディレクトリ
+** app/views/shared/
+
+==== 共通利用する主なパーシャルファイル
+
+[source, bash]
+----
+app/views/shared/
+  ├── _body_bottom.html.erb     # </body>直前用パーシャル
+  ├── _body_top.html.erb        # <body>直後用パーシャル
+  ├── _global_header.html.erb   # グローバルヘッダー
+  └── _global_footer.html.erb   # グローバルフッター
+----
+
+==== 例
+
+[source]
+----
+<%= render 'shared/global_header' %>
+# app/views/shared/_global_header.html.erb が呼び出される
+
+<%= render 'shared/global_footer', bar: 'baz' %>
+# パーシャルに変数を渡す場合(locals: は略すことができる)
+----

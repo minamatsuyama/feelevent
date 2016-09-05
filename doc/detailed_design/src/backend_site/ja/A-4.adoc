@@ -1,0 +1,61 @@
+== A-4 パスワード再発行 (入力)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /password/edit
+| コントローラ,アクション | devise/password#edit
+| ルート名                | edit_user_password
+| ビュー                  | devise/password/edit.html.erb
+|=====
+
+=== リクエスト
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| reset_password_token | トークン | ◯ |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+. 全体仕様
+** トークンチェックなどの処理は `Devise` の処理に任せる
+. パスワード
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+. パスワード(確認)
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+
+
+== A-4-a パスワード再発行 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | PATCH /password
+| コントローラ,アクション | devise/password#update
+| ルート名                | (default)
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+[cols="65,35,10,30"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| event_user[password] | パスワード | ◯ |
+| event_user[password_confirmation] | パスワード確認用 | ◯ |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+* 成功時(バリデートを通った時)
+** パスワード再設定準備などの処理は `Devise` の処理に任せる
+*** メール送信処理も `Devise` に含まれる
+*** テンプレートは適宜文言の差し替え処理を行う
+* 失敗時(バリデートに引っかかった時)
+** `A-3` の入力画面でエラーを表示する

@@ -1,0 +1,50 @@
+== はじめに
+本アプリケーションは `Feelnote` から派生して構築される *イベント情報サイト* のバックエンド詳細設計書になります。
+
+=== 技術的備考
+* `Feelnote` 側でもイベント情報を利用するため、テーブルはすべて `Feelnote DB` 内に構築します。
+* `Feelnote` のサービス画面は `SPA (SinglePageApplication)` として提供しておりますが、
+本アプリケーションはイベント情報ページを一般公開するため SEO の観点から従来の
+`MPA (Multi Page Application)` タイプとして実装します。
+
+=== System requirements
+* Nginx
+* Ruby 2.3.1
+* Ruby on Rails 5.0.0.1
+* MySQL 5.7系
+* Redis
+
+=== Coding guideline
+
+* ベーススタイル
+** https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.md
+** https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+* Rubyコーディングスタイル（ベーススタイルへの追加のガイド）
+** https://github.com/styleguide/ruby
+* Railsコーディングスタイル
+** https://github.com/bbatsov/rails-style-guide/blob/master/README.md
+
+==== ワンパクオリジナル
+
+===== 定義
+* `class` 定義の下は改行がなしと統一する
+* 最終行の `end` の間では空行なしと統一する
+
+===== 後置 if, unless 文の使い分け
+条件式が埋もれても見やすくするために、以下の通り後置 if 文を使う最低限のルールを設ける(例外あり)
+
+* `return`, `raise` するときなどそこで処理を中断して終わらせるときの条件を指定する場合に限定する。
+
+[source, ruby]
+----
+return unless @user.signed_in?
+----
+
+* 処理をする場合や変数への代入してその後の処理が継続して下に続く場合は一行でも通常の if 文にする。
+
+[source, ruby]
+----
+if @flow.init?
+  @user.assign_attributes @flow.get_data(:form)
+end
+----
