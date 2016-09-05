@@ -102,6 +102,8 @@ group :test do
   gem 'database_rewinder'
   gem 'shoulda-matchers'
   gem 'timecop'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

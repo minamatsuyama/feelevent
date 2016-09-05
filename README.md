@@ -22,3 +22,4 @@
 ## Getting Development Started
 
     bin/setup
+    npm install -g phantomjs-prebuilt
