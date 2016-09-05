@@ -4,6 +4,32 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+## OS generated files ##
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+.envrc
+.powder
+.powenv
+.pryrc
+
+## Editor generated files ##
+.*.sw[p|o|n]
+*.sw[p|o|n]
+*.un~
+*\#*
+*~
+\#*\#
+/tags
+.idea
+*.bak
+node_modules
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -37,6 +63,15 @@ build/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
+
+
+### grunt(sass) configuration files ##
+/frontend/node_modules
+/frontend/.sass-cache
+/frontend/coverage
+/frontend/js/coverage
+/frontend/js/espowered
+/frontend/npm-debug.log
 
 ### https://raw.github.com/github/gitignore/a1ed257134eb4f769b203db874004c9371642952/rails.gitignore
 *.rbc
