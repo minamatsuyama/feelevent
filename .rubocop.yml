@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'db/schema.rb'
     - 'vendor/**/*'
+    - 'doc/**/*'
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
