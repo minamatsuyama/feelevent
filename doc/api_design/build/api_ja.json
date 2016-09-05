@@ -74,7 +74,7 @@
           "title": "削除",
           "description": "お気に入りを削除する",
           "_doc_id": "A0102",
-          "href": "/api/events/{(#/definitions/favorite/definitions/event_id/)}/favorites",
+          "href": "/api/events/{event_id}/favorites",
           "method": "DELETE",
           "mediaType": "application/json",
           "rel": "self"
