@@ -86,3 +86,5 @@ rerun.txt
 pickle-email-*.html
 
 .rubocop_todo.yml
+
+config/unicorn/local.rb.
