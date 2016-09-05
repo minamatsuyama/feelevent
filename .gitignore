@@ -50,7 +50,7 @@ node_modules
 ## Specific to RubyMotion:
 .dat*
 .repl_history
-build/
+/build/
 
 ## Documentation cache and generated files:
 /.yardoc/
