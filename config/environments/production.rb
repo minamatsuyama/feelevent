@@ -84,15 +84,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.after_initialize do
-    Bullet.enable        = true
-    Bullet.alert         = false
-    Bullet.console       = false
-    Bullet.growl         = false
-    Bullet.bullet_logger = true
-    Bullet.rails_logger  = true
-    Bullet.add_footer    = false
-    Bullet.unused_eager_loading_enable = true
-  end
 end
