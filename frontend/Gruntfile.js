@@ -26,8 +26,9 @@
      Setup tasks
      */
 
-    grunt.registerTask('css', ['sass']);
-    grunt.registerTask('js',  ['qunit', 'concat', 'uglify']);
+    grunt.registerTask('test', ['qunit']);
+    grunt.registerTask('css',  ['sass']);
+    grunt.registerTask('js',   ['qunit', 'concat', 'uglify']);
 
     grunt.registerTask('build',['css', 'js', 'copy']);
 
@@ -39,6 +40,7 @@
     grunt.registerTask('w', ['watch']);
     grunt.registerTask('c', ['css']);
     grunt.registerTask('j', ['js']);
+    grunt.registerTask('t', ['test']);
 
     grunt.registerTask('b', ['build']);
   };
