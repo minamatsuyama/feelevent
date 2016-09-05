@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'db/schema.rb'
     - 'vendor/**/*'
+    - 'doc/**/*'
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
@@ -12,6 +13,9 @@ Rails:
 
 Metrics/LineLength:
   Max: 120
+
+Style/AsciiComments:
+  Enabled: false
 
 Style/BlockComments:
   Enabled: false
