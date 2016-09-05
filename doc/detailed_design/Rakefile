@@ -30,7 +30,7 @@ rule '.pdf' => '.adoc' do |t|
       -param body.font.family Meiryo \
       -param dingbat.font.family Meiryo \
       -param monospace.font.family Meiryo \
-      -param ietle.color Teal \
+      -param title.color Teal \
       -param text.color dimgray \
       -param toc.section.depth 0 \
       -param sans.font.family Meiryo \
