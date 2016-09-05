@@ -1,0 +1,22 @@
+== ディレクトリ構成図
+
+```
+/app
+/frontend
+  /package.json
+  /Gruntfile.js
+  /grunt
+  /src
+    /js
+    /css
+  /spec
+    /js
+  /public
+    /js
+    /css
+    /img
+/public
+  /js
+  /css
+  /img
+```

@@ -1,0 +1,57 @@
+== タスクランナー設計書
+
+利用プラグイン
+
+```
+"grunt-contrib-clean": "^0.6.0",
+"grunt-contrib-concat": "^0.5.1",
+"grunt-contrib-copy": "^0.8.2",
+"grunt-contrib-imagemin": "^0.9.4",
+"grunt-contrib-qunit": "^0.7.0",
+"grunt-contrib-sass": "^0.9.2",
+"grunt-contrib-uglify": "^0.9.2",
+"grunt-contrib-watch": "^0.6.1",
+```
+
+タスク定義
+```
+/frontend/Gruntfile.js
+```
+
+設定
+```
+/frontend/grunt/config.js
+/frontend/grunt/config.js.js
+/frontend/grunt/config.css.js
+/frontend/grunt/config.watch.js
+```
+
+=== セットアップ
+```
+$ cd frontend
+$ npm install
+```
+
+=== ビルド
+```
+$ npm run build
+```
+
+=== ウォッチ
+
+```
+$ npm run watch
+```
+
+=== テスト(JS)
+
+```
+$ npm run test
+```
+
+
+=== ローカルサーバー
+
+```
+$ npm run server
+```
