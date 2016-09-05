@@ -1,4 +1,4 @@
-= FeelEvent バックエンド サイト詳細設計
+= FeelEvent バックエンド Site詳細設計
 :authorinitials: 1PAC. INC.
 :revdate:        2016-09-01
 :revnumber:      0.1.0
