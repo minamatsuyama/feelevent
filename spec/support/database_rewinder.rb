@@ -20,3 +20,4 @@ RSpec.configure do |config|
   config.after :each do
     DatabaseRewinder.clean
   end
+end
