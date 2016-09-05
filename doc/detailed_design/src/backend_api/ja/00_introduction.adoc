@@ -1,0 +1,8 @@
+include::../../backend_site/ja/00_introduction.adoc[]
+
+=== 補足事項
+* API の URL、リクエスト、レスポンスなどの情報は `JSON Schema` 形式で管理しています。
+** 各設計の基本情報内の `JSON Schema` 行で対応する API Document の場所を記載しています。
+
+[NOTE]
+同 Github リポジトリ内の `doc/api_design/build/{lang}/` 配下に Markdown ファイルを格納しています。
