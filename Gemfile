@@ -95,6 +95,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
   gem 'rails-controller-testing', require: false
   gem 'rspec-its'
   gem 'rspec-request_describer'
