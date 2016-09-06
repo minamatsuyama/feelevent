@@ -26,5 +26,18 @@ module FgEvent
 
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.jbuilder false
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       integration_tool: false,
+                       fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+    end
   end
 end
