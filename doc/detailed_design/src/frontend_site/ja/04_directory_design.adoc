@@ -1,22 +1,37 @@
 == ディレクトリ構成図
 
 ```
-/app
-/frontend
-  /package.json
-  /Gruntfile.js
-  /grunt
-  /src
-    /js
-    /css
-  /spec
-    /js
-  /public
-    /js
-    /css
-    /img
-/public
-  /js
-  /css
-  /img
+.
+├── frontend/         # 開発用ディレクトリ
+│   ├── package.json      # タスクランナー用ファイル
+│   ├── Gruntfile.js       # タスクランナー用ファイル
+│   ├── grunt/ # タスクランナー用フォルダ
+│   ├── src/     # 開発用フォルダ
+│   │    ├── js/     #JS 開発フォルダ
+│   │    │    ├── lib/     #JS ライブラリ用フォルダ
+│   │    │    │    ├── modules/     #JS モジュール要フォルダ
+│   │    │    │    ├── vendor/      #JS ベンダー用フォルダ
+│   │    │    ├── 各ディレクトリ/     #JS もし各ページ専用のjsがあればファオルダを作成しjsファイルを格納
+│   │    ├── css/    #SASS 開発用フォルダ
+│   │    │    ├── lib/     #SASS ライブラリ用フォルダ
+│   │    │    │    ├── mixins/     #SASS mixin用フォルダ
+│   │    │    ├── shared/  #SASS 各カテゴリ別フォルダ
+│   │    │    │    ├── base/       #SASS baseスタイル用フォルダ
+│   │    │    │    ├── layout/     #SASS layoutスタイル用フォルダ
+│   │    │    │    ├── modules/    #SASS moduleスタイル用フォルダ
+│   │    │    │    ├── vendor/     #SASS vendor用フォルダ
+│   │    │    ├── 各ディレクトリ/     #CSS もし各ページ専用のcssがあればファオルダを作成しcssファイルを格納
+├── public/ #Webサーバーのドキュメンルート
+│   ├── js/      #JS フォルダ
+│   │    ├── lib/     #JS ライブラリ用フォルダ
+│   │    ├── common/     #JS 共通用フォルダ
+│   │    ├── 各ディレクトリ/     #JS もし各ページ専用のjsがあればファオルダを作成しjsファイルを格納
+│   ├── css/      #CSS フォルダ
+│   │    ├── lib/     #CSS ライブラリ用フォルダ
+│   │    ├── common/     #CSS 共通用フォルダ
+│   │    ├── 各ディレクトリ/     #CSS もし各ページ専用のcssがあればファオルダを作成しcssファイルを格納
+│   ├── img/  #画像格納フォルダ
+│   ├── 各ディレクトリ/  #各ページ用のディレクトリ
+│   │    ├── img/     #各ページのみで使用する画像を格納
+
 ```
