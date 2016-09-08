@@ -1,7 +1,7 @@
 = FeelEvent バックエンド API詳細設計
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-05
-:revnumber:      0.1.0
+:revdate:        2016-09-08
+:revnumber:      0.1.1
 :imagesdir:      src/backend_api/
 {authorinitials}
 
