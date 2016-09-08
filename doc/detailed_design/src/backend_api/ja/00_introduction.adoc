@@ -1,8 +1,19 @@
 include::../../backend_site/ja/00_introduction.adoc[]
 
 === 補足事項
+==== 設計資料は JSON Schema を併用
 * API の URL、リクエスト、レスポンスなどの情報は `JSON Schema` 形式で管理しています。
 ** 各設計の基本情報内の `JSON Schema` 行で対応する API Document の場所を記載しています。
 
 [NOTE]
 同 Github リポジトリ内の `doc/api_design/build/{lang}/` 配下に Markdown ファイルを格納しています。
+
+==== テーブルのカラムの表現
+各ページの詳細仕様を記述するにあたって、テーブルのカラムの値を記載する際、
+実テーブルのカラムの型や値ではなく、Rails(ActiveRecord)としての型・値で記載します。
+
+==== 例
+* DB側
+** __event_items.published__ は `tinyint` で、値は `1:公開`、`0:非公開`
+* 仕様上での表現例
+** __event_items.published__ が `true(公開)` の時は◯◯する
