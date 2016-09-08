@@ -16,5 +16,5 @@
 . 例外処理
 ** `event_item_id` から対象のイベント情報(__event_items__)が存在しなければ `404レスポンス` を返す
 ** イベント公開フラグ(__event_items.published__)が *true(公開)* では無い場合は `404レスポンス` を返す
-** 現在日時がイベント公開開始日時(__event_items.published_at__)からイベント公開終了日時(__event_items.privated_at__)の範囲外の場合は `404レスポンス` を返す
+** 現在日時がイベント公開開始日時(__event_items.publish_started_at__)からイベント公開終了日時(__event_items.publish_ended_at__)の範囲外の場合は `404レスポンス` を返す
 ** 対象のお気に入り情報(__event_user_items__)が無い場合は `404 レスポンス` を返す
