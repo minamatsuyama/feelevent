@@ -84,6 +84,16 @@ HTTP/1.1 404 Not Found
 {"message": "Not Found"}
 ```
 
+#### 409 Conflict
+- 例) お気に入り登録 API 等を実行した際に既に登録済みの時のレスポンス
+
+```
+HTTP/1.1 409 Conflict
+```
+```javascript
+{"message": "Conflict"}
+```
+
 #### 422 Unprocessable Entity
 - バリデーションエラー時のレスポンス
 

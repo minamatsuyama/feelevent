@@ -129,7 +129,7 @@ HTTP/1.1 503 Service Unavailable
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **count** | *integer* | お気に入り数 | `999` |
-| **event_id** | *integer* | イベントID | `123` |
+| **event_item_id** | *integer* | イベントID | `123` |
 
 ***
 
@@ -138,14 +138,14 @@ HTTP/1.1 503 Service Unavailable
 お気に入りを登録する
 
 ```
-POST /api/events/{event_id}/favorites
+POST /api/events/{event_item_id}/favorites
 ```
 
 
 #### Curl Example
 
 ```bash
-$ curl -n -X POST https://v2.feelnote.org/api/events/$EVENT_ID/favorites \
+$ curl -n -X POST https://v2.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
   -H "Content-Type: application/json"
 ```
 
@@ -158,7 +158,7 @@ HTTP/1.1 200 OK
 
 ```json
 {
-  "event_id": 123,
+  "event_item_id": 123,
   "count": 999
 }
 ```
@@ -170,14 +170,14 @@ HTTP/1.1 200 OK
 お気に入りを削除する
 
 ```
-DELETE /api/events/{event_id}/favorites
+DELETE /api/events/{event_item_id}/favorites
 ```
 
 
 #### Curl Example
 
 ```bash
-$ curl -n -X DELETE https://v2.feelnote.org/api/events/$EVENT_ID/favorites \
+$ curl -n -X DELETE https://v2.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
   -H "Content-Type: application/json"
 ```
 
@@ -190,7 +190,7 @@ HTTP/1.1 200 OK
 
 ```json
 {
-  "event_id": 123,
+  "event_item_id": 123,
   "count": 999
 }
 ```
