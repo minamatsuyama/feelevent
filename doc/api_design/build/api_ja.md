@@ -1,7 +1,7 @@
 FeelEvent API Document
 ============
 
-| Date: 2016-09-05 | Author: 1PAC 春菜 紘道 |
+| Date: 2016-09-09 | Author: 1PAC 春菜 紘道 |
 |---|---|
 
 ## Overview
@@ -55,6 +55,13 @@ or
 HTTP/1.1 201 Created
 ```
 
+#### 204 No Content
+- 処理は成功(受理)したがレスポンスボディがない場合のレスポンス
+
+```
+HTTP/1.1 204 No Content
+```
+
 ### Error response
 例外系(エラー系)レスポンスの説明になります。
 
@@ -82,6 +89,16 @@ HTTP/1.1 404 Not Found
 ```
 ```javascript
 {"message": "Not Found"}
+```
+
+#### 409 Conflict
+- 例) お気に入り登録 API 等を実行した際に既に登録済みの時のレスポンス
+
+```
+HTTP/1.1 409 Conflict
+```
+```javascript
+{"message": "Conflict"}
 ```
 
 #### 422 Unprocessable Entity
@@ -145,7 +162,7 @@ POST /api/events/{event_item_id}/favorites
 #### Curl Example
 
 ```bash
-$ curl -n -X POST https://v2.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
+$ curl -n -X POST https://worldschool.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
   -H "Content-Type: application/json"
 ```
 
@@ -177,7 +194,7 @@ DELETE /api/events/{event_item_id}/favorites
 #### Curl Example
 
 ```bash
-$ curl -n -X DELETE https://v2.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
+$ curl -n -X DELETE https://worldschool.feelnote.org/api/events/$EVENT_ITEM_ID/favorites \
   -H "Content-Type: application/json"
 ```
 
