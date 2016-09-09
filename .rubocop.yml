@@ -27,5 +27,8 @@ Style/AsciiComments:
 Style/BlockComments:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
