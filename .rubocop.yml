@@ -3,6 +3,7 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
     - 'doc/**/*'
+    - 'frontend/**/*'
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
@@ -10,6 +11,10 @@ AllCops:
 
 Rails:
   Enabled: true
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'config/unicorn/*.rb'
 
 Metrics/LineLength:
   Max: 120

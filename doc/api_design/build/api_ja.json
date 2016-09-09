@@ -4,22 +4,6 @@
     "object"
   ],
   "definitions": {
-    "lang": {
-      "description": "言語",
-      "definitions": {
-        "code": {
-          "description": "各言語を指定するコード",
-          "type": [
-            "string"
-          ],
-          "example": "ja",
-          "pattern": "(ja)"
-        }
-      },
-      "type": [
-        "object"
-      ]
-    },
     "site": {
       "description": "サイト(法人)",
       "definitions": {
@@ -97,11 +81,11 @@
     }
   },
   "id": "api",
-  "title": "FeelGood API v1",
-  "description": "FeelGood API v1 インターフェース仕様(JSON Hyper Schema draft v4 形式で記述しています)",
+  "title": "FeelEvent API v1",
+  "description": "FeelEvent API v1 インターフェース仕様(JSON Hyper Schema draft v4 形式で記述しています)",
   "links": [
     {
-      "href": "https://v2.feelnote.org",
+      "href": "https://worldschool.feelnote.org",
       "rel": "self"
     }
   ]

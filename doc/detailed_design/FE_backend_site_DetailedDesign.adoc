@@ -1,7 +1,7 @@
 = FeelEvent バックエンド Site詳細設計
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-01
-:revnumber:      0.1.0
+:revdate:        2016-09-09
+:revnumber:      0.1.1
 :imagesdir:      src/backend_site/
 {authorinitials}
 
@@ -25,4 +25,6 @@ include::src/backend_site/ja/A-3.adoc[]
 
 include::src/backend_site/ja/A-4.adoc[]
 
-include::src/backend_site/ja/D-1.adoc[]
+#include::src/backend_site/ja/C-1.adoc[]
+
+#include::src/backend_site/ja/D-1.adoc[]
