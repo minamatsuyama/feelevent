@@ -11,17 +11,6 @@ links:
 
 # グローバル変数として定義する
 definitions:
-  # 言語は全てでまたいで利用するため以下のようにしておく
-  # LANG_CODE の参照名にするためネストしている
-  lang:
-    description: 言語
-    definitions:
-      code:
-        description: 各言語を指定するコード
-        type:        string
-        example:     ja
-        pattern:     (ja)
-    type: object
   site:
     description: "サイト(法人)"
     definitions:
