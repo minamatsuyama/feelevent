@@ -2,47 +2,108 @@
 
 ```
 .
-├── frontend/         # 開発用ディレクトリ
-│   ├── package.json      # タスクランナー用ファイル
-│   ├── Gruntfile.js       # タスクランナー用ファイル
-│   ├── grunt/ # タスクランナー用フォルダ
-│   ├── src/     # 開発用フォルダ
-│   │    ├── js/     #JS 開発フォルダ
-│   │    │    ├── lib/     #JS ライブラリ用フォルダ
-│   │    │    │    ├── modules/    #JS モジュール要フォルダ
-│   │    │    │    ├── vendor/     #JS ベンダー用フォルダ
-│   │    │    ├── 各ディレクトリ/    #JS もし各ページ専用のjsがあればファオルダを作成しjsファイルを格納
-│   │    ├── css/    #SASS 開発用フォルダ
-│   │    │    ├── lib/     #SASS ライブラリ用フォルダ
-│   │    │    │    ├── mixins/     #SASS mixin用フォルダ
-│   │    │    ├── shared/  #SASS 各カテゴリ別フォルダ
-│   │    │    │    ├── base/       #SASS baseスタイル用フォルダ
-│   │    │    │    ├── layout/     #SASS layoutスタイル用フォルダ
-│   │    │    │    ├── modules/    #SASS moduleスタイル用フォルダ
-│   │    │    │    ├── vendor/     #SASS vendor用フォルダ
-│   │    │    ├── 各ディレクトリ/    #CSS もし各ページ専用のcssがあればファオルダを作成しcssファイルを格納
-├── public/ #Webサーバーのドキュメンルート
-│   ├── js/      #JS フォルダ
-│   │    ├── lib/     #JS ライブラリ用フォルダ
-│   │    ├── common/     #JS 共通用フォルダ
-│   │    ├── 各ディレクトリ/     #JS もし各ページ専用のjsがあればファオルダを作成しjsファイルを格納
-│   ├── css/      #CSS フォルダ
-│   │    ├── lib/     #CSS ライブラリ用フォルダ
-│   │    ├── common/     #CSS 共通用フォルダ
-│   │    ├── 各ディレクトリ/     #CSS もし各ページ専用のcssがあればファオルダを作成しcssファイルを格納
-│   ├── img/      #img フォルダ
-│   │    ├── common/     #共通用フォルダ
-│   │    ├── 各ディレクトリ/     #もし各ページ専用のimageがあればファオルダを作成しimageファイルを格納
-│   ├── img/  #画像格納フォルダ
-│   ├── login.html      # ログインページ
-│   ├── index.html      # トップページ
-│   ├── detail/   #詳細画面ディレクトリ
-│   │     ├── index.html    #詳細画面ページ
-│   ├── mypage/   #マイページ画面ディレクトリ
-│   │     ├── index.html    #マイページインデックスページ
-│   │     ├── favorite.html  #お気に入りページ
-│   │     ├── settings.html  #設定ページ
-│   ├── newentry/   #新規登録画面ディレクトリ
-│   │     ├── index.html    #新規登録ページ
+├── frontend    #開発用ディレクトリ
+│   ├── Gruntfile.js    #タスクランナー環境設定ファイル
+│   ├── grunt/          #タスクランナー環境設定ファイル用フォルダ
+│   │   ├── config.css.js
+│   │   ├── config.js
+│   │   ├── config.js.js
+│   │   └── config.watch.js
+│   ├── node_modules/   #タスクランナーパッケージフォルダ
+│   ├── package.json    #タスクランナーインストール設定ファイル
+│   ├── public/         #fg-event-pv.1pac.net に配信(静的HTMLのプレビューのみ) ルートディレクトリ
+│   │   ├── img/        #画像格納フォルダ
+│   │   ├── css/        #CSS 格納フォルダ
+│   │   │   └── lib/    #共通CSS 格納フォルダ
+│   │   │       ├── base.css
+│   │   │       └── module.css
+│   │   ├── events/     #[B-2] イベント詳細
+│   │   │   └── index.html
+│   │   ├── index.html  #[B-1] トップページ
+│   │   ├── js/         #js 格納フォルダ
+│   │   │   └── lib/    #共通js格納フォルダ
+│   │   │       ├── module.js
+│   │   │       └── vendor.js
+│   │   ├── me/         #[C-1] マイページ
+│   │   │   ├── index.html
+│   │   │   └── settings    #[C-2] マイページ 設定変更
+│   │   │       └── index.html
+│   │   ├── password/   #
+│   │   │   ├── edit    #[A-4] パスワード再設定
+│   │   │   │   └── index.html
+│   │   │   └── new     #A[-3] パスワード変更
+│   │   │       └── index.html
+│   │   ├── signin/     #[A-1] ログイン
+│   │   │   └── index.html
+│   │   ├── signout/    #[A-2] ログアウト
+│   │   │   └── index.html
+│   │   └── signup/     #[D-1] 新規登録
+│   │       └── index.html
+│   └── src/
+│       ├── css/
+│       │   └── lib/
+│       │       ├── _mixins.scss       #clearfixやprefix補完など汎用性の高いmixinを定義
+│       │       ├── _variables.scss    #色値、画面サイズ、余白などのパターンを変数管理
+│       │       ├── base.scss    #下記SCSSをimportし出力されるCSS
+│       │       ├── base/              #ベースレイヤー
+│       │       │   ├── _print.scss    #印刷時スタイル
+│       │       │   ├── _sanitize.scss #サニタイズ（Normalizeの後継）
+│       │       │   └── _scaffolding.scss    #body、プライマリーゾーニング定義
+│       │       ├── develop/
+│       │       │   ├── _code.scss    #コードのシンタックスハイライト
+│       │       │   ├── _guide.scss   #ガイド線
+│       │       │   └── _sample.scss  #カラムグリッドのハイライト、ミス可視化
+│       │       ├── layout/
+│       │       │   ├── _breadcrumb.scss
+│       │       │   ├── _global-footer.scss     #グローバルフッター
+│       │       │   ├── _global-header.scss     #グローバルヘッダー
+│       │       │   └── _grid.scss              #レスポンシブグリッドシステム
+│       │       └── module.scss   #下記SCSSをインポrtし出力されるCSS
+│       │       ├── mixins/
+│       │       │   ├── _btn.scss      #ボタンスタイル用mixin
+│       │       │   ├── _form.scss     #フォームスタイル用mixin
+│       │       │   ├── _gradients.scss    #グラデーションスタイル用mixin
+│       │       │   ├── _grid.scss     #グリッドスタイル用mixin
+│       │       │   ├── _image.scss    #imageスタイル用mixin
+│       │       │   ├── _link.scss     #リンクスタイル用mixin
+│       │       │   ├── _list.scss     #リストスタイル用mixin
+│       │       │   ├── _mediaquery.scss     #メディアクエリスタイル用mixin
+│       │       │   ├── _responsive-utilities.scss    #レスポンシブ表示の汎用スタイル用mixin
+│       │       │   ├── _responsive-visibility.scss   #レスポンシブ表示の汎用スタイル関数用mixin
+│       │       │   ├── _table.scss    #テーブルスタイル用mixin
+│       │       │   ├── _utilities.scss    #ユーティリティスタイル用mixin
+│       │       │   └── _vendor-prefixes.scss    #ベンダープリフィックススタイル用mixin
+│       │       ├── module/
+│       │       │   ├── _accordion.scss    #アコーディオンスタイル用CSS
+│       │       │   ├── _btn.scss          #ボタンスタイル用CSS
+│       │       │   ├── _carousel.scss     #カルーセルスタイル用CSS
+│       │       │   ├── _form.scss         #フォームスタイル用CSS
+│       │       │   ├── _image.scss        #imageスタイル用CSS
+│       │       │   ├── _link.scss         #リンクスタイル用CSS
+│       │       │   ├── _list.scss         #リストスタイル用CSS
+│       │       │   ├── _media.scss        #メディアレイアウト用CSS
+│       │       │   ├── _tab.scss          #タブスタイル用CSS
+│       │       │   ├── _table.scss        #テーブルスタイル用CSS
+│       │       │   ├── _type.scss         #書式設定スタイル用CSS
+│       │       │   └── _utilities.scss    #ユーティリティクラス用CSS
+│       └── js/
+│           └── vendor/    #vendorJS用
+├── public    #fg-event.1pac.netに配信(Railsアプリケーションとして動作する) ルートディレクトリ
+│   ├── 404.html
+│   ├── 422.html
+│   ├── 500.html
+│   ├── apple-touch-icon-precomposed.png
+│   ├── apple-touch-icon.png
+│   ├── img
+│   ├── css
+│   │   ├── lib
+│   │   │   ├── base.css     #基本レイアウト、共通レイアウト用CSS
+│   │   │   └── module.css   #モジュール用CSS
+│   ├── favicon.ico
+│   ├── js
+│   │   └── lib
+│   │       ├── module.js    #モジュールJS
+│   │       └── vendor.js    #vendorJS
+│   └── robots.txt
 
 ```

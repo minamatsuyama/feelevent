@@ -1,0 +1,103 @@
+//
+// Links
+// --------------------------------------------------
+
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: $color-black;
+  &:hover {
+    color: $color-link-main;
+  }
+}
+
+// External links
+a[target="_blank"],
+a[target="new"] {
+
+}
+
+.link-external {
+  @extend %link-external;
+}
+
+// tap-highlight
+.tap-highlight {
+  @extend %tap-highlight;
+}
+
+// link-to-all
+.link-to-all {
+  display: inline-block;
+  background: url("/img/shared/icon_grid_blue.png") left center no-repeat;
+  background-size: 13px 13px;
+  padding-left: 18px;
+  color: $color-black;
+  &:hover {
+    @include opacity(0.8);
+    text-decoration: none;
+  }
+  &:active {
+    @include opacity(1);
+    color: $color-link-main;
+  }
+}
+
+
+// card
+// -------------------------
+
+.link-card {
+  display: block;
+  margin: $margin-v-subchapter 0;
+  color: $color-black;
+  @extend %tap-highlight;
+  @include transition(all .2s $easeOutCubic);
+  @include mediaquery-sm() {
+    margin: $margin-v-subchapter-sm 0;
+  }
+  .image {
+    background-color: #000;
+    img {
+      backface-visibility: hidden;
+      //@include translate3d(0,0,0);
+      @include img-liquid(); //Experimental
+      @include opacity(0.9);
+      @include transition(all .2s $easeOutCubic);
+    }
+  }
+  .title {
+    font-size: $font-size-large;
+    margin: $margin-v-paragraph 0;
+    line-height: 1.5;
+  }
+
+  @include hover-and-touched() {
+    text-decoration: none;
+    .title {
+      color: $color-link-main;
+    }
+    .image {
+      img {
+        @include opacity(1);
+      }
+    }
+  }
+
+  &.light {
+    .image {
+      background-color: #fff;
+      img {
+        @include opacity(1);
+      }
+    }
+
+    @include hover-and-touched() {
+      .image {
+        img {
+          @include opacity(0.8);
+        }
+      }
+    }
+  }
+}
