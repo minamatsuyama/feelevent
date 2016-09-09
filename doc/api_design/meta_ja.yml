@@ -1,12 +1,12 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
 id: api
-title:       "FeelGood API v1"
-description: "FeelGood API v1 インターフェース仕様(JSON Hyper Schema draft v4 形式で記述しています)"
+title:       "FeelEvent API v1"
+description: "FeelEvent API v1 インターフェース仕様(JSON Hyper Schema draft v4 形式で記述しています)"
 type:
   - object
 links:
-  - href: https://v2.feelnote.org
+  - href: https://worldschool.feelnote.org
     rel:  self
 
 # グローバル変数として定義する
