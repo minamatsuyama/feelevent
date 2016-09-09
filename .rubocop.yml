@@ -3,6 +3,7 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
     - 'doc/**/*'
+    - 'frontend/**/*'
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: true
