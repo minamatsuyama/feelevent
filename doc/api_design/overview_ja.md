@@ -55,6 +55,13 @@ or
 HTTP/1.1 201 Created
 ```
 
+#### 204 No Content
+- 処理は成功(受理)したがレスポンスボディがない場合のレスポンス
+
+```
+HTTP/1.1 204 No Content
+```
+
 ### Error response
 例外系(エラー系)レスポンスの説明になります。
 
