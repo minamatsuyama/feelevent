@@ -1,7 +1,7 @@
 FeelEvent API Document
 ============
 
-| Date: 2016-09-05 | Author: 1PAC 春菜 紘道 |
+| Date: 2016-09-09 | Author: 1PAC 春菜 紘道 |
 |---|---|
 
 ## Overview
@@ -53,6 +53,13 @@ or
 
 ```
 HTTP/1.1 201 Created
+```
+
+#### 204 No Content
+- 処理は成功(受理)したがレスポンスボディがない場合のレスポンス
+
+```
+HTTP/1.1 204 No Content
 ```
 
 ### Error response

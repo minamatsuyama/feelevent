@@ -59,19 +59,20 @@ HTTP/1.1 <%=
     '201 Created'
   when 'empty'
     '202 Accepted'
+  when 'no-content'
+    '204 No Content'
   else
     '200 OK'
   end %>
 <%- end %>
 ```
 
-<%- if response_example || link['rel'] != 'empty' %>
+<%- if response_example || (link['rel'] != 'empty' && link['rel'] != 'no-content') %>
 ```json
 <%- if response_example %>
 <%=   response_example['body'] %>
 <%- else %>
-<%-   if link['rel'] == 'empty' %>
-<%-   elsif link.has_key?('targetSchema') %>
+<%-   if link.has_key?('targetSchema') %>
 <%=     JSON.pretty_generate(schema.schema_example(link['targetSchema'])) %>
 <%-   elsif link['rel'] == 'instances' %>
 <%=     JSON.pretty_generate([schema.schemata_example(resource)]) %>
