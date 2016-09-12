@@ -6,6 +6,7 @@ class Event::Item < ApplicationRecord
   has_many :event_addresses, foreign_key: 'event_item_id', class_name: 'Event::Address'
   has_many :event_summary_contents, foreign_key: 'event_item_id', class_name: 'Event::SummaryContent'
   has_many :event_experience_contents, foreign_key: 'event_item_id', class_name: 'Event::ExperienceContent'
+  has_many :event_seminar_contents, foreign_key: 'event_item_id', class_name: 'Event::SeminarContent'
 
   extend Enumerize
 
