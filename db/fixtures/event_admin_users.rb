@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Event::Admin::User.seed_once(:id) do |s|
   s.id = 1
   s.email = 'admin@example.com'
