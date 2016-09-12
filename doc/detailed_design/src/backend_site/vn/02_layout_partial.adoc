@@ -1,0 +1,37 @@
+== Bố cục (layout), bộ phận (partial)
+=== Layout
+Sử dụng các layout có sẵn của `Rails`. +
+Vì đây là một web application đơn giản, nên chỉ sử dụng các layout có sẵn cơ bản của `application`
+
+* Thư mục chứa các tập tin layout
+** app/views/layouts/
+* File ghi định dạng layout chung
+** application.html.erb
+
+
+=== Partial
+Dưới đây là thông tin về các tập tin chứa partial chung như header, footer.
+* Thư mục chứa các partial dùng chung
+** app/views/shared/
+
+==== Các partial chính
+
+[source, bash]
+----
+app/views/shared/
+  ├── _body_bottom.html.erb     # Chứa phần chung đặt ngay trước thẻ </body>
+  ├── _body_top.html.erb        # Chứa phần chung đặt ngay sau thẻ <body>
+  ├── _global_header.html.erb   # Chứa global header
+  └── _global_footer.html.erb   # Chứa global footer
+----
+
+==== Ví dụ
+
+[source]
+----
+<%= render 'shared/global_header' %>
+# nội dung của `app/views/shared/_global_header.html.erb` sẽ được chèn vào
+
+<%= render 'shared/global_footer', bar: 'baz' %>
+# Trường hợp muốn đưa tham số cho partial(có thể tỉnh lược locals:)
+----

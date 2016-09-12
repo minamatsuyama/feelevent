@@ -1,0 +1,48 @@
+== MỞ ĐẦU
+Đây là bảng thiết kế chi tiết server-end của trang *World School* (`FeelEvent`), một trang được tách ra từ `Feelnote`.
+
+=== Chú thích về mặt kỹ thuật
+
+* Vì các thông tin về hội thảo (event) cũng được sử dụng ở `Feelnote` nên tất cả các bảng (table) của cơ sở dữ liệu sẽ được cấu trúc tại `Feelnote DB`.
+* Mặc dù giao diện của `Feelnote` được thiết kế theo cơ cấu `SPA (Single Page Application)`, nhưng trang *World School* là một trang web mở được công bố rộng rãi, nên dựa trên quan điểm SEO giao diện của nó sẽ được thiết kế theo phương thức truyền thống `MPA(Multi Page Application)`.
+
+=== Cấu hình hệ thống
+* Nginx
+* Ruby (phiên bản 2.3.1)
+* Ruby on Rails (phiên bản 5.0.0.1)
+* MySQL (phiên bản 5.7)
+* Redis
+
+=== Nguyên tắc code
+
+* Nguyên tắc code cơ bản
+** https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.md
+** https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+* Các nguyên tắc code khác của Ruby (bổ sung cho nguyên tắc cơ bản ở trên)
+** https://github.com/styleguide/ruby
+* Nguyên tắc code cơ bản cho Rails
+** https://github.com/bbatsov/rails-style-guide/blob/master/README.md
+
+==== Nguyên tắc code riêng của 1PAC
+
+===== Mục định nghĩa
+* Không thêm dòng trống vào sau `class`.
+* Không thêm dòng trống vào giữa 2 `end` cuối cùng.
+
+===== Cách dùng unless, if đặt sau
+Các nguyên tác tối thiếu dưới đây được đặt ra để giữ cho code vẫn có thể dễ hiểu khi có nhiều xử lý phân nhánh if.(trừ một số ngoại lệ).
+
+* Chỉ được áp dụng if, unless đặt sau khi sử dùng `return`, `raise` để thực hiện ngưng xử lý. Ví dụ:
+
+[source, ruby]
+----
+return unless @user.signed_in?
+----
+
+*  Đối với trường hợp thêm xử lý hoặc đặt giá trị cho biến số và tiếp tục xử lý sau đó, thì dù cho có là 1 dòng đi nữa cũng phải dùng cấu trúc if bình thường. Ví dụ:
+[source, ruby]
+----
+if @flow.init?
+  @user.assign_attributes @flow.get_data(:form)
+end
+----

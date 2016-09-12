@@ -1,0 +1,57 @@
+== Các lưu ý khi lập trình
+Dưới đây là 2 lưu ý chính trong quá trình lập trình.
+* Sử dụng `RSpec` để thực hiện các kiểm tra.
+* Bắt buộc phải tạo `Pull Request` để có thể kiểm tra chéo code của nhau.
+
+=== Sử dụng RSpec để kiểm tra trong lập trình
+Web Application này không sử dụng `Minitest` của `Rails` mà sẽ dùng `RSpec` để thực hiện kiểm tra code trong lập trình.
+* FactoryGirl
+** Mặc dù Rails có chức năng `Fixture` để tạo test data, nhưng application lần này sẽ sử dụng `FactoryGirl`.
+* Faker
+** Một `Gem` chuyên dùng để tạo các dữ liệu ảo trong test.
+
+==== Các loại TEST
+* Test đơn thể độc lập
+** Thực hiện kiểm tra các method của Model, Decorator, Helper
+* Test dành cho controller
+** Dùng kiểm tra cả quá trình tạo view, ngăn ngừa lỗi gọi method không được định nghĩa, hoặc gây lỗi trong view.
+
+.Sách tham khảo
+[NOTE]
+Everyday Rails - RSpecによるRailsテスト入門 +
+https://leanpub.com/everydayrailsrspec-jp/read
+
+=== Kiểm tra code chéo dựa trên Pull-Request
+Thực hiện tạo branch và chia nhỏ các commit theo mức hợp lý.
+Thực hiện kiểm tra kỹ trên máy tính của mình trước khi đưa lên Github tạo Pull-Request và nhờ người khác kiểm tra chéo. +
+\* Về cơ bản, chỉ được thực hiện `Merge` sau khi *đã được kiểm tra chéo và có comment đồng ý.*
+
+==== Các kiểm tra tối thiểu trước khi nhờ kiểm tra chéo
+Thực hiện tất cả các điều dưới đây trước khi nhờ kiểm tra chéo.
+
+* Kiểm tra xem có code không phù hợp với nội dung của branch không.
+* Message trong mỗi commit có đơn giản, dễ hiểu không.
+* Đã thực hiện tinh chỉnh, tối giản code chưa (refactoring)
+* Method có thiết định public, private phù hợp hay chưa.
+* Code có thực sự dê đọc và dễ hiểu không
+* Tên của Class/Method/biến số có phù hợp không
+* Có trùng lặp với các code đã có sẵn hay không
+* Có gây ảnh hưởng tới các code đã có sẵn không
+* Có các comment tại vị trí cần thiết hay chưa
+* Đã xoá hết các code dùng trong debbug chưa
+* Có thể viết code một cách khác nào tốt hơn hay không
+* Tên file có hợp lý chưa
+* Các file không cần thiết có bị commit chung hay không
+* Có chứa lỗi đánh máy không
+* Có tuân thủ đúng các qui tắc lập trình không
+* Validate trong model có phù hợp chưa
+* Có vấn đề gì về mặt bảo mật không
+* Code có đi lệch khỏi các qui tắc của framework không
+* Có chứa các sử lý mà có thể thay thế bằng library có sẵn không
+* Có gây các tiềm ẩn gây nặng xử lý, hoặc nguy hiểm về bảo mật trong tương lai không
+* Có cần thực hiện xử lý transaction cho cơ sở dữ liệu không
+* Có cần sử dụng bộ nhớ đệm để giảm thiểu xử lý không
+* Có chứa các SQL không cần thiết không
+* Code kiểm tra có chứa đủ các trường hợp hay chưa
+* Chương trình có chạy đúng tại nhưng điều kiện đặc biệt không
+* Xử lý chặn lỗi (error handling) có được thực hiện phù hợp, đầy đủ chưa

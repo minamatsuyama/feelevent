@@ -1,0 +1,40 @@
+== A-1 Login
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET\|POST /signin
+| Controller, Action | sessions#signin
+| Tên route                | new_user_session
+| View                  | devise/sessions/new.html.erb
+|=====
+
+=== Request
+[cols="50,35,20,40"]
+|=====
+| Parameter | Chi tiết | Bắt buộc | Ghi chú
+| event_user[email]       | Email | Có |
+| event_user[password]    | Mật khẩu | Có |
+| event_user[remember_me] | Giữ thông tin login |  |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== Chi tiết
+image::../assets/A-1.png[]
+. Email
+** Xuất dưới dạng tag là input với hạng mục là `email`
+. Mật khẩu
+** Xuất dưới dạng tag là input với hạng mục là `password`
+** Nếu xuất hiện màn hình lỗi sau ấn login, không chứa nội dung đã nhập trước đó
+. Lưu lại login
+** Xuất dưới dạng tag là input với hạng mục là `checkbox`
+** Giá trị mặc định là không được chọn
+. Nút Login
+** Trường hợp *Login thành công*
+*** Sử dụng `Devise` tạo session
+*** Chuyển về trang `B-1`
+** Trường hợp *Login thất bại*
+*** Trả lại màn hình này và xuất các thông báo lỗi cần thiết.

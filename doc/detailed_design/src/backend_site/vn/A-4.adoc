@@ -1,0 +1,60 @@
+== A-4 Tạo lại mật khẩu (Nhập dữ liệu)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET /password/edit
+| Controller,Action | devise/password#edit
+| Tên route                | edit_user_password
+| View                  | devise/password/edit.html.erb
+|=====
+
+=== Request
+[cols="50,35,20,40"]
+|=====
+| Parameter | Chi tiết | Bắt buộc | Ghi chú
+| reset_password_token | Chuỗi nhận dạng (Token) | Có |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+=== Chi tiết
+. Chi tiết chung
+** Sử dụng `Devise` để kiểm tra token
+. Mật khẩu
+** Xuất dưới dạng tag input vơi hạng mục là `password`
+** Không chứa giá trị khi bị trả lại màn hình lỗi
+. Mật khẩu(Xác nhận)
+** Xuất dưới dạng tag input vơi hạng mục là `password`
+** Không chứa giá trị khi bị trả lại màn hình lỗi
+
+== A-4-a Tạo lại mật khẩu (Xử lý)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method,URL            | PATCH /password
+| Controller, Action | devise/password#update
+| Tên route                | (default)
+| View                  | Không có
+|=====
+
+=== Request
+[cols="65,35,20,30"]
+|=====
+| Parameter | Chi tiết | Bắt buộc | Ghi chú
+| event_user[password] | Mật khẩu | Có |
+| event_user[password_confirmation] | Xác nhận mật khẩu | Có |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== Chi tiết
+* Trường hợp thành công (Validate thành công)
+** Sử dụng `Devise` để xử lý chuẩn bị tạo lại mật khẩu
+*** Xử lý gửi email cũng có sẵn trong `Devise`
+*** Chỉnh sửa mẫu chung cho phù hợp nội dung
+* Trường hợp thất bại (Lỗi không qua validate)
+** Chuyển về màn hình `A-3` và hiển thị thông tin lỗi cần thiết.

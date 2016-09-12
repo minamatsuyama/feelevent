@@ -1,0 +1,16 @@
+== C-1 My Page (WIP)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET /me
+| Controller, Action | me#show
+| Tên route                | me
+| View                  | me/show.html.erb
+|=====
+
+=== Request
+* Không có
+
+=== Chi tiết
+. Chi tiết chung

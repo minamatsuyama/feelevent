@@ -1,0 +1,16 @@
+== D-1 会員登録 (WIP)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /signup
+| コントローラ,アクション | sessions#signup
+| ルート名                | signup
+| ビュー                  | sessions/signup_input.html.erb
+|=====
+
+=== リクエスト
+* WIP
+
+=== 仕様
+* WIP
