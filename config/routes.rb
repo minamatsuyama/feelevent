@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations',
     sessions: 'users/sessions'
+  }, path_names: {
+    sign_in: 'signin',
+    sign_out: 'singout',
+    sign_up: 'signup'
   }
 
   namespace :admin do
