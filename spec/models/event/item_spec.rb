@@ -12,5 +12,10 @@ RSpec.describe Event::Item, type: :model do
         .class_name('Event::SummaryContent')
         .with_foreign_key('event_item_id')
     end
+    it do
+      is_expected.to have_many(:event_experience_contents)
+        .class_name('Event::ExperienceContent')
+        .with_foreign_key('event_item_id')
+    end
   end
 end
