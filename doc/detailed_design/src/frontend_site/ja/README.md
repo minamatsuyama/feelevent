@@ -1,9 +1,12 @@
-# SPAフロントエンド設計書(SPA frontend design)
+# World School フロントエンド設計書(Frontend design of World School)
 
 * [技術仕様書](./02_technical_guideline.adoc)
 * [コーディングガイドライン](./03_cording_guideline.adoc)
 * [ディレクトリ構成図](./04_directory_design.adoc)
-* [SPAページルーティング設計書](./05_spa_rooting_design.adoc)
-* [フロント通信設計書](./06_frontend_model_design.adoc)
-* [基礎レイアウト設計書](./07_basic_layout_design.adoc)
-* [モジュール設計書](./08_module_design.adoc)
+* [タスクランナー設計書](./05_taskrunner_design.adoc)
+* [スタイルシート設計書](./06_stylesheet_basic_design.adoc)
+* [Javascript設計書](./07_javascript_basic_design.adoc)
+
+## 画面設計書
+
+* [画面設計書 A-1](./A-1.adoc)
