@@ -1,0 +1,20 @@
+== A0102 Xoá event khỏi danh sách yêu thích (Delete favorite event)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| JSON Schema             | api_design/build/unit/ja/A01.md
+| Controller, Action | api/favorites#destroy
+|=====
+
+=== Chi tiết
+. Xử lý trước
+** Kiểm tra login
+*** Kiểm tra login dựa trên CookieSession. Nếu chưa login thì trả về `403  Response`
+. Xử lý chính
+** Xoá event được chỉ định khỏi danh sách yêu thích (__event_user_items__)
+. Xử lý khi có lỗi
+** Nếu không tìm được thông tin event trong __event_items__ đúng theo `event_item_id` thì trả lại `404 Response`.
+** Nếu event đang không được công bố, (__event_items.published__) có giá trị khác *true (published)*, thì trả về `404 Response`
+** Nếu hiện tại không phải là thời gian sự kiện được công bố, thời gian nằm ngoài khoản __event_items.published_started_at__ ~ __event_items.published_ended_at__, thì trả về giá trị `404 Response`
+** Nếu như không có event đã chỉ định trong danh sách yêu thích thì trả về `404 Response`
