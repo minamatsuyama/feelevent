@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-module Event::Admin
+module Event
   def self.table_name_prefix
-    'event_admin_'
+    'event_'
   end
 end
