@@ -1,0 +1,5 @@
+== Style sheet basic design document
+https://docs.google.com/presentation/d/1fGNMIxWYhZYOUG-43ajM5B_DzQlTEsL75F2L5RPxDog/edit
+
+=== CSS Structure
+https://docs.google.com/spreadsheets/d/1kylLv0YL7q9eEMfVWFKQFAfE_1zqs3Ca_GmCNP6od2I/edit#gid=571240193
