@@ -8,6 +8,6 @@ endif::[]
 | ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
 
 | 01 | メールアドレス +
-__event_user[email]__ | email | ◯ |
+__user[email]__ | email | ◯ |
 
 |=====
