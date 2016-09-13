@@ -13,4 +13,7 @@ __user[email]__ | email | ◯ |
 | 02 | パスワード +
 __user[password]__ | password | ◯ |
 
+| 03 | ログイン情報の保持 +
+__user[remember_me]__ | checkbox | |
+
 |=====
