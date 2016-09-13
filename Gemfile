@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'seed-fu'
+
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'acts-as-list'
 gem 'acts-as-taggable-on'

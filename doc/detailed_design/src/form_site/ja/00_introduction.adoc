@@ -1,0 +1,36 @@
+== はじめに
+本アプリケーションのフォーム定義資料になります。
+
+=== フォーム種別の説明
+* 基本的には `select`, `textarea` を除いて `input` タグの type 属性の値を記載しています。
+* `select` は複数選択オプションがあるため下記2パターン存在します。
+** **select(single)** - デフォルトの select
+** **select(multiple)** - multiple 属性をつけた複数選択版
+
+=== 備考列の項目説明
+備考列に初期値やバリデーション内容などの情報を記載します。 +
+下記は凡例になります。
+
+
+==== default
+* デフォルト値
+* 例) **default:** AAA
+
+==== maxlength
+* maxlength値
+* 例) **maxlength:** 255
+
+==== minlength
+* minlength値
+* 例) **minlength:** 3
+
+==== format
+* 入力フォーマット
+* 例) **format:** YYYY-MM-DD
+
+==== pattern
+* 入力(選択肢)パターン
+* 例1) **pattern:** (foo, bar)
+** 上記例の場合は `foo` , `bar` を受け付ける
+* 例2) **pattern:** (ja:日本語, vi:ベトナム語)
+** 上記例の場合は `<option value="vi">ベトナム語</option>` のように利用する

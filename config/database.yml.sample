@@ -11,7 +11,7 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8mb4
   pool: 5
   username: root
   password:
@@ -51,4 +51,4 @@ production:
   <<: *default
   database: fg-note_production
   username: fg-note
-  password: <%= ENV['FG-EVENT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['FG-NOTE_DATABASE_PASSWORD'] %>

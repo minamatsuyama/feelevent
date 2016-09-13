@@ -1,1 +1,2 @@
 == Javascript基本設計書
+https://docs.google.com/presentation/d/19xx6XdESdFyT8zlXDwTp-ROFj_hocS9Izx4BAbL1ptA/edit

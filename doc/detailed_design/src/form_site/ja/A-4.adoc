@@ -1,0 +1,3 @@
+== A-4 パスワード再発行 (入力)
+
+include::./_include/A-4.adoc[]

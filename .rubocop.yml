@@ -18,6 +18,8 @@ Lint/HandleExceptions:
 
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - 'config/initializers/devise.rb'
 
 Style/AsciiComments:
   Enabled: false
@@ -25,5 +27,11 @@ Style/AsciiComments:
 Style/BlockComments:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
   Enabled: false

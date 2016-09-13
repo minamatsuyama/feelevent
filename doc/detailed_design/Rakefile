@@ -9,6 +9,8 @@ else
   end
 end
 
+page_orientation = ENV['PAGE_ORIENTATION'] ? ENV['PAGE_ORIENTATION'] : 'portrait'
+
 task default: :pdf
 
 task pdf: source_files.ext('.pdf')
@@ -34,6 +36,7 @@ rule '.pdf' => '.adoc' do |t|
       -r asciidoctor-diagram -r asciidoctor-diagram-cacoo #{t.source} && \
     ./vendor/bin/fopub -t #{docbook_xsl_path} #{xml_file} \
       -param alignment left \
+      -param page.orientation #{page_orientation} \
       -param body.font.family #{fonts[lang]} \
       -param dingbat.font.family #{fonts[lang]} \
       -param monospace.font.family #{fonts[lang]} \
