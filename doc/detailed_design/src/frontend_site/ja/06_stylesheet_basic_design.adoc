@@ -1,1 +1,2 @@
 == スタイルシート基本設計書
+https://docs.google.com/presentation/d/1fGNMIxWYhZYOUG-43ajM5B_DzQlTEsL75F2L5RPxDog/edit
