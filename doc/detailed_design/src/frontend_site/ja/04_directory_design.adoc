@@ -3,7 +3,6 @@
 ```
 .
 ├── frontend    #開発用ディレクトリ
-│   ├── Gruntfile.js    #タスクランナー環境設定ファイル
 │   ├── grunt/          #タスクランナー環境設定ファイル用フォルダ
 │   │   ├── config.css.js
 │   │   ├── config.js
@@ -39,53 +38,58 @@
 │   │   │   └── index.html
 │   │   └── signup/     #[D-1] 新規登録
 │   │       └── index.html
-│   └── src/
-│       ├── css/
-│       │   └── lib/
-│       │       ├── _mixins.scss       #clearfixやprefix補完など汎用性の高いmixinを定義
-│       │       ├── _variables.scss    #色値、画面サイズ、余白などのパターンを変数管理
-│       │       ├── base.scss    #下記SCSSをimportし出力されるCSS
-│       │       ├── base/              #ベースレイヤー
-│       │       │   ├── _print.scss    #印刷時スタイル
-│       │       │   ├── _sanitize.scss #サニタイズ（Normalizeの後継）
-│       │       │   └── _scaffolding.scss    #body、プライマリーゾーニング定義
-│       │       ├── develop/
-│       │       │   ├── _code.scss    #コードのシンタックスハイライト
-│       │       │   ├── _guide.scss   #ガイド線
-│       │       │   └── _sample.scss  #カラムグリッドのハイライト、ミス可視化
-│       │       ├── layout/
-│       │       │   ├── _breadcrumb.scss
-│       │       │   ├── _global-footer.scss     #グローバルフッター
-│       │       │   ├── _global-header.scss     #グローバルヘッダー
-│       │       │   └── _grid.scss              #レスポンシブグリッドシステム
-│       │       └── module.scss   #下記SCSSをインポrtし出力されるCSS
-│       │       ├── mixins/
-│       │       │   ├── _btn.scss      #ボタンスタイル用mixin
-│       │       │   ├── _form.scss     #フォームスタイル用mixin
-│       │       │   ├── _gradients.scss    #グラデーションスタイル用mixin
-│       │       │   ├── _grid.scss     #グリッドスタイル用mixin
-│       │       │   ├── _image.scss    #imageスタイル用mixin
-│       │       │   ├── _link.scss     #リンクスタイル用mixin
-│       │       │   ├── _list.scss     #リストスタイル用mixin
-│       │       │   ├── _mediaquery.scss     #メディアクエリスタイル用mixin
-│       │       │   ├── _responsive-utilities.scss    #レスポンシブ表示の汎用スタイル用mixin
-│       │       │   ├── _responsive-visibility.scss   #レスポンシブ表示の汎用スタイル関数用mixin
-│       │       │   ├── _table.scss    #テーブルスタイル用mixin
-│       │       │   ├── _utilities.scss    #ユーティリティスタイル用mixin
-│       │       │   └── _vendor-prefixes.scss    #ベンダープリフィックススタイル用mixin
-│       │       ├── module/
-│       │       │   ├── _accordion.scss    #アコーディオンスタイル用CSS
-│       │       │   ├── _btn.scss          #ボタンスタイル用CSS
-│       │       │   ├── _carousel.scss     #カルーセルスタイル用CSS
-│       │       │   ├── _form.scss         #フォームスタイル用CSS
-│       │       │   ├── _image.scss        #imageスタイル用CSS
-│       │       │   ├── _link.scss         #リンクスタイル用CSS
-│       │       │   ├── _list.scss         #リストスタイル用CSS
-│       │       │   ├── _media.scss        #メディアレイアウト用CSS
-│       │       │   ├── _tab.scss          #タブスタイル用CSS
-│       │       │   ├── _table.scss        #テーブルスタイル用CSS
-│       │       │   ├── _type.scss         #書式設定スタイル用CSS
-│       │       │   └── _utilities.scss    #ユーティリティクラス用CSS
+│   └── src
+│       ├── css
+│       │   ├── lib	#共通スタイル
+│       │   │   ├── _mixins.scss	#clearfixやprefix補完など汎用性の高いmixinを定義
+│       │   │   ├── _variables.scss	#色値、画面サイズ、余白などのパターンを変数管理
+│       │   │   ├── base.scss	#下記SCSSをimportし出力されるCSS
+│       │   │   ├── mixins
+│       │   │   │   ├── _box.scss	#ボックススタイル用mixin
+│       │   │   │   ├── _btn.scss	#ボタンスタイル用mixin
+│       │   │   │   ├── _develop.scss	#開発環境専用のmixin
+│       │   │   │   ├── _form.scss	#フォームスタイル用mixin
+│       │   │   │   ├── _gradients.scss	#グラデーションスタイル用mixin
+│       │   │   │   ├── _grid.scss	#グリッドスタイル用mixin
+│       │   │   │   ├── _image.scss	#imageスタイル用mixin
+│       │   │   │   ├── _link.scss	#リンクスタイル用mixin
+│       │   │   │   ├── _list.scss	#リストスタイル用mixin
+│       │   │   │   ├── _mediaquery.scss	#メディアクエリスタイル用mixin
+│       │   │   │   ├── _responsive-utilities.scss	#レスポンシブ表示の汎用スタイル用mixin
+│       │   │   │   ├── _responsive-visibility.scss	#レスポンシブ表示の汎用スタイル関数用mixin
+│       │   │   │   ├── _screenreader.scss	#スクリーンリーダーのスタイル関数用mixin
+│       │   │   │   ├── _table.scss	#テーブルスタイル用mixin
+│       │   │   │   ├── _type.scss	#テキストスタイル用mixin
+│       │   │   │   ├── _utilities.scss	#ユーティリティスタイル用mixin
+│       │   │   │   └── _vendor-prefixes.scss	#ベンダープリフィックススタイル用mixin
+│       │   │   └── module.scss
+│       │   └── shared
+│       │       ├── base	#ベースレイヤー
+│       │       │   ├── _print.scss	#印刷時スタイル
+│       │       │   ├── _sanitize.scss	#サニタイズ（Normalizeの後継）
+│       │       │   └── _scaffolding.scss	#body、プライマリーゾーニング定義
+│       │       ├── develop
+│       │       │   ├── _code.scss	#コードのシンタックスハイライト
+│       │       │   ├── _guide.scss	#ガイド線
+│       │       │   └── _sample.scss	#カラムグリッドのハイライト、ミス可視化
+│       │       ├── layout
+│       │       │   ├── _breadcrumb.scss	#ブレッドクラム
+│       │       │   ├── _global-footer.scss	#グローバルフッター
+│       │       │   ├── _global-header.scss	#グローバルヘッダー
+│       │       │   └── _grid.scss	#レスポンシブグリッドシステム
+│       │       └── module
+│       │           ├── _accordion.scss	#アコーディオンスタイル用CSS
+│       │           ├── _btn.scss	#ボタンスタイル用CSS
+│       │           ├── _carousel.scss	#カルーセルスタイル用CSS
+│       │           ├── _form.scss	#フォームスタイル用CSS
+│       │           ├── _image.scss	#imageスタイル用CSS
+│       │           ├── _link.scss	#リンクスタイル用CSS
+│       │           ├── _list.scss	#リストスタイル用CSS
+│       │           ├── _media.scss	#メディアレイアウト用CSS
+│       │           ├── _tab.scss	#タブスタイル用CSS
+│       │           ├── _table.scss	#テーブルスタイル用CSS
+│       │           ├── _type.scss	#書式設定スタイル用CSS
+│       │           └── _utilities.scss	#ユーティリティクラス用CSS
 │       └── js/
 │           └── vendor/    #vendorJS用
 ├── public    #fg-event.1pac.netに配信(Railsアプリケーションとして動作する) ルートディレクトリ

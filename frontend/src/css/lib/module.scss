@@ -1,22 +1,22 @@
 @charset "UTF-8";
 
 //library
-@import "../lib/variables";
-@import "../lib/mixins";
+@import "variables";
+@import "mixins";
 
 //
 // Modules
 // --------------------------------------------------
 
 //エレメント
-@import "module/list";
-@import "module/btn";
-@import "module/image";
+@import "../shared/module/list";
+@import "../shared/module/btn";
+@import "../shared/module/image";
 
 //入れ物系
-@import "module/media";
-@import "module/link";
-@import "module/table";
+@import "../shared/module/media";
+@import "../shared/module/link";
+@import "../shared/module/table";
 
 //コンポーネント
 //@import "module/accordion";
@@ -25,14 +25,14 @@
 //@import "module/tab";
 
 //フォーム
-@import "module/form";
+@import "../shared/module/form";
 
 //ローディング
 //@import "module/loading";
 
 // Utilities
 // ---------------------------------------------------
-@import "module/utilities";
+@import "../shared/module/utilities";
 
 
 //
