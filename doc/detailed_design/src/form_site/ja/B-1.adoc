@@ -1,0 +1,3 @@
+== B-1 トップページ(検索)
+
+include::./_include/B-1.adoc[]
