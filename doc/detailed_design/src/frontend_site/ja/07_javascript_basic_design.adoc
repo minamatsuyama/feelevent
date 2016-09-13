@@ -52,6 +52,7 @@
 - レスポンスにより「ON/OFF」とお気に入り数を変更する
 
 ## カルーセル
+http://kenwheeler.github.io/slick/
 
 ### PCの場合
 
