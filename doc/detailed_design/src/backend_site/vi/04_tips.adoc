@@ -1,0 +1,29 @@
+== Tips
+Hướng dẫn chung về nhưng `Gem` khác.
+
+=== Decorator (Draper)
+
+Gem tạo ra một lớp Presenter(Draper) nằm giữa view và model nhằm giảm thiểu các logic gây khó hiểu không cần thiết trong model và view.
+
+==== Ví dụ
+===== app/decorators/user_decorator.rb
+[source, ruby]
+----
+class UserDecorator < Draper::Decorator
+  delegate_all
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+end
+----
+
+===== app/views/me/sample.html.erb
+[source, ruby]
+----
+<h1><%= @user.full_name %></h1>
+----
+
+[NOTE]
+Các thông tin khác của Draper có thể xem tại link Github dưới +
+https://github.com/drapergem/draper

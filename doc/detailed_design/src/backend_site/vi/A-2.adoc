@@ -1,0 +1,20 @@
+== A-2 Logout
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | DELETE /signout
+| Controller,Action | sessions#destroy
+| Tên route                | destroy_user_session
+| View                  | Không có
+|=====
+
+=== Request
+* Không có
+
+include::./_include/note_devise.adoc[]
+
+=== Chi tiết
+. Chi tiết chung
+** Sử dụng `Devise` cho sử lý ngừng sesion
+** Chuyển về trang `B-1`

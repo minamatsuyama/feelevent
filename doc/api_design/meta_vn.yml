@@ -1,0 +1,21 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+id: api
+title:       "FeelEvent API v1"
+description: "Chi tiết interface của FeelEvent API v1(Viết theo mẫu JSON Hyper Schema draft v4)"
+type:
+  - object
+links:
+  - href: https://worldschool.feelnote.org
+    rel:  self
+
+# グローバル変数として定義する
+definitions:
+  site:
+    description: "Site (công ty)"
+    definitions:
+      code:
+        description: Mã phân biệt site (công ty)
+        type:        string
+        example:     1pac
+    type: object

@@ -1,0 +1,19 @@
+== Bộ nhớ đệm (Cells)
+Nhằm giảm bớt xử lý trên database system, chương trình sẽ dùng gem `Cells` để tạo các tập tin bộ nhớ đệm.
+
+=== Cells là gì ?
+
+Đây là một Gem có thể xử lý cả logic(controller) lẫn view (partial) +
+Ví dụ, chúng sẽ được dùng trong các xử lý xuất các mục của side bar.
+[NOTE]
+Các thông tin khác về Cells có thể xem tại link Github dưới +
+https://github.com/apotonick/cells
+
+=== Các dùng
+* Thư mục chứa các xử lý logic (controller)
+** app/cells/
+* Cách đặt tên file
+** File có phần mở rộng là `rb` và phần tên có kết thúc là `_cell` (`*_cell.rb`)
+
+=== Tập tin chứa view
+ Mặc dù trong thiết định thông thường của gem `Cells` thì tập tin chứa view sẽ được đặt tại `app/cells/`, nhưng nhằm mục đích tập trung tất cả các view về một nơi, view sẽ được đặt tại `app/views/`

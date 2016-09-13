@@ -1,0 +1,53 @@
+== A-3 Đổi mật khẩu(Nhập dữ liệu)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET /password/new
+| Controller, Action | devise/password#new
+| Tên route                | new_user_password
+| View                  | devise/password/new.html.erb
+|=====
+
+=== Request
+* Không có
+
+include::./_include/note_devise.adoc[]
+
+=== Chi tiết
+. Địa chỉ email
+** Xuất dưới dạng tag input với hạng mục là `email`
+. Nút gửi đi
+** Gửi thông tin đến `A-3-a` bằng method POST.
+
+
+== A-3-a Đổi mật khẩu (Xử lý)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method,URL            | POST /password
+| Controller, Action | devise/password#create
+| Tên route                | user_password
+| View                  | devise/password/new_complete.html.erb
+| View của email            | devise/mailer/reset_password_instructions.html.erb
+|=====
+
+=== Request
+[cols="50,35,20,40"]
+|=====
+| Parameter | Chi tiết | Bắt buộc | Ghi chú
+| event_user[email] | Email | Có |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== Chi tiết
+* Trường hợp thành công (Validate thành công)
+** Dùng `Devise` thực hiện các sử lý chuẩn bị cho thay đổi mật khẩu
+*** Xử lý gửi email đi có sẵn trong `Devise`
+*** Thay đổi mẫu chung của email cho phù hợp
+* Trường hợp thất bại(Lỗi không qua được validate)
+** Chuyển về màn hinh nhập `A-3` và hiện thông số lỗi cần thiết

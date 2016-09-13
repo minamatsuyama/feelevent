@@ -1,0 +1,30 @@
+= Thiết kê chi tiết server-side cho trang FeelEvent
+:authorinitials: 1PAC. INC.
+:revdate:        2016-09-09
+:revnumber:      0.1.1
+:imagesdir:      src/backend_site/
+{authorinitials}
+
+include::src/backend_site/vi/00_introduction.adoc[]
+
+include::src/backend_site/vi/01_directory.adoc[]
+
+include::src/backend_site/vi/02_layout_partial.adoc[]
+
+include::src/backend_site/vi/03_cache.adoc[]
+
+include::src/backend_site/vi/04_tips.adoc[]
+
+include::src/backend_site/vi/05_development.adoc[]
+
+include::src/backend_site/vi/A-1.adoc[]
+
+include::src/backend_site/vi/A-2.adoc[]
+
+include::src/backend_site/vi/A-3.adoc[]
+
+include::src/backend_site/vi/A-4.adoc[]
+
+#include::src/backend_site/vi/C-1.adoc[]
+
+#include::src/backend_site/vi/D-1.adoc[]

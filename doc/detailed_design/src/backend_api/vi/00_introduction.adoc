@@ -1,0 +1,17 @@
+include::../../backend_site/vi/00_introduction.adoc[]
+
+=== Bổ sung
+==== Thiết kế chi tiết sử dụng cả JSON Schema
+* Các thông tin như đường dẫn của API, tham số (Request), cách thức trả lời (response) được quản lý dưới dạng `JSON Schema`.
+** Tên tập tin thiết kế API tương ứng sẽ được ghi tại dòng `JSON Schema` trong mỗi phần.
+[NOTE]
+Tập tin dạng Markdown được lưu tại thư mục `doc/api_design/build/{lang}/` trong cùng Github.
+
+==== Tên của các cột của bảng trong database
+Nội dung của các tham số trong bản thiết kế được ghi theo loại(type) và giá trị(value) của Rails (ActiveRecord) không phải ghi theo loại và giá trị thực trên cơ sở dữ liệu.
+
+==== Ví dụ
+* Trên cơ sơ dữ liệu
+** __event_items.published__ là loại `tinyint` và có giá trị là `1:Published`, `0:unpublished`
+* Cách ghi trên thiết kế
+** Khi __event_items.published__ có giá trị là `true(published)` thì làm xxx...

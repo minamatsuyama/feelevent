@@ -1,0 +1,37 @@
+== Cấu trúc thư mục
+
+Dưới đây là thông tin về cấu trúc thư mục(directory) và tập tin (file) của application. +
+\* Chỉ trích dẫn các directory và file chính.
+[source, bash]
+----
+.
+├── Gemfile      # File quản lý, thiết định các gem cơ bản
+├── Gemfile.lock # File quản lý, giữ phiên bản tất cả các gem sử dụng trong app
+├── Rakefile     # Thiết định các task có thể chạy từ terminal
+├── app/         # Thư mục chính lưu giữ application
+│   ├── assets/      # Thư mục chứa các file hình ảnh và style sheets
+│   ├── cells/       # Thư mục chứa có xử lý logic của gem Cells
+│   ├── controllers/ # Thư mục chứa các controller của Rails
+│   ├── helpers/     # Thư mục chứa các module hỗ trợ cho Rails
+│   ├── mailers/     # Thư mục chứa các controller cho xử lý email
+│   ├── models/      # Thư mục chứa các định nghĩa model của Rails
+│   └── views/       # Thư mục chứa các view của Rails
+├── config/ # Thư mục chứa các file thiết định của project, application
+│   ├── application.rb # File ghi thiết định chung của application cho mọi môi trường
+│   ├── boot.rb # File khởi động chính
+│   ├── database.yml # File ghi thiết định cơ sở dư liệu(database)
+│   ├── environment.rb # File thiết định các môi trường
+│   ├── environments/ # Thư mục chứa file ghi thiết định riêng cho mỗi môi  trường
+│   ├── initializers/ # Thư mục chứa các file thiết lập cơ bản ban đầu
+│   ├── locales/ # Thư mục chứa các file từ điển định nghĩa chung
+│   └── routes.rb # File thiết lập routing của Rails
+├── config.ru # File thiết định của Racka
+├── db/       # Thư mục chứa các thông tin của database
+├── doc/      # Thư mục chứa các tài liệu hướng dẫn, thiết kế
+├── lib/      # Thư mục chứa các libray của Rails
+├── log/      # Thư mục chứa các file log
+├── public/   # Thư mục gốc của web server
+├── spec/     # Thư mục chứa các file code kiểm tra (test code)
+├── tmp/      # Thư mục chứa các file, thông tin lưu dữ tạm thời
+└── vendor/   # Thư mục chứa các library bên ngoài (ví dụ gem của rails)
+----

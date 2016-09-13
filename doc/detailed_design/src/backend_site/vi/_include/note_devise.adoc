@@ -1,0 +1,10 @@
+=== Chú thích đặc biệt cho (Devise)
+Trang web này sử dụng gem `Devise` để thực hiện các thao tác liên quan đến quản lý User và xử lý đăng nhập
+[NOTE]
+Có thể xem thông tin của Devise tại link Github dưới +
+https://github.com/plataformatec/devise
+
+==== Thông số thiết định Devise
+* Tên table chứa thông `event_users`
+* Tên cột chưa thông tin id đăng nhập `email`
+* Tên cột chứa mật khẩu `password (encrypted_password)`

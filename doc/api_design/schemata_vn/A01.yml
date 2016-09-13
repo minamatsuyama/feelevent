@@ -1,0 +1,43 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title:            "Event yêu thích"
+description:      "Thông tin event yêu thích"
+stability:        prototype
+strictProperties: true
+type:             object
+definitions:
+  # リクエスト関連
+  event_item_id:
+    description: "Event id"
+    example:     123
+    type:        integer
+  count:
+    description: "Số lượng event yêu thích"
+    example:     999
+    type:        integer
+
+links:
+  - title:       "Đăng kí"
+    description: "Luư vào danh sách yêu thích"
+    _doc_id:     "A0101"
+    href:        "/api/events/{event_item_id}/favorites"
+    method:      POST
+    mediaType:   application/json
+    rel:         self
+
+  - title:       "Xoá"
+    description: "Xoá khỏi danh sách yêu thích"
+    _doc_id:     "A0102"
+    href:        "/api/events/{event_item_id}/favorites"
+    method:      DELETE
+    mediaType:   application/json
+    rel:         self
+
+properties:
+  event_item_id:
+    "$ref": "#/definitions/favorite/definitions/event_item_id"
+  count:
+    "$ref": "#/definitions/favorite/definitions/count"
+
+_doc_id: "A01"
+id: schemata/favorite
