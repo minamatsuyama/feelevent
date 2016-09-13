@@ -61,7 +61,6 @@
 │       │   │   │   ├── _type.scss	#テキストスタイル用mixin
 │       │   │   │   ├── _utilities.scss	#ユーティリティスタイル用mixin
 │       │   │   │   └── _vendor-prefixes.scss	#ベンダープリフィックススタイル用mixin
-│       │   │   └── module.scss
 │       │   └── lib
 │       │       ├── base.scss	# `frontend/css/lib/` 以下の `base` , `develop` , `layout` を `@import` して出力する共通CSS
 │       │       ├── base	#ベースレイヤー
