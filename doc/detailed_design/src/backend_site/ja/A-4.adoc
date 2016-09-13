@@ -44,8 +44,6 @@ include::../../form_site/ja/_include/A-4.adoc[]
 
 include::./_include/note_devise.adoc[]
 
-<<<
-
 === 仕様
 * 成功時(バリデートを通った時)
 ** パスワード再設定準備などの処理は `Devise` の処理に任せる
