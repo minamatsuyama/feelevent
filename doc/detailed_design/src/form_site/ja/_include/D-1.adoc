@@ -8,24 +8,24 @@ endif::[]
 | ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
 
 | 01 | 対象年齡 +
-__event_user[qualifying_age_id]__ | select(single) | ◯ |
+__user[qualifying_age_id]__ | select(single) | ◯ |
 
 | 02 | メールアドレス +
-__event_user[email]__ | email | ◯ |
+__user[email]__ | email | ◯ |
 
 | 03 | パスワード +
-__event_user[password]__ | password | ◯ |
+__user[password]__ | password | ◯ |
 
 | 04 | パスワード(確認用) +
-__event_user[password_confirmation]__ | password | ◯ |
+__user[password_confirmation]__ | password | ◯ |
 
 | 05 | キーワード +
-__event_user[keyword_ids]__ | checkbox |  |
+__user[keyword_ids]__ | checkbox |  |
 
 | 06 | 種別 +
-__event_user[event_types]__ | checkbox |  |
+__user[event_types]__ | checkbox |  |
 
 | 07 | ニュースレター受け取りフラグ +
-__event_user[subscribe_newsletter]__ | checkbox |  |
+__user[subscribe_newsletter]__ | checkbox |  |
 
 |=====
