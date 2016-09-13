@@ -40,10 +40,9 @@
 │   │       └── index.html
 │   └── src
 │       ├── css
-│       │   ├── lib	#共通スタイル
-│       │   │   ├── _mixins.scss	#clearfixやprefix補完など汎用性の高いmixinを定義
-│       │   │   ├── _variables.scss	#色値、画面サイズ、余白などのパターンを変数管理
-│       │   │   ├── base.scss	#下記SCSSをimportし出力されるCSS
+│       │   ├── shared	#共通スタイル
+│       │   │   ├── _variables.scss	#色値、画面サイズ、余白などのパターンを変数管理するpartialファイル
+│       │   │   ├── _mixins.scss	# `frontend/css/shared/mixins` 以下を `@import` するpartialファイル
 │       │   │   ├── mixins
 │       │   │   │   ├── _box.scss	#ボックススタイル用mixin
 │       │   │   │   ├── _btn.scss	#ボタンスタイル用mixin
@@ -63,12 +62,13 @@
 │       │   │   │   ├── _utilities.scss	#ユーティリティスタイル用mixin
 │       │   │   │   └── _vendor-prefixes.scss	#ベンダープリフィックススタイル用mixin
 │       │   │   └── module.scss
-│       │   └── shared
+│       │   └── lib
+│       │       ├── base.scss	# `frontend/css/lib/` 以下の `base` , `develop` , `layout` を `@import` して出力する共通CSS
 │       │       ├── base	#ベースレイヤー
 │       │       │   ├── _print.scss	#印刷時スタイル
 │       │       │   ├── _sanitize.scss	#サニタイズ（Normalizeの後継）
 │       │       │   └── _scaffolding.scss	#body、プライマリーゾーニング定義
-│       │       ├── develop
+│       │       ├── develop   #開発用のコード。**※リリース時にはこbase.scssの@import分をコメントアウトすること**
 │       │       │   ├── _code.scss	#コードのシンタックスハイライト
 │       │       │   ├── _guide.scss	#ガイド線
 │       │       │   └── _sample.scss	#カラムグリッドのハイライト、ミス可視化
@@ -77,6 +77,7 @@
 │       │       │   ├── _global-footer.scss	#グローバルフッター
 │       │       │   ├── _global-header.scss	#グローバルヘッダー
 │       │       │   └── _grid.scss	#レスポンシブグリッドシステム
+│       │       ├── module.scss	# `frontend/css/lib/module`を `@import` して出力する共通CSS
 │       │       └── module
 │       │           ├── _accordion.scss	#アコーディオンスタイル用CSS
 │       │           ├── _btn.scss	#ボタンスタイル用CSS
@@ -90,8 +91,9 @@
 │       │           ├── _table.scss	#テーブルスタイル用CSS
 │       │           ├── _type.scss	#書式設定スタイル用CSS
 │       │           └── _utilities.scss	#ユーティリティクラス用CSS
-│       └── js/
-│           └── vendor/    #vendorJS用
+│       └── js
+│           └── lib
+│               └── vendor    #サードパーティのライブラリを格納する（ `/public/js/lib/vendor.js` として結合して出力される。）
 ├── public    #fg-event.1pac.netに配信(Railsアプリケーションとして動作する) ルートディレクトリ
 │   ├── 404.html
 │   ├── 422.html
