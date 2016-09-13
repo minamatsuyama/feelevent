@@ -27,8 +27,8 @@
      */
 
     grunt.registerTask('test', ['qunit']);
-    grunt.registerTask('css',  ['sass']);
-    grunt.registerTask('js',   ['qunit', 'concat', 'uglify']);
+    grunt.registerTask('css',  ['sass', 'copy:css']);
+    grunt.registerTask('js',   ['qunit', 'concat', 'uglify', 'copy:js']);
 
     grunt.registerTask('build',['css', 'js', 'copy']);
 
