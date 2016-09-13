@@ -1,4 +1,4 @@
-include::../../backend_site/vn/00_introduction.adoc[]
+include::../../backend_site/vi/00_introduction.adoc[]
 
 === Bổ sung
 ==== Thiết kế chi tiết sử dụng cả JSON Schema
