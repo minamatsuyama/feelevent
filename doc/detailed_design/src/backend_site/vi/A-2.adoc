@@ -4,9 +4,9 @@
 [cols="38,80"]
 |=====
 | Method, URL            | DELETE /signout
-| Controller,Action | sessions#destroy
-| Tên route                | destroy_user_session
-| View                  | Không có
+| Controller,Action      | users/sessions#destroy
+| Tên route              | destroy_user_session
+| View                   | Không có
 |=====
 
 === Request

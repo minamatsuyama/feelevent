@@ -4,19 +4,13 @@
 [cols="38,80"]
 |=====
 | Method, URL            | GET\|POST /signin
-| Controller, Action | sessions#signin
-| Tên route                | new_user_session
-| View                  | devise/sessions/new.html.erb
+| Controller, Action     | users/sessions#signin
+| Tên route              | new_user_session
+| View                   | users/sessions/new.html.erb
 |=====
 
 === Request
-[cols="50,35,20,40"]
-|=====
-| Parameter | Chi tiết | Bắt buộc | Ghi chú
-| event_user[email]       | Email | Có |
-| event_user[password]    | Mật khẩu | Có |
-| event_user[remember_me] | Giữ thông tin login |  |
-|=====
+* Chi tiết ở bảng định nghĩa FORM bên dưới.
 
 include::./_include/note_devise.adoc[]
 
@@ -38,3 +32,7 @@ image::../assets/A-1.png[]
 *** Chuyển về trang `B-1`
 ** Trường hợp *Login thất bại*
 *** Trả lại màn hình này và xuất các thông báo lỗi cần thiết.
+
+<<<
+
+include::../../form_site/vi/_include/A-1.adoc[]

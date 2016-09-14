@@ -4,17 +4,13 @@
 [cols="38,80"]
 |=====
 | Method, URL            | GET /password/edit
-| Controller,Action | devise/password#edit
-| Tên route                | edit_user_password
-| View                  | devise/password/edit.html.erb
+| Controller,Action      | users/password#edit
+| Tên route              | edit_user_password
+| View                   | users/password/edit.html.erb
 |=====
 
 === Request
-[cols="50,35,20,40"]
-|=====
-| Parameter | Chi tiết | Bắt buộc | Ghi chú
-| reset_password_token | Chuỗi nhận dạng (Token) | Có |
-|=====
+* Xem ở bảng định nghĩa FORM bên dưới
 
 include::./_include/note_devise.adoc[]
 
@@ -28,28 +24,25 @@ include::./_include/note_devise.adoc[]
 ** Xuất dưới dạng tag input vơi hạng mục là `password`
 ** Không chứa giá trị khi bị trả lại màn hình lỗi
 
+
+include::../../form_site/vi/_include/A-4.adoc[]
+
+
 == A-4-a Tạo lại mật khẩu (Xử lý)
 
 === Thông số cơ bản
 [cols="38,80"]
 |=====
 | Method,URL            | PATCH /password
-| Controller, Action | devise/password#update
-| Tên route                | (default)
+| Controller, Action    | users/password#update
+| Tên route             | (default)
 | View                  | Không có
 |=====
 
 === Request
-[cols="65,35,20,30"]
-|=====
-| Parameter | Chi tiết | Bắt buộc | Ghi chú
-| event_user[password] | Mật khẩu | Có |
-| event_user[password_confirmation] | Xác nhận mật khẩu | Có |
-|=====
+* Xem ở bản định nghĩa FORM `A-4`
 
 include::./_include/note_devise.adoc[]
-
-<<<
 
 === Chi tiết
 * Trường hợp thành công (Validate thành công)
@@ -57,4 +50,4 @@ include::./_include/note_devise.adoc[]
 *** Xử lý gửi email cũng có sẵn trong `Devise`
 *** Chỉnh sửa mẫu chung cho phù hợp nội dung
 * Trường hợp thất bại (Lỗi không qua validate)
-** Chuyển về màn hình `A-3` và hiển thị thông tin lỗi cần thiết.
+** Chuyển về màn hình `A-4` và hiển thị thông tin lỗi cần thiết.
