@@ -1,0 +1,37 @@
+ifdef::env-github[]
+== B-1 Top page(Tìm kiếm)
+endif::[]
+
+=== Định nghĩa FORM
+[cols="1,3a,2,^1,4a",options="header"]
+|=====
+| ID | Tên hiển thị/Tên field ở form | Hạng mục của form | Bắt buộc | Ghi chú
+
+| 01 | キーワード +
+__keyword_ids__ | checkbox | |
+
+| 02 | 種別 +
+__event_types__ | checkbox | |
+
+| 03 | 開催場所 +
+__held_area__ | select(single) | |
+
+| 04 | 開催開始日 +
+__held_started_on__ | date | |
+* **format:** YYYY-MM-DD
+
+| 05 | 開催終了日 +
+__held_ended_on__ | date | |
+* **format:** YYYY-MM-DD
+
+| 06 | 参加費 +
+__entry_fee_type__ | select(single) | |
+* **pattern:** (free:無料, pay:有料)
+
+| 07 | 対象年齡 +
+__qualifying_age_id__ | select(single) | |
+
+| 08 | フリーワード +
+__word__ | text | |
+
+|=====

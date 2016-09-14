@@ -1,0 +1,3 @@
+== A-3 Đổi mật khẩu (Nhập dữ liệu)
+
+include::./_include/A-3.adoc[]

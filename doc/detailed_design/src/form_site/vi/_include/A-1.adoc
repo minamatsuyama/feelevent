@@ -1,0 +1,19 @@
+ifdef::env-github[]
+== A-1 Login
+endif::[]
+
+=== Định nghĩa FORM
+[cols="1,3a,2,^1,4a",options="header"]
+|=====
+| ID | Tên hiển thị/Tên field ở form | Hạng mục của form | Bắt buộc | Ghi chú
+
+| 01 | メールアドレス +
+__user[email]__ | email | ◯ |
+
+| 02 | パスワード +
+__user[password]__ | password | ◯ |
+
+| 03 | ログイン情報の保持 +
+__user[remember_me]__ | checkbox | |
+
+|=====

@@ -1,0 +1,27 @@
+== B-1 Top page
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET /
+| Controller, Action     | events#index
+| Tên route              | root
+| View                   | events/index.html.erb
+|=====
+
+=== Request
+* Chi tiết ở trong bảng đỉnh nghĩa FORM bên dưới.
+
+=== Chi tiết
+. Các thành phần của FORM.
+** Xuất các thành phần của FORM được ghi trong bảng định nghĩa FORM
+. Nút `Hiển thị thêm` (tiếng Nhật `もっと見る`)
+** Gán URL của trang hiển thị thêm vào `data-url`
+** Nếu không có trang kế tiếp thì không hiển thị nút này.
+. Kết quả tìm kiếm
+** Xử lý hiển thị của lần tìm kiếm đầu tiên sẽ do Rails thực hiện
+** Nếu không có parameter đính kèm thì xử lý tìm kiếm sẽ thực hiện hiện tìm kiếm sau khi xoá (reset) các điều kiện.
+
+<<<
+
+include::../../form_site/vi/_include/B-1.adoc[]

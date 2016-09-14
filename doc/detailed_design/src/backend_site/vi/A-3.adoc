@@ -4,13 +4,13 @@
 [cols="38,80"]
 |=====
 | Method, URL            | GET /password/new
-| Controller, Action | devise/password#new
-| Tên route                | new_user_password
-| View                  | devise/password/new.html.erb
+| Controller, Action     | users/password#new
+| Tên route              | new_user_password
+| View                   | users/password/new.html.erb
 |=====
 
 === Request
-* Không có
+* Chi tiết ở bảng định nghĩa FORM bên dưới
 
 include::./_include/note_devise.adoc[]
 
@@ -20,6 +20,7 @@ include::./_include/note_devise.adoc[]
 . Nút gửi đi
 ** Gửi thông tin đến `A-3-a` bằng method POST.
 
+include::../../form_site/vi/_include/A-3.adoc[]
 
 == A-3-a Đổi mật khẩu (Xử lý)
 
@@ -27,18 +28,14 @@ include::./_include/note_devise.adoc[]
 [cols="38,80"]
 |=====
 | Method,URL            | POST /password
-| Controller, Action | devise/password#create
-| Tên route                | user_password
-| View                  | devise/password/new_complete.html.erb
-| View của email            | devise/mailer/reset_password_instructions.html.erb
+| Controller, Action    | users/password#create
+| Tên route             | user_password
+| View                  | users/password/new_complete.html.erb
+| View của email        | users/mailer/reset_password_instructions.html.erb
 |=====
 
 === Request
-[cols="50,35,20,40"]
-|=====
-| Parameter | Chi tiết | Bắt buộc | Ghi chú
-| event_user[email] | Email | Có |
-|=====
+* Xem ở bảng định nghĩa FORM `A-3`
 
 include::./_include/note_devise.adoc[]
 

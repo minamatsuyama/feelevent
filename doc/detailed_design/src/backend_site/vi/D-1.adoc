@@ -1,16 +1,78 @@
-== D-1 会員登録 (WIP)
+== D-1 Đăng kí thành viên mới
 
-=== 基本情報
+=== Thông số cơ bản
 [cols="38,80"]
 |=====
-| メソッド,URL            | GET /signup
-| コントローラ,アクション | sessions#signup
-| ルート名                | signup
-| ビュー                  | sessions/signup_input.html.erb
+| Method, URL            | GET /users/signup
+| Controller, Acition    | users/registrations#new
+| Tên route              | new_user_registration
+| View                   | users/registrations/new.html.erb
 |=====
 
-=== リクエスト
-* WIP
+=== Request
+* Xem chi tiết ở bảng định nghĩa FORM bên dưới
 
-=== 仕様
-* WIP
+include::./_include/note_devise.adoc[]
+
+=== Chi tiết
+. Form
+** Xuất các thành phần ghi trong định nghĩa Form
+. Nút `Gửi đi` (tiếng Nhật `送信`)
+** Gửi bằng method `POST` đến `D-1-a`
+
+include::../../form_site/vi/_include/D-1.adoc[]
+
+
+
+== D-1-a Đăng kí thành viên mới (Xử lý)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | POST /users
+| Controller, Action     | users/registrations#create
+| Tên route              | user_registration
+| View                   | users/registrations/new_complete.html.erb
+| Mail view              | users/mailer/confirmation_instructions.html.erb
+|=====
+
+=== Requests
+* Xem tại bảng định nghĩa FORM `D-1`
+
+=== Chi tiết
+* Khi xử lý thành công (kiểm tra dữ liệu nhập, validate, không bị lỗi)
+** Dùng `Devise`  trong xửlý đăng kí tạm thời.
+**** Xử lý gửi mail cũng dùng chức năng có sẵn của `Devise`
+**** Hiển thị màn hình thông báo đã thành công trong đăng kí tạm thời
+* Khi có lỗi(dữ liệu nhập có lỗi, validate không thành công)
+** Chuyển về màn hình nhập dữ liệu `D-1` và hiển thị các thông tin lỗi cần thiết
+
+
+== D-2 Đăng ki thành viên mới (Đăng kí chính thức)
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| Method, URL            | GET /users/confirmation
+| Controller, Action     | users/confirmations#show
+| Tên route              | new_user_confirmation
+| View                   | Không có
+|=====
+
+=== Requests
+[cols="50,35,10,40"]
+|=====
+| Parameters | Chi tiết | Bắt buộc | Ghi chú
+| confirmation_token | Token | Có |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== Chi tiết
+* Khi xử lý thành công (kiểm tra dữ liệu nhập, validate, không bị lỗi)
+** Dùng `Devise` để xử lý đăng kí chính thức
+** Chuyển sang trang `A-1` sau khi hoàn tất đăng kí
+* Khi có lỗi (dữ liệu nhập có lỗi, validate không thành công)
+** Hiện thị lỗi tại màn hình `users/confirmations/new.html.erb`

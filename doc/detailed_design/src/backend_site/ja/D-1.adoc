@@ -1,16 +1,79 @@
-== D-1 会員登録 (WIP)
+== D-1 会員登録
 
 === 基本情報
 [cols="38,80"]
 |=====
-| メソッド,URL            | GET /signup
-| コントローラ,アクション | sessions#signup
-| ルート名                | signup
-| ビュー                  | sessions/signup_input.html.erb
+| メソッド,URL            | GET /users/signup
+| コントローラ,アクション | users/registrations#new
+| ルート名                | new_user_registration
+| ビュー                  | users/registrations/new.html.erb
 |=====
 
 === リクエスト
-* WIP
+* 下記フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
 
 === 仕様
-* WIP
+. フォーム
+** フォーム定義書の各フィールドを出力する
+. 送信ボタン
+** `D-1-a` へ POST 送信する
+
+include::../../form_site/ja/_include/D-1.adoc[]
+
+
+
+== D-1-a 会員登録 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | POST /users
+| コントローラ,アクション | users/registrations#create
+| ルート名                | user_registration
+| ビュー                  | users/registrations/new_complete.html.erb
+| メールビュー            | users/mailer/confirmation_instructions.html.erb
+|=====
+
+=== リクエスト
+* `D-1` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** 仮登録処理は `Devise` の処理に任せる
+*** メール送信処理も `Devise` に含まれる
+*** 仮登録完了画面を表示する
+* 失敗時(バリデートに引っかかった時)
+** `D-1` の入力画面でエラーを表示する
+
+
+
+== D-2 会員登録 (本登録)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /users/confirmation
+| コントローラ,アクション | users/confirmations#show
+| ルート名                | new_user_confirmation
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| confirmation_token | トークン | ◯ |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+* 成功時(バリデートを通った時)
+** 本登録などの処理は `Devise` の処理に任せる
+** 登録完了後に `A-1` に遷移する
+* 失敗時(バリデートに引っかかった時)
+** `users/confirmations/new.html.erb` の入力画面でエラーを表示する
