@@ -1,0 +1,31 @@
+ifdef::env-github[]
+== D-1 Đăng kí mới
+endif::[]
+
+=== Định nghĩa FORM
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | Tên hiển thị/Tên field ở form | Hạng mục của form | Bắt buộc | Ghi chú
+
+| 01 | 対象年齡 +
+__user[qualifying_age_id]__ | select(single) | ◯ |
+
+| 02 | メールアドレス +
+__user[email]__ | email | ◯ |
+
+| 03 | パスワード +
+__user[password]__ | password | ◯ |
+
+| 04 | パスワード(確認用) +
+__user[password_confirmation]__ | password | ◯ |
+
+| 05 | キーワード +
+__user[keyword_ids]__ | checkbox |  |
+
+| 06 | 種別 +
+__user[event_types]__ | checkbox |  |
+
+| 07 | ニュースレター受け取りフラグ +
+__user[subscribe_newsletter]__ | checkbox |  |
+
+|=====

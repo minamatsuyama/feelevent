@@ -1,0 +1,36 @@
+== Mở đầu
+Tài liệu về các FORM được sử dụng trong chương trình này.
+
+=== Hướng dẫn về các hạng mục(type) trong form
+* Ngoại trừ `select` và `textarea` thì tất cả đều là nội dung của type cho tag `input`.
+* `select` có 2 dạng như sau:
+** **select(single)** - Giá trị mặc định của select
+** **select(multiple)** - Đặt thêm thuộc tính `multiple` để cho phép lựa chọn nhiều.
+
+=== Hướng dẫn về cột *'Ghi chú'*
+Cột *'Ghi chú'* sẽ là nơi ghi các giá trị mặc định ban đầu và các điều kiện bắt buộc của giá trị được điền. +
+Dưới đây là một số ví dụ
+
+
+==== default
+* Giá trị mặc định
+* 例) **default:** AAA
+
+==== maxlength
+* Gía trị của maxlength (độ dài tối đa cho phép)
+* 例) **maxlength:** 255
+
+==== minlength
+* Giá trị của minlength (độ dài tối thiếu cho phép)
+* 例) **minlength:** 3
+
+==== format
+* Format của dữ liệu được nhập
+* 例) **format:** YYYY-MM-DD
+
+==== pattern
+* Các kiểu của dữ liệu được nhập (giá trị có thể chọn)
+* Ví dụ 1) **pattern:** (foo, bar)
+** Cách ghi này có nghĩa là nhận giá trị là `foo` hoặc `bar`.
+* 例2) **pattern:** (ja: Japanese, vi: Vietnamese)
+** Dùng như sau `<option value="vi">Vietnamese</option>`
