@@ -5,23 +5,23 @@
 {authorinitials}
 :imagesdir: src/frontend_site/
 
-include::src/frontend_site/ja/00_introduction.adoc[]
+include::src/frontend_site/en/00_introduction.adoc[]
 
-include::src/frontend_site/ja/01_list.adoc[]
+include::src/frontend_site/en/01_list.adoc[]
 
-include::src/frontend_site/ja/02_technical_guideline.adoc[]
+include::src/frontend_site/en/02_technical_guideline.adoc[]
 
-include::src/frontend_site/ja/03_cording_guideline.adoc[]
+include::src/frontend_site/en/03_cording_guideline.adoc[]
 
-include::src/frontend_site/ja/04_directory_design.adoc[]
+include::src/frontend_site/en/04_directory_design.adoc[]
 
-include::src/frontend_site/ja/05_taskrunner_design.adoc[]
+include::src/frontend_site/en/05_taskrunner_design.adoc[]
 
-include::src/frontend_site/ja/06_stylesheet_basic_design.adoc[]
+include::src/frontend_site/en/06_stylesheet_basic_design.adoc[]
 
-include::src/frontend_site/ja/07_javascript_basic_design.adoc[]
+include::src/frontend_site/en/07_javascript_basic_design.adoc[]
 
 - TODO:HTMLbasic design
 - TODO:Screen design
 
-include::src/frontend_site/ja/A-1.adoc[]
+include::src/frontend_site/en/A-1.adoc[]
