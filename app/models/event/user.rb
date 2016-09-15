@@ -5,7 +5,7 @@ class Event::User < ApplicationRecord
   devise :database_authenticatable, :confirmable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :event_bookmarks, foreign_key: 'event_user_id', class_name: 'Event::Bookmark'
+  has_many :event_favorites, foreign_key: 'event_user_id', class_name: 'Event::Favorite'
   has_many :event_users_keywords, foreign_key: 'event_user_id', class_name: 'Event::UsersKeyword'
   has_many :keywords, through: :event_users_keywords
   has_many :event_qualifying_ages_event_users, foreign_key: 'event_user_id', class_name: 'Event::QualifyingAgesEventUser'
