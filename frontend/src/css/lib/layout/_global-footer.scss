@@ -16,8 +16,23 @@
 
 #global-footer {
   border-top: 1px solid $color-border-light;
-  padding: $margin-v-subchapter 0 $margin-v-chapter;
   color: $color-gray;
+  height:120px;
+  text-align:center;
+  background: #2c7996;
+  padding: 12px 0;
+  .container{
+    height:100%;
+    position:relative;
+    .copyright{
+      position:absolute;
+      width:100%;
+      display:block;
+      font-size:10px;
+      color:#b1c3cc;
+      bottom:0;
+    }
+  }
 
   [role=contentinfo] small {
     font-family: $font-family-alphanumeric;

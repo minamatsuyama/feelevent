@@ -1,11 +1,18 @@
 //
 // Grid system
 // --------------------------------------------------
-
-
+$screen-md:   680px;
+$screen-lg:  1000px;
+$container-width-inner:    970px;
+$container-padding-side:    15px;
+$container-padding-side-sm: 30px;
+$container-width: $container-width-inner + $container-padding-side * 2;
 // ---------------------------------------------------
 // container
 //
+#content{
+  min-height:545px;
+}
 .container {
   @include container();
 }
