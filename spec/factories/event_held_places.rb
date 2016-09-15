@@ -7,7 +7,7 @@ FactoryGirl.define do
     map_enable    { Faker::Boolean.boolean }
     country       { Faker::Address.country }
     zip_code      { Faker::Address.zip_code }
-    prefecture    { Faker::Number.between(1, 100) }
+    prefecture    { Faker::Number.between(1, 47) }
     state         { Faker::Address.state }
     city          { Faker::Address.city }
     address1      { Faker::Address.street_address }

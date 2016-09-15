@@ -15,7 +15,7 @@ class Event::Item < ApplicationRecord
 
   # TODO: set types
   enumerize :event_type, in: %i(participatory lecture evaluation)
-  enumerize :held_area, in: %i(kansai kantou overseas)
+  enumerize :held_area, in: %i(kansai kanto overseas)
   enumerize :currency, in: %i(yen dollar)
   enumerize :preparation_type, in: %i(needless individual team)
 end
