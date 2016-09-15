@@ -1,0 +1,194 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title:            "Event"
+description:      "Thông tin Event"
+stability:        prototype
+strictProperties: true
+type:             object
+definitions:
+  # リクエスト関連
+  keyword_ids:
+    description: "Keyword id(FeelnoteDBのkeywords.id)"
+    example:
+      - 100
+      - 102
+    type:        array
+  event_types:
+    description: "Hình thức (参加型: participatory, 講義型: lecture, 評価型: evaluation)"
+    pattern: (participatory|lecture|evaluation)
+    example:
+      - "participatory"
+      - "evaluation"
+    type:        array
+  held_area:
+    description: "Địa điểm tổ chức(TODO: 関西:kansai, 関東:kanto, 海外:overseas)"
+    example:     "kanto"
+    type:        string
+  held_started_on:
+    description: "Ngày bắt đầu Event / 開催開始日"
+    example:     "2016-01-02"
+    type:        string
+  held_ended_on:
+    description: "Ngày kết thúc Event / 開催終了日"
+    example:     "2016-03-03"
+    type:        string
+  entry_fee:
+    description: "Phí tham gia(無料:free, 有料:pay)"
+    example:     "free"
+    pattern:     (pay|free)
+    type:        string
+  qualifying_age_id:
+    description: "Lứa tuổi (event_qualifying_ages.id)"
+    example:     33
+    type:        integer
+  word:
+    description: "Từ khoá tự do"
+    example:     "soccer"
+    type:        string
+
+  # レスポンス関連
+  data:
+    description: "Giải thích"
+    items:
+      properties:
+        id:
+          description: "ID"
+          example:     123
+          type:        integer
+        title:
+          description: "Event title"
+          example:     "Title"
+          type:        string
+        event_type:
+          description: "Hình thức(参加型: participatory, 講義型: lecture, 評価型: evaluation)"
+          example:
+            value: "participatory"
+            text:  "参加型"
+          type:        array
+        preparation_type:
+          description: "Chuẩn bị trước(準備不要: needless、個人で準備: individual、チームで準備: team)"
+          example:
+            value: "needless"
+            text:  "準備不要"
+          type:        array
+        index_image:
+          description: "Ảnh cho dùng cho trang index"
+          example:     "http://dummyimage.com/300x200/ccc/fff.jpg"
+          type:        string
+        entry_fee:
+          description: "Phí tham gia(無料:free, 有料:pay)"
+          example:
+            value: "free"
+            text:  "無料"
+          type:        array
+        held_started_at:
+          description: "Thời gian bắt đầu sự kiện 開催開始日"
+          example:     "2016-05-01T09:03:02+0900"
+          type:        string
+        held_ended_at:
+          description: "Thời gian kết thúc sự kiện 開催終了日"
+          example:     "2016-08-12T09:17:45+0900"
+          type:        string
+        entry_ended_at:
+          description: "Thời hạn đăng kí 申込締切日"
+          example:     "2016-03-19T12:34:56+0900"
+          type:        string
+        held_areas:
+          description: "Địa điểm tổ chức (TODO: 関西:kansai, 関東:kanto, 海外:overseas)"
+          example:
+            - value: kanto
+              text:  関東
+            - value: kansai
+              text:  関西
+          type:        array
+        keywords:
+          description: "Keyword キーワード"
+          example:
+            - id: 100
+              name: コミュニケーション
+            - id: 102
+              name: アート
+            - id: 233
+              name: ビジネス
+          type:        array
+        recommended:
+          description: "Recommendation flag/リコメンドフラグ"
+          example:     true
+          pattern:     (true|false)
+          type:        boolean
+        reviewed:
+          description: "WOM flag/口コミフラグ"
+          example:     true
+          pattern:     (true|false)
+          type:        boolean
+        favorite_count:
+          description: "Số lượng event yêu thích"
+          example:     123
+          type:        integer
+        favorited:
+          description: "Favorite flag (chỉ hiệu lực khi đang login)"
+          example:     true
+          pattern:     (true|false)
+          type:        boolean
+    type: array
+
+  pagination:
+    description: Thông tin pagination của response
+    properties:
+      current_page:
+        description: Trang hiện tại (current page)
+        example:     2
+        type:        integer
+      next_page:
+        description: Trang kế tiếp (nếu không có sẽ có giá trị null)
+        example:     3
+        type:        integer
+      prev_page:
+        description: Trang trước (nếu không có sẽ có giá trị null)
+        example:     1
+        type:        integer
+      per_page:
+        description: Số lượng event cho mỗi trang
+        example:     20
+        type:        integer
+      total_count:
+        description: Tổng số event
+        example:     100
+        type:        integer
+    type: object
+
+links:
+  - title:       "Tìm kiếm"
+    description: "Tìm kiếm thông tin Event"
+    _doc_id:     "A0201"
+    href:        "/api/events"
+    method:      GET
+    mediaType:   application/json
+    rel:         self
+    schema:
+      properties:
+        keyword_ids:
+          "$ref": "#/definitions/events/definitions/keyword_ids"
+        event_types:
+          "$ref": "#/definitions/events/definitions/event_types"
+        held_area:
+          "$ref": "#/definitions/events/definitions/held_area"
+        held_started_on:
+          "$ref": "#/definitions/events/definitions/held_started_on"
+        held_ended_on:
+          "$ref": "#/definitions/events/definitions/held_ended_on"
+        entry_fee:
+          "$ref": "#/definitions/events/definitions/entry_fee"
+        qualifying_age_id:
+          "$ref": "#/definitions/events/definitions/qualifying_age_id"
+        word:
+          "$ref": "#/definitions/events/definitions/word"
+
+properties:
+  pagination:
+    "$ref": "#/definitions/events/definitions/pagination"
+  data:
+    "$ref": "#/definitions/events/definitions/data"
+
+_doc_id: "A02"
+id: schemata/events

@@ -1,7 +1,7 @@
 = Thiết kế chi tiết server-side cho API của FeelEvent
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-08
-:revnumber:      0.1.1
+:revdate:        2016-09-15
+:revnumber:      0.2.0
 :imagesdir:      src/backend_api/
 {authorinitials}
 
@@ -16,3 +16,5 @@ include::src/backend_site/vi/05_development.adoc[]
 include::src/backend_api/vi/A0101.adoc[]
 
 include::src/backend_api/vi/A0102.adoc[]
+
+include::src/backend_api/vi/A0201.adoc[]

@@ -1,0 +1,48 @@
+== A0201 Tìm kiếm Event
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| JSON Schema             | api_design/build/unit/ja/A02.md
+| Controller, Action | api/events#index
+|=====
+
+=== Chi tiết
+. Xử lý trước (Pre-processing)
+** Không có
+. Điều kiện tìm kiếm
+** Các điều kiện tìm kiếm được nối với nhau bằng điều kiện `AND` (_AND search_)
+*** Tuy nhiên, những hạng mục dùng multi-select, như `Keywords`(キーワード) hoặc `Event Type`, thì các giá trị của hạng mục đó phải được nối với nhau bằng `OR`.
+*** Ví dụ:  `WHERE (event_type = 'lecture' OR event_type = 'evaluation') AND (condition_2...) ...`
+** Theo Keyword (`キーワード`)
+*** イベントキーワード情報(__event_items_keywords__)を元に検索する
+** Theo độ tuổi (`対象年齢`)
+*** Tìm kiếm Event dựa trên thông tin về lứa tuổi nhắm đến của mỗi event (__event_qualifying_ages_event_items__)
+** Theo địa điểm tổ chức (`開催場所`)
+*** Tìm kiếm dựa theo thông tin tổ chức (__event_held_areas__)
+** Theo thời gian bắt đầu (`開催開始日`)
+*** Tìm kiếm các Event có thời gian bắt đầu sau ngày chỉ định (bao gồm cả ngày chỉ định)
+** Kiếm theo ngày kết thúc (`開催終了日`)
+*** Tìm kiếm những Event có ngày kết thúc trước ngày được chỉ định (bao gồm cả ngày chỉ định)
+** Kiếm theo từ khoá tự do フリーワード
+*** Tìm kiếm các Event có chứa từ khoá tự do trong tiêu đề (__event_items__) hoặc trong mục tóm lược (__summary__) ở mỗi thẻ thông tin Event (__event_items__) bằng lệnh LIKE
+. Điều kiện sắp xếp kết quả tìm kiếm `検索ソート条件`
+** Xếp theo trật tự Event có thời hạn kết thúc đăng kí gần hơn lên trước (__event_items.entry_ended_at__)
+. Tìm kiếm thành công
+** Trả lại kết quả tìm kiếm là thông tin Event trong bảng (__event_items__), các thông tin liên quan ở các bảng khác, thông tin về các trang kết quả khác (pagination) dưới dạng JSON
+** Địa điểm tổ chức `開催場所`
+*** Trả thông tin vùng (__area__) của địa điểm tổ chức Event (__event_held_areas__)
+** Recommendation flag (data.recommended)
+*** Nếu cột __recommended__ trong __event_summary_contents__ có giá trị là `true` thì trả về giá trị `true`.
+** Word-of-mouth (WOM) flag (data.reviewed)
+*** Trả lại giá trị `true` nếu cột __event_review_contents__ có giá trị.
+** Số lượng event yêu thích (data.favorite_count)
+*** Trả lại số event yêu thích dựa trên thông tin ở __event_favorites__.
+** Favorited Flag (data.favorited)
+*** Chỉ thực hiện khi có cookiesession chứa thông tin đang login
+*** Trả lại `false` khi không login
+*** Trả lại `true` nếu có thông tin lưu về Event yêu thích tại __event_favorites__
+. Xử lý khi có lỗi
+** Trả lại `status` là `200 OK` và `data` là mảng rỗng (empty array) khi không có kết quả tương ứng điều kiện tìm kiếm.
+*** Thông tin `pagination` cũng sẽ là một Object rỗng.
+*** Ví dụ: { data: [], pagination: {} }
