@@ -1,0 +1,30 @@
+ja:
+  enumerize:
+    event/item:
+      event_type:
+        participatory: "参加型"
+        lecture:       "講義型"
+        evaluation:    "評価型"
+      held_area:
+        kansai:   "関西"
+        kantou:   "関東"
+        overseas: "海外"
+      currency:
+        yen:    "円"
+        dollar: "Dollar(s)"
+      preparation_type:
+        needless:   "準備不要"
+        individual: "個人で準備"
+        team:       "チームで準備"
+    event/experience_content:
+      layout:
+        left:   "本文の左"
+        right:  "本文の右"
+        top:    "本文の上"
+        bottom: "本文の下"
+    event/summary_content:
+      layout:
+        left:   "本文の左"
+        right:  "本文の右"
+        top:    "本文の上"
+        bottom: "本文の下"
