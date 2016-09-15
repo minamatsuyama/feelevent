@@ -2,7 +2,6 @@
 // global-header
 // ---------------------------------------------------
 $font-family-sans-serif: 'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-
 $color-yellow: #ffbf00;
 
 
@@ -41,21 +40,32 @@ $color-yellow: #ffbf00;
   //z-index: $zindex-fixed-header;
   border-bottom: 1px solid $color-border-light;
   background: $color-yellow url("/img/bg-header.gif") no-repeat center bottom;
+  background-size: 91px 13px;
   height:60px;
   @include transition(all .2s $easeOutCubic);
   .container{
     height:100%;
     position:relative;
-    .top-link{
+    .top-link,.top-user{
       position: absolute;
-      left:0;
       bottom:11px;
+      img{
+        height:auto;
+      }
+    }
+    .top-link{
+      left:0;
+      img{
+        width:29px;
+      }
     }
     .top-user{
-      position: absolute;
       right:0;
-      bottom:11px;
+      img{
+        width:51px;
+      }
     }
+
   }
 }
 
@@ -74,5 +84,26 @@ $color-yellow: #ffbf00;
   }
 }
 @include mediaquery-sm() {
-
+  #global-header{
+    height:120px;
+    background-size: 22%  ;
+    .container{
+      .top-link,
+      .top-user{
+        bottom: 27px;
+      }
+      .top-link{
+        left:30px;
+        img{
+          width:57px;
+        }
+      }
+      .top-user{
+        right:30px;
+        img{
+          width:90px;
+        }
+      }
+    }
+  }
 }
