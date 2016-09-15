@@ -21,5 +21,13 @@
 
 ## Getting Development Started
 
-    bin/setup
-    npm install -g phantomjs-prebuilt
+```
+bin/setup
+npm install -g phantomjs-prebuilt
+```
+
+### annotateの更新
+
+```
+bundle exec annotate
+```

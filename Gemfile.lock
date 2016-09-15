@@ -60,6 +60,9 @@ GEM
     acts-as-taggable-on (4.0.0)
       activerecord (>= 4.0)
     addressable (2.4.0)
+    annotate (2.7.1)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 12.0)
     arel (7.1.1)
     ast (2.3.0)
     awesome_print (1.7.0)
@@ -532,6 +535,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.0)
   acts-as-list
   acts-as-taggable-on
+  annotate
   awesome_print
   bcrypt (~> 3.1.7)
   better_errors
