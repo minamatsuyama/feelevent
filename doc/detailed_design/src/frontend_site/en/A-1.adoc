@@ -1,0 +1,52 @@
+== A-1 Screen detailed design sample
+
+=== Overview
+
+I write overview of the design 
+
+=== Wireframe
+
+https://docs.google.com/presentation/d/1c4xtvmtKfRsK2KOW7EMndIF1t2zH41a5xZhXg546TOY/edit#slide=id.g165019e56f_0_172
+
+=== Basic info
+
+**TODO** Described if there is structure of the page-specific zoning and HTML (Insert picture if necessary)
+
+* Promotion area
+** ※I will write explanation 
+* Search form
+** ※I will write explanation 
+* Search result
+** ※I will write explanation 
+* Pagination
+** ※I will write explanation 
+
+<<<
+
+=== Spec
+
+//image::../assets/A-1.png[]
+
+**TODO** Describe elements of each zone (if there is any specific thing when you login / not log in, describe in each case)
+
+==== Search form
+
+Set search condition 
+
+* Keyword
+* Type
+* Participation fee
+* Area
+* Target
+* Period
+* Free word
+* Search button
+
+==== Search result
+
+* Event info
+
+==== Pagination
+
+* もっと見る (See more) button 
+** If click, call `api/***` and add search result

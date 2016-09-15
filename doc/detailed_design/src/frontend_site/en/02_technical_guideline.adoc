@@ -1,0 +1,129 @@
+== Technical Spec
+
+=== Functional Requirements
+
+==== About corresponding environment
+
+PC::
+* Windows 7 or later
+** Latest Mozilla FireFox 
+** Latest Google Chrome 
+** Internet Explorer 11 or later
+** Latest Edge 
+
+* MacOSX 10.9 Mavericks or later
+** Latest Safari 
+** Latest Mozilla FireFox 
+** Latest Google Chrome 
+
+SP::
+* iOS 9 or later
+* Android 4.4.4 or later
+
+- ex. https://support.microsoft.com/ja-jp/gp/lifeselect?target=lifecycle&c1=509&=GSSProdSelMore509#gp/Microsoft-Internet-Explorer
+- ex. http://qiita.com/yunano/items/4757f86f9e92bb4f503f#ios
+
+==== Technology topic that you can use but need to be careful 
+
+Technology that you can use if Backward compatible or alternative means is available but need to be careful when implement 
+
+* Data URIs
+** http://caniuse.com/#feat=datauri[In IE 10-11,upper limit of data size is 4MB]
+//* ::placeholder CSS pseudo-element
+//** http://caniuse.com/#feat=css-placeholder[vendor-prefix is neccessary]
+* CSS initial value
+** http://caniuse.com/#feat=css-initial-value[IE10-11 does not support]
+* Promises
+** http://caniuse.com/#feat=promises[IE10-11 does not support]
+//* rem (root em) units
+//** We use font property by shortbanh in IE10, but tt does not work if you want to specify  pseudo-element
+* audio, video element
+** https://developer.mozilla.org/ja/docs/Web/HTML/Supported_media_formats[media format which is supported in audio and video element of HTML5]
+//* pointer-events
+//** http://caniuse.com/#feat=pointer[Support IE10]
+* position:fixed
+** There is bug in iOS, Android so we need to fix each time 
+* Specify hover of iOS
+** When opacity is specified, if you do not tap twice it will not move to the link 
+
+* svg
+** Notice when input in <a> tag
+*** If you set a link by <a> tag in svg which is embedded in <object> tag, the link is not clickable
+//*** For IE9, a pointer does not become a cursor
+** If you use display method rather than write svg tag directly, there are times when the color of the rendering fails (become black) if you apply CSS translate for example.
+*** Read svg file by JS and embed svg tag
+
+==== Should not use 
+
+* http://caniuse.com/#feat=css-touch-action[CSS touch-action property]
+** There is a large difference in behavior depending on device
+
+==== Other
+
+Please select a method to adopt depending on implementation status of link:http://caniuse.com/#compare=ie+10,ie+11,edge+14,firefox+48,chrome+52,safari+9.1,ios_saf+8.1-8.4,android+4.4.3-4.4.4[viewing environment ]
+
+==== Breakpoint
+
+※ Specified in design 
+
+==== Print corresponding or not 
+
+* (There is portfolio item so please check)
+
+// * For display of background and image, basically we conforms to the browser settings  
+
+==== Access analysis service
+
+* (Confirm what it uses, for example GoogleAnalytics)
+// * GoogleAnalytics
+
+=== Other
+
+[options="header"]
+|=================
+|Requirements | Detailed requirements | Content | Notes
+|Constraints of existing HTML / CSS||No|
+|Accessibility / Usability corresponding|Support non-target environment |No|
+||Corresponding in JS-off environment |No|
+||Corresponding in image-off environment|Set alt attribute in the picture|Allow alt = "" for the images which are not decorative or descriptive 
+||Support Audio browser |No|
+||Text scaling corresponding | browser standard only|
+| CMS to use|Use or not|No|
+||Adopt CMS and version ||
+||Determine user agent |Register class name in body tag which determines PC, iOS, Android |Since we fix separately for bug in device environment 
+|SEO corresponding|HTML5 syntax|outline normalization +
+ Correct setting of title / heading|
+||title, description|Support|
+||keyword|Not support|Since Robot for example of Google does not support meta:keyword anymore
+|=================
+
+== Frontend spec 
+
+[options="header"]
+|================
+|Requirements | Detailed requirements | Content | Notes
+|SSL|Has SSL or not |HTTPS only|
+|Document type of HTML | document standard |HTML5|
+|CSS version ||CSS3 / CSS2.1|
+|Declare XML or not (in case of XHTML)||No|
+|Character code||UTF-8|
+|Line feed code||LF|
+|Img||JPEG, GIF, PNG, SVG|
+|Development Environment |Manage package|npm|
+||Module management tool |No|
+||Task runner|grunt|
+|CSS|Technology to use in dev environment |SASS(scss syntax)|
+||Version|CSS3/CSS2.1|In view environment deploy CSS, which was compiled using sass.
+|JavaScript|Can use or not |Yes|
+||Version|ES5|
+||HTML5 API to use|HTML5 Semantic Elements|
+||JS framework・library to use| jQuery 3.1.0 |
+|Web font|Service name to use ||
+||Font to use||
+|Social connection tag |OGP|og:title, og:type, og:url, og:image, og:description(optional)|
+||Twitter card|No|
+|Viewport setting||width=device-width,minimum-scale=1.0,initial-scale=1|
+|Compatibility corresponding | external library||
+||IE compatibility mode setting (X-UA-Compatible)|IE-edge|
+|Other, such as existing systems and technical constraints ||No|
+|================
