@@ -15,6 +15,7 @@ Dưới đây là thông tin về cấu trúc thư mục(directory) và tập ti
 │   ├── helpers/     # Thư mục chứa các module hỗ trợ cho Rails
 │   ├── mailers/     # Thư mục chứa các controller cho xử lý email
 │   ├── models/      # Thư mục chứa các định nghĩa model của Rails
+│   ├── serializers/      # Thư mục dùng cho gem ActiveModelSerializers 
 │   └── views/       # Thư mục chứa các view của Rails
 ├── config/ # Thư mục chứa các file thiết định của project, application
 │   ├── application.rb # File ghi thiết định chung của application cho mọi môi trường

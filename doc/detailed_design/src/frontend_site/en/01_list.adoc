@@ -1,0 +1,13 @@
+== World School Frontend design spec
+
+* [02] Technical Spec
+* [03] Coding guideline
+* [04] Directory structure map
+* [05] Task runner design
+* [06] Style sheet basic design
+* [07] Javascript basic design 
+* [08] HTML basic design **TODO**
+
+== Screen design 
+
+* [A-1] Login screen

@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-  factory :event_address, class: 'Event::Address' do
+  factory :event_held_place, class: 'Event::HeldPlace' do
     event_item_id { Faker::Number.between(1, 10000) }
-    label         { Faker::Pokemon.location }
+    title         { Faker::Address.state }
+    area          { Event::HeldPlace.area.values.sample }
+    map_enable    { Faker::Boolean.boolean }
     country       { Faker::Address.country }
     zip_code      { Faker::Address.zip_code }
+    prefecture    { Faker::Number.between(1, 47) }
     state         { Faker::Address.state }
     city          { Faker::Address.city }
     address1      { Faker::Address.street_address }

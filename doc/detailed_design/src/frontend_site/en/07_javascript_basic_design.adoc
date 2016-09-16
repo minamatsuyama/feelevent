@@ -1,0 +1,76 @@
+== Javascript basic design 
+# WorldSchool spec: Top Page
+
+## Search function
+
+- When display, it is rendered on server side
+  - Display the number of filter condition, search item depending on query
+  - Set the value to search form depending on query 
+  - Output URL for もっと見る in `data-url` attribute of もっと見るbutton
+- If you change the search results, send free word, keyword, type, area, period, participation cost, target age to API and display the result in front-end 
+  - Include the following URL for もっと見る in response  
+    - If URL is not included, hide the もっと見る button
+
+### For PC
+
+#### En ter free word, area, period, participation fees, target age and search
+
+- When you enter the conditions and click Search button, access search API and re-display search results.
+- Re-display filter conditions and the number of searches
+
+#### Filter by keyword・type
+
+- Keyword・Type operates as a toggle button
+- When toggle button is changed, access search API and re-display search results.
+- Re-display filter conditions and the number of searches
+
+#### もっと見る
+
+- Access URL for もっと見る and add search result
+- Include the following URL for もっと見る in response 
+
+### For SP
+
+#### Input free work and search 
+
+- When you enter free work and click Search button, access search API and re-display search results.
+
+#### Filter by Keyword・type, area, period, participation fees, target age
+
+- When tap 絞り込み (Filter) button , Filter form will slide in 
+- Enter conditions and tap Filter button
+  - Slide out Filter form
+- Access search API and re-display search results
+- Re-display filter conditions and the number of searches
+- Tap Cancel button of Filter form 
+  - Slide out Filter form
+
+## Display Calendar
+https://jqueryui.com/datepicker/
+
+- When you click or tap Calendar icon, calendar is displayed.
+- When you click or tap the date on calendar, the selected date is displayed in yyyy.mm.dd format
+
+
+## Favorite
+
+- Grant ID in HTML of each event 
+- When you click お気に入り (Favorite) button, access the favorite API that has the relevant ID  
+- Change the number of Favorite and "ON / OFF" by response
+
+## Carousel
+http://kenwheeler.github.io/slick/
+
+### For PC
+
+- When you click the right icon, slide to the left 1 event card 
+- When you click the left icon, slide to the right 1 event card 
+- When you reach the end of the event card, go back to the first card
+- When you click the left icon in the initial display, the last event card is displayed in the right as slide 
+
+### For SP
+
+- If you flick to the left from the right, slide to the left 1 event card 
+- If you flick to the right from the left, slide to the right 1 event card 
+- When you reach the end of the event card, go back to the first card and click to the left, the first event card is slided from left
+- When you click the left in the initial display, the last event card is displayed in the right as slide

@@ -10,7 +10,7 @@
 === Chi tiết
 . Xử lý trước
 ** Kiểm tra login
-*** Kiểm tra login dựa trên CookieSession. Nếu chưa login thì trả về `403  Response`
+*** Kiểm tra login dựa trên CookieSession. Nếu chưa login thì trả về `401  Response`
 . Xử lý chính
 ** Tạo và lưu thông tin event yêu thích(__event_user_items__).
 . Xử lý khi có lỗi
