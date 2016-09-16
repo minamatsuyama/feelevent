@@ -148,148 +148,263 @@
             "string"
           ]
         },
-        "data": {
+        "page": {
+          "description": "**ページ指定** (存在しないページが指定された時は0件とする)",
+          "example": 2,
+          "type": [
+            "integer"
+          ],
+          "default": 1
+        },
+        "per_page": {
+          "description": "**1ページ件数**",
+          "example": 5,
+          "type": [
+            "integer"
+          ],
+          "default": 5,
+          "minimum": 1,
+          "maximum": 20
+        },
+        "shared_id": {
+          "description": "ID",
+          "example": 344,
+          "type": [
+            "integer"
+          ]
+        },
+        "shared_title": {
+          "description": "イベントタイトル",
+          "example": "イベントのタイトル",
+          "type": [
+            "string"
+          ]
+        },
+        "shared_event_type": {
+          "description": "種別(参加型: participatory, 講義型: lecture, 評価型: evaluation)",
+          "example": {
+            "value": "participatory",
+            "text": "参加型"
+          },
+          "type": [
+            "array"
+          ]
+        },
+        "shared_preparation_type": {
+          "description": "事前準備(準備不要: needless、個人で: individual準備、チームで準備: team)",
+          "example": {
+            "value": "needless",
+            "text": "準備不要"
+          },
+          "type": [
+            "array"
+          ]
+        },
+        "shared_index_image": {
+          "description": "一覧用画像",
+          "example": "http://dummyimage.com/300x200/ccc/fff.jpg",
+          "type": [
+            "string"
+          ]
+        },
+        "shared_entry_fee": {
+          "description": "参加費(無料:free, 有料:pay)",
+          "example": {
+            "value": "free",
+            "text": "無料"
+          },
+          "type": [
+            "array"
+          ]
+        },
+        "shared_held_started_at": {
+          "description": "開催開始日",
+          "example": "2016-05-01T09:03:02+0900",
+          "type": [
+            "string"
+          ]
+        },
+        "shared_held_ended_at": {
+          "description": "開催終了日",
+          "example": "2016-08-12T09:17:45+0900",
+          "type": [
+            "string"
+          ]
+        },
+        "shared_entry_ended_at": {
+          "description": "申込締切日",
+          "example": "2016-03-19T12:34:56+0900",
+          "type": [
+            "string"
+          ]
+        },
+        "shared_held_areas": {
+          "description": "開催場所(TODO: 関西:kansai, 関東:kanto, 海外:overseas)",
+          "example": [
+            {
+              "value": "kanto",
+              "text": "関東"
+            },
+            {
+              "value": "kansai",
+              "text": "関西"
+            }
+          ],
+          "type": [
+            "array"
+          ]
+        },
+        "shared_keywords": {
+          "description": "キーワード",
+          "example": [
+            {
+              "id": 100,
+              "name": "コミュニケーション"
+            },
+            {
+              "id": 102,
+              "name": "アート"
+            },
+            {
+              "id": 233,
+              "name": "ビジネス"
+            }
+          ],
+          "type": [
+            "array"
+          ]
+        },
+        "shared_recommended": {
+          "description": "リコメンドフラグ",
+          "example": true,
+          "pattern": "(true|false)",
+          "type": [
+            "boolean"
+          ]
+        },
+        "shared_reviewed": {
+          "description": "口コミフラグ",
+          "example": true,
+          "pattern": "(true|false)",
+          "type": [
+            "boolean"
+          ]
+        },
+        "shared_favorite_count": {
+          "description": "お気に入り数",
+          "example": 123,
+          "type": [
+            "integer"
+          ]
+        },
+        "shared_favorited": {
+          "description": "お気に入りフラグ(ログイン時に有効)",
+          "example": true,
+          "pattern": "(true|false)",
+          "type": [
+            "boolean"
+          ]
+        },
+        "events_data": {
           "description": "説明",
           "items": {
             "properties": {
               "id": {
-                "description": "ID",
-                "example": 123,
-                "type": [
-                  "integer"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_id"
               },
               "title": {
-                "description": "イベントタイトル",
-                "example": "イベントのタイトル",
-                "type": [
-                  "string"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_title"
               },
               "event_type": {
-                "description": "種別(参加型: participatory, 講義型: lecture, 評価型: evaluation)",
-                "example": {
-                  "value": "participatory",
-                  "text": "参加型"
-                },
-                "type": [
-                  "array"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_event_type"
               },
               "preparation_type": {
-                "description": "事前準備(準備不要: needless、個人で: individual準備、チームで準備: team)",
-                "example": {
-                  "value": "needless",
-                  "text": "準備不要"
-                },
-                "type": [
-                  "array"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_preparation_type"
               },
               "index_image": {
-                "description": "一覧用画像",
-                "example": "http://dummyimage.com/300x200/ccc/fff.jpg",
-                "type": [
-                  "string"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_index_image"
               },
               "entry_fee": {
-                "description": "参加費(無料:free, 有料:pay)",
-                "example": {
-                  "value": "free",
-                  "text": "無料"
-                },
-                "type": [
-                  "array"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_entry_fee"
               },
               "held_started_at": {
-                "description": "開催開始日",
-                "example": "2016-05-01T09:03:02+0900",
-                "type": [
-                  "string"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_held_started_at"
               },
               "held_ended_at": {
-                "description": "開催終了日",
-                "example": "2016-08-12T09:17:45+0900",
-                "type": [
-                  "string"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_held_ended_at"
               },
               "entry_ended_at": {
-                "description": "申込締切日",
-                "example": "2016-03-19T12:34:56+0900",
-                "type": [
-                  "string"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
               },
               "held_areas": {
-                "description": "開催場所(TODO: 関西:kansai, 関東:kanto, 海外:overseas)",
-                "example": [
-                  {
-                    "value": "kanto",
-                    "text": "関東"
-                  },
-                  {
-                    "value": "kansai",
-                    "text": "関西"
-                  }
-                ],
-                "type": [
-                  "array"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_held_areas"
               },
               "keywords": {
-                "description": "キーワード",
-                "example": [
-                  {
-                    "id": 100,
-                    "name": "コミュニケーション"
-                  },
-                  {
-                    "id": 102,
-                    "name": "アート"
-                  },
-                  {
-                    "id": 233,
-                    "name": "ビジネス"
-                  }
-                ],
-                "type": [
-                  "array"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_keywords"
               },
               "recommended": {
-                "description": "リコメンドフラグ",
-                "example": true,
-                "pattern": "(true|false)",
-                "type": [
-                  "boolean"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_recommended"
               },
               "reviewed": {
-                "description": "口コミフラグ",
-                "example": true,
-                "pattern": "(true|false)",
-                "type": [
-                  "boolean"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_reviewed"
               },
               "favorite_count": {
-                "description": "お気に入り数",
-                "example": 123,
-                "type": [
-                  "integer"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_favorite_count"
               },
               "favorited": {
-                "description": "お気に入りフラグ(ログイン時に有効)",
-                "example": true,
-                "pattern": "(true|false)",
-                "type": [
-                  "boolean"
-                ]
+                "$ref": "#/definitions/events/definitions/shared_favorited"
+              }
+            }
+          },
+          "type": [
+            "array"
+          ]
+        },
+        "events_favorites_data": {
+          "description": "説明",
+          "items": {
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/events/definitions/shared_id"
+              },
+              "title": {
+                "$ref": "#/definitions/events/definitions/shared_title"
+              },
+              "event_type": {
+                "$ref": "#/definitions/events/definitions/shared_event_type"
+              },
+              "preparation_type": {
+                "$ref": "#/definitions/events/definitions/shared_preparation_type"
+              },
+              "index_image": {
+                "$ref": "#/definitions/events/definitions/shared_index_image"
+              },
+              "entry_fee": {
+                "$ref": "#/definitions/events/definitions/shared_entry_fee"
+              },
+              "held_started_at": {
+                "$ref": "#/definitions/events/definitions/shared_held_started_at"
+              },
+              "held_ended_at": {
+                "$ref": "#/definitions/events/definitions/shared_held_ended_at"
+              },
+              "entry_ended_at": {
+                "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
+              },
+              "held_areas": {
+                "$ref": "#/definitions/events/definitions/shared_held_areas"
+              },
+              "keywords": {
+                "$ref": "#/definitions/events/definitions/shared_keywords"
+              },
+              "recommended": {
+                "$ref": "#/definitions/events/definitions/shared_recommended"
+              },
+              "reviewed": {
+                "$ref": "#/definitions/events/definitions/shared_reviewed"
+              },
+              "favorite_count": {
+                "$ref": "#/definitions/events/definitions/shared_favorite_count"
               }
             }
           },
@@ -375,6 +490,51 @@
               },
               "word": {
                 "$ref": "#/definitions/events/definitions/word"
+              },
+              "page": {
+                "$ref": "#/definitions/events/definitions/page"
+              },
+              "per_page": {
+                "$ref": "#/definitions/events/definitions/per_page"
+              }
+            }
+          },
+          "targetSchema": {
+            "properties": {
+              "pagination": {
+                "$ref": "#/definitions/events/definitions/pagination"
+              },
+              "data": {
+                "$ref": "#/definitions/events/definitions/events_data"
+              }
+            }
+          }
+        },
+        {
+          "title": "お気に入り一覧",
+          "description": "イベントお気に入り情報の一覧を取得する",
+          "_doc_id": "A0202",
+          "href": "/api/events/favorites",
+          "method": "GET",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": {
+              "page": {
+                "$ref": "#/definitions/events/definitions/page"
+              },
+              "per_page": {
+                "$ref": "#/definitions/events/definitions/per_page"
+              }
+            }
+          },
+          "targetSchema": {
+            "properties": {
+              "pagination": {
+                "$ref": "#/definitions/events/definitions/pagination"
+              },
+              "data": {
+                "$ref": "#/definitions/events/definitions/events_favorites_data"
               }
             }
           }
@@ -385,7 +545,7 @@
           "$ref": "#/definitions/events/definitions/pagination"
         },
         "data": {
-          "$ref": "#/definitions/events/definitions/data"
+          "$ref": "#/definitions/events/definitions/events_data"
         }
       },
       "_doc_id": "A02"
