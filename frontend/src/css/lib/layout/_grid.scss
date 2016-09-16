@@ -5,8 +5,10 @@
 // ---------------------------------------------------
 // container
 //
-#contents{
-  min-height: 545px
+
+#content{
+  min-height: 545px;
+  background-color: $color-bg;
 }
 .container {
   @include container();

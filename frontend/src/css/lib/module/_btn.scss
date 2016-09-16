@@ -81,3 +81,32 @@
     background-color: $color-gray-lightest;
   }
 }
+
+.btn-filled {
+  background-color: $color-blue;
+  font-size: 18px;
+  padding: 15px;
+  &:hover {
+    background-color: lighten($color-blue, 6%);
+  }
+  &:active,
+  &.active {
+    background-color: $color-blue;
+  }
+  @include mediaquery-sm() {
+    font-size: 13px;
+  }
+}
+
+.btn-like{
+  color:$color-border-table;
+  background-color: $color-almost-white;
+  padding: 5px;
+  min-width: 70px;
+  margin-right:15px;
+  font-weight: bold;
+  &:hover {
+    color: $color-red;
+    background-color: $color-almost-white;
+  }
+}
