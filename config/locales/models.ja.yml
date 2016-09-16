@@ -5,10 +5,6 @@ ja:
         participatory: "参加型"
         lecture:       "講義型"
         evaluation:    "評価型"
-      held_area:
-        kansai:   "関西"
-        kanto:   "関東"
-        overseas: "海外"
       currency:
         yen:    "円"
         dollar: "$"
@@ -16,6 +12,17 @@ ja:
         needless:   "準備不要"
         individual: "個人で準備"
         team:       "チームで準備"
+    event/held_place:
+      area:
+        hokkaido: "北海道"
+        tohoku:   "東北"
+        kanto:    "関東"
+        chubu:    "中部"
+        kinki:    "近畿"
+        shikoku:  "四国"
+        kyushu:   "九州"
+        overseas: "海外"
+
     event/experience_content:
       layout:
         left:   "本文の左"
