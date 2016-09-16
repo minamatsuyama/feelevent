@@ -171,7 +171,7 @@ $ curl -n -X POST https://worldschool.feelnote.org/api/events/$EVENT_ITEM_ID/fav
 #### Response Example
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 ```
 
 ```json

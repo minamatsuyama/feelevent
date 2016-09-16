@@ -52,7 +52,7 @@
           "href": "/api/events/{event_item_id}/favorites",
           "method": "POST",
           "mediaType": "application/json",
-          "rel": "self"
+          "rel": "create"
         },
         {
           "title": "Xoá",

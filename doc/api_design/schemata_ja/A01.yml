@@ -23,7 +23,7 @@ links:
     href:        "/api/events/{event_item_id}/favorites"
     method:      POST
     mediaType:   application/json
-    rel:         self
+    rel:         create
 
   - title:       "削除"
     description: "お気に入りを削除する"
