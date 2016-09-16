@@ -1,0 +1,32 @@
+== A0202 Trang danh sách (index page) Event yêu thích
+
+=== Thông số cơ bản
+[cols="38,80"]
+|=====
+| JSON Schema             | api_design/build/unit/ja/A02.md
+| Controller, Action      | api/favorites#index
+|=====
+
+=== Chi tiết
+. Xử lý trước (Pre-processing)
+** Kiểm tra có đang đăng nhập (login) hay không.
+*** Nếu không trả về `401 Unauthorized`
+. Trật tự sắp xếp
+** Xếp theo thứ tự giảm dần của __event_favorites.created_at__ (mục ghi mới lên trước)
+. Xử lý khi xác nhận được đang đăng nhập
+** Trả về dưới dạng JSON các thông tin sau
+*** Thông tin trong bảng __event_items__ của các Event tương ứng
+*** Thông tin liên quan với Event ở trên
+*** Thông tin pagination
+** Địa điểm tổ chức (`開催場所`)
+*** Trả lại thông tin vùng (__area__) của địa điểm tổ chức (__event_held_areas__)
+** Recommedation flag (data.recommended)
+*** Nếu giá trị của __recommended__ trong bảng thông tin khái quát về Event (__event_summary_contents__) là `true` thì trả về `true`
+** WoM flag (data.reviewed)
+*** Nếu có giá trị trong __event_review_contents__ thì trả lại `true`
+** Số lượng Event yêu thích (data.favorite_count)
+*** Trả lại số lượng của Event tương ứng lưu trong __event_favorites__
+. Xử lý khi lỗi
+** Trả về status `200 OK` với `data` là mảng (array) rỗng khi không có kết quả tìm kiếm tương ứng với điều kiện.
+*** Thông tin paginationn cũng trả lại là 1 Object rỗng
+*** Ví dụ { data: [], pagination: {} }
