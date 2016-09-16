@@ -222,21 +222,21 @@ Thông tin Event
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **data/entry_ended_at** | *string* | Thời hạn đăng kí 申込締切日 | `"2016-03-19T12:34:56+0900"` |
-| **data/entry_fee** | *array* | Phí tham gia(無料:free, 有料:pay) | `{"value":"free","text":"無料"}` |
+| **data/entry_ended_at** | *string* | Ngày hết hạn đăng kí (申込締切日) | `"2016-03-19T12:34:56+0900"` |
+| **data/entry_fee** | *array* | Lệ phí(無料:free, 有料:pay) | `{"value":"free","text":"無料"}` |
 | **data/event_type** | *array* | Hình thức(参加型: participatory, 講義型: lecture, 評価型: evaluation) | `{"value":"participatory","text":"参加型"}` |
-| **data/favorite_count** | *integer* | Số lượng event yêu thích | `123` |
-| **data/favorited** | *boolean* | Favorite flag (chỉ hiệu lực khi đang login)<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
-| **data/held_areas** | *array* | Địa điểm tổ chức (TODO: 関西:kansai, 関東:kanto, 海外:overseas) | `[{"value":"kanto","text":"関東"},{"value":"kansai","text":"関西"}]` |
-| **data/held_ended_at** | *string* | Thời gian kết thúc sự kiện 開催終了日 | `"2016-08-12T09:17:45+0900"` |
-| **data/held_started_at** | *string* | Thời gian bắt đầu sự kiện 開催開始日 | `"2016-05-01T09:03:02+0900"` |
-| **data/id** | *integer* | ID | `123` |
-| **data/index_image** | *string* | Ảnh cho dùng cho trang index | `"http://dummyimage.com/300x200/ccc/fff.jpg"` |
-| **data/keywords** | *array* | Keyword キーワード | `[{"id":100,"name":"コミュニケーション"},{"id":102,"name":"アート"},{"id":233,"name":"ビジネス"}]` |
-| **data/preparation_type** | *array* | Chuẩn bị trước(準備不要: needless、個人で準備: individual、チームで準備: team) | `{"value":"needless","text":"準備不要"}` |
-| **data/recommended** | *boolean* | Recommendation flag/リコメンドフラグ<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
-| **data/reviewed** | *boolean* | WOM flag/口コミフラグ<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
-| **data/title** | *string* | Event title | `"Title"` |
+| **data/favorite_count** | *integer* | Số lượng Event yêu thích | `123` |
+| **data/favorited** | *boolean* | Favorite flag(Chỉ có true khi đang login)<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/held_areas** | *array* | Địa điểm tổ chức(TODO: 関西:kansai, 関東:kanto, 海外:overseas) | `[{"value":"kanto","text":"関東"},{"value":"kansai","text":"関西"}]` |
+| **data/held_ended_at** | *string* | Ngày kết thúc tổ chức (開催終了日) | `"2016-08-12T09:17:45+0900"` |
+| **data/held_started_at** | *string* | Ngày bắt đầu tổ chức (開催開始日) | `"2016-05-01T09:03:02+0900"` |
+| **data/id** | *integer* | ID | `344` |
+| **data/index_image** | *string* | Hình ảnh dùng cho trang index | `"http://dummyimage.com/300x200/ccc/fff.jpg"` |
+| **data/keywords** | *array* | Keyword | `[{"id":100,"name":"Communication"},{"id":102,"name":"アート"},{"id":233,"name":"Business"}]` |
+| **data/preparation_type** | *array* | Yêu cầu chuẩn bị trước(準備不要: needless、個人で: individual準備、チームで準備: team) | `{"value":"needless","text":"準備不要"}` |
+| **data/recommended** | *boolean* | Recommendation flag<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/reviewed** | *boolean* | WoM flag<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/title** | *string* | Event title | `"This is event title"` |
 | **pagination:current_page** | *integer* | Trang hiện tại (current page) | `2` |
 | **pagination:next_page** | *integer* | Trang kế tiếp (nếu không có sẽ có giá trị null) | `3` |
 | **pagination:per_page** | *integer* | Số lượng event cho mỗi trang | `20` |
@@ -263,6 +263,8 @@ GET /api/events
 | **held_ended_on** | *string* | Ngày kết thúc Event / 開催終了日 | `"2016-03-03"` |
 | **held_started_on** | *string* | Ngày bắt đầu Event / 開催開始日 | `"2016-01-02"` |
 | **keyword_ids** | *array* | Keyword id(FeelnoteDBのkeywords.id) | `[100,102]` |
+| **page** | *integer* | **Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)<br/> **default:** `1` | `2` |
+| **per_page** | *integer* | **số event mỗi trang**<br/> **default:** `5`<br/> **Range:** `1 <= value <= 20` | `5` |
 | **qualifying_age_id** | *integer* | Lứa tuổi (event_qualifying_ages.id) | `33` |
 | **word** | *string* | Từ khoá tự do | `"soccer"` |
 
@@ -281,7 +283,9 @@ $ curl -n https://worldschool.feelnote.org/api/events
   -d held_ended_on=2016-03-03 \
   -d entry_fee=free \
   -d qualifying_age_id=33 \
-  -d word=soccer
+  -d word=soccer \
+  -d page=2 \
+  -d per_page=5
 ```
 
 
@@ -302,8 +306,8 @@ HTTP/1.1 200 OK
   },
   "data": [
     {
-      "id": 123,
-      "title": "Title",
+      "id": 344,
+      "title": "This is event title",
       "event_type": {
         "value": "participatory",
         "text": "参加型"
@@ -333,7 +337,7 @@ HTTP/1.1 200 OK
       "keywords": [
         {
           "id": 100,
-          "name": "コミュニケーション"
+          "name": "Communication"
         },
         {
           "id": 102,
@@ -341,13 +345,108 @@ HTTP/1.1 200 OK
         },
         {
           "id": 233,
-          "name": "ビジネス"
+          "name": "Business"
         }
       ],
       "recommended": true,
       "reviewed": true,
       "favorite_count": 123,
       "favorited": true
+    }
+  ]
+}
+```
+
+***
+
+### ID:A0202 Event:Danh sách Event yêu thích
+
+Lấy thông tin danh sách Event yêu thích
+
+```
+GET /api/events/favorites
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **page** | *integer* | **Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)<br/> **default:** `1` | `2` |
+| **per_page** | *integer* | **số event mỗi trang**<br/> **default:** `5`<br/> **Range:** `1 <= value <= 20` | `5` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://worldschool.feelnote.org/api/events/favorites
+ -G \
+  -d page=2 \
+  -d per_page=5
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "pagination": {
+    "current_page": 2,
+    "next_page": 3,
+    "prev_page": 1,
+    "per_page": 20,
+    "total_count": 100
+  },
+  "data": [
+    {
+      "id": 344,
+      "title": "This is event title",
+      "event_type": {
+        "value": "participatory",
+        "text": "参加型"
+      },
+      "preparation_type": {
+        "value": "needless",
+        "text": "準備不要"
+      },
+      "index_image": "http://dummyimage.com/300x200/ccc/fff.jpg",
+      "entry_fee": {
+        "value": "free",
+        "text": "無料"
+      },
+      "held_started_at": "2016-05-01T09:03:02+0900",
+      "held_ended_at": "2016-08-12T09:17:45+0900",
+      "entry_ended_at": "2016-03-19T12:34:56+0900",
+      "held_areas": [
+        {
+          "value": "kanto",
+          "text": "関東"
+        },
+        {
+          "value": "kansai",
+          "text": "関西"
+        }
+      ],
+      "keywords": [
+        {
+          "id": 100,
+          "name": "Communication"
+        },
+        {
+          "id": 102,
+          "name": "アート"
+        },
+        {
+          "id": 233,
+          "name": "Business"
+        }
+      ],
+      "recommended": true,
+      "reviewed": true,
+      "favorite_count": 123
     }
   ]
 }
