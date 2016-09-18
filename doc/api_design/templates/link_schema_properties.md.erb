@@ -1,0 +1,5 @@
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+<%- extract_attributes(schema, params).each do |(key, type, description, example)| %>
+| **<%= key.gsub('_', '\_') %>** | *<%= type.gsub('_', '\_') %>* | <%= description.gsub('_', '\_') %> | <%= example.gsub('_', '\_') %> |
+<%- end %>
