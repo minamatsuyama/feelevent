@@ -19,8 +19,75 @@
         "object"
       ]
     },
-    "favorite": {
+    "meta_pagination": {
+      "description": "Pagination",
+      "properties": {
+        "page": {
+          "description": "**Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)",
+          "example": 2,
+          "type": [
+            "integer"
+          ],
+          "default": 1
+        },
+        "per_page": {
+          "description": "**số event mỗi trang**",
+          "example": 5,
+          "type": [
+            "integer"
+          ],
+          "default": 5,
+          "minimum": 1,
+          "maximum": 20
+        }
+      }
+    },
+    "meta_pagination_response": {
+      "description": "Thông tin pagination của response",
+      "properties": {
+        "current_page": {
+          "description": "Trang hiện tại (current page)",
+          "example": 2,
+          "type": [
+            "integer"
+          ]
+        },
+        "next_page": {
+          "description": "Trang kế tiếp (nếu không có sẽ có giá trị null)",
+          "example": 3,
+          "type": [
+            "integer"
+          ]
+        },
+        "prev_page": {
+          "description": "Trang trước (nếu không có sẽ có giá trị null)",
+          "example": 1,
+          "type": [
+            "integer"
+          ]
+        },
+        "per_page": {
+          "description": "Số lượng event cho mỗi trang",
+          "example": 20,
+          "type": [
+            "integer"
+          ]
+        },
+        "total_count": {
+          "description": "Tổng số event",
+          "example": 100,
+          "type": [
+            "integer"
+          ]
+        }
+      },
+      "type": [
+        "object"
+      ]
+    },
+    "a01": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "_doc_id": "A01",
       "title": "Event yêu thích",
       "description": "Thông tin event yêu thích",
       "stability": "prototype",
@@ -30,7 +97,7 @@
       ],
       "definitions": {
         "event_item_id": {
-          "description": "Event id",
+          "description": "Event ID",
           "example": 123,
           "type": [
             "integer"
@@ -42,6 +109,14 @@
           "type": [
             "integer"
           ]
+        }
+      },
+      "properties": {
+        "event_item_id": {
+          "$ref": "#/definitions/a01/definitions/event_item_id"
+        },
+        "count": {
+          "$ref": "#/definitions/a01/definitions/count"
         }
       },
       "links": [
@@ -63,19 +138,11 @@
           "mediaType": "application/json",
           "rel": "self"
         }
-      ],
-      "properties": {
-        "event_item_id": {
-          "$ref": "#/definitions/favorite/definitions/event_item_id"
-        },
-        "count": {
-          "$ref": "#/definitions/favorite/definitions/count"
-        }
-      },
-      "_doc_id": "A01"
+      ]
     },
-    "events": {
+    "a02": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "_doc_id": "A02",
       "title": "Event",
       "description": "Thông tin Event",
       "stability": "prototype",
@@ -147,24 +214,6 @@
           "type": [
             "string"
           ]
-        },
-        "page": {
-          "description": "**Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)",
-          "example": 2,
-          "type": [
-            "integer"
-          ],
-          "default": 1
-        },
-        "per_page": {
-          "description": "**số event mỗi trang**",
-          "example": 5,
-          "type": [
-            "integer"
-          ],
-          "default": 5,
-          "minimum": 1,
-          "maximum": 20
         },
         "shared_id": {
           "description": "ID",
@@ -310,49 +359,49 @@
           "items": {
             "properties": {
               "id": {
-                "$ref": "#/definitions/events/definitions/shared_id"
+                "$ref": "#/definitions/a02/definitions/shared_id"
               },
               "title": {
-                "$ref": "#/definitions/events/definitions/shared_title"
+                "$ref": "#/definitions/a02/definitions/shared_title"
               },
               "event_type": {
-                "$ref": "#/definitions/events/definitions/shared_event_type"
+                "$ref": "#/definitions/a02/definitions/shared_event_type"
               },
               "preparation_type": {
-                "$ref": "#/definitions/events/definitions/shared_preparation_type"
+                "$ref": "#/definitions/a02/definitions/shared_preparation_type"
               },
               "index_image": {
-                "$ref": "#/definitions/events/definitions/shared_index_image"
+                "$ref": "#/definitions/a02/definitions/shared_index_image"
               },
               "entry_fee": {
-                "$ref": "#/definitions/events/definitions/shared_entry_fee"
+                "$ref": "#/definitions/a02/definitions/shared_entry_fee"
               },
               "held_started_at": {
-                "$ref": "#/definitions/events/definitions/shared_held_started_at"
+                "$ref": "#/definitions/a02/definitions/shared_held_started_at"
               },
               "held_ended_at": {
-                "$ref": "#/definitions/events/definitions/shared_held_ended_at"
+                "$ref": "#/definitions/a02/definitions/shared_held_ended_at"
               },
               "entry_ended_at": {
-                "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
+                "$ref": "#/definitions/a02/definitions/shared_entry_ended_at"
               },
               "held_areas": {
-                "$ref": "#/definitions/events/definitions/shared_held_areas"
+                "$ref": "#/definitions/a02/definitions/shared_held_areas"
               },
               "keywords": {
-                "$ref": "#/definitions/events/definitions/shared_keywords"
+                "$ref": "#/definitions/a02/definitions/shared_keywords"
               },
               "recommended": {
-                "$ref": "#/definitions/events/definitions/shared_recommended"
+                "$ref": "#/definitions/a02/definitions/shared_recommended"
               },
               "reviewed": {
-                "$ref": "#/definitions/events/definitions/shared_reviewed"
+                "$ref": "#/definitions/a02/definitions/shared_reviewed"
               },
               "favorite_count": {
-                "$ref": "#/definitions/events/definitions/shared_favorite_count"
+                "$ref": "#/definitions/a02/definitions/shared_favorite_count"
               },
               "favorited": {
-                "$ref": "#/definitions/events/definitions/shared_favorited"
+                "$ref": "#/definitions/a02/definitions/shared_favorited"
               }
             }
           },
@@ -365,95 +414,60 @@
           "items": {
             "properties": {
               "id": {
-                "$ref": "#/definitions/events/definitions/shared_id"
+                "$ref": "#/definitions/a02/definitions/shared_id"
               },
               "title": {
-                "$ref": "#/definitions/events/definitions/shared_title"
+                "$ref": "#/definitions/a02/definitions/shared_title"
               },
               "event_type": {
-                "$ref": "#/definitions/events/definitions/shared_event_type"
+                "$ref": "#/definitions/a02/definitions/shared_event_type"
               },
               "preparation_type": {
-                "$ref": "#/definitions/events/definitions/shared_preparation_type"
+                "$ref": "#/definitions/a02/definitions/shared_preparation_type"
               },
               "index_image": {
-                "$ref": "#/definitions/events/definitions/shared_index_image"
+                "$ref": "#/definitions/a02/definitions/shared_index_image"
               },
               "entry_fee": {
-                "$ref": "#/definitions/events/definitions/shared_entry_fee"
+                "$ref": "#/definitions/a02/definitions/shared_entry_fee"
               },
               "held_started_at": {
-                "$ref": "#/definitions/events/definitions/shared_held_started_at"
+                "$ref": "#/definitions/a02/definitions/shared_held_started_at"
               },
               "held_ended_at": {
-                "$ref": "#/definitions/events/definitions/shared_held_ended_at"
+                "$ref": "#/definitions/a02/definitions/shared_held_ended_at"
               },
               "entry_ended_at": {
-                "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
+                "$ref": "#/definitions/a02/definitions/shared_entry_ended_at"
               },
               "held_areas": {
-                "$ref": "#/definitions/events/definitions/shared_held_areas"
+                "$ref": "#/definitions/a02/definitions/shared_held_areas"
               },
               "keywords": {
-                "$ref": "#/definitions/events/definitions/shared_keywords"
+                "$ref": "#/definitions/a02/definitions/shared_keywords"
               },
               "recommended": {
-                "$ref": "#/definitions/events/definitions/shared_recommended"
+                "$ref": "#/definitions/a02/definitions/shared_recommended"
               },
               "reviewed": {
-                "$ref": "#/definitions/events/definitions/shared_reviewed"
+                "$ref": "#/definitions/a02/definitions/shared_reviewed"
               },
               "favorite_count": {
-                "$ref": "#/definitions/events/definitions/shared_favorite_count"
+                "$ref": "#/definitions/a02/definitions/shared_favorite_count"
               }
             }
           },
           "type": [
             "array"
           ]
-        },
+        }
+      },
+      "properties": {
         "pagination": {
-          "description": "Thông tin pagination của response",
-          "properties": {
-            "current_page": {
-              "description": "Trang hiện tại (current page)",
-              "example": 2,
-              "type": [
-                "integer"
-              ]
-            },
-            "next_page": {
-              "description": "Trang kế tiếp (nếu không có sẽ có giá trị null)",
-              "example": 3,
-              "type": [
-                "integer"
-              ]
-            },
-            "prev_page": {
-              "description": "Trang trước (nếu không có sẽ có giá trị null)",
-              "example": 1,
-              "type": [
-                "integer"
-              ]
-            },
-            "per_page": {
-              "description": "Số lượng event cho mỗi trang",
-              "example": 20,
-              "type": [
-                "integer"
-              ]
-            },
-            "total_count": {
-              "description": "Tổng số event",
-              "example": 100,
-              "type": [
-                "integer"
-              ]
-            }
-          },
-          "type": [
-            "object"
-          ]
+          "$ref": "#/definitions/meta_pagination_response"
+        },
+        "data": {
+          "$ref": "#/definitions/a02/definitions/events_data"
         }
       },
       "links": [
@@ -468,44 +482,44 @@
           "schema": {
             "properties": {
               "keyword_ids": {
-                "$ref": "#/definitions/events/definitions/keyword_ids"
+                "$ref": "#/definitions/a02/definitions/keyword_ids"
               },
               "event_types": {
-                "$ref": "#/definitions/events/definitions/event_types"
+                "$ref": "#/definitions/a02/definitions/event_types"
               },
               "held_area": {
-                "$ref": "#/definitions/events/definitions/held_area"
+                "$ref": "#/definitions/a02/definitions/held_area"
               },
               "held_started_on": {
-                "$ref": "#/definitions/events/definitions/held_started_on"
+                "$ref": "#/definitions/a02/definitions/held_started_on"
               },
               "held_ended_on": {
-                "$ref": "#/definitions/events/definitions/held_ended_on"
+                "$ref": "#/definitions/a02/definitions/held_ended_on"
               },
               "entry_fee": {
-                "$ref": "#/definitions/events/definitions/entry_fee"
+                "$ref": "#/definitions/a02/definitions/entry_fee"
               },
               "qualifying_age_id": {
-                "$ref": "#/definitions/events/definitions/qualifying_age_id"
+                "$ref": "#/definitions/a02/definitions/qualifying_age_id"
               },
               "word": {
-                "$ref": "#/definitions/events/definitions/word"
+                "$ref": "#/definitions/a02/definitions/word"
               },
               "page": {
-                "$ref": "#/definitions/events/definitions/page"
+                "$ref": "#/definitions/meta_pagination/properties/page"
               },
               "per_page": {
-                "$ref": "#/definitions/events/definitions/per_page"
+                "$ref": "#/definitions/meta_pagination/properties/per_page"
               }
             }
           },
           "targetSchema": {
             "properties": {
               "pagination": {
-                "$ref": "#/definitions/events/definitions/pagination"
+                "$ref": "#/definitions/meta_pagination_response"
               },
               "data": {
-                "$ref": "#/definitions/events/definitions/events_data"
+                "$ref": "#/definitions/a02/definitions/events_data"
               }
             }
           }
@@ -514,49 +528,40 @@
           "title": "Danh sách Event yêu thích",
           "description": "Lấy thông tin danh sách Event yêu thích",
           "_doc_id": "A0202",
-          "href": "/api/events/favorites",
+          "href": "/api/a02/favorites",
           "method": "GET",
           "mediaType": "application/json",
           "rel": "self",
           "schema": {
             "properties": {
               "page": {
-                "$ref": "#/definitions/events/definitions/page"
+                "$ref": "#/definitions/meta_pagination/properties/page"
               },
               "per_page": {
-                "$ref": "#/definitions/events/definitions/per_page"
+                "$ref": "#/definitions/meta_pagination/properties/per_page"
               }
             }
           },
           "targetSchema": {
             "properties": {
               "pagination": {
-                "$ref": "#/definitions/events/definitions/pagination"
+                "$ref": "#/definitions/meta_pagination_response"
               },
               "data": {
-                "$ref": "#/definitions/events/definitions/events_favorites_data"
+                "$ref": "#/definitions/a02/definitions/events_favorites_data"
               }
             }
           }
         }
-      ],
-      "properties": {
-        "pagination": {
-          "$ref": "#/definitions/events/definitions/pagination"
-        },
-        "data": {
-          "$ref": "#/definitions/events/definitions/events_data"
-        }
-      },
-      "_doc_id": "A02"
+      ]
     }
   },
   "properties": {
-    "favorite": {
-      "$ref": "#/definitions/favorite"
+    "a01": {
+      "$ref": "#/definitions/a01"
     },
-    "events": {
-      "$ref": "#/definitions/events"
+    "a02": {
+      "$ref": "#/definitions/a02"
     }
   },
   "id": "api",
