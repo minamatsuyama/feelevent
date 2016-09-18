@@ -138,7 +138,7 @@ HTTP/1.1 503 Service Unavailable
 
 ***
 
-## <a name="resource-favorite"></a>ID:A01 Event yêu thích
+## <a name="resource-a01"></a>ID:A01 Event yêu thích
 
 Thông tin event yêu thích
 
@@ -147,7 +147,7 @@ Thông tin event yêu thích
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **count** | *integer* | Số lượng event yêu thích | `999` |
-| **event_item_id** | *integer* | Event id | `123` |
+| **event_item_id** | *integer* | Event ID | `123` |
 
 ***
 
@@ -214,7 +214,7 @@ HTTP/1.1 200 OK
 ```
 
 
-## <a name="resource-events"></a>ID:A02 Event
+## <a name="resource-a02"></a>ID:A02 Event
 
 Thông tin Event
 
@@ -364,7 +364,7 @@ HTTP/1.1 200 OK
 Lấy thông tin danh sách Event yêu thích
 
 ```
-GET /api/events/favorites
+GET /api/a02/favorites
 ```
 
 #### Optional Parameters
@@ -378,7 +378,7 @@ GET /api/events/favorites
 #### Curl Example
 
 ```bash
-$ curl -n https://worldschool.feelnote.org/api/events/favorites
+$ curl -n https://worldschool.feelnote.org/api/a02/favorites
  -G \
   -d page=2 \
   -d per_page=5

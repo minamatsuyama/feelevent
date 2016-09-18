@@ -1,12 +1,13 @@
 ---
-"$schema": http://json-schema.org/draft-04/hyper-schema
+"$schema":       http://json-schema.org/draft-04/hyper-schema
+id:              schemata/a02
+_doc_id:         "A02"
 title:            "イベント"
 description:      "イベント情報"
 stability:        prototype
 strictProperties: true
 type:             object
 definitions:
-  # リクエスト関連
   keyword_ids:
     description: "キーワードID(FeelnoteDBのkeywords.id)"
     example:
@@ -45,18 +46,6 @@ definitions:
     description: "フリーワード"
     example:     "サッカー"
     type:        string
-  page:
-    description: "**ページ指定** (存在しないページが指定された時は0件とする)"
-    example:     2
-    type:        integer
-    default:     1
-  per_page:
-    description: "**1ページ件数**"
-    example:     5
-    type:        integer
-    default:     5
-    minimum:     1
-    maximum:     20
 
   shared_id:
     description: "ID"
@@ -138,42 +127,40 @@ definitions:
     pattern:     (true|false)
     type:        boolean
 
-
-  # レスポンス関連
   events_data:
     description: "説明"
     items:
       properties:
         id:
-          "$ref": "#/definitions/events/definitions/shared_id"
+          "$ref": "#/definitions/a02/definitions/shared_id"
         title:
-          "$ref": "#/definitions/events/definitions/shared_title"
+          "$ref": "#/definitions/a02/definitions/shared_title"
         event_type:
-          "$ref": "#/definitions/events/definitions/shared_event_type"
+          "$ref": "#/definitions/a02/definitions/shared_event_type"
         preparation_type:
-          "$ref": "#/definitions/events/definitions/shared_preparation_type"
+          "$ref": "#/definitions/a02/definitions/shared_preparation_type"
         index_image:
-          "$ref": "#/definitions/events/definitions/shared_index_image"
+          "$ref": "#/definitions/a02/definitions/shared_index_image"
         entry_fee:
-          "$ref": "#/definitions/events/definitions/shared_entry_fee"
+          "$ref": "#/definitions/a02/definitions/shared_entry_fee"
         held_started_at:
-          "$ref": "#/definitions/events/definitions/shared_held_started_at"
+          "$ref": "#/definitions/a02/definitions/shared_held_started_at"
         held_ended_at:
-          "$ref": "#/definitions/events/definitions/shared_held_ended_at"
+          "$ref": "#/definitions/a02/definitions/shared_held_ended_at"
         entry_ended_at:
-          "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
+          "$ref": "#/definitions/a02/definitions/shared_entry_ended_at"
         held_areas:
-          "$ref": "#/definitions/events/definitions/shared_held_areas"
+          "$ref": "#/definitions/a02/definitions/shared_held_areas"
         keywords:
-          "$ref": "#/definitions/events/definitions/shared_keywords"
+          "$ref": "#/definitions/a02/definitions/shared_keywords"
         recommended:
-          "$ref": "#/definitions/events/definitions/shared_recommended"
+          "$ref": "#/definitions/a02/definitions/shared_recommended"
         reviewed:
-          "$ref": "#/definitions/events/definitions/shared_reviewed"
+          "$ref": "#/definitions/a02/definitions/shared_reviewed"
         favorite_count:
-          "$ref": "#/definitions/events/definitions/shared_favorite_count"
+          "$ref": "#/definitions/a02/definitions/shared_favorite_count"
         favorited:
-          "$ref": "#/definitions/events/definitions/shared_favorited"
+          "$ref": "#/definitions/a02/definitions/shared_favorited"
     type: array
 
   events_favorites_data:
@@ -181,59 +168,40 @@ definitions:
     items:
       properties:
         id:
-          "$ref": "#/definitions/events/definitions/shared_id"
+          "$ref": "#/definitions/a02/definitions/shared_id"
         title:
-          "$ref": "#/definitions/events/definitions/shared_title"
+          "$ref": "#/definitions/a02/definitions/shared_title"
         event_type:
-          "$ref": "#/definitions/events/definitions/shared_event_type"
+          "$ref": "#/definitions/a02/definitions/shared_event_type"
         preparation_type:
-          "$ref": "#/definitions/events/definitions/shared_preparation_type"
+          "$ref": "#/definitions/a02/definitions/shared_preparation_type"
         index_image:
-          "$ref": "#/definitions/events/definitions/shared_index_image"
+          "$ref": "#/definitions/a02/definitions/shared_index_image"
         entry_fee:
-          "$ref": "#/definitions/events/definitions/shared_entry_fee"
+          "$ref": "#/definitions/a02/definitions/shared_entry_fee"
         held_started_at:
-          "$ref": "#/definitions/events/definitions/shared_held_started_at"
+          "$ref": "#/definitions/a02/definitions/shared_held_started_at"
         held_ended_at:
-          "$ref": "#/definitions/events/definitions/shared_held_ended_at"
+          "$ref": "#/definitions/a02/definitions/shared_held_ended_at"
         entry_ended_at:
-          "$ref": "#/definitions/events/definitions/shared_entry_ended_at"
+          "$ref": "#/definitions/a02/definitions/shared_entry_ended_at"
         held_areas:
-          "$ref": "#/definitions/events/definitions/shared_held_areas"
+          "$ref": "#/definitions/a02/definitions/shared_held_areas"
         keywords:
-          "$ref": "#/definitions/events/definitions/shared_keywords"
+          "$ref": "#/definitions/a02/definitions/shared_keywords"
         recommended:
-          "$ref": "#/definitions/events/definitions/shared_recommended"
+          "$ref": "#/definitions/a02/definitions/shared_recommended"
         reviewed:
-          "$ref": "#/definitions/events/definitions/shared_reviewed"
+          "$ref": "#/definitions/a02/definitions/shared_reviewed"
         favorite_count:
-          "$ref": "#/definitions/events/definitions/shared_favorite_count"
+          "$ref": "#/definitions/a02/definitions/shared_favorite_count"
     type: array
 
+properties:
   pagination:
-    description: レスポンスのページャ情報
-    properties:
-      current_page:
-        description: 現ページ番号
-        example:     2
-        type:        integer
-      next_page:
-        description: 次のページ (ページが存在しない場合は null)
-        example:     3
-        type:        integer
-      prev_page:
-        description: 前のページ (ページが存在しない場合は null)
-        example:     1
-        type:        integer
-      per_page:
-        description: 1ページの件数
-        example:     20
-        type:        integer
-      total_count:
-        description: 記事総数
-        example:     100
-        type:        integer
-    type: object
+    "$ref": "#/definitions/meta_pagination_response"
+  data:
+    "$ref": "#/definitions/a02/definitions/events_data"
 
 links:
   - title:       "検索"
@@ -246,31 +214,31 @@ links:
     schema:
       properties:
         keyword_ids:
-          "$ref": "#/definitions/events/definitions/keyword_ids"
+          "$ref": "#/definitions/a02/definitions/keyword_ids"
         event_types:
-          "$ref": "#/definitions/events/definitions/event_types"
+          "$ref": "#/definitions/a02/definitions/event_types"
         held_area:
-          "$ref": "#/definitions/events/definitions/held_area"
+          "$ref": "#/definitions/a02/definitions/held_area"
         held_started_on:
-          "$ref": "#/definitions/events/definitions/held_started_on"
+          "$ref": "#/definitions/a02/definitions/held_started_on"
         held_ended_on:
-          "$ref": "#/definitions/events/definitions/held_ended_on"
+          "$ref": "#/definitions/a02/definitions/held_ended_on"
         entry_fee:
-          "$ref": "#/definitions/events/definitions/entry_fee"
+          "$ref": "#/definitions/a02/definitions/entry_fee"
         qualifying_age_id:
-          "$ref": "#/definitions/events/definitions/qualifying_age_id"
+          "$ref": "#/definitions/a02/definitions/qualifying_age_id"
         word:
-          "$ref": "#/definitions/events/definitions/word"
+          "$ref": "#/definitions/a02/definitions/word"
         page:
-          "$ref": "#/definitions/events/definitions/page"
+          "$ref": "#/definitions/meta_pagination/properties/page"
         per_page:
-          "$ref": "#/definitions/events/definitions/per_page"
+          "$ref": "#/definitions/meta_pagination/properties/per_page"
     targetSchema:
       properties:
         pagination:
-          "$ref": "#/definitions/events/definitions/pagination"
+          "$ref": "#/definitions/meta_pagination_response"
         data:
-          "$ref": "#/definitions/events/definitions/events_data"
+          "$ref": "#/definitions/a02/definitions/events_data"
 
   - title:       "お気に入り一覧"
     description: "イベントお気に入り情報の一覧を取得する"
@@ -282,21 +250,12 @@ links:
     schema:
       properties:
         page:
-          "$ref": "#/definitions/events/definitions/page"
+          "$ref": "#/definitions/meta_pagination/properties/page"
         per_page:
-          "$ref": "#/definitions/events/definitions/per_page"
+          "$ref": "#/definitions/meta_pagination/properties/per_page"
     targetSchema:
       properties:
         pagination:
-          "$ref": "#/definitions/events/definitions/pagination"
+          "$ref": "#/definitions/meta_pagination_response"
         data:
-          "$ref": "#/definitions/events/definitions/events_favorites_data"
-
-properties:
-  pagination:
-    "$ref": "#/definitions/events/definitions/pagination"
-  data:
-    "$ref": "#/definitions/events/definitions/events_data"
-
-_doc_id: "A02"
-id: schemata/events
+          "$ref": "#/definitions/a02/definitions/events_favorites_data"

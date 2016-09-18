@@ -19,3 +19,42 @@ definitions:
         type:        string
         example:     1pac
     type: object
+
+  meta_pagination:
+    description: "ページネーション"
+    properties:
+      page:
+        description: "ページ番号 (存在しないページが指定された時は0件とする)"
+        example:     2
+        default:     1
+        type:        integer
+      per_page:
+        description: "1ページの件数"
+        example:     5
+        default:     10
+        minimum:     1
+        maximum:     20
+        type:        integer
+
+  meta_pagination_response:
+    description: ページャ情報(レスポンス)
+    properties:
+      current_page:
+        description: 現ページ番号
+        example:     2
+        type:        integer
+      next_page:
+        description: 次のページ (ページが存在しない場合は null)
+        example:     3
+        type:        integer
+      prev_page:
+        description: 前のページ (ページが存在しない場合は null)
+        example:     1
+        type:        integer
+      per_page:
+        "$ref":      "#/definitions/meta_pagination/properties/per_page"
+      total_count:
+        description: 記事総数
+        example:     100
+        type:        integer
+    type: object
