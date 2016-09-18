@@ -1,20 +1,27 @@
 ---
-"$schema": http://json-schema.org/draft-04/hyper-schema
+"$schema":        http://json-schema.org/draft-04/hyper-schema
+id:               schemata/a01
+_doc_id:          "A01"
 title:            "Event yêu thích"
 description:      "Thông tin event yêu thích"
 stability:        prototype
 strictProperties: true
 type:             object
 definitions:
-  # リクエスト関連
   event_item_id:
-    description: "Event id"
+    description: "Event ID"
     example:     123
     type:        integer
   count:
     description: "Số lượng event yêu thích"
     example:     999
     type:        integer
+
+properties:
+  event_item_id:
+    "$ref": "#/definitions/a01/definitions/event_item_id"
+  count:
+    "$ref": "#/definitions/a01/definitions/count"
 
 links:
   - title:       "Đăng kí"
@@ -32,12 +39,3 @@ links:
     method:      DELETE
     mediaType:   application/json
     rel:         self
-
-properties:
-  event_item_id:
-    "$ref": "#/definitions/favorite/definitions/event_item_id"
-  count:
-    "$ref": "#/definitions/favorite/definitions/count"
-
-_doc_id: "A01"
-id: schemata/favorite
