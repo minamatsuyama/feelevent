@@ -1,0 +1,16 @@
+ifdef::env-github[]
+== B-3 パスワード再発行 (入力)
+endif::[]
+
+=== フォーム定義
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | パスワード +
+__user[password]__ | password | ◯ |
+
+| 02 | パスワード +
+__user[password_confirmation]__ | password | ◯ |
+
+|=====
