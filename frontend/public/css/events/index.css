@@ -82,6 +82,22 @@ p {
     margin-top: 9px;
   }
 }
+.detail-title img {
+  position: relative;
+}
+.detail-title img.recommended:after {
+  content: "Recommended";
+  background: url("/img/recommend.png") no-repeat left top;
+  background-size: 100% 100%;
+  height: 34px;
+  width: 151px;
+  position: absolute;
+  left: 10px;
+  top: 11px;
+  z-index: 1010;
+  padding: 8px 26px;
+  font-size: 14px;
+}
 
 .detail-tags {
   margin-top: 15px;
@@ -229,14 +245,34 @@ p {
 .recommends .eventcard {
   float: left;
   max-width: 340px;
+  position: relative;
 }
 .recommends .eventcard-warpper, .recommends .event-likebox {
   margin: 0 10px;
 }
 
+.event-group {
+  margin-top: 46px;
+}
+.event-group:before, .event-group:after {
+  content: " ";
+  display: table;
+}
+.event-group:after {
+  clear: both;
+}
 .event-group h3 {
   color: #888;
   font-weight: normal;
+}
+@media screen and (max-width: 679px) {
+  .event-group h3 {
+    margin-bottom: -10px;
+  }
+}
+
+.banners {
+  margin-top: 40px;
 }
 
 hr {
@@ -261,4 +297,34 @@ hr {
   .mobile-br {
     display: none;
   }
+}
+.slick-prev, .slick-next {
+  background: transparent no-repeat center center;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 999;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 42%;
+}
+.slick-prev:hover, .slick-next:hover {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+html:target .slick-prev:hover, html:target .slick-prev:active, html:target .slick-prev:focus, html:target .slick-next:hover, html:target .slick-next:active, html:target .slick-next:focus {
+  outline: 1px solid 0;
+}
+
+.slick-prev {
+  left: -10px;
+  background-image: url("/img/ico_arrow-prev.png");
+}
+
+.slick-next {
+  right: 160px;
+  background-image: url("/img/ico_arrow-next.png");
 }

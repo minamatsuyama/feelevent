@@ -76,6 +76,24 @@ p {
       margin-top: 9px;
     }
   }
+  img {
+    position: relative;
+    &.recommended {
+      &:after {
+        content: "Recommended";
+        background: url("/img/recommend.png") no-repeat left top;
+        background-size: 100% 100%;
+        height: 34px;
+        width: 151px;
+        position: absolute;
+        left: 10px;
+        top: 11px;
+        z-index: 1010;
+        padding: 8px 26px;
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 .detail-tags {
@@ -206,9 +224,11 @@ p {
   margin-right: auto;
   width: 100%;
   max-width: 1200px;
+
   .eventcard {
     float: left;
     max-width: 340px;
+    position: relative;
   }
   .eventcard-warpper, .event-likebox {
     margin: 0 10px;
@@ -216,10 +236,21 @@ p {
 }
 
 .event-group {
+  margin-top: 46px;
+  @include clearfix();
   h3 {
     color: $color-gray-slightly-lighter;
     font-weight: normal;
   }
+  @include mediaquery-sm() {
+    h3 {
+      margin-bottom: -10px;
+    }
+  }
+}
+
+.banners {
+  margin-top: 40px;
 }
 
 hr {
@@ -242,4 +273,33 @@ hr {
   .mobile-br {
     display: none;
   }
+}
+
+.slick-prev, .slick-next {
+  background: transparent no-repeat center center;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 999;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  top: 42%;
+  &:hover {
+    @include transition-duration(.3s);
+    @include opacity(0.8);
+  }
+  &:hover, &:active, &:focus {
+    @include outline(0);
+  }
+}
+
+.slick-prev {
+  left: -10px;
+  background-image: url("/img/ico_arrow-prev.png");
+}
+
+.slick-next {
+  right:160px;
+  background-image: url("/img/ico_arrow-next.png");
 }
