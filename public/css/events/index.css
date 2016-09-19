@@ -109,6 +109,19 @@ p {
     margin-bottom: 8px;
   }
 }
+.detail-tags .likes {
+  float: left;
+}
+.detail-tags .sns {
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 679px) {
+  .detail-tags .sns {
+    float: right;
+  }
+}
 
 .tag-type {
   font-size: 14px;

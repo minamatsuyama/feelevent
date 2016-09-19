@@ -103,6 +103,17 @@ p {
     margin-top: 5px;
     margin-bottom: 8px;
   }
+  .likes {
+    float:left;
+  }
+  .sns {
+    float:left;
+    margin-top: 10px;
+    margin-left: 10px;
+    @include mediaquery-sm() {
+      float:right;
+    }
+  }
 }
 .tag-type {
   font-size: 14px;
@@ -230,7 +241,7 @@ p {
     max-width: 340px;
     position: relative;
   }
-  
+
   //.eventcard-warpper, .event-likebox {
   //  margin: 0 10px;
   //}
