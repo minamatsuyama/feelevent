@@ -247,9 +247,6 @@ p {
   max-width: 340px;
   position: relative;
 }
-.recommends .eventcard-warpper, .recommends .event-likebox {
-  margin: 0 10px;
-}
 
 .event-group {
   margin-top: 46px;
