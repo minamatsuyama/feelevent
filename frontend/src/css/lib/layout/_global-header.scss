@@ -87,23 +87,23 @@ body{
 }
 @include mediaquery-sm() {
   #global-header{
-    height:120px;
+    height:60px;
     background-size: 22%  ;
     .container{
       .top-link,
       .top-user{
-        bottom: 27px;
+        bottom: 14px;
       }
       .top-link{
-        left:30px;
+        left:15px;
         img{
-          width:57px;
+          width:29px;
         }
       }
       .top-user{
-        right:30px;
+        right:15px;
         img{
-          width:90px;
+          width:45px;
         }
       }
     }
