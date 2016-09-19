@@ -2,7 +2,7 @@
 :authorinitials: 1PAC. INC.
 :revdate:        2016-09-14
 :revnumber:      0.1.2
-:imagesdir:      src/form/
+:imagesdir:      src/form_site/
 {authorinitials}
 
 include::src/form_site/ja/00_introduction.adoc[]

@@ -1,0 +1,1 @@
+* このページはスーパーユーザ(__event_admin_users.user_type__ が `super_user`)のアカウントのみが利用できる
