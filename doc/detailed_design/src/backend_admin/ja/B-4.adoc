@@ -1,11 +1,11 @@
-== A-2 ログアウト
+== B-4 ログアウト
 
 === 基本情報
 [cols="38,80"]
 |=====
-| メソッド,URL            | DELETE /signout
-| コントローラ,アクション | users/sessions#destroy
-| ルート名                | destroy_user_session
+| メソッド,URL            | DELETE /admin/signout
+| コントローラ,アクション | admin/users/sessions#destroy
+| ルート名                | destroy_admin_user_session
 | ビュー                  | なし
 |=====
 

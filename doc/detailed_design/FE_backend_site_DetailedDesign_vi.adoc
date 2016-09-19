@@ -1,7 +1,7 @@
 = Thiết kê chi tiết server-side cho trang FeelEvent
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-14
-:revnumber:      0.2.2
+:revdate:        2016-09-19
+:revnumber:      0.2.3
 :imagesdir:      src/backend_site/
 {authorinitials}
 

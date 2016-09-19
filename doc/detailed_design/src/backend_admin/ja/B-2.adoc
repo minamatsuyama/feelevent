@@ -1,0 +1,51 @@
+== B-2 パスワード変更 (入力)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/password/new
+| コントローラ,アクション | admin/users/passwords#new
+| ルート名                | new_admin_user_password
+| ビュー                  | admin/users/passwords/new.html.erb
+|=====
+
+=== リクエスト
+* 下記フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+. メールアドレス
+** `email` フィールドとして input タグを出力
+. 送信ボタン
+** `B-2-a` へ POST 送信する
+
+include::../../form_admin/ja/_include/B-2.adoc[]
+
+
+== B-2-a パスワード変更 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | POST /admin/password
+| コントローラ,アクション | admin/users/passwords#create
+| ルート名                | admin_user_password
+| ビュー                  | admin/users/passwords/new_complete.html.erb
+| メールビュー            | admin/users/mailer/reset_password_instructions.html.erb
+|=====
+
+=== リクエスト
+* `B-2` フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** パスワード再設定準備などの処理は `Devise` の処理に任せる
+*** メール送信処理も `Devise` に含まれる
+*** テンプレートは適宜文言の差し替え処理を行う
+* 失敗時(バリデートに引っかかった時)
+** `B-2` の入力画面でエラーを表示する

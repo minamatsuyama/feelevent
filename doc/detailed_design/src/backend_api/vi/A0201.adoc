@@ -15,7 +15,7 @@
 *** Tuy nhiên, những hạng mục dùng multi-select, như `Keywords`(キーワード) hoặc `Event Type`, thì các giá trị của hạng mục đó phải được nối với nhau bằng `OR`.
 *** Ví dụ:  `WHERE (event_type = 'lecture' OR event_type = 'evaluation') AND (condition_2...) ...`
 ** Theo Keyword (`キーワード`)
-*** イベントキーワード情報(__event_items_keywords__)を元に検索する
+*** Tìm kiếm dựa trên keyword của event (__event_items_keywords__)
 ** Theo độ tuổi (`対象年齢`)
 *** Tìm kiếm Event dựa trên thông tin về lứa tuổi nhắm đến của mỗi event (__event_qualifying_ages_event_items__)
 ** Theo địa điểm tổ chức (`開催場所`)

@@ -2,7 +2,7 @@
 "$schema": http://json-schema.org/draft-04/hyper-schema
 id: api
 title:       "FeelEvent API v1"
-description: "FeelEvent API v1 インターフェース仕様(JSON Hyper Schema draft v4 形式で記述しています)"
+description: "Chi tiết interface của FeelEvent API v1(Viết theo mẫu JSON Hyper Schema draft v4)"
 type:
   - object
 links:
@@ -12,49 +12,51 @@ links:
 # グローバル変数として定義する
 definitions:
   site:
-    description: "サイト(法人)"
+    description: "Site (công ty)"
     definitions:
       code:
-        description: サイト(法人)を識別するコード
+        description: Mã phân biệt site (công ty)
         type:        string
         example:     1pac
     type: object
 
   meta_pagination:
-    description: "ページネーション"
+    description: "Pagination"
     properties:
       page:
-        description: "ページ番号 (存在しないページが指定された時は0件とする)"
+        description: "**Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)"
         example:     2
-        default:     1
         type:        integer
+        default:     1
       per_page:
-        description: "1ページの件数"
+        description: "**số event mỗi trang**"
         example:     5
-        default:     10
+        type:        integer
+        default:     5
         minimum:     1
         maximum:     20
-        type:        integer
 
   meta_pagination_response:
-    description: ページャ情報(レスポンス)
+    description: Thông tin pagination của response
     properties:
       current_page:
-        description: 現ページ番号
+        description: Trang hiện tại (current page)
         example:     2
         type:        integer
       next_page:
-        description: 次のページ (ページが存在しない場合は null)
+        description: Trang kế tiếp (nếu không có sẽ có giá trị null)
         example:     3
         type:        integer
       prev_page:
-        description: 前のページ (ページが存在しない場合は null)
+        description: Trang trước (nếu không có sẽ có giá trị null)
         example:     1
         type:        integer
       per_page:
-        "$ref":      "#/definitions/meta_pagination/properties/per_page"
+        description: Số lượng event cho mỗi trang
+        example:     20
+        type:        integer
       total_count:
-        description: 記事総数
+        description: Tổng số event
         example:     100
         type:        integer
     type: object

@@ -1,0 +1,19 @@
+ifdef::env-github[]
+== B-1 ログイン
+endif::[]
+
+=== フォーム定義
+[cols="1,3a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | メールアドレス +
+__user[email]__ | email | ◯ |
+
+| 02 | パスワード +
+__user[password]__ | password | ◯ |
+
+| 03 | ログイン情報の保持 +
+__user[remember_me]__ | checkbox | |
+
+|=====
