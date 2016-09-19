@@ -139,3 +139,13 @@
     margin: 10px 0 30px;
   }
 }
+
+/* Defines the width of the carousel and centers it on the page */
+.slick-carousel {
+  width: 320px;
+}
+
+/* The width of each slide */
+.slick-slide {
+  width: 320px;
+}
