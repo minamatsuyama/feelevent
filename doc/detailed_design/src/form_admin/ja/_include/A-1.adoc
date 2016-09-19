@@ -1,0 +1,25 @@
+ifdef::env-github[]
+== A-1 管理アカウント:新規登録
+endif::[]
+
+=== フォーム定義
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 姓 +
+__user[last_name]__ | text | ◯ |
+
+| 02 | 名 +
+__user[first_name]__ | text | ◯ |
+
+| 03 | メールアドレス +
+__user[email]__ | email | ◯ |
+
+| 04 | パスワード +
+__user[password]__ | password | ◯ |
+
+| 04 | パスワード(確認用) +
+__user[password_confirmation]__ | password | ◯ |
+
+|=====
