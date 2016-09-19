@@ -1,0 +1,11 @@
+=== 特記事項 (Devise)
+本ページはユーザ管理・認証を行う `Devise` gem を利用して実現します。
+
+[NOTE]
+Device については下記 Github を参考 +
+https://github.com/plataformatec/devise
+
+==== Devise 設定情報
+* 対象のテーブルは `event_admin_users`
+* 対象のログインキーのカラムは `email`
+* 対象のパスワードのカラムは `password (encrypted_password)`

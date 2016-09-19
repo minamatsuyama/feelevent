@@ -1,0 +1,49 @@
+== A-3 管理アカウント:編集
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/users/:event_admin_user_id/edit
+| コントローラ,アクション | admin/users#edit
+| ルート名                | edit_admin_user
+| ビュー                  | admin/users/edit.html.erb
+|=====
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== リクエスト
+* 下記フォーム定義を参照
+
+=== 仕様
+. フォーム
+** フォーム定義書の各フィールドを出力する
+. 送信ボタン
+** `A-2` へ POST 送信する
+
+include::../../form_admin/ja/_include/A-3.adoc[]
+
+
+== A-3-a 管理アカウント:編集 (処理)
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | POST /admin/users
+| コントローラ,アクション | admin/users#update
+| ルート名                | なし
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+* `A-3` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** 対象レコード(__event_admin_users__)を更新する
+** `A-2` へリダイレクトし、フラッシュメッセージを表示する
+* 失敗時(バリデートに引っかかった時)
+** `A-3` の入力画面でエラーを表示する
