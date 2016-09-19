@@ -4,7 +4,7 @@
 [cols="38,80"]
 |=====
 | メソッド,URL            | DELETE /signout
-| コントローラ,アクション | users#/sessions#destroy
+| コントローラ,アクション | users/sessions#destroy
 | ルート名                | destroy_user_session
 | ビュー                  | なし
 |=====
