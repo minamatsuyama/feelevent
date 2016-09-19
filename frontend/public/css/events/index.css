@@ -353,3 +353,6 @@ hr {
     display: none;
   }
 }
+.slick-slide {
+  width: 325px;
+}

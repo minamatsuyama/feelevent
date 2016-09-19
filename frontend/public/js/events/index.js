@@ -6,7 +6,8 @@ $(document).ready(function() {
                 dots: false,
                 infinite: true,
                 speed: 600,
-                arrows: false
+                arrows: false,
+                variableWidth: true
             });
         } else {
             $card.unslick();

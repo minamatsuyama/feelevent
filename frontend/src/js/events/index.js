@@ -12,6 +12,7 @@ $(document).ready(function () {
         infinite: true,
         speed: 600,
         arrows: false,
+        variableWidth: true
       });
     } else {
       $card.unslick();
@@ -21,3 +22,4 @@ $(document).ready(function () {
   $window.resize(toggleSlick);
   toggleSlick();
 });
+
