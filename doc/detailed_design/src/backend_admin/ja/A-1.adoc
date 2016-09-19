@@ -1,0 +1,89 @@
+== A-1 管理アカウント:新規登録
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/users/new
+| コントローラ,アクション | admin/users/registrations#new
+| ルート名                | new_admin_user_registration
+| ビュー                  | admin/users/registrations/new.html.erb
+|=====
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== リクエスト
+* 下記フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+. フォーム
+** フォーム定義書の各フィールドを出力する
+. 送信ボタン
+** `A-1-a` へ POST 送信する
+
+include::../../form_admin/ja/_include/A-1.adoc[]
+
+
+
+== A-1-a 管理アカウント:新規登録 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | POST /admin/users
+| コントローラ,アクション | admin/users/registrations#create
+| ルート名                | admin_user_registration
+| ビュー                  | なし
+| メールビュー            | admin/users/mailer/confirmation_instructions.html.erb
+|=====
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== リクエスト
+* `A-1` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** 仮登録処理は `Devise` の処理に任せる
+*** メール送信処理も `Devise` に含まれる
+*** `A-2` へリダイレクトし、フラッシュメッセージを表示する
+* 失敗時(バリデートに引っかかった時)
+** `A-1` の入力画面でエラーを表示する
+
+
+
+== A-1-1 管理アカウント:新規登録 (本登録)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/users/confirmation
+| コントローラ,アクション | admin/users/confirmations#show
+| ルート名                | new_admin_user_confirmation
+| ビュー                  | なし
+|=====
+
+=== 特記事項
+* こちらのページは未ログイン状態でアクセスするため、スーパーユーザの権限チェック処理は行わない
+
+=== リクエスト
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| confirmation_token | トークン | ◯ |
+|=====
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+* 成功時(バリデートを通った時)
+** 本登録などの処理は `Devise` の処理に任せる
+*** ユーザタイプ(__event_admin_users.user_type__)は `normal_user` として作成する
+** 登録完了後に `B-1` に遷移する
+* 失敗時(バリデートに引っかかった時)
+** `admin/users/confirmations/new.html.erb` の入力画面でエラーを表示する
