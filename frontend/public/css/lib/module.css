@@ -604,6 +604,19 @@ ol li,
   }
 }
 
+.btn-more {
+  color: #187fc4;
+  background-color: #fff;
+  font-size: 13px;
+  padding: 15px;
+}
+.btn-more:hover {
+  background-color: #f0f0f0;
+}
+.btn-more:active, .btn-more.active {
+  background-color: #f0f0f0;
+}
+
 .btn-like {
   color: #aaa;
   background-color: #f6f6f6;

@@ -68,6 +68,8 @@ p {
 }
 
 .detail-title {
+  position: relative;
+
   h2 {
     margin-top: 20px;
     margin-left: -17px;
@@ -76,23 +78,18 @@ p {
       margin-top: 9px;
     }
   }
-  img {
-    position: relative;
-    &.recommended {
-      &:after {
-        content: "Recommended";
-        background: url("/img/recommend.png") no-repeat left top;
-        background-size: 100% 100%;
-        height: 34px;
-        width: 151px;
-        position: absolute;
-        left: 10px;
-        top: 11px;
-        z-index: 1010;
-        padding: 8px 26px;
-        font-size: 14px;
-      }
-    }
+  &.recommended:after {
+    content: "Recommended";
+    background: url("/img/recommend.png") no-repeat left top;
+    background-size: 100% 100%;
+    height: 34px;
+    width: 151px;
+    position: absolute;
+    left: -10px;
+    top: 340px;
+    z-index: 1010;
+    padding: 8px 26px;
+    font-size: 14px;
   }
 }
 
@@ -230,21 +227,50 @@ p {
 }
 
 .recommends {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 1200px;
-
   .eventcard {
-    float: left;
-    max-width: 340px;
     position: relative;
   }
 
-  //.eventcard-warpper, .event-likebox {
-  //  margin: 0 10px;
-  //}
+}
+
+.register-box {
+  border: 4px solid $color-yellow-main;
+  border-radius: 3px;
+  background-color: $color-white;
+  padding:10px 65px;
+  margin-top: 54px;
+  @include mediaquery-sm() {
+    padding:10px 12px;
+    border-width:2px;
+  }
+  h2 {
+    font-weight: normal;
+    padding: 25px 15px;
+    @include mediaquery-sm() {
+      padding: 5px 0 0;
+    }
+  }
+  .register-text {
+    float:left;
+    width: 70%;
+    padding:15px 0;
+    @include mediaquery-sm() {
+      width: 69%;
+      font-size: 12px;
+      padding:15px 0 10px;
+    }
+  }
+  .register-btn {
+    background-color: $color-yellow-main;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border-radius: 50px;
+    color: $color-black;
+    padding-top: 30px;
+    padding-left: 25px;
+    float:right;
+  }
 }
 
 .event-group {
@@ -257,6 +283,12 @@ p {
   @include mediaquery-sm() {
     h3 {
       margin-bottom: -10px;
+    }
+  }
+  .btn-container {
+    margin-top: 10px;
+    @include mediaquery-sm() {
+      display: none;
     }
   }
 }
@@ -287,31 +319,4 @@ hr {
   }
 }
 
-.slick-prev, .slick-next {
-  background: transparent no-repeat center center;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  z-index: 999;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  top: 42%;
-  &:hover {
-    @include transition-duration(.3s);
-    @include opacity(0.8);
-  }
-  &:hover, &:active, &:focus {
-    @include outline(0);
-  }
-}
 
-.slick-prev {
-  left: -10px;
-  background-image: url("/img/ico_arrow-prev.png");
-}
-
-.slick-next {
-  right:160px;
-  background-image: url("/img/ico_arrow-next.png");
-}
