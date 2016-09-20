@@ -67,7 +67,7 @@ link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backe
 ==== 3.セミナー情報エリア
 
 ** セミナー情報を表示する
-*** table表示の部分はSP版の時横スクロールが表示されるようにする
+*** table表示の部分はSP版の時横スクロールが表示されるようにする（scroll-containerクラスを利用する）
 *** GoogleマップとGooglemapへのリンクを右上に付加する
 
 ==== 4.申込先ウェブサイトリンクボタン
