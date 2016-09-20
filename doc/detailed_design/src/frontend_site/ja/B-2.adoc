@@ -1,12 +1,9 @@
-== C-1 詳細画面詳細設計サンプル
+== B-2 詳細画面詳細設計サンプル
 
 === 概要
 
 前ページで選択されたイベントの詳細情報を表示する
 
-=== ワイヤーフレーム
-
-https://docs.google.com/presentation/d/1c4xtvmtKfRsK2KOW7EMndIF1t2zH41a5xZhXg546TOY/edit#slide=id.g165019e56f_0_172
 
 === 基本情報
 
@@ -51,7 +48,7 @@ image::../assets/B-2.png[]
 
 ** お気に入りAPI
 
-link;;https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0101.adoc#a0101-イベントお気に入り登録[A0101-イベントお気に入り登録]
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0101.adoc#a0101-イベントお気に入り登録[A0101-イベントお気に入り登録]
 
 ** SNS
 *** facebook
@@ -94,4 +91,4 @@ link;;https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backe
 ==== 8.プロモーションバナーエリア
 
 ** プロモーションバナーを表示
-** TODO:MAX4件
+** MAX4件
