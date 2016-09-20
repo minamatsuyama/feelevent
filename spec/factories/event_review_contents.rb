@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 FactoryGirl.define do
-  factory :event_experience_content, class: 'Event::ExperienceContent' do
+  factory :event_review_content, class: 'Event::ReviewContent' do
     event_item_id { Faker::Number.between(1, 10000) }
     profile_name  { Faker::Name.name }
     profile_image { nil }

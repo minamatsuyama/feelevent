@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class Event::ExperienceContent < ApplicationRecord
+class Event::ReviewContent < ApplicationRecord
   belongs_to :event_item, class_name: 'Event::Item'
 
   extend Enumerize

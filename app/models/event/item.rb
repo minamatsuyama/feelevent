@@ -8,7 +8,7 @@ class Event::Item < ApplicationRecord
   has_many :event_organizers, foreign_key: 'event_item_id', class_name: 'Event::Organizer'
   has_many :event_held_places, foreign_key: 'event_item_id', class_name: 'Event::HeldPlace'
   has_many :event_summary_contents, foreign_key: 'event_item_id', class_name: 'Event::SummaryContent'
-  has_many :event_experience_contents, foreign_key: 'event_item_id', class_name: 'Event::ExperienceContent'
+  has_many :event_review_contents, foreign_key: 'event_item_id', class_name: 'Event::ReviewContent'
   has_many :event_seminar_contents, foreign_key: 'event_item_id', class_name: 'Event::SeminarContent'
 
   extend Enumerize

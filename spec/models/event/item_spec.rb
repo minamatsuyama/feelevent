@@ -11,7 +11,7 @@ RSpec.describe Event::Item, type: :model do
     it { is_expected.to have_many(:event_organizers).class_name('Event::Organizer').with_foreign_key('event_item_id') }
     it { is_expected.to have_many(:event_held_places).class_name('Event::HeldPlace').with_foreign_key('event_item_id') }
     it { is_expected.to have_many(:event_summary_contents).class_name('Event::SummaryContent').with_foreign_key('event_item_id') }
-    it { is_expected.to have_many(:event_experience_contents).class_name('Event::ExperienceContent').with_foreign_key('event_item_id') }
+    it { is_expected.to have_many(:event_review_contents).class_name('Event::ReviewContent').with_foreign_key('event_item_id') }
     it { is_expected.to have_many(:event_seminar_contents).class_name('Event::SeminarContent').with_foreign_key('event_item_id') }
   end
 end
