@@ -1790,24 +1790,24 @@ body {
 
 @media screen and (max-width: 679px) {
   #global-header {
-    height: 120px;
+    height: 60px;
     background-size: 22%;
   }
   #global-header .container .top-link,
   #global-header .container .top-user {
-    bottom: 27px;
+    bottom: 14px;
   }
   #global-header .container .top-link {
-    left: 30px;
+    left: 15px;
   }
   #global-header .container .top-link img {
-    width: 57px;
+    width: 29px;
   }
   #global-header .container .top-user {
-    right: 30px;
+    right: 15px;
   }
   #global-header .container .top-user img {
-    width: 90px;
+    width: 45px;
   }
 }
 /* STRUCTURE
@@ -1838,6 +1838,11 @@ body {
   bottom: 0;
   left: 50%;
   margin-left: -50%;
+}
+@media screen and (max-width: 679px) {
+  #global-footer .container .copyright {
+    font-size: 8px;
+  }
 }
 #global-footer [role=contentinfo] small {
   font-family: Helvetica, arial, sans-serif;

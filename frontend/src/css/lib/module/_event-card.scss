@@ -7,6 +7,9 @@
     margin: 15px 0;
     border-radius: $border-radius-small;
     padding-bottom:6px;
+    @include mediaquery-sm(){
+      margin: 10px 0;
+    }
     &:hover{
       .eventcard-warpper{
         border: 1px solid #ffbf00;

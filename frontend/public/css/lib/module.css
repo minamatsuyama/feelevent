@@ -1112,13 +1112,36 @@ input[type="radio"]:checked {
   border-radius: 2px;
   padding-bottom: 6px;
 }
+@media screen and (max-width: 679px) {
+  .eventcards .eventcard {
+    margin: 10px 0;
+  }
+}
 .eventcards .eventcard:hover .eventcard-warpper {
   border: 1px solid #ffbf00;
-  border-width: 1px 1px 0 1px;
+  border-bottom: 0;
 }
 .eventcards .eventcard:hover .event-likebox {
   border: 1px solid #ffbf00;
   border-top: 1px solid #e6edf2;
+}
+.eventcards .eventcard.recommended:after {
+  content: "Recommended";
+  background: url("/img/recommend.png") no-repeat left top;
+  background-size: 100% 100%;
+  height: 34px;
+  width: 151px;
+  position: absolute;
+  left: 10px;
+  top: 11px;
+  z-index: 1010;
+  padding: 8px 26px;
+  font-size: 14px;
+}
+@media screen and (max-width: 679px) {
+  .eventcards .eventcard.recommended:after {
+    left: 5px;
+  }
 }
 .eventcards .eventcard .eventcard-warpper {
   font-size: 12px;
@@ -1149,6 +1172,9 @@ input[type="radio"]:checked {
   background-color: #ff9500;
   border-radius: 4px;
   padding: 0 5px;
+}
+.eventcards .eventcard .eventcard-warpper .event-pm-paid.free {
+  background: #1bb297;
 }
 .eventcards .eventcard .eventcard-warpper .event-title {
   padding: 15px 0 0;
