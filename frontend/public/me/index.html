@@ -8,16 +8,11 @@
 <meta name="author" content="">
 <link rel="icon" href="/favicon.ico">
 <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css">
 <link href="/css/lib/base.css" rel="stylesheet">
 <link href="/css/lib/module.css" rel="stylesheet">
 <link href="/css/me/index.css" rel="stylesheet">
-  <!-- jQuery CDN -->
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <!-- slick Carousel CDN -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+<link rel="stylesheet" href="/css/lib/vendor/slick.css"/>
+<script src="/js/lib/vendor.js"></script>
 <title>WorldSchool</title>
 </head>
 <body>
@@ -58,10 +53,11 @@
 </div>
 </div>
 </section>
+<section class="event-group">
 <div class="eventcards l-grid">
 <div class="container">
 <h2 class="eventgroup-title">お気に入り</h2>
-<div class="row slick-carousel">
+<div class="row favorite">
 <div class="eventcard col-md-4 col-4 col">
 <div class="eventcard-warpper">
 <div class="event-img-warpper">
@@ -177,15 +173,13 @@
 </div>
 </div>
 </div>
-<div class="row">
-<div class="col-12 col"><a href='#' class='btn-view-more'>もっと見る</a></div>
-</div>
+<a href='#' class='btn btn-more btn-full btn-container'>もっと見る</a>
 </div>
 </div>
 <div class="eventcards l-grid">
 <div class="container">
 <h2 class="eventgroup-title">事前準備なし</h2>
-<div class="row">
+<div class="row preparefree">
 <div class="eventcard col-md-4 col-4 col">
 <div class="eventcard-warpper">
 <div class="event-img-warpper">
@@ -301,15 +295,13 @@
 </div>
 </div>
 </div>
-<div class="row">
-<div class="col-12 col"><a href='#' class='btn-view-more'>もっと見る</a></div>
-</div>
+<a href='#' class='btn btn-more btn-full btn-container'>もっと見る</a>
 </div>
 </div>
 <div class="eventcards l-grid">
 <div class="container">
 <h2 class="eventgroup-title">事前準備あり</h2>
-<div class="row">
+<div class="row advanceprepare">
 <div class="eventcard col-md-4 col-4 col">
 <div class="eventcard-warpper">
 <div class="event-img-warpper">
@@ -425,29 +417,20 @@
 </div>
 </div>
 </div>
-<div class="row">
-<div class="col-12 col"><a href='#' class='btn-view-more'>もっと見る</a></div>
+<a href='#' class='btn btn-more btn-full btn-container'>もっと見る</a>
 </div>
 </div>
-</div>
+</section>
 <div class="container">
 <div class="row">
-<div class="col-4 col-offset-4 col"><a href='#' class='btn-to-top'>TOPに戻る</a></div>
+<div class="col-4 col-offset-4 col"><a href='#' class='btn btn-more btn-to-top btn-full btn-container'>TOPに戻る</a></div>
 </div>
 </div>
 </section>
 <footer id="global-footer">
 <div class="container"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
 </footer>
+<script src="/js/me/index.js"></script>
 </section>
-<script>
-  $('.slick-carousel').slick({
-  infinite: true,
-  slidesToShow: 1, // Shows a three slides at a time
-  slidesToScroll: 1, // When you click an arrow, it scrolls 1 slide at a time
-  arrows: false, // Adds arrows to sides of slider
-//dots: true // Adds the dots on the bottom
-});
-</script>
 </body>
 </html>

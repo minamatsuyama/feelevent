@@ -587,6 +587,49 @@ ol li,
   background-color: #f0f0f0;
 }
 
+.btn-filled {
+  background-color: #187fc4;
+  font-size: 18px;
+  padding: 15px;
+}
+.btn-filled:hover {
+  background-color: #1b91df;
+}
+.btn-filled:active, .btn-filled.active {
+  background-color: #187fc4;
+}
+@media screen and (max-width: 679px) {
+  .btn-filled {
+    font-size: 13px;
+  }
+}
+
+.btn-more {
+  color: #187fc4;
+  background-color: #fff;
+  font-size: 13px;
+  padding: 15px;
+}
+.btn-more:hover {
+  background-color: #f0f0f0;
+}
+.btn-more:active, .btn-more.active {
+  background-color: #f0f0f0;
+}
+
+.btn-like {
+  color: #aaa;
+  background-color: #f6f6f6;
+  padding: 5px;
+  min-width: 70px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.btn-like:hover {
+  color: #ef0155;
+  background-color: #f6f6f6;
+}
+
 .img-liquid, .article img,
 .block-content img {
   max-width: 100%;
@@ -759,6 +802,16 @@ ol li,
   height: 100%;
 }
 
+.box-main {
+  background-color: #fff;
+  padding: 40px 85px;
+}
+@media screen and (max-width: 679px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
 .media-right:before, .media-right:after,
 .media-left:before,
 .media-left:after {
@@ -849,7 +902,7 @@ ol li,
 }
 a[href^="tel:"],
 a[href^="mailto:"] {
-  color: #000;
+  color: #187fc4;
 }
 a[href^="tel:"]:hover,
 a[href^="mailto:"]:hover {
@@ -1048,6 +1101,77 @@ html.pointer .link-card.light:hover .image img, html.touch .link-card.light.touc
     max-width: 280px;
     min-width: 120px;
   }
+}
+
+.table-none-bordered {
+  width: 100%;
+  color: #83828c;
+  font-size: 14px;
+}
+.table-none-bordered th, .table-none-bordered td {
+  text-align: left;
+  width: 50%;
+  padding-bottom: 8px;
+}
+@media screen and (max-width: 679px) {
+  .table-none-bordered {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-none-bordered tbody, .table-none-bordered tr, .table-none-bordered th, .table-none-bordered td {
+    display: block;
+    width: 100%;
+  }
+}
+
+.table-block {
+  width: 100%;
+}
+.table-block th, .table-block td {
+  border: solid 1px #aaa;
+  padding: 10px;
+}
+.table-block th {
+  background-color: #f5f7fa;
+}
+@media screen and (max-width: 679px) {
+  .table-block {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-block tbody, .table-block tr, .table-block th, .table-block td {
+    display: block;
+  }
+  .table-block tbody {
+    width: 100%;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #aaa;
+  }
+  .table-block th, .table-block td {
+    padding: 5px 10px;
+  }
+  .table-block tr:last-child td {
+    border-bottom-width: 0;
+  }
+  .table-block th {
+    text-align: left;
+    border-top-width: 0;
+    border-bottom-width: 0;
+  }
+}
+
+.label {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.label-orange {
+  background-color: #fa8500;
 }
 
 input[type="submit"] {

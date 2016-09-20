@@ -8,7 +8,7 @@
   font-family: $font-family-sans-serif;
   background: $color-white;
   padding: 15px 85px 45px;
-  margin: 40px 0 51px;
+  margin: 40px 0 50px;
   position: relative;
   border-radius: 4px;
   border-top: 10px solid #2c7996;
@@ -43,6 +43,7 @@
   .type {
     margin-top: -21px;
   }
+
   @include mediaquery-sm {
     padding: 8px 15px 15px 15px;
     margin: 20px 0 25px;
@@ -77,7 +78,7 @@
   font-size: 20px;
   font-weight: normal;
   color: #888888;
-  margin-top: 30px;
+  margin-top: 45px;
   padding-left: 15px;
   @include mediaquery-sm() {
     margin-top: 5px;
@@ -85,6 +86,7 @@
     margin-bottom: -10px;
   }
 }
+
 .changesetting {
   position: absolute;
   top: 38px;
@@ -100,51 +102,30 @@
   @include mediaquery-sm() {
     top: 13px;
     padding:0 10px;
+    font-size: 13px;
     span {
       display: none;
     }
   }
 }
 
-.btn-view-more,
-.btn-to-top {
-    display: block;
-    font-size: 13px;
-    background: $color-white;
-    width: 100%;
-    display: block;
-    border-radius: 4px;
-    padding: 15px;
-    text-align: center;
-    margin:8px 0 25px;
-    &:hover {
-      text-decoration: none;
-    }
-
-}
-
-.btn-view-more {
+.btn-more {
+  margin-top: 10px;
   @include mediaquery-sm() {
-   display: none;
- }
+    display: none;
+  }
 }
 
 .btn-to-top {
-  margin: 35px 0 60px;
+  display: block;
+  margin: 55px 0 60px;
   @include mediaquery-sm() {
+    display: block;
     margin: 10px 0 30px;
   }
 }
 
-
-/* Defines the width of the carousel and centers it on the page */
-.slick-carousel {
-    // margin: 0 auto;
-    width: 320px;
- }
-
-/* The width of each slide */
 .slick-slide {
-  width: 320px;
+  width: 325px;
 }
 
