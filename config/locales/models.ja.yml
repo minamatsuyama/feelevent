@@ -1,10 +1,6 @@
 ja:
   enumerize:
     event/item:
-      event_type:
-        participatory: "参加型"
-        lecture:       "講義型"
-        evaluation:    "評価型"
       currency:
         yen:    "円"
         dollar: "$"
