@@ -4,9 +4,6 @@
 
 ログイン画面を表示する
 
-=== ワイヤーフレーム
-
-https://docs.google.com/presentation/d/1c4xtvmtKfRsK2KOW7EMndIF1t2zH41a5xZhXg546TOY/edit#slide=id.g165019e56f_0_172
 
 === 基本情報
 
