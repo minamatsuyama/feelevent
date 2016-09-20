@@ -8,6 +8,9 @@ $(document).ready(function () {
 
   toggleSlick = function () {
     if ($window.width() < 450) {
+      if($card.hasClass('slick-initialized')) {
+        $card.slick("unslick");
+      }
       $card.slick({
         dots: false,
         infinite: true,
@@ -17,7 +20,7 @@ $(document).ready(function () {
       });
     } else {
       if($card.hasClass('slick-initialized')) {
-        $card.unslick();
+        $card.slick("unslick");
       }
     }
   }
