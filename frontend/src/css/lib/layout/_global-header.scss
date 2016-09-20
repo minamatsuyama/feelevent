@@ -1,7 +1,7 @@
 //
 // global-header
 // ---------------------------------------------------
-$color-yellow: #ffbf00;
+$color-yellow: #ffcc00;
 $top-link-padding: 15px;
 
 // Base
@@ -39,21 +39,38 @@ body{
   //top: 0;
   //left: 0;
   //z-index: $zindex-fixed-header;
-  border-bottom: 1px solid $color-border-light;
   background: $color-yellow url("/img/bg-header.gif") no-repeat center bottom;
-  background-size: 91px 13px;
+  background-size: 209px 53px;
   height:60px;
   @include transition(all .2s $easeOutCubic);
   .container{
     height:100%;
     max-width:100%;
     position:relative;
+    padding:0 15px;
+    .top-fb-link,.top-tw-link{
+      margin:15px 10px 15px 0;
+      float: left;
+      img{
+        border-radius: 4px;
+      }
+    }
     .top-link,.top-user{
       position: absolute;
       bottom:11px;
       img{
         height:auto;
       }
+    }
+    .top-lock{
+      position: absolute;
+      bottom: 11px;
+      right: 103px;
+    }
+    .top-flag{
+      position: absolute;
+      top:0;
+      right:$top-link-padding;
     }
     .top-link{
       left:$top-link-padding;
