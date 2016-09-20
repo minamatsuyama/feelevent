@@ -1,14 +1,21 @@
 $(document).ready(function() {
     var $window = $(window), $card = $(".recommend-list"), toggleSlick;
     toggleSlick = function() {
-        if ($window.width() < 450) {
+        if ($(window).width() < 480) {
+            if ($card.hasClass("slick-initialized")) {
+                $card.slick("unslick");
+            }
             $card.slick({
-                dots: false,
                 infinite: true,
                 speed: 600,
+                dots: false,
                 arrows: false,
                 variableWidth: true
             });
+        } else {
+            if ($card.hasClass("slick-initialized")) {
+                $card.slick("unslick");
+            }
         }
     };
     $window.resize(toggleSlick);
