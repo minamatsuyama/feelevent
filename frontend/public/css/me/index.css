@@ -85,11 +85,12 @@
   }
 }
 
-.preparefree-list .eventcard:nth-child(n+4),
-.advanceprepare-list .eventcard:nth-child(n+4) {
-  display: none;
+@media screen and (min-width: 680px) {
+  .preparefree-list .eventcard:nth-child(n+4),
+  .advanceprepare-list .eventcard:nth-child(n+4) {
+    display: none;
+  }
 }
-
 .changesetting {
   position: absolute;
   top: 38px;

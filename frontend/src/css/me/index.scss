@@ -86,9 +86,12 @@
     margin-bottom: -10px;
   }
 }
-.preparefree-list .eventcard:nth-child(n+4),
-.advanceprepare-list .eventcard:nth-child(n+4) {
-  display: none;
+
+@include mediaquery-not-sm() {
+  .preparefree-list .eventcard:nth-child(n+4),
+  .advanceprepare-list .eventcard:nth-child(n+4) {
+    display: none;
+  }
 }
 
 .changesetting {
