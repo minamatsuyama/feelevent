@@ -5,9 +5,6 @@
 // ---------------------------------------------------
 // container
 //
-#contents{
-  min-height: 545px
-}
 .container {
   @include container();
 }

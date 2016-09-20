@@ -6,9 +6,6 @@ $top-link-padding: 15px;
 
 // Base
 // ---------------------------------------------------
-body{
-  background-color:$body-bg;
-}
 .skip-navigation {
   @include sr-only();
   @include sr-only-focusable();
@@ -35,10 +32,6 @@ body{
 #global-header {
   line-height: 1;
   width: 100%;
-  //position: fixed;
-  //top: 0;
-  //left: 0;
-  //z-index: $zindex-fixed-header;
   background: $color-yellow url("/img/bg-header.gif") no-repeat center bottom;
   background-size: 209px 53px;
   height:60px;
@@ -48,29 +41,53 @@ body{
     max-width:100%;
     position:relative;
     padding:0 15px;
+    text-align: center;
+    .link-text{
+      padding: 5px 0 0 0;
+      color: $color-gray-dark;
+    }
+    .logo{
+      width:200px;
+      height:auto;
+      margin: 0 auto;
+      padding-top:6px;
+      img{
+        width:100%;
+        height: auto;
+      }
+    }
     .top-fb-link,.top-tw-link{
-      margin:15px 10px 15px 0;
-      float: left;
+      position: absolute;
+      top:15px;
+      left:$top-link-padding;
       img{
         border-radius: 4px;
       }
     }
-    .top-link,.top-user{
+    .top-tw-link{
+      left:55px;
+    }
+    .top-link,.top-user,.top-login{
       position: absolute;
       bottom:11px;
       img{
         height:auto;
       }
     }
-    .top-lock{
-      position: absolute;
-      bottom: 11px;
+    .top-login{
       right: 103px;
     }
     .top-flag{
       position: absolute;
+      width:70px;
+      height:75px;
       top:0;
+      line-height: 65px;
+      text-align: center;
       right:$top-link-padding;
+      z-index: $zindex-flow-content;
+      color:#fff;
+      background: url("/img/top-flag.png") no-repeat top left;
     }
     .top-link{
       left:$top-link-padding;
@@ -80,9 +97,7 @@ body{
     }
     .top-user{
       right:$top-link-padding;
-      img{
-        width:51px;
-      }
+
     }
 
   }
@@ -107,6 +122,13 @@ body{
     height:60px;
     background-size: 22%  ;
     .container{
+      .logo{
+        width:166px;
+        padding-top:12px;
+      }
+      .link-text{
+        font-size: $font-size-small;
+      }
       .top-link,
       .top-user{
         bottom: 14px;
@@ -119,9 +141,7 @@ body{
       }
       .top-user{
         right:15px;
-        img{
-          width:45px;
-        }
+
       }
     }
   }
