@@ -317,6 +317,9 @@ hr {
   .mobile-br {
     display: none;
   }
+  .recommend-list .eventcard:nth-child(n+4) {
+    display:none;
+  }
 }
 
 .slick-slide
