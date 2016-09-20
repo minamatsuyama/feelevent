@@ -2,7 +2,7 @@
 .userinfo-inner {
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   background: #fff;
-  padding: 15px 85px 45px;
+  padding: 15px 84px 45px;
   margin: 40px 0 50px;
   position: relative;
   border-radius: 4px;
@@ -73,14 +73,14 @@
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   font-size: 20px;
   font-weight: normal;
-  color: #888888;
+  color: #888;
   margin-top: 45px;
   padding-left: 15px;
 }
 @media screen and (max-width: 679px) {
   .eventgroup-title {
-    margin-top: 5px;
     font-size: 14px;
+    margin-top: 5px;
     margin-bottom: -10px;
   }
 }
@@ -91,26 +91,27 @@
     display: none;
   }
 }
-.changesetting {
+.btn-changesetting {
   position: absolute;
-  top: 38px;
-  right: 0;
+  top: 45px;
+  right: 10px;
   font-size: 14px;
   color: #187fc4;
-  padding: 5px 17px;
   background: transparent;
 }
-.changesetting span {
+.btn-changesetting span {
   background: transparent;
   padding: 0;
 }
+.btn-changesetting:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 679px) {
-  .changesetting {
+  .btn-changesetting {
     top: 13px;
-    padding: 0 10px;
     font-size: 13px;
   }
-  .changesetting span {
+  .btn-changesetting span {
     display: none;
   }
 }

@@ -7,7 +7,7 @@
 .userinfo-inner {
   font-family: $font-family-sans-serif;
   background: $color-white;
-  padding: 15px 85px 45px;
+  padding: 15px 84px 45px;
   margin: 40px 0 50px;
   position: relative;
   border-radius: 4px;
@@ -18,7 +18,7 @@
   h1 {
     font-size: $font-size-h2;
     font-weight: normal;
-    border-bottom: 1px solid #e6edf2;
+    border-bottom: 1px solid $color-divide-line;
     margin: 35px 0;
     padding-bottom: 10px;
   }
@@ -29,12 +29,12 @@
   .txt-title {
     font-family: $font-family-sans-serif;
     font-size: $font-size-small;
-    color: #83828c;
+    color: $color-gray-light;
     padding-bottom: 3px;
     display: block;
   }
   span{
-    background: #f5f7fa;
+    background: $color-th-table;
     padding: 3px 18px;
     border-radius: 18px;
     margin: 5px 5px 5px 0;
@@ -77,12 +77,12 @@
   font-family: $font-family-sans-serif;
   font-size: 20px;
   font-weight: normal;
-  color: #888888;
+  color: $color-gray-slightly-lighter;
   margin-top: 45px;
   padding-left: 15px;
   @include mediaquery-sm() {
-    margin-top: 5px;
     font-size: $font-size-base;
+    margin-top: 5px;
     margin-bottom: -10px;
   }
 }
@@ -94,21 +94,22 @@
   }
 }
 
-.changesetting {
+.btn-changesetting {
   position: absolute;
-  top: 38px;
-  right: 0;
+  top: 45px;
+  right: 10px;
   font-size: $font-size-base;
-  color: #187fc4;
-  padding: 5px 17px;
+  color: $color-blue;
   background: transparent;
   span {
     background: transparent;
     padding: 0;
   }
+  &:hover {
+    cursor: pointer;
+  }
   @include mediaquery-sm() {
     top: 13px;
-    padding:0 10px;
     font-size: 13px;
     span {
       display: none;
