@@ -4,6 +4,7 @@ require 'rails_helper'
 RSpec.describe Event::Item, type: :model do
   describe 'associations' do
     it { is_expected.to belong_to(:event_admin_user).class_name('Event::Admin::User') }
+    it { is_expected.to belong_to(:event_type).class_name('Event::Type') }
     it { is_expected.to have_many(:event_items_keywords).with_foreign_key('event_item_id') }
     it { is_expected.to have_many(:keywords).with_foreign_key('event_item_id') }
     it { is_expected.to have_many(:event_qualifying_ages_event_items).class_name('Event::QualifyingAgesEventItem').with_foreign_key('event_item_id') }

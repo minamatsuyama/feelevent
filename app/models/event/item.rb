@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Event::Item < ApplicationRecord
   belongs_to :event_admin_user, class_name: 'Event::Admin::User'
+  belongs_to :event_type, class_name: 'Event::Type'
   has_many :event_items_keywords, foreign_key: 'event_item_id', class_name: 'Event::ItemsKeyword'
   has_many :keywords, through: :event_items_keywords
   has_many :event_qualifying_ages_event_items, foreign_key: 'event_item_id', class_name: 'Event::QualifyingAgesEventItem'
