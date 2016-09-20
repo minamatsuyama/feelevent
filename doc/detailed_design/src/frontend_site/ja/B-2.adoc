@@ -48,7 +48,7 @@ image::../assets/B-2.png[]
 
 ** お気に入りAPI
 
-link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0101.adoc#a0101-イベントお気に入り登録[A0101-イベントお気に入り登録]
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0101.adoc#a0101-イベントお気に入り登録[]
 
 ** SNS
 *** facebook
