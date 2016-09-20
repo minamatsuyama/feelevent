@@ -70,3 +70,55 @@ input[type="radio"] {
   //  border-width: 0.5px;
   //}
 }
+
+*:focus {
+  outline: none;
+}
+
+.input-text {
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  padding: 10px 10px;
+  width: 400px;
+  font-size: 14px;
+  background-color: #f5f7fa;
+  @include placeholder(#83828c);
+  @include mediaquery-sm() {
+    width: 100%;
+  }
+}
+
+.input-label {
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f5f7fa;
+  font-size: 13px;
+  border-radius: 3px;
+  .check-box {
+    margin-top: -5px;
+    margin-right: 10px;
+    &:before{
+      position: relative;
+      display: block;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #d3dae0;
+      border-radius: 3px;
+      content: "";
+      background: #FFF;
+    }
+    &:checked:before{
+      background-image: url('/img/ico_checkbox-checked.jpg');
+      width: 16px;
+      height: 15px;
+    }
+  }
+  &:hover, &:active, &:focus {
+    background: #dcf5e7;
+  }
+  @include mediaquery-sm() {
+    padding: 0;
+    font-size: 12px;
+  }
+}
+

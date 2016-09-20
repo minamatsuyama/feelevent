@@ -1,0 +1,58 @@
+#content {
+  background-color: #e3e3e3;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.box-main {
+  background-color: #fff;
+  padding: 58px 85px 53px;
+}
+@media screen and (max-width: 639px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
+.signin h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+hr {
+  height: 1px;
+  background-color: #e6edf2;
+}
+
+.table-form {
+  margin: 0 auto;
+}
+
+#login {
+  margin-top: 30px;
+}
+
+.text-link {
+  color: #187fc4;
+}
+
+.table-form td.remember {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.btn-login {
+  margin-left: 85px;
+  background-color: #187fc4;
+  color: #fff;
+  border: 1px solid #075386;
+  width: 150px;
+  padding: 10px;
+}
+.btn-login:hover {
+  background-color: #1b91df;
+}
+.btn-login:active, .btn-login.active {
+  background-color: #1b91df;
+}

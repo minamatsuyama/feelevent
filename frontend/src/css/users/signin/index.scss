@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+// library
+@import "../../shared/variables";
+@import "../../shared/mixins";
+
+#content {
+  background-color: #e3e3e3;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.box-main {
+  background-color: $color-white;
+  padding: 58px 85px 53px;
+  @include mediaquery-sm {
+    padding: 15px 15px 30px;
+  }
+}
+
+.signin {
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
+
+hr {
+  height: 1px;
+  background-color: #e6edf2;
+}
+
+.table-form {
+  margin: 0 auto;
+}
+
+#login {
+  margin-top: 30px;
+}
+
+.text-link {
+  color: #187fc4;
+}
+
+.table-form td.remember {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.btn-login {
+  margin-left: 85px;
+  background-color: #187fc4;
+  color: $color-white;
+  border: 1px solid #075386;
+  width: 150px;
+  padding: 10px;
+  &:hover {
+    background-color: lighten(#187fc4, 6%);
+  }
+  &:active,
+  &.active {
+    background-color: lighten(#187fc4, 6%);
+  }
+}
