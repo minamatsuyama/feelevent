@@ -6,12 +6,18 @@ $(document).ready(function() {
                 dots: false,
                 infinite: true,
                 speed: 600,
-                arrows: false
+                arrows: false,
+                variableWidth: true
             });
-        } else {
-            $card.unslick();
         }
     };
     $window.resize(toggleSlick);
     toggleSlick();
+    $(".recommends .btn-more").click(function(e) {
+        $(".recommend-list .eventcard:hidden").slice(0, 3).css("display", "inline-block");
+        if ($(".recommend-list .eventcard").length == $(".recommend-list .eventcard:visible").length) {
+            $(".recommends .btn-more").hide();
+        }
+        e.preventDefault();
+    });
 });
