@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :favorites, only: %i(create destroy)
+    resources :favorites, only: %i(index create destroy)
   end
 end
