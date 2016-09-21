@@ -1,0 +1,215 @@
+#content {
+  background-color: #e3e3e3;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.box-main {
+  background-color: #fff;
+  padding: 58px 85px 53px;
+}
+@media screen and (max-width: 639px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
+.signup h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+hr {
+  height: 1px;
+  background-color: #e6edf2;
+}
+
+#signup-form {
+  margin-top: 30px;
+}
+#signup-form .input-text {
+  width: 100%;
+}
+
+.text-link {
+  color: #187fc4;
+}
+
+.table-form {
+  margin: 0 auto;
+  max-width: 660px;
+}
+.table-form th, .table-form td {
+  text-align: left;
+}
+.table-form .btn-signup-container {
+  text-align: center;
+  padding-bottom: 0;
+}
+.table-form .btn-signup-container .terms {
+  margin-bottom: 10px;
+}
+.table-form td.keywords {
+  max-width: 525px;
+}
+.table-form .label-gray {
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.table-form th.keyword-title {
+  vertical-align: top;
+  padding-top: 15px;
+}
+.table-form th.message {
+  padding-top: 45px;
+  padding-bottom: 25px;
+}
+.table-form th.receive-message {
+  padding-top: 55px;
+  padding-bottom: 58px;
+}
+
+.btn-signup {
+  background-color: #187fc4;
+  color: #fff;
+  border: 1px solid #075386;
+  width: 150px;
+  padding: 10px;
+}
+.btn-signup:hover, .btn-signup:active, .btn-signup.active {
+  background-color: #1b91df;
+  border: 1px solid #187fc4;
+}
+
+*:focus {
+  outline: none;
+}
+
+.input-text {
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  padding: 9px 10px;
+  width: 400px;
+  font-size: 14px;
+  background-color: #f5f7fa;
+}
+.input-text::-moz-placeholder {
+  color: #83828c;
+  opacity: 1;
+}
+.input-text:-ms-input-placeholder {
+  color: #83828c;
+}
+.input-text::-webkit-input-placeholder {
+  color: #83828c;
+}
+@media screen and (max-width: 639px) {
+  .input-text {
+    width: 100%;
+  }
+}
+
+.input-label {
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f5f7fa;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.input-label .check-box {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+.input-label .check-box:before {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  content: "";
+  background: #FFF;
+}
+.input-label .check-box:checked:before {
+  background-image: url("/img/ico_checkbox-checked.jpg");
+  width: 16px;
+  height: 15px;
+}
+.input-label:hover, .input-label:active, .input-label:focus {
+  background-color: #dcf5e7;
+}
+@media screen and (max-width: 639px) {
+  .input-label {
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+.table-form {
+  color: #999;
+  font-size: 14px;
+}
+.table-form th {
+  color: #333;
+  font-weight: normal;
+  padding-right: 15px;
+}
+.table-form th, .table-form td {
+  padding: 10px 0;
+}
+@media screen and (max-width: 639px) {
+  .table-form {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-form tbody, .table-form tr, .table-form th, .table-form td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.label {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.label-gray {
+  color: #83828c;
+  border: 1px solid #d3dae0;
+  background-color: #f5f7fa;
+  padding: 6px 8px;
+}
+
+.selectpicker .select2-container .select2-results__option--highlighted[aria-selected] {
+  background-color: #f5f7fa;
+  color: #333;
+}
+.selectpicker .select2-container .select2-selection--single {
+  height: 40px;
+  border-radius: 3px;
+  background-color: #f5f7fa;
+  border-color: #d3dae0;
+}
+.selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
+  background: url("/img/select-arrow.jpg") right center no-repeat;
+  height: 40px;
+  top: 0;
+  right: 20px;
+}
+.selectpicker .select2-container .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+.selectpicker .select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+  color: #83828c;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+  background-color: white;
+}
