@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   namespace :admin do
     devise_for :users, class_name: 'Event::Admin::User'
   end
+
+  namespace :api do
+    resources :favorites, only: %i(create)
+  end
 end
