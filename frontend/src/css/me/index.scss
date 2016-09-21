@@ -120,7 +120,6 @@
 
 .btn-more {
   margin-top: 10px;
-  font-weight: bold;
   @include mediaquery-sm() {
     display: none;
   }
