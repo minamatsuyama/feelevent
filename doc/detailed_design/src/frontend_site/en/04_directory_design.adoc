@@ -16,6 +16,7 @@
 │   │   │   └── lib/    #Common CSS storage folder
 │   │   │       ├── base.css
 │   │   │       └── module.css
+
 │   │   ├── events/     #[B-2] Event details
 │   │   │   └── index.html
 │   │   ├── index.html  #[B-1] Top Page
@@ -23,21 +24,25 @@
 │   │   │   └── lib/    #Commonjs storage folder
 │   │   │       ├── module.js
 │   │   │       └── vendor.js
-│   │   ├── me/         #[C-1] My page
-│   │   │   ├── index.html
+│   │   ├── events.html     #[B-2] Event details
+│   │   ├── index.html      #[B-1] Top Page
+│   │   ├── term.html       #[E-1] User Policy
+│   │   ├── privacy.html    #[E-2] Privacy Policy
+│   │   ├── js/             #js storage folder
+│   │   │   └── lib/        #Commonjs storage folder
+│   │   │       ├── module.js
+│   │   │       └── vendor.js
+│   │   ├── me/
+│   │   │   ├── index.html  #[C-1] My page
 │   │   │   └── settings    #[C-2] My page Change setting
-│   │   │       └── index.html
-│   │   ├── password/   #
-│   │   │   ├── edit    #[A-4] Reset password
-│   │   │   │   └── index.html
-│   │   │   └── new     #A[-3] Change password
-│   │   │       └── index.html
-│   │   ├── signin/     #[A-1] Log in
-│   │   │   └── index.html
-│   │   ├── signout/    #[A-2] Log out
-│   │   │   └── index.html
-│   │   └── signup/     #[D-1] Sign up
-│   │       └── index.html
+│   │   │   └── favorites   #[C-3] My favorite
+│   │   └── users
+│   │       ├── password
+│   │       │   ├── edit.html    #[A-4] Reset password
+│   │       │   └── new.html     #[A-3] Change password
+│   │       ├── signin.html      #[A-1] Log in
+│   │       ├── signout.html     #[A-2] Log out
+│   │       └── signup.html      #[D-1] Sign up
 │   └── src
 │       ├── css
 │       │   ├── shared	#Common style 
