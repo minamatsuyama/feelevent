@@ -17,7 +17,7 @@ Display signup screen
 
 === Spec
 
-image::../assets/D-1.png[]
+image::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/frontend_site/assets/D-1.png[]
 
 
 ==== 1.Input form area 
