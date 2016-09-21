@@ -5,7 +5,7 @@
 
 //start code
 .userinfo-inner {
-  font-family: $font-family-sans-serif;
+  font-family: $font-family-base;
   background: $color-white;
   padding: 15px 84px 45px;
   margin: 40px 0 50px;
@@ -16,8 +16,8 @@
     position: relative;
   }
   h1 {
+    font-family: $font-family-base;
     font-size: $font-size-h2;
-    font-weight: normal;
     border-bottom: 1px solid $color-divide-line;
     margin: 35px 0;
     padding-bottom: 10px;
@@ -104,6 +104,7 @@
   span {
     background: transparent;
     padding: 0;
+    margin-right: 0;
   }
   &:hover {
     cursor: pointer;
@@ -119,6 +120,7 @@
 
 .btn-more {
   margin-top: 10px;
+  font-weight: bold;
   @include mediaquery-sm() {
     display: none;
   }
