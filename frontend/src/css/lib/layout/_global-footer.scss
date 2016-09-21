@@ -31,6 +31,7 @@
     }
     .info{
       padding: 15px 0;
+      font-size: $font-size-small;
       img{
         vertical-align: bottom;
       }
@@ -38,6 +39,9 @@
     ul{
       li{
         border:0 none;
+        a{
+          font-size: $font-size-small;
+        }
       }
     }
   }
@@ -52,7 +56,7 @@
       position:absolute;
       width:100%;
       display:block;
-      font-size:10px;
+      font-size:$font-size-xsmall;
       color:#b1c3cc;
       bottom:7px;
       left:50%;
@@ -62,16 +66,5 @@
 
   [role=contentinfo] small {
     font-family: $font-family-alphanumeric;
-  }
-}
-@include  mediaquery-sm(){
-  #global-footer {
-    .main-footer{
-      .footer-link{
-      }
-      .info{
-        padding: 15px 0;
-      }
-    }
   }
 }
