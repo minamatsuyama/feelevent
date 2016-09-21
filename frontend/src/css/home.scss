@@ -8,6 +8,9 @@ $color-border-search: #d3dae0;
 .container{
   max-width:100%;
 }
+.load-more{
+  margin-bottom:60px;
+}
 .promotions{
 	.main-slideshow{
 		height:460px;
@@ -105,6 +108,7 @@ $color-border-search: #d3dae0;
       color: $color-gray-light;
     }
     .search-info-text{
+      padding-left:10px;
       float: left;
     }
     .total-event{
@@ -156,20 +160,11 @@ $color-border-search: #d3dae0;
       width:195px;
       height:40px;
       position: relative;
-      &:before{
-        content: "";
-        width:40px;
-        height: 40px;
-        position: absolute;
-        top:0;
-        right:0;
-        background: url("/img/icon-calendar.png") no-repeat center center;
-      }
       input{
         padding-left:20px;
         width: 100%;
         height: 100%;
-        background-color:#fff;
+        background: #fff url("/img/icon-calendar.png") no-repeat 92% center;
       }
     }
     .search-text{
@@ -210,6 +205,9 @@ $color-border-search: #d3dae0;
       background-color: $btn-color-blue;
       margin: 0;
       border-radius: 0;
+      &:hover{
+        background-color:#0088e3;
+      }
     }
   }
   .toggle{
@@ -237,10 +235,11 @@ $color-border-search: #d3dae0;
           pointer-events: none;
         }
         &.active{
-
+          background: $btn-color-blue;
+          color:#fff;
         }
         &:hover{
-
+          background: #fff;
         }
       }
     }

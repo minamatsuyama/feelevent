@@ -7,9 +7,6 @@
     margin: 15px 0;
     border-radius: $border-radius-small;
     padding-bottom:6px;
-    @include mediaquery-sm(){
-      margin: 10px 0;
-    }
     &:hover{
       .eventcard-warpper{
         border: 1px solid #ffbf00;
@@ -27,20 +24,22 @@
       height: 34px;
       width: 151px;
       position: absolute;
-      left: 10px;
+      right: 10px;
       top: 11px;
       z-index: $zindex-flow-content;
-      padding: 8px 26px;
+      padding: 8px 28px 8px 0;
       font-size: 14px;
+      text-align: right;
       @include mediaquery-sm(){
-        left: 5px;
+        right: 5px;
       }
     }
     .eventcard-warpper{
       font-size: $font-size-small;
       box-shadow: 0 0 10px 0 rgba(0,0,0,0.05);
       background:#fff;
-      border: 1px solid #fff;
+      border: 1px solid #e3e3e3;
+      border-bottom-width:0;
       color:$color-gray-light;
       padding:15px 15px 6px 15px;
       .event-img-warpper{
@@ -86,11 +85,14 @@
     }
     .event-likebox{
       background: #fff;
-      border:1px solid #fff;
+      border:1px solid #e3e3e3;
       border-top:1px solid #e6edf2;
       .btn-comment-box {
         float:left;
         margin:10px 0 0 15px;
+        font-size: 12px;
+        color: $color-gray-dark;
+        font-weight: bold;
       }
       .btn-like-box{
         color:#aaa;
@@ -104,8 +106,20 @@
         }
       }
       @include clearfix();
-
     }
-
+  }
+  .load-more{
+    background-color: #fff;
+    margin:0 0 30px 0;
+    font-size: 13px;
+    color:#187fc4;
+    padding:19px 0;
+  }
+}
+@include mediaquery-md(){
+  .eventcards{
+    .container{
+      width:660px;
+    }
   }
 }
