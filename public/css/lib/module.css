@@ -1188,7 +1188,7 @@ input[type="radio"]:checked {
   height: 15px;
 }
 .input-label:hover, .input-label:active, .input-label:focus {
-  background: #dcf5e7;
+  background-color: #dcf5e7;
 }
 @media screen and (max-width: 639px) {
   .input-label {
