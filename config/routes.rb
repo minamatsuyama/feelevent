@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     sign_up: 'signup'
   }
 
+  resource :me, only: %i(show)
+
   namespace :admin do
     devise_for :users, class_name: 'Event::Admin::User'
   end
