@@ -10,6 +10,7 @@
 <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 <link rel="stylesheet" type="text/css" href="/css/lib/vendor/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="/css/lib/vendor/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/css/home.css" />
 <link href="/css/lib/base.css" rel="stylesheet">
 <link href="/css/lib/module.css" rel="stylesheet">
@@ -67,7 +68,7 @@
                 <li class="search-text">
                   <input type="text" name="word" class="input input-block input-lg" placeholder="イベント名、キーワードで検索 ...">
                 </li>
-                <li >
+                <li class="hidden-sm">
                   <ul>
                     <li class="held-area selectpicker">
                       <select name="held_area" class="select">
@@ -181,10 +182,13 @@
         </div>
         </div>
       </form>
-      <div class="search-result-info">
+      <div class="search-result-info hidden-sm">
         <div class="lbl-text">絞り込み条件</div>
         <div class="search-info-text">関東  /  2016.12.12~2016.12.13</div>
         <div class="total-event">99999 件</div>
+      </div>
+      <div class="btn-searchmenu hidden-not-sm">
+        <a href="#">絞り込み検索</a>
       </div>
     </div>
   </div>

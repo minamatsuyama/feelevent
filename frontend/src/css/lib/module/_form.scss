@@ -2,7 +2,7 @@
 // Form parts
 // --------------------------------------------------
 
-
+$btn-color-gray: #f5f7fa;
 
 .label {
   @extend %form-label;
@@ -56,6 +56,28 @@ input[type="search"].input-sm {
 
 .select-lg {
   padding: .6em 30px .6em 1em ;
+}
+.select2-container {
+  .select2-results__option--highlighted[aria-selected]{
+    background-color: $btn-color-gray;
+    color: $color-gray-dark;
+  }
+  .select2-selection--single{
+    height:40px;
+    border-radius:0;
+    .select2-selection__arrow{
+      background: url("/img/select-arrow.png") right center no-repeat;
+      height: 40px;
+      top:0;
+      right:0;
+      b{
+        border:0 none;
+      }
+    }
+    .select2-selection__rendered{
+     line-height: 40px;
+    }
+  }
 }
 
 input[type="checkbox"],
