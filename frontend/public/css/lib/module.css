@@ -1114,17 +1114,37 @@ input[type="radio"]:checked {
 }
 .eventcards .eventcard:hover .eventcard-warpper {
   border: 1px solid #ffbf00;
-  border-width: 1px 1px 0 1px;
+  border-bottom: 0;
 }
 .eventcards .eventcard:hover .event-likebox {
   border: 1px solid #ffbf00;
   border-top: 1px solid #e6edf2;
 }
+.eventcards .eventcard.recommended:after {
+  content: "Recommended";
+  background: url("/img/recommend.png") no-repeat left top;
+  background-size: 100% 100%;
+  height: 34px;
+  width: 151px;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  z-index: 1010;
+  padding: 8px 28px 8px 0;
+  font-size: 14px;
+  text-align: right;
+}
+@media screen and (max-width: 679px) {
+  .eventcards .eventcard.recommended:after {
+    right: 5px;
+  }
+}
 .eventcards .eventcard .eventcard-warpper {
   font-size: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #e3e3e3;
+  border-bottom-width: 0;
   color: #83828c;
   padding: 15px 15px 6px 15px;
 }
@@ -1150,6 +1170,9 @@ input[type="radio"]:checked {
   border-radius: 4px;
   padding: 0 5px;
 }
+.eventcards .eventcard .eventcard-warpper .event-pm-paid.free {
+  background: #1bb297;
+}
 .eventcards .eventcard .eventcard-warpper .event-title {
   padding: 15px 0 0;
 }
@@ -1167,12 +1190,15 @@ input[type="radio"]:checked {
 }
 .eventcards .eventcard .event-likebox {
   background: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #e3e3e3;
   border-top: 1px solid #e6edf2;
 }
 .eventcards .eventcard .event-likebox .btn-comment-box {
   float: left;
   margin: 10px 0 0 15px;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
 }
 .eventcards .eventcard .event-likebox .btn-like-box {
   color: #aaa;
@@ -1193,6 +1219,11 @@ input[type="radio"]:checked {
   clear: both;
 }
 
+@media screen and (min-width: 680px) and (max-width: 999px) {
+  .eventcards .container {
+    width: 660px;
+  }
+}
 .text-vertical {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
