@@ -32,8 +32,7 @@ $top-link-padding: 15px;
 #global-header {
   line-height: 1;
   width: 100%;
-  background: $color-yellow url("/img/bg-header.gif") no-repeat center bottom;
-  background-size: 209px 53px;
+  background-color: $color-yellow;
   height:60px;
   @include transition(all .2s $easeOutCubic);
   .powered-by{
