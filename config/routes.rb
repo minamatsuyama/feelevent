@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    resources :events, only: %i(index)
     resources :favorites, only: %i(index create destroy)
   end
 end
