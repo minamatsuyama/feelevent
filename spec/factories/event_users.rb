@@ -4,5 +4,6 @@ FactoryGirl.define do
     email                 { Faker::Internet.email }
     password              { Faker::Internet.pssword }
     password_confirmation { password }
+    confirmed_at          Date.today
   end
 end
