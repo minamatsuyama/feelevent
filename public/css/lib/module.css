@@ -1520,3 +1520,17 @@ html.pointer .hidden-pointer {
 .border-left {
   border-left: 1px solid #e5e5e5;
 }
+
+.pop {
+  width: 100%;
+  position: absolute;
+  top: 43%;
+  background-color: #187fc4;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-align: center;
+  display: none;
+}
