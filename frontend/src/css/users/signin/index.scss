@@ -8,6 +8,9 @@
   background-color: #e3e3e3;
   padding-top: 40px;
   padding-bottom: 60px;
+  @include mediaquery-sm() {
+    padding-top: 22px;
+  }
 }
 
 .box-main {
@@ -22,44 +25,73 @@
   h2 {
     font-size: 24px;
     text-align: center;
+    padding-bottom: 3px;
     margin-bottom: 5px;
+    border-bottom: 1px solid #e6edf2;
   }
 }
 
-hr {
-  height: 1px;
-  background-color: #e6edf2;
-}
-
-.table-form {
-  margin: 0 auto;
-}
 
 #login {
-  margin-top: 30px;
+  margin-top: 40px;
+  @include mediaquery-sm() {
+    margin-top: 20px;
+  }
 }
 
 .text-link {
   color: #187fc4;
 }
 
-.table-form td.remember {
-  padding-top: 40px;
-  padding-bottom: 15px;
+.btn-login-container {
+  text-align: center;
+  margin-top: 5px;
 }
 
 .btn-login {
-  margin-left: 85px;
   background-color: #187fc4;
   color: $color-white;
   border: 1px solid #075386;
   width: 150px;
   padding: 10px;
-  &:hover {
+  &:hover,&:active, &.active {
     background-color: lighten(#187fc4, 6%);
+    border: 1px solid #187fc4;
   }
-  &:active,
-  &.active {
-    background-color: lighten(#187fc4, 6%);
+}
+
+.row {
+  &.row-login {
+    margin-bottom: 20px;
+    &.remember {
+      margin-top: 45px;
+      @include mediaquery-sm() {
+        margin-top: 25px;
+      }
+    }
+    &.forgot-password {
+      margin-top: -5px;
+    }
+  }
+}
+
+.col {
+  &.col-offset-1 {
+    &.col-title {
+      margin-top: 10px;
+      text-align: right;
+      padding-right: 5px;
+      @include mediaquery-sm() {
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.input-text {
+  &.percent-90 {
+    width: 100%;
   }
 }

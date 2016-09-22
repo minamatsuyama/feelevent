@@ -45,27 +45,3 @@
     }
   }
 }
-
-.table-form {
-  color:$color-gray-light;
-  font-size: 14px;
-  th {
-    color: #333;
-    font-weight: normal;
-    padding-right: 15px;
-  }
-  th,td {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  @include mediaquery-sm {
-    overflow-x: auto;
-    display: block;
-    font-size: 13px;
-      tbody, tr, th,td {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-  }
-}

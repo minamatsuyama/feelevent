@@ -3,6 +3,11 @@
   padding-top: 40px;
   padding-bottom: 60px;
 }
+@media screen and (max-width: 639px) {
+  #content {
+    padding-top: 22px;
+  }
+}
 
 .box-main {
   background-color: #fff;
@@ -17,42 +22,69 @@
 .signin h2 {
   font-size: 24px;
   text-align: center;
+  padding-bottom: 3px;
   margin-bottom: 5px;
-}
-
-hr {
-  height: 1px;
-  background-color: #e6edf2;
-}
-
-.table-form {
-  margin: 0 auto;
+  border-bottom: 1px solid #e6edf2;
 }
 
 #login {
-  margin-top: 30px;
+  margin-top: 40px;
+}
+@media screen and (max-width: 639px) {
+  #login {
+    margin-top: 20px;
+  }
 }
 
 .text-link {
   color: #187fc4;
 }
 
-.table-form td.remember {
-  padding-top: 40px;
-  padding-bottom: 15px;
+.btn-login-container {
+  text-align: center;
+  margin-top: 5px;
 }
 
 .btn-login {
-  margin-left: 85px;
   background-color: #187fc4;
   color: #fff;
   border: 1px solid #075386;
   width: 150px;
   padding: 10px;
 }
-.btn-login:hover {
+.btn-login:hover, .btn-login:active, .btn-login.active {
   background-color: #1b91df;
+  border: 1px solid #187fc4;
 }
-.btn-login:active, .btn-login.active {
-  background-color: #1b91df;
+
+.row.row-login {
+  margin-bottom: 20px;
+}
+.row.row-login.remember {
+  margin-top: 45px;
+}
+@media screen and (max-width: 639px) {
+  .row.row-login.remember {
+    margin-top: 25px;
+  }
+}
+.row.row-login.forgot-password {
+  margin-top: -5px;
+}
+
+.col.col-offset-1.col-title {
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 5px;
+}
+@media screen and (max-width: 639px) {
+  .col.col-offset-1.col-title {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.input-text.percent-90 {
+  width: 100%;
 }

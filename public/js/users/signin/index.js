@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    initInputLabel();
+});
+
+function initInputLabel() {
     $(".input-label").bind("click mouseleave", function() {
         if ($(".check-box").is(":checked")) {
             $(this).css("background-color", "#dcf5e7");
@@ -8,4 +12,4 @@ $(document).ready(function() {
     }).mouseenter(function() {
         $(this).css("background-color", "#dcf5e7");
     });
-});
+}

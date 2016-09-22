@@ -1,5 +1,9 @@
 
 $(document).ready(function () {
+  initInputLabel();
+});
+
+function initInputLabel() {
   $('.input-label').bind('click mouseleave',function () {
     if ($('.check-box').is(':checked')) {
       $(this).css("background-color", "#dcf5e7");
@@ -8,6 +12,6 @@ $(document).ready(function () {
       $(this).css("background-color", "#f5f7fa");
     }
   }).mouseenter(function() {
-      $(this).css("background-color", "#dcf5e7");
-    });
-});
+    $(this).css("background-color", "#dcf5e7");
+  });
+}

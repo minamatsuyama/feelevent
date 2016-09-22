@@ -1050,32 +1050,6 @@ html.pointer .link-card.light:hover .image img, html.touch .link-card.light.touc
   }
 }
 
-.table-form {
-  color: #999;
-  font-size: 14px;
-}
-.table-form th {
-  color: #333;
-  font-weight: normal;
-  padding-right: 15px;
-}
-.table-form th, .table-form td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 639px) {
-  .table-form {
-    overflow-x: auto;
-    display: block;
-    font-size: 13px;
-  }
-  .table-form tbody, .table-form tr, .table-form th, .table-form td {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-}
-
 input[type="submit"] {
   letter-spacing: 0.05em;
 }
@@ -1141,7 +1115,6 @@ input[type="radio"]:checked {
   border: 1px solid #d3dae0;
   border-radius: 3px;
   padding: 10px 10px;
-  width: 400px;
   font-size: 14px;
   background-color: #f5f7fa;
 }
@@ -1192,8 +1165,12 @@ input[type="radio"]:checked {
 }
 @media screen and (max-width: 639px) {
   .input-label {
-    padding: 0;
+    padding: 10px 5px;
     font-size: 12px;
+  }
+  .input-label .check-box {
+    margin-top: 0;
+    margin-right: 5px;
   }
 }
 
