@@ -11,7 +11,7 @@
 
 .box-main {
   background-color: #fff;
-  padding: 58px 85px 53px;
+  padding: 62px 85px 53px;
 }
 @media screen and (max-width: 639px) {
   .box-main {
@@ -34,7 +34,7 @@
 }
 
 #login {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 @media screen and (max-width: 639px) {
   #login {
