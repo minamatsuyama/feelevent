@@ -32,6 +32,7 @@ function arrowsPosition() {
 function datepickerInit() {
     $(".search-area .date-picker input").datepicker({
         regional: "ja",
+        dateFormat: "yy.mm.dd",
         onClose: function(arg) {
             var inputValue = $(this).val();
             if (inputValue.trim()) {
