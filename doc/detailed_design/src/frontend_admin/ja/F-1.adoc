@@ -1,12 +1,12 @@
-== F-1 イベント新規作成・編集
+== F-1 イベント新規作成
 
 === 概要
 
-イベントの新規登録／編集を行う
+イベントの新規登録を行う
 
 === ワイヤーフレーム
 
-
+https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075AnI/edit#slide=id.g165272825b_2_541
 
 === 基本情報
 
@@ -14,7 +14,6 @@
 |==================
 |項目|内容|備考
 |URL|/admin/events/new|新規作成
-|URL|/admin/events/:event_id/edit|編集
 |==================
 
 === 仕様
