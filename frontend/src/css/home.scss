@@ -352,11 +352,29 @@ $color-border-search: #d3dae0;
   }
 
 }
-@include  mediaquery-md{
+@include mediaquery-md{
   .promotions{
     .main-slideshow{
       .slick-slide{
         width:680px;
+      }
+    }
+  }
+  .search-area{
+    .container{
+      padding:0 15px;
+    }
+    .search-select{
+      width:68.7%;
+    }
+    .btn-eventsearch{
+      width:31.3%;
+      height:42px;
+    }
+    .btn-searchmenu{
+      a{
+        display: block;
+        text-align: center;
       }
     }
   }

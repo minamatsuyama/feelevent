@@ -30,7 +30,15 @@ function datepickerInit() {
 }
 
 function select2Init() {
-    $(".selectpicker select").select2({
+    $(".held-area select").select2({
+        minimumResultsForSearch: Infinity
+    });
+    $(".entry-fee-type select").select2({
+        placeholder: "参加費",
+        minimumResultsForSearch: Infinity
+    });
+    $(".qualifying-age select").select2({
+        placeholder: "対象年齡",
         minimumResultsForSearch: Infinity
     });
 }

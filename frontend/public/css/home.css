@@ -358,4 +358,19 @@
   .promotions .main-slideshow .slick-slide {
     width: 680px;
   }
+
+  .search-area .container {
+    padding: 0 15px;
+  }
+  .search-area .search-select {
+    width: 68.7%;
+  }
+  .search-area .btn-eventsearch {
+    width: 31.3%;
+    height: 42px;
+  }
+  .search-area .btn-searchmenu a {
+    display: block;
+    text-align: center;
+  }
 }

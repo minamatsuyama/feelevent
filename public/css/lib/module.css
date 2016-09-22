@@ -1133,11 +1133,6 @@ input[type="radio"]:checked {
   border-radius: 2px;
   padding-bottom: 6px;
 }
-@media screen and (max-width: 679px) {
-  .eventcards .eventcard {
-    margin: 10px 0;
-  }
-}
 .eventcards .eventcard:hover .eventcard-warpper {
   border: 1px solid #ffbf00;
   border-bottom: 0;
@@ -1153,22 +1148,24 @@ input[type="radio"]:checked {
   height: 34px;
   width: 151px;
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 11px;
   z-index: 1010;
-  padding: 8px 26px;
+  padding: 8px 28px 8px 0;
   font-size: 14px;
+  text-align: right;
 }
 @media screen and (max-width: 679px) {
   .eventcards .eventcard.recommended:after {
-    left: 5px;
+    right: 5px;
   }
 }
 .eventcards .eventcard .eventcard-warpper {
   font-size: 12px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
   background: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #e3e3e3;
+  border-bottom-width: 0;
   color: #83828c;
   padding: 15px 15px 6px 15px;
 }
@@ -1214,12 +1211,15 @@ input[type="radio"]:checked {
 }
 .eventcards .eventcard .event-likebox {
   background: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #e3e3e3;
   border-top: 1px solid #e6edf2;
 }
 .eventcards .eventcard .event-likebox .btn-comment-box {
   float: left;
   margin: 10px 0 0 15px;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
 }
 .eventcards .eventcard .event-likebox .btn-like-box {
   color: #aaa;
@@ -1239,7 +1239,19 @@ input[type="radio"]:checked {
 .eventcards .eventcard .event-likebox:after {
   clear: both;
 }
+.eventcards .load-more {
+  background-color: #fff;
+  margin: 0 0 30px 0;
+  font-size: 13px;
+  color: #187fc4;
+  padding: 19px 0;
+}
 
+@media screen and (min-width: 680px) and (max-width: 999px) {
+  .eventcards .container {
+    width: 660px;
+  }
+}
 .text-vertical {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
