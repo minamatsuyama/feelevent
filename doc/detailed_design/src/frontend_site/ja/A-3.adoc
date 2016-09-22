@@ -9,6 +9,7 @@
 |=================================
 |1       |入力フォームエリア    |Eメール入力要素を表示
 |2       |送信ボタンエリア   |ボタンを表示
+|3       |キャンセルボタンエリア   |ボタンを表示
 |=================================
 
 
@@ -26,7 +27,10 @@ include::../../form_site/ja/_include/A-3.adoc[]
 ==== 2.送信ボタンエリア
 
 ** 送信ボタンを表示
-** 呼び出すリンクは /password/new
+** 呼び出すリンクは /password
 
 link:https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_site/ja/A-3.adoc[]
 
+==== 3.キャンセルボタンエリア
+
+** A-1:ログイン画面へ戻る
