@@ -1,0 +1,37 @@
+== World Schoolフロントエンド管理画面設計書
+
+* 技術仕様書
+* コーディングガイドライン
+* タスクランナー設計書
+* スタイルシート基本設計書
+* Javascript基本設計書
+
+World Schoolフロントエンド設計に習う
+
+* [04] ディレクトリ構成図　//TODO
+
+
+=== 技術要件：特記事項
+
+==== 基本フレームワーク
+
+http://getbootstrap.com/[BootStrap]を用いる
+
+==== プラグイン
+
+* bootstrap-datepicker：カレンダーの制作
+  * https://github.com/eternicode/bootstrap-datepicker
+  * link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
+
+
+== 画面設計書
+
+* [A-1]
+* [A-2]
+* [A-3]
+* [B-1]
+* [C-1] 記事一覧
+* [D-1]
+* [E-1]
+* [F-1]
+* [F-1']
