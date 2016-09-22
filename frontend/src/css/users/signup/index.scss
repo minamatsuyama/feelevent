@@ -8,11 +8,16 @@
   background-color: #e3e3e3;
   padding-top: 40px;
   padding-bottom: 60px;
+  @include mediaquery-sm() {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
 }
 
 .box-main {
   background-color: $color-white;
-  padding: 58px 85px 53px;
+  padding: 62px 85px 33px;
+  border-radius: 3px;
   @include mediaquery-sm {
     padding: 15px 15px 30px;
   }
@@ -22,62 +27,46 @@
   h2 {
     font-size: 24px;
     text-align: center;
+    padding-bottom: 3px;
     margin-bottom: 5px;
+    border-bottom: 1px solid #e6edf2;
   }
-}
-
-hr {
-  height: 1px;
-  background-color: #e6edf2;
+  @include mediaquery-sm() {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 }
 
 #signup-form {
-  margin-top: 30px;
-  .input-text {
-    width: 100%;
+  margin-top: 35px;
+  @include mediaquery-sm() {
+    margin-top: 15px;
   }
 }
-
 .text-link {
   color: #187fc4;
 }
 
-.table-form {
-  margin: 0 auto;
-  max-width: 660px;
-  th,td {
-    text-align: left;
-  }
-  .btn-signup-container {
-    text-align: center;
-    padding-bottom: 0;
-    .terms {
-      margin-bottom: 10px;
-    }
-  }
-  td.keywords {
-    max-width: 525px;
-  }
+.keywords {
   .label-gray {
     margin-bottom: 10px;
-    margin-right: 5px;
-  }
-  th {
-    &.keyword-title {
-      vertical-align: top;
-      padding-top: 15px;
-    }
-    &.message {
-      padding-top: 45px;
-      padding-bottom: 25px;
-    }
-    &.receive-message {
-      padding-top: 55px;
-      padding-bottom: 58px;
+    margin-right: 3px;
+    @include mediaquery-sm() {
+      margin-bottom: 5px;
+      margin-right: 0;
     }
   }
 }
 
+.terms {
+  margin-bottom: 10px;
+  @include mediaquery-sm() {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+}
 
 
 .btn-signup {
@@ -93,8 +82,6 @@ hr {
   }
 }
 
-
-
 *:focus {
   outline: none;
 }
@@ -103,7 +90,6 @@ hr {
   border: 1px solid #d3dae0;
   border-radius: 3px;
   padding: 9px 10px;
-  width: 400px;
   font-size: 14px;
   background-color: #f5f7fa;
   @include placeholder(#83828c);
@@ -141,33 +127,15 @@ hr {
     background-color: #dcf5e7;
   }
   @include mediaquery-sm() {
-    padding: 0;
+    padding: 10px 5px;
     font-size: 12px;
-  }
-}
-
-.table-form {
-  color:$color-gray-light;
-  font-size: 14px;
-  th {
-    color: #333;
-    font-weight: normal;
-    padding-right: 15px;
-  }
-  th,td {
-    padding: 10px 0;
-  }
-  @include mediaquery-sm {
-    overflow-x: auto;
-    display: block;
-    font-size: 13px;
-    tbody, tr, th,td {
-      display: block;
-      width: 100%;
-      text-align: left;
+    .check-box {
+      margin-top: 0;
+      margin-right: 5px;
     }
   }
 }
+
 
 .label {
   color:$color-white;
@@ -218,6 +186,62 @@ hr {
       .select2-selection--single {
         background-color: lighten(#f5f7fa, 6%);
       }
+    }
+    .select2-dropdown--below {
+      border-width: 0;
+    }
+  }
+  .select2-results__option {
+    border-width: 0 1px 1px;
+    border-style :solid;
+    border-color: #d3dae0;
+    padding: 9px;
+    &.select2-results__option--highlighted[aria-selected],
+    &.select2-results__option[aria-selected=true] {
+      background-color: #f5f7fa;
+      color: #333;
+    }
+  }
+
+}
+
+.row {
+  &.row-register {
+    margin-bottom: 20px;
+    &.message {
+      margin-top: 57px;
+      margin-bottom: 35px;
+      @include mediaquery-sm() {
+        margin-top: 27px;
+        margin-bottom: 15px;
+      }
+    }
+    &.receive-news {
+      margin-top: 70px;
+      margin-bottom: 67px;
+      @include mediaquery-sm() {
+        margin-top: 35px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+.col {
+  &.btn-signup-container {
+    text-align: center;
+  }
+  &.col-title {
+    margin-top: 10px;
+    @include mediaquery-sm() {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+  &.col-input {
+    margin-left: -60px;
+    @include mediaquery-sm() {
+      margin-left: 0;
     }
   }
 }
