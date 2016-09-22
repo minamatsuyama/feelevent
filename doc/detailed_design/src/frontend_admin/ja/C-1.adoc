@@ -14,7 +14,6 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 |==================
 |項目|内容|備考
 |URL|/admin/events|
-
 |==================
 
 === 仕様
@@ -23,7 +22,7 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 
 . タブ
 
-** *全体*
+** *共通*
 *** カレントの表示
 **** 選択されているカレントタブ、そうでないタブが表現されている
 ** *タブボタン*
@@ -34,10 +33,10 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 
 . イベントモジュール
 
-** *全体*
+** *共通*
 *** 公開／非公開ステータスによってそれぞれに対応したデザインが表現されている
 *** 表示制御
-**** 「公開」では公開のみ、「非公開」では非公開のステータスのイベントのみ表示されている。
+**** 「公開一覧」では公開ステータスのみ、「非公開一覧」では非公開ステータスのイベントのみ表示されている。
 
 ** *公開ステータス*
 *** 公開／非公開 の2種類。該当イベントの公開ステータスを表示する。
@@ -45,6 +44,10 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 ** *公開ボタン*
 *** 非公開ステータスのイベントモジュールにのみ存在する
 *** confirmによる「はい」「いいえ」の確認を通した後、API通信経由にて公開に設定する
+... confirm「はい」
+**** API通信経由にて公開に設定する
+... confirm「いいえ」
+**** なにもしない(confirm画面を閉じる)
 *** イベント記事をAPI通信経由にてイベント一覧を最新状態に更新する
 
 ** *非公開ボタン*
