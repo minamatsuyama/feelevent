@@ -2,7 +2,7 @@
 FactoryGirl.define do
   factory :event_item, class: 'Event::Item' do
     event_admin_user_id  { Faker::Number.between(1, 10000) }
-    event_type           { Event::Item.event_type.values.sample }
+    event_type_id        { Faker::Number.between(1, 10000) }
     held_started_at      { Faker::Time.between(Time.current, Time.current + 1.month) }
     held_ended_at        { held_started_at + Faker::Number.between(1, 10).days }
     entry_started_at     { Faker::Time.between(Time.current, Time.current + 1.month) }
