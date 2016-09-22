@@ -2,7 +2,7 @@
   max-width: 100%;
 }
 
-.load-more {
+.btn.btn-more {
   margin-bottom: 60px;
 }
 
@@ -22,6 +22,7 @@
   background-position: top left;
   background-size: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 .promotions .main-slideshow .slick-arrow.slick-prev {
   background-image: url("/img/btn-prev.png");
@@ -53,8 +54,8 @@
   width: 100%;
 }
 .promotions .main-slideshow .slick-slide img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
 }
 .promotions .main-slideshow .slick-slide:after {
   content: '\A';
@@ -136,7 +137,15 @@
 }
 .search-area .search-select .selectpicker .select2-container .select2-selection--single {
   border: 0 none;
+  background-color: #fff;
+}
+.search-area .search-select .selectpicker .select2-container .select2-selection--single .select2-selection__placeholder {
   background-color: #f5f7fa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  width: 100%;
 }
 .search-area .search-select .selectpicker select {
   font-size: 14px;
@@ -152,6 +161,7 @@
 .search-area .search-select .selectpicker.held-area {
   width: 150px;
   border-left-width: 0;
+  border-right: 1px solid #d3dae0;
 }
 .search-area .search-select .icon-date-to {
   width: 34px;
@@ -170,8 +180,11 @@
   padding-left: 20px;
   width: 100%;
   height: 100%;
-  background: #fff url("/img/icon-calendar.png") no-repeat 92% center;
+  background: #f5f7fa url("/img/icon-calendar.png") no-repeat 92% center;
   cursor: pointer;
+}
+.search-area .search-select .date-picker input.has-value {
+  background-color: #fff;
 }
 .search-area .search-select .search-text {
   width: 100%;
@@ -248,6 +261,7 @@
 }
 .search-area .toggle .btn-group .btn-checkbox:hover {
   background: #fff;
+  color: #83828c;
 }
 .search-area .toggle:before, .search-area .toggle:after {
   content: " ";
@@ -344,6 +358,10 @@
 
   .search-area .search-select {
     width: 68.7%;
+  }
+  .search-area .search-select .search-text .input {
+    font-size: 13px;
+    padding-left: 30px;
   }
   .search-area .btn-eventsearch {
     width: 31.3%;

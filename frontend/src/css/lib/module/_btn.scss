@@ -81,3 +81,17 @@
     background-color: $color-gray-lightest;
   }
 }
+
+.btn-more {
+  color: $color-blue;
+  background-color: $color-white;
+  font-size: 13px;
+  padding: 15px;
+  &:hover {
+    background-color: $color-gray-lightest;
+  }
+  &:active,
+  &.active {
+    background-color: $color-gray-lightest;
+  }
+}

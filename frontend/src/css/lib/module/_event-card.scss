@@ -27,9 +27,10 @@
       right: 10px;
       top: 11px;
       z-index: $zindex-flow-content;
-      padding: 8px 28px 8px 0;
+      padding: 8px 30px 8px 0;
       font-size: 14px;
       text-align: right;
+      letter-spacing: 0;
       @include mediaquery-sm(){
         right: 5px;
       }
@@ -101,7 +102,8 @@
         min-width: 70px;
         float:right;
         margin-right:15px;
-        &:hover {
+        &:hover,
+        &.active{
           color: #ef0155;
         }
       }

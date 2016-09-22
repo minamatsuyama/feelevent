@@ -587,6 +587,19 @@ ol li,
   background-color: #f0f0f0;
 }
 
+.btn-more {
+  color: #187fc4;
+  background-color: #fff;
+  font-size: 13px;
+  padding: 15px;
+}
+.btn-more:hover {
+  background-color: #f0f0f0;
+}
+.btn-more:active, .btn-more.active {
+  background-color: #f0f0f0;
+}
+
 .img-liquid, .article img,
 .block-content img {
   max-width: 100%;
@@ -1151,9 +1164,10 @@ input[type="radio"]:checked {
   right: 10px;
   top: 11px;
   z-index: 1010;
-  padding: 8px 28px 8px 0;
+  padding: 8px 30px 8px 0;
   font-size: 14px;
   text-align: right;
+  letter-spacing: 0;
 }
 @media screen and (max-width: 679px) {
   .eventcards .eventcard.recommended:after {
@@ -1229,7 +1243,7 @@ input[type="radio"]:checked {
   float: right;
   margin-right: 15px;
 }
-.eventcards .eventcard .event-likebox .btn-like-box:hover {
+.eventcards .eventcard .event-likebox .btn-like-box:hover, .eventcards .eventcard .event-likebox .btn-like-box.active {
   color: #ef0155;
 }
 .eventcards .eventcard .event-likebox:before, .eventcards .eventcard .event-likebox:after {

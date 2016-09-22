@@ -8,7 +8,7 @@ $color-border-search: #d3dae0;
 .container{
   max-width:100%;
 }
-.load-more{
+.btn.btn-more{
   margin-bottom:60px;
 }
 .promotions{
@@ -27,6 +27,7 @@ $color-border-search: #d3dae0;
       background-position: top left;
       background-size: 100%;
       background-color: rgba(256,256,256,0.5);
+      cursor: pointer;
       &.slick-prev{
         background-image: url("/img/btn-prev.png");
       }
@@ -55,8 +56,8 @@ $color-border-search: #d3dae0;
         width: 100%;
 			}
 			img{
-				height: 100%;
-        width:auto;
+				height: auto;
+        width:100%;
 			}
       &:after{
         content: '\A';
@@ -129,7 +130,15 @@ $color-border-search: #d3dae0;
       .select2-container {
         .select2-selection--single{
           border: 0 none;
-          background-color: $btn-color-gray;
+          background-color: #fff;
+          .select2-selection__placeholder{
+            background-color:$btn-color-gray;
+            position: absolute;
+            top:0;
+            left:0;
+            padding-left:20px;
+            width:100%;
+          }
         }
       }
       select{
@@ -146,6 +155,7 @@ $color-border-search: #d3dae0;
       &.held-area{
         width:150px;
         border-left-width: 0;
+        border-right:1px solid $color-border-search;
       }
     }
     .icon-date-to{
@@ -164,8 +174,11 @@ $color-border-search: #d3dae0;
         padding-left:20px;
         width: 100%;
         height: 100%;
-        background: #fff url("/img/icon-calendar.png") no-repeat 92% center;
+        background: $btn-color-gray url("/img/icon-calendar.png") no-repeat 92% center;
         cursor: pointer;
+        &.has-value{
+          background-color:#fff;
+        }
       }
     }
     .search-text{
@@ -241,6 +254,7 @@ $color-border-search: #d3dae0;
         }
         &:hover{
           background: #fff;
+          color:$color-gray-light;
         }
       }
     }
@@ -338,6 +352,12 @@ $color-border-search: #d3dae0;
   .search-area{
     .search-select{
       width:68.7%;
+      .search-text{
+        .input{
+          font-size: 13px;
+          padding-left:30px;
+        }
+      }
     }
     .btn-eventsearch{
       width:31.3%;
