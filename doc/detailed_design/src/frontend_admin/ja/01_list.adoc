@@ -20,8 +20,8 @@ http://getbootstrap.com/[BootStrap]を用いる
 ==== プラグイン
 
 * bootstrap-datepicker：カレンダーの制作
-  * https://github.com/eternicode/bootstrap-datepicker
-  * link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
+** https://github.com/eternicode/bootstrap-datepicker
+** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
 
 
 == 画面設計書
