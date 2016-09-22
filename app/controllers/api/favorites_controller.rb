@@ -10,6 +10,6 @@ class Api::FavoritesController < ApplicationController
 
     favorite = Event::Favorite.new({ event_user_id: current_user.id, event_item_id: params[:id] })
     favorite.save!
-    render json: { event_item_id: params[:id], count: favorites.count() }, status: 201
+    render json: { event_item_id: params[:id], count: event_item.favorites.count() }, status: 201
   end
 end
