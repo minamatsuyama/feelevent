@@ -70,7 +70,7 @@ body {
       outline: none;
     }
   }
-
+  .password-title {display: none}
   .password {
     background: #f5f7fa;
   }
@@ -213,9 +213,6 @@ body {
     height: 40px;
     width: 150px;
     margin: 0 5px;
-    @include mediaquery-sm () {
-      margin-bottom: 10px;
-    }
   }
 
   .btn-cancel {
@@ -254,6 +251,7 @@ body {
     }
     &:nth-child(2){
       order: 1;
+      margin-top: -10px;
     }
     &:nth-child(3) {
       order: 3;
@@ -272,14 +270,29 @@ body {
   .password{
     display: block;
   }
+
+  .keywords {
+    border-bottom:1px solid #e4e4e4;
+    padding-bottom: 10px;
+  }
+  .password-title ,
   .keyword-title {
     font-size: 16px;
+    color: #83828c;
     display: block;
     width: 100%;
-    margin-bottom: 15px;
+    margin:12px 0 15px;
   }
-  .bn-base{
-    font-size: 12px;
-    padding: 3px 7px;
+  .password-title {
+    margin: -5px 0;
+  }
+  .keyword-list {
+    .btn-base {
+      font-size: 12px;
+      padding: 2px 7px;
+    }
+  }
+  .submitdiv {
+    margin: 10px auto 30px;
   }
 }

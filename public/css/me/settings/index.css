@@ -68,6 +68,10 @@ select:focus {
   outline: none;
 }
 
+.password-title {
+  display: none;
+}
+
 .password {
   background: #f5f7fa;
 }
@@ -205,11 +209,6 @@ select:focus {
   width: 150px;
   margin: 0 5px;
 }
-@media screen and (max-width: 639px) {
-  .submitdiv button {
-    margin-bottom: 10px;
-  }
-}
 .submitdiv .btn-cancel {
   color: #333;
   background: #f5f7fa;
@@ -246,6 +245,7 @@ select:focus {
   }
   .form-wrap:nth-child(2) {
     order: 1;
+    margin-top: -10px;
   }
   .form-wrap:nth-child(3) {
     order: 3;
@@ -265,15 +265,30 @@ select:focus {
     display: block;
   }
 
-  .keyword-title {
-    font-size: 16px;
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
+  .keywords {
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 10px;
   }
 
-  .bn-base {
+  .password-title,
+  .keyword-title {
+    font-size: 16px;
+    color: #83828c;
+    display: block;
+    width: 100%;
+    margin: 12px 0 15px;
+  }
+
+  .password-title {
+    margin: -5px 0;
+  }
+
+  .keyword-list .btn-base {
     font-size: 12px;
-    padding: 3px 7px;
+    padding: 2px 7px;
+  }
+
+  .submitdiv {
+    margin: 10px auto 30px;
   }
 }
