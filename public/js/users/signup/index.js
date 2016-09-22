@@ -4,14 +4,17 @@ $(document).ready(function() {
 });
 
 function initInputLabel() {
-    $(".input-label").bind("click mouseleave", function() {
+    var $input = $(".input-label");
+    var activeColor = "#dcf5e7";
+    var normalColor = "#f5f7fa";
+    $input.bind("click mouseleave", function() {
         if ($(".check-box").is(":checked")) {
-            $(this).css("background-color", "#dcf5e7");
+            $input.css("background-color", activeColor);
         } else {
-            $(this).css("background-color", "#f5f7fa");
+            $input.css("background-color", normalColor);
         }
     }).mouseenter(function() {
-        $(this).css("background-color", "#dcf5e7");
+        $input.css("background-color", activeColor);
     });
 }
 
