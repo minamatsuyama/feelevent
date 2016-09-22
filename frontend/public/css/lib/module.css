@@ -1218,6 +1218,7 @@ input[type="radio"]:checked {
   font-weight: bold;
 }
 .eventcards .eventcard .eventcard-warpper table {
+  width: 100%;
   border-top: 1px solid #e6edf2;
 }
 .eventcards .eventcard .eventcard-warpper table td {
@@ -1252,13 +1253,6 @@ input[type="radio"]:checked {
 }
 .eventcards .eventcard .event-likebox:after {
   clear: both;
-}
-.eventcards .load-more {
-  background-color: #fff;
-  margin: 0 0 30px 0;
-  font-size: 13px;
-  color: #187fc4;
-  padding: 19px 0;
 }
 
 @media screen and (min-width: 680px) and (max-width: 999px) {
