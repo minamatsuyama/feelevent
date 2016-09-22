@@ -17,4 +17,12 @@ class Event::Item < ApplicationRecord
   # TODO: set types
   enumerize :currency, in: %i(yen dollar)
   enumerize :preparation_type, in: %i(needless individual team)
+
+  def self.get_valid_item(id)
+    now = Time.now.utc.strftime("%Y-%m-%d")
+    Event::Item.where("id = ?", id)
+               .where("? BETWEEN DATE_FORMAT(publish_started_at, '%Y-%m-%d') AND DATE_FORMAT(publish_ended_at, '%Y-%m-%d')", now)
+               .where("published = 1")
+  end
+
 end
