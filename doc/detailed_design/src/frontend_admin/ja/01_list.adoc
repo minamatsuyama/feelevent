@@ -11,7 +11,7 @@ World Schoolフロントエンド設計に習う
 * [04] ディレクトリ構成図　//TODO
 
 
-=== 技術要件：特記事項
+=== 技術要件：特記・付加事項
 
 ==== 基本フレームワーク
 
@@ -19,10 +19,15 @@ http://getbootstrap.com/[BootStrap]を用いる
 
 ==== プラグイン
 
-* bootstrap-datepicker：カレンダーの制作
-** https://github.com/eternicode/bootstrap-datepicker
-** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
+* カレンダー
+** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
+*** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
 
+==== レスポンシブ対応
+
+管理画面の使用者はPCを前提としているので対応はなし
+
+==== 他
 
 == 画面設計書
 
