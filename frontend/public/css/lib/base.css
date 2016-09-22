@@ -139,7 +139,7 @@ table {
 body {
   color: #000;
   font-size: 14px;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   letter-spacing: 0.05em;
   vertical-align: top;
 }
@@ -435,7 +435,7 @@ h2:hover ._heading-anchor, h3:hover ._heading-anchor {
   content: attr(id);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 
 ._sample-index .child {
@@ -481,7 +481,7 @@ html:target .container-full::after,
   content: attr(class);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 html:target .container .row-no-gutter,
 html:target .container .row-md-no-gutter,
@@ -509,7 +509,7 @@ html:target .row::after,
   content: attr(class);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 .row + html:target .row, .col + html:target .row, .row +
 ._sample:not(._no-guide) .row, .col +
@@ -532,7 +532,7 @@ html:target .col::after,
   content: attr(class);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 html:target .row-wide-gutter .col,
 ._sample:not(._no-guide) .row-wide-gutter .col {
@@ -581,7 +581,7 @@ html:target .row-no-gutter .col,
     content: attr(class);
     z-index: 1;
     letter-spacing: normal;
-    font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+    font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
   }
   .row-sm-no-gutter html:target .col, .row-sm-no-gutter
   ._sample:not(._no-guide) .col {
@@ -638,11 +638,11 @@ html:target body:not(._module) *[class^="_"]::before {
   font-size: 10px;
   display: block;
   z-index: 9010;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 html:target body:not(._module) *[class^="_"]::after {
   content: "【注意】「_」から始まるclassが残っています";
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
   display: block;
   position: fixed;
   top: 0;
@@ -670,14 +670,14 @@ html:target body:not(._module) a[href="dummy"]::before {
   font-size: 10px;
   display: block;
   z-index: 9010;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 html:target body:not(._module) a[href=""]::after,
 html:target body:not(._module) a[href="DUMMY"]::after,
 html:target body:not(._module) a[href="dummy"]::after,
 html:target body:not(._module) a[href="dummy"]::after {
   content: "【注意】ダミーのhrefが残っています";
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
   display: block;
   position: fixed;
   top: 0;
@@ -742,7 +742,7 @@ html:target body:not(._module) a[href="dummy"]::after {
   content: attr(class);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 #content:target .bc-normal::after,
 #content:target .bc-attention::after,
@@ -799,7 +799,7 @@ html:target body:not(._module) a[href="dummy"]::after {
   content: attr(class);
   z-index: 1;
   letter-spacing: normal;
-  font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif !important;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif !important;
 }
 #content:target .bc-normal .subchapter::after,
 #content:target .bc-attention .subchapter::after,
@@ -975,7 +975,7 @@ kbd kbd {
 }
 
 #content {
-  min-height: 500px;
+  min-height: 545px;
 }
 
 .container {
@@ -1001,8 +1001,8 @@ kbd kbd {
 @media screen and (max-width: 679px) {
   .container {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1217,8 +1217,8 @@ kbd kbd {
 @media screen and (min-width: 680px) and (max-width: 999px) and (max-width: 679px) {
   .container-md {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1404,8 +1404,8 @@ kbd kbd {
 @media screen and (max-width: 679px) and (max-width: 679px) {
   .container-sm {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1782,7 +1782,6 @@ kbd kbd {
 */
 #global-footer {
   border-top: 1px solid #e5e5e5;
-  padding: 20px 0 40px;
   color: #666;
   height: 120px;
   text-align: center;
