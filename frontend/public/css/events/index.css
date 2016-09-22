@@ -98,6 +98,11 @@ p {
   padding: 8px 26px;
   font-size: 14px;
 }
+@media screen and (max-width: 679px) {
+  .detail-title.recommended:after {
+    top: 0;
+  }
+}
 
 .detail-tags {
   margin-top: 15px;
@@ -246,10 +251,6 @@ p {
   .map-text.nth-map {
     margin-top: 16px;
   }
-}
-
-.recommends .eventcard {
-  position: relative;
 }
 
 .register-box {

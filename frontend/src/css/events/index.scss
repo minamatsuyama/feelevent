@@ -90,6 +90,9 @@ p {
     z-index: 1010;
     padding: 8px 26px;
     font-size: 14px;
+    @include mediaquery-sm() {
+      top: 0;
+    }
   }
 }
 
@@ -224,13 +227,6 @@ p {
       margin-top: 16px;
     }
   }
-}
-
-.recommends {
-  .eventcard {
-    position: relative;
-  }
-
 }
 
 .register-box {
