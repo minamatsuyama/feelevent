@@ -23,6 +23,25 @@ http://getbootstrap.com/[BootStrap]を用いる
 ** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
 *** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
 
+==== フォーム
+
+* 必須チェック
+
+http://caniuse.com/#search=required
+required属性を使用する
+
+* 入力パターンチェック
+
+http://caniuse.com/#search=pattern
+pattern属性を用いる
+
+////
+* valid
+http://caniuse.com/#search=%3Avalid
+各フォームにおいてのチェックは可能だが
+formタグにはIEが効かないので使用しない
+////
+
 ==== レスポンシブ対応
 
 管理画面の使用者の環境はPCを前提としているので対応はなし
