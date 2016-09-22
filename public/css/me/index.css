@@ -38,7 +38,7 @@
 @media screen and (max-width: 679px) {
   .userinfo-inner {
     padding: 8px 15px 15px 15px;
-    margin: 20px 0 25px;
+    margin: 20px 5px 25px;
     border-top: 5px solid #2c7996;
   }
   .userinfo-inner .col {
@@ -126,12 +126,23 @@
   margin: 55px 0 60px;
 }
 @media screen and (max-width: 679px) {
-  .btn-to-top {
+  .btn-to-top.btn {
     display: block;
-    margin: 10px 0 30px;
+    margin: 10px 5px 30px;
+    width: auto;
   }
 }
 
 .slick-slide {
   width: 325px;
+}
+
+@media screen and (max-width: 679px) {
+  .container {
+    padding: 0;
+  }
+
+  .event-group {
+    margin: 0 5px;
+  }
 }

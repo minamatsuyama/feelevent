@@ -4,6 +4,7 @@
 @import "../shared/mixins";
 
 //start code
+
 .userinfo-inner {
   background: $color-white;
   padding: 15px 84px 45px;
@@ -43,7 +44,7 @@
 
   @include mediaquery-sm {
     padding: 8px 15px 15px 15px;
-    margin: 20px 0 25px;
+    margin: 20px 5px 25px;
     border-top: 5px solid #2c7996;
     .col {
       margin-bottom: 10px;
@@ -125,12 +126,23 @@
   display: block;
   margin: 55px 0 60px;
   @include mediaquery-sm() {
+    &.btn {
     display: block;
-    margin: 10px 0 30px;
+    margin: 10px 5px 30px;
+    width: auto;
+    }
   }
 }
-
 .slick-slide {
   width: 325px;
+}
+
+@include mediaquery-sm() {
+  .container {
+    padding: 0;
+  }
+  .event-group {
+    margin: 0 5px;
+  }
 }
 
