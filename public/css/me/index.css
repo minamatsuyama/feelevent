@@ -80,7 +80,7 @@
   }
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 1000px) {
   .preparefree-list .eventcard:nth-child(n+4),
   .advanceprepare-list .eventcard:nth-child(n+4) {
     display: none;
@@ -115,7 +115,7 @@
 .btn-more {
   margin-top: 10px;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .btn-more {
     display: none;
   }
@@ -137,12 +137,17 @@
   width: 325px;
 }
 
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .container {
     padding: 0;
+    width: auto;
   }
 
   .event-group {
     margin: 0 5px;
+  }
+
+  .userinfo-inner {
+    margin: 20px 5px 25px;
   }
 }

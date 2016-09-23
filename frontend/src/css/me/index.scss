@@ -84,7 +84,7 @@
   }
 }
 
-@include mediaquery-not-sm() {
+@include mediaquery-lg() {
   .preparefree-list .eventcard:nth-child(n+4),
   .advanceprepare-list .eventcard:nth-child(n+4) {
     display: none;
@@ -117,7 +117,7 @@
 
 .btn-more {
   margin-top: 10px;
-  @include mediaquery-sm() {
+  @include mediaquery-not-lg() {
     display: none;
   }
 }
@@ -137,12 +137,17 @@
   width: 325px;
 }
 
-@include mediaquery-sm() {
+@include mediaquery-not-lg() {
   .container {
     padding: 0;
+    width: auto;
   }
+
   .event-group {
     margin: 0 5px;
   }
-}
 
+  .userinfo-inner {
+    margin: 20px 5px 25px;
+  }
+}

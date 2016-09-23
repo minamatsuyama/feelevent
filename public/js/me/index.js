@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var $window = $(window), $card = $(".favorite-list, .preparefree-list, .advanceprepare-list"), toggleSlick;
     toggleSlick = function() {
-        if ($window.width() < 450) {
+        if ($window.width() < 1e3) {
             if ($card.hasClass("slick-initialized")) {
                 $card.slick("unslick");
             }

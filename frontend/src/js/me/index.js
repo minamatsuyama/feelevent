@@ -7,7 +7,7 @@ $(document).ready(function () {
     , toggleSlick;
 
   toggleSlick = function () {
-    if ($window.width() < 450) {
+    if ($window.width() < 1000) {
       if($card.hasClass('slick-initialized')) {
         $card.slick("unslick");
       }
