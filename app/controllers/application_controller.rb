@@ -20,16 +20,25 @@ class ApplicationController < ActionController::Base
 
   def render_403(e = nil)
     logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
-    render file: 'html/errors/403', status: :forbidden
+    respond_to do |format|
+      format.html { render file: 'html/errors/403', status: :forbidden }
+      format.json { render json: { message: 'Forbidden' }, status: :forbidden }
+    end
   end
 
   def render_404(e = nil)
     logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
-    render file: 'html/errors/404', status: :not_found
+    respond_to do |format|
+      format.html { render file: 'html/errors/404', status: :not_found }
+      format.json { render json: { message: 'Not Found' }, status: :not_found }
+    end
   end
 
   def render_500(e = nil)
     logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
-    render file: 'html/errors/500', status: :internal_server_error, layout: false
+    respond_to do |format|
+      format.html { render file: 'html/errors/500', status: :internal_server_error, layout: false }
+      format.json { render json: { message: 'Internal Server Error' }, status: :internal_server_error }
+    end
   end
 end
