@@ -31,13 +31,13 @@ http://getbootstrap.com/[BootStrap]を用いる
 
 * 必須チェック
 
-http://caniuse.com/#search=required
+http://caniuse.com/#search=required +
 required属性を使用する
 
-* 入力パターンチェック
+* 入力パターンチェック ※Safariは対応していない(バグあり)
 
-http://caniuse.com/#search=pattern
-pattern属性を用いる
+http://caniuse.com/#search=pattern +
+pattern属性を用いる ※Safariは対応していない(バグあり)
 
 ////
 * valid
