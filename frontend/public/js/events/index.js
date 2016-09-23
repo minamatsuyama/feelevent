@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    initSlick();
+    initLoadMore();
+});
+
+function initSlick() {
     var $window = $(window), $card = $(".recommend-list"), toggleSlick;
     toggleSlick = function() {
         if ($(window).width() < 480) {
@@ -20,11 +25,16 @@ $(document).ready(function() {
     };
     $window.resize(toggleSlick);
     toggleSlick();
-    $(".recommends .btn-more").click(function(e) {
+}
+
+function initLoadMore() {
+    var $btn = $(".recommends .btn-more");
+    var $eventcard = $(".recommend-list .eventcard");
+    $btn.on("click", function(e) {
         $(".recommend-list .eventcard:hidden").slice(0, 3).css("display", "inline-block");
-        if ($(".recommend-list .eventcard").length == $(".recommend-list .eventcard:visible").length) {
-            $(".recommends .btn-more").hide();
+        if ($eventcard.length == $(".recommend-list .eventcard:visible").length) {
+            $btn.hide();
         }
         e.preventDefault();
     });
-});
+}
