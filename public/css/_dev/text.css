@@ -1,0 +1,21 @@
+#content {
+  background-color: #e3e3e3;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 639px) {
+  #content {
+    padding-top: 22px;
+    font-size: 12px;
+  }
+}
+
+.box-main {
+  background-color: #fff;
+  padding: 48px 85px 33px;
+}
+@media screen and (max-width: 639px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}

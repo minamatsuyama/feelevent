@@ -138,7 +138,7 @@ table {
 }
 body {
   color: #000;
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3" Meiryo, メイリオ, sans-serif;
   letter-spacing: 0.05em;
   vertical-align: top;
@@ -165,10 +165,14 @@ body {
 }
 
 a {
-  color: #4078c0;
+  color: #187fc4;
 }
 a:hover {
+  color: #187fc4;
   text-decoration: underline;
+}
+a:visited {
+  color: #065ac1;
 }
 
 .sr-only {
@@ -394,7 +398,7 @@ h2._red code {
 }
 
 h3._red {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 0;
 }
 
@@ -412,7 +416,7 @@ h2:hover ._heading-anchor, h3:hover ._heading-anchor {
   outline: none;
   opacity: 1;
   text-decoration: none;
-  color: #4078c0;
+  color: #187fc4;
 }
 ._heading-anchor::before {
   content: "¶";
@@ -975,7 +979,7 @@ kbd kbd {
 }
 
 #content {
-  min-height: 500px;
+  min-height: 545px;
 }
 
 .container {
@@ -1080,7 +1084,7 @@ kbd kbd {
   vertical-align: top;
   text-align: left;
   letter-spacing: 0.05em;
-  font-size: 14px;
+  font-size: 15px;
 }
 @media screen and (max-width: 679px) {
   .col {
@@ -1761,7 +1765,7 @@ kbd kbd {
 }
 
 .global-navigation h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-family: Helvetica, arial, sans-serif;
   margin: 1em 0;
 }
@@ -1782,7 +1786,6 @@ kbd kbd {
 */
 #global-footer {
   border-top: 1px solid #e5e5e5;
-  padding: 20px 0 40px;
   color: #666;
   height: 120px;
   text-align: center;

@@ -16,38 +16,21 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
     color: $color-gray-light;
   }
-
-  .shoulder {
-    display: block;
-    margin-bottom: .5em;
-    font-size: $font-size-large;
-  }
-
-  &.no-margin {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-  &.no-margin-top {
-    margin-top: 0 !important;
-  }
-  &.no-margin-bottom {
-    margin-bottom: 0 !important;
-  }
 }
 
 h1 {
   font-size: $font-size-h1;
-  margin-bottom: $margin-v-chapter;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-size: $font-size-h2;
-  margin: $margin-v-chapter 0 ($margin-v-chapter - 10);
+  margin: 20px 0;
 }
 
 h3 {
   font-size: $font-size-h3;
-  margin: ($margin-v-subchapter + 5) 0 ($margin-v-subchapter - 5);
+  margin: 20px 0 15px;
 }
 
 h4 {
@@ -66,42 +49,18 @@ h6 {
 }
 
 
-.underline-blue {
-  border-bottom: $color-link-main-dark 1px solid;
-  padding-bottom: 0.5em;
-
-  /*
-  @include mediaquery-md() {
-    margin-left  : -$container-guide;
-    margin-right : -$container-guide;
-    padding-left :  $container-guide;
-    padding-right:  $container-guide;
-  }
-  */
-
-  @include mediaquery-sm() {
-    margin-left  : -$container-guide-sm;
-    margin-right : -$container-guide-sm;
-    padding-left :  $container-guide-sm;
-    padding-right:  $container-guide-sm;
-  }
-
-}
-
-
-
 @include mediaquery-sm() {
   h1 {
     font-size: $font-size-h1-sm;
-    margin-bottom: $margin-v-chapter-sm;
+    margin-bottom: 10px;
   }
   h2 {
     font-size: $font-size-h2-sm;
-    margin: $margin-v-chapter-sm 0 ($margin-v-chapter-sm - 5);
+    margin: 10px 0;
   }
   h3 {
     font-size: $font-size-h3-sm;
-    margin: ($margin-v-subchapter-sm + 5) 0 ($margin-v-subchapter-sm - 5);
+    margin: 10px 0;
   }
   time {
     font-size: $font-size-small;
@@ -118,8 +77,11 @@ h6 {
 
 //通常の段落
 p {
-  margin: .5em 0;
+  font-size: $font-size-base;
   line-height: $line-height-base;
+  @include mediaquery-sm() {
+    font-size: 12px;
+  }
 }
 
 .col > p {
@@ -196,28 +158,6 @@ sub {
   vertical-align: text-bottom;
 }
 
-
-//リード文
-.lead {
-  @include mediaquery-not-sm() {
-    font-size: 18px;
-  }
-}
-
-//注釈
-.note,
-.notes,
-.list-notes {
-  margin: 1em 0;
-  font-size: $font-size-small;
-  color: $color-gray;
-  line-height: $line-height-narrow;
-  list-style: none;
-  li {
-    margin: .5em 0;
-  }
-}
-
 //太字
 .font-bold {
   font-weight: bold;
@@ -233,11 +173,6 @@ em {
   color: $color-assort;
 }
 
-//アテンション文言
-.attention {
-  color: $color-attention;
-}
-
 //小さい文字
 small,
 .small {
@@ -251,21 +186,6 @@ mark,
   padding: .2em;
 }
 
-.title-square {
-  position: relative;
-  padding-left: 1em;
-
-  &::before {
-    width: 5px;
-    height: 5px;
-    background-color: $color-gray-lighter;
-    content: "";
-    display: block;
-    position: absolute;
-    left: 2px;
-    top: .7em;
-  }
-}
 
 blockquote {
   color: $color-gray-light;
@@ -300,59 +220,6 @@ address {
   font-style: normal;
 }
 
-h1 {
-  &.title-lg {
-    margin: 80px 0 50px 0;
-    font-size: 44px;
-    line-height: 1.5;
-    @include mediaquery-sm() {
-      margin: 50px 0 20px 0;
-      font-size: 26px;
-    }
-
-    &.no-margin-bottom {
-      margin-bottom: 0;
-    }
-  }
-}
-
-
-h2 {
-  &.title-lg {
-    margin: 80px 0;
-    font-size: 36px;
-    @include mediaquery-sm() {
-      margin: 30px 0 25px 0;
-      font-size: 20px;
-    }
-  }
-
-  &.no-margin-bottom {
-    margin-bottom: 0;
-  }
-
-  &.margin-sm {
-    margin: 60px 0 30px 0;
-    @include mediaquery-sm() {
-      margin: 30px 0 25px 0;
-    }
-  }
-
-  &.light {
-    color: #0086ce;
-    font-size: 24px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
 // outline
 // -------------------------
 
@@ -368,8 +235,8 @@ h2 {
 }
 
 .paragraph {
-  margin-top: $margin-v-paragraph;
-  margin-bottom: $margin-v-paragraph;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 @include mediaquery-sm(){

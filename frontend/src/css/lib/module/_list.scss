@@ -31,6 +31,7 @@ ol,
   @include list-style-square();
   li {
     margin: .5em 0;
+    padding-left: 15px;
     &:first-child { margin-top: 0; }
     &:last-child  { margin-bottom: 0; }
   }
@@ -243,4 +244,3 @@ ol,
     }
   }
 }
-
