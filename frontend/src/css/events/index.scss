@@ -90,6 +90,10 @@ p {
     z-index: 1010;
     padding: 8px 26px;
     font-size: 14px;
+    @include mediaquery-sm() {
+      top: -5px;
+      left: -15px;
+    }
   }
 }
 
@@ -226,15 +230,8 @@ p {
   }
 }
 
-.recommends {
-  .eventcard {
-    position: relative;
-  }
-
-}
-
 .register-box {
-  border: 4px solid $color-yellow-main;
+  border: 4px solid #ffcc00;
   border-radius: 3px;
   background-color: $color-white;
   padding:10px 65px;
@@ -261,7 +258,7 @@ p {
     }
   }
   .register-btn {
-    background-color: $color-yellow-main;
+    background-color: #ffcc00;
     width: 100px;
     height: 100px;
     display: inline-block;

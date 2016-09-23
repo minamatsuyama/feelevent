@@ -16,28 +16,25 @@
 │   │   │   └── lib/    #共通CSS 格納フォルダ
 │   │   │       ├── base.css
 │   │   │       └── module.css
-│   │   ├── events/     #[B-2] イベント詳細
-│   │   │   └── index.html
+│   │   ├── events.html     #[B-2] イベント詳細
 │   │   ├── index.html  #[B-1] トップページ
+│   │   ├── term.html   #[E-1] 利用規約
+│   │   ├── privacy.html  #[E-2] プライバシーポリシー
 │   │   ├── js/         #js 格納フォルダ
 │   │   │   └── lib/    #共通js格納フォルダ
 │   │   │       ├── module.js
 │   │   │       └── vendor.js
-│   │   ├── me/         #[C-1] マイページ
-│   │   │   ├── index.html
+│   │   ├── me/
+│   │   │   ├── index.html  #[C-1] マイページ
 │   │   │   └── settings    #[C-2] マイページ 設定変更
-│   │   │       └── index.html
-│   │   ├── password/   #
-│   │   │   ├── edit    #[A-4] パスワード再設定
-│   │   │   │   └── index.html
-│   │   │   └── new     #A[-3] パスワード変更
-│   │   │       └── index.html
-│   │   ├── signin/     #[A-1] ログイン
-│   │   │   └── index.html
-│   │   ├── signout/    #[A-2] ログアウト
-│   │   │   └── index.html
-│   │   └── signup/     #[D-1] 新規登録
-│   │       └── index.html
+│   │   │   └── favorites   #[C-3] お気に入り一覧
+│   │   └── users
+│   │       ├── password
+│   │       │   ├── edit.html    #[A-4] パスワード再設定
+│   │       │   └── new.html     #[A-3] パスワード変更
+│   │       ├── signin.html      #[A-1] ログイン
+│   │       ├── signout.html     #[A-2] ログアウト
+│   │       └── signup.html      #[D-1] 新規登録
 │   └── src
 │       ├── css
 │       │   ├── shared	#共通スタイル
