@@ -100,7 +100,8 @@ p {
 }
 @media screen and (max-width: 679px) {
   .detail-title.recommended:after {
-    top: 0;
+    top: -5px;
+    left: -15px;
   }
 }
 
