@@ -61,4 +61,5 @@ RSpec.configure do |config|
   config.include JsonSpec::Helpers
   config.include RSpec::RequestDescriber, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.extend LoginMacros, type: :controller
 end
