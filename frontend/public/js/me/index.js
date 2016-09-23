@@ -7,7 +7,7 @@ $(document).ready(function() {
             }
             $card.slick({
                 dots: false,
-                infinite: true,
+                infinite: false,
                 speed: 600,
                 arrows: false,
                 variableWidth: true

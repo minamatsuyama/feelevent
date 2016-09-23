@@ -92,6 +92,7 @@
   right: 10px;
   font-size: 14px;
   color: #187fc4;
+  text-decoration: none;
   background: transparent;
 }
 .btn-changesetting span {
@@ -101,6 +102,7 @@
 }
 .btn-changesetting:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 @media screen and (max-width: 679px) {
   .btn-changesetting {

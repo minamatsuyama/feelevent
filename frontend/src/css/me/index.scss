@@ -97,6 +97,7 @@
   right: 10px;
   font-size: $font-size-base;
   color: $color-blue;
+  text-decoration: none;
   background: transparent;
   span {
     background: transparent;
@@ -105,6 +106,7 @@
   }
   &:hover {
     cursor: pointer;
+    text-decoration: none;
   }
   @include mediaquery-sm() {
     top: 13px;
