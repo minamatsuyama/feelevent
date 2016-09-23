@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <% if admin_user_signed_in? %>
+      Logged in as <strong><%= current_admin_user.email %></strong> (Admin). </br>
+      <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete %>
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert%></p>
     <%= yield %>
   </body>
 </html>
