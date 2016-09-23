@@ -5,7 +5,7 @@
 
 a[href^="tel:"],
 a[href^="mailto:"] {
-  color: $color-black;
+  color: $color-blue;
   &:hover {
     color: $color-link-main;
   }

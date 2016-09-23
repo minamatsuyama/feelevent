@@ -3,7 +3,7 @@
   padding-top: 40px;
   padding-bottom: 60px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   #content {
     padding-top: 20px;
     padding-bottom: 30px;
@@ -15,7 +15,7 @@
   padding: 62px 85px 33px;
   border-radius: 3px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .box-main {
     padding: 15px 15px 30px;
   }
@@ -28,7 +28,7 @@
   margin-bottom: 5px;
   border-bottom: 1px solid #e6edf2;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .signup .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -38,7 +38,7 @@
 #signup-form {
   margin-top: 35px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   #signup-form {
     margin-top: 15px;
   }
@@ -52,7 +52,7 @@
   margin-bottom: 10px;
   margin-right: 3px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .keywords .label-gray {
     margin-bottom: 5px;
     margin-right: 0;
@@ -62,7 +62,7 @@
 .terms {
   margin-bottom: 10px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .terms {
     margin-bottom: 5px;
     font-size: 12px;
@@ -81,88 +81,11 @@
   border: 1px solid #187fc4;
 }
 
-*:focus {
-  outline: none;
-}
-
-.input-text {
-  border: 1px solid #d3dae0;
-  border-radius: 3px;
-  padding: 9px 10px;
-  font-size: 14px;
-  background-color: #f5f7fa;
-}
-.input-text::-moz-placeholder {
-  color: #83828c;
-  opacity: 1;
-}
-.input-text:-ms-input-placeholder {
-  color: #83828c;
-}
-.input-text::-webkit-input-placeholder {
-  color: #83828c;
-}
-@media screen and (max-width: 639px) {
-  .input-text {
-    width: 100%;
-  }
-}
-
-.input-label {
-  color: #333;
-  padding: 15px 20px;
-  background-color: #f5f7fa;
-  font-size: 13px;
-  border-radius: 3px;
-}
-.input-label .check-box {
-  margin-top: -5px;
-  margin-right: 10px;
-}
-.input-label .check-box:before {
-  position: relative;
-  display: block;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #d3dae0;
-  border-radius: 3px;
-  content: "";
-  background: #FFF;
-}
-.input-label .check-box:checked:before {
-  background-image: url("/img/ico_checkbox-checked.jpg");
-  width: 16px;
-  height: 15px;
-}
-.input-label:hover, .input-label:active, .input-label:focus {
-  background-color: #dcf5e7;
-}
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .input-label {
-    padding: 10px 5px;
-    font-size: 12px;
-  }
-  .input-label .check-box {
-    margin-top: 0;
-    margin-right: 5px;
+    padding: 2px;
   }
 }
-
-.label {
-  color: #fff;
-  font-size: 12px;
-  border-radius: 3px;
-  padding: 0 10px;
-  display: inline-block;
-}
-
-.label-gray {
-  color: #83828c;
-  border: 1px solid #d3dae0;
-  background-color: #f5f7fa;
-  padding: 6px 8px;
-}
-
 .selectpicker .select2-container .select2-results__option--highlighted[aria-selected] {
   background-color: #f5f7fa;
   color: #333;
@@ -211,7 +134,7 @@
   margin-top: 57px;
   margin-bottom: 35px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .row.row-register.message {
     margin-top: 27px;
     margin-bottom: 15px;
@@ -221,7 +144,7 @@
   margin-top: 70px;
   margin-bottom: 67px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .row.row-register.receive-news {
     margin-top: 35px;
     margin-bottom: 30px;
@@ -234,7 +157,7 @@
 .col.col-title {
   margin-top: 10px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .col.col-title {
     margin-top: 0;
     margin-bottom: 5px;
@@ -243,7 +166,7 @@
 .col.col-input {
   margin-left: -60px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .col.col-input {
     margin-left: 0;
   }
