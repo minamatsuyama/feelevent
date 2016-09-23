@@ -81,3 +81,39 @@
     background-color: $color-gray-lightest;
   }
 }
+
+.btn-checkbox{
+  background-color: $color-btn-gray;
+  color:$color-gray-light;
+  input{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+  }
+  &.active{
+    background: $color-blue;
+    color:#fff;
+    &:hover{
+      background-color:$color-blue-light;
+      color:#fff;
+    }
+  }
+  &:hover{
+    background: #fff;
+    color:$color-gray-light;
+  }
+}
+
+.btn-more {
+  color: $color-blue;
+  background-color: $color-white;
+  font-size: 13px;
+  padding: 15px;
+  &:hover {
+    background-color: $color-gray-lightest;
+  }
+  &:active,
+  &.active {
+    background-color: $color-gray-lightest;
+  }
+}

@@ -164,7 +164,7 @@ $color-border-search: #d3dae0;
         padding-bottom: 20px;
         .lbl-text{
           &:before{
-            background-position: right top;
+            background-position: right -10px;
           }
         }
       }
@@ -178,13 +178,13 @@ $color-border-search: #d3dae0;
           content:"";
           position: absolute;
           top:50%;
-          margin-top:-6px;
+          margin-top:-5px;
           right:7px;
-          height:6px;
-          width:12px;
-          background-image: url("/img/searchmenu-arrow.jpg");
+          height:10px;
+          width:10px;
+          background-image: url("/img/searchmenu-arrow.png");
           background-repeat: no-repeat;
-          background-position: right -6px;
+          background-position: right top;
           background-size:100% ;
         }
         &.keyword-group{
