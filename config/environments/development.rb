@@ -56,7 +56,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   config.after_initialize do
-    Bullet.enable = true
+    Bullet.enable = false
     Bullet.bullet_logger = true
     Bullet.raise = true # raise an error if n+1 query occurs
   end
