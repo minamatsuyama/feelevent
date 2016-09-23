@@ -26,6 +26,6 @@ include::../../form_site/ja/_include/A-4.adoc[]
 ==== 2.送信ボタンエリア
 
 ** 送信ボタンを表示
-** 呼び出すURL /password/edit
+** 呼び出すURL /password
 
 link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_site/ja/A-4.adoc[]
