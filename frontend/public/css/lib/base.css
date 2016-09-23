@@ -1798,7 +1798,7 @@ kbd kbd {
   z-index: 1010;
   font-size: 12px;
   color: #fff;
-  background: url("/img/top-flag.png") no-repeat top left;
+  background: url("/img/top-flag.png") no-repeat bottom left;
 }
 #global-header .container .top-link {
   left: 15px;
@@ -1828,12 +1828,38 @@ kbd kbd {
     height: 60px;
     background-size: 22%;
   }
+  #global-header .container .share-box {
+    display: none;
+    height: 55px;
+    width: 125px;
+    background-color: #ffcc00;
+    border-top: 1px solid #e6b800;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 20px;
+    z-index: 1010;
+  }
+  #global-header .container .share-box .top-fb-link, #global-header .container .share-box .top-tw-link {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+  }
+  #global-header .container .share-box .top-fb-link img, #global-header .container .share-box .top-tw-link img {
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+  }
+  #global-header .container .share-box .top-tw-link {
+    margin-left: 15px;
+  }
   #global-header .container .logo {
     width: 166px;
     padding: 12px 0 5px 0;
   }
   #global-header .container .link-text {
-    font-size: 12px;
+    font-size: 9px;
   }
   #global-header .container .top-link,
   #global-header .container .top-user {
@@ -1845,6 +1871,14 @@ kbd kbd {
   }
   #global-header .container .top-link img {
     width: 29px;
+  }
+  #global-header .container .top-flag {
+    line-height: normal;
+    height: 56px;
+    top: 60px;
+    right: 0;
+    font-size: 10px;
+    padding: 15px 0;
   }
   #global-header .container .top-user {
     right: 15px;
@@ -1878,6 +1912,7 @@ kbd kbd {
 }
 #global-footer .main-footer .info img {
   vertical-align: bottom;
+  padding-left: 10px;
 }
 #global-footer .main-footer ul li {
   border: 0 none;
