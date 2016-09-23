@@ -1,0 +1,31 @@
+== サービス画面:A-3 パスワード変更
+
+=== From
+include::./_include/from.adoc[]
+
+=== To
+* 入力されたメールアドレス
+
+=== Subject
+----
+[WorldSchool] パスワード再設定
+----
+
+=== Body
+----
+<%= メールアドレス %> 様
+
+「WorldSchool」へログインするパスワードの変更リクエストを受け付けました。
+
+■メールアドレス
+<%= メールアドレス %>
+
+パスワードを変更するには、以下をクリックしてください。
+https://worldschool.feelnote.org/password/edit?reset_password_token=<%= トークン %>
+※URLの有効時間は10分間です。
+
+このメールに心あたりがない場合は、
+お手数ですが削除をお願いいたします。
+
+include::./_include/body_footer.adoc[]
+----
