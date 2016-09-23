@@ -1,59 +1,68 @@
-== B-1 トップページ画面詳細設計サンプル
+== B-1 トップページ画面詳細設計
 
 === 概要
 
 WorldSchoolのトップページ
 
-=== ワイヤーフレーム
-
-https://docs.google.com/presentation/d/1c4xtvmtKfRsK2KOW7EMndIF1t2zH41a5xZhXg546TOY/edit#slide=id.g165019e56f_0_172
 
 === 基本情報
 
-* プロモーションエリア
-** カルーセル表示
-* 検索フォーム
-** PC
-** SP
-*** 絞り込みボタン押下で条件画像をスライドインさせる
-
-* 検索結果
-** APIからのレスポンス内容を表示
-** キーワード、種別のON、OFFはAPIからのレスポンスから取得
-
-* ページネーション
-** ○○件該当のイベントを表示（※ 該当イベントが無い場合は非表示）
+|=================================
+|1       |プロモーションエリア    |プロモーションバナーを掲載
+|2       |検索条件入力エリア   |イベント検索条件を掲載
+|3       |イベント情報一覧   |イベントの検索結果を掲載
+|4       |もっと見るボタン   |イベント検索結果をさらに表示するボタンを掲載
+|=================================
 
 <<<
 
 === 仕様
 
-//image::../assets/B-1.png[]
+image::../assets/B-1.png[]
 
-**TODO**　ゾーンごとの要素を記載する(非ログイン時/ログイン時固有のものがあればそれぞれ記載する)
 
-==== 検索フォーム
+==== 1.プロモーションエリア
 
-検索条件を設定する
+* カルーセルで表示を切り替えられる
+* MAX4件まで表示
 
-https://github.com/1pac/fg-event/blob/71dad3cde94627fac0d676f2329e2d44b4bcc1b0/doc/api_design/build/api_ja.md#ida0201-イベント検索
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/frontend_site/ja/07_javascript_basic_design.adoc#カルーセル[]
 
-* 初期表示
-** エリア（先頭表示）
-** 参加費用
-** 対象年齢
-** 開始期間（ページを表示した日付）
-** 終了期間（空白）
-** キーワード（全てOFF）
-** 種別（全てOFF）
-** フリーワード（placeholder:イベント名、キーワードで検索...）
-** 検索ボタン
+==== 2.検索条件入力エリア
 
-==== 検索結果
+* PC版
+** 検索条件を設定する
 
-* イベント情報
+include::../../form_site/ja/_include/B-1.adoc[]
 
-==== ページネーション
+** 検索ボタン押下 /api/events
 
-* もっと見るボタン
-** クリックしたら `api/***` を呼び出し検索結果を追加する。
+link::https://github.com/1pac/fg-event/blob/71dad3cde94627fac0d676f2329e2d44b4bcc1b0/doc/api_design/build/api_ja.md#ida0201-イベント検索[]
+
+
+* SP版
+** フリーワード、検索ボタン、絞り込み条件を表示させておく
+** 検索ボタン押下のAPIはPC版と同じ
+** 絞り込み検索ボタン押下で検索の詳細条件画面がスライドインする
+** スライドインした詳細条件画面の検索ボタン押下
+** ↓詳細条件画面
+
+image::../assets/B-1-SP-menu.png[]
+
+==== 3.イベント情報一覧
+
+* 初期表示MAX9件
+* お気に入り登録
+** お気に入りボタンを押下しAPIを呼ぶ
+
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0101.adoc[]
+
+* お気に入り削除
+** 再度お気に入りボタンを押下しAPIを呼ぶ
+
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/ja/A0102.adoc[]
+
+==== 4.もっと見るボタン
+
+* 画面表示時に呼び出すAPIがセットされる
+
