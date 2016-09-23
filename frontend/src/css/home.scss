@@ -1,9 +1,6 @@
 @import "shared/variables";
 @import "shared/mixins";
 
-$btn-color-blue: #187fc4;
-$btn-color-gray: #f5f7fa;
-$color-border-search: #d3dae0;
 
 .container{
   max-width:100%;
@@ -114,6 +111,9 @@ $color-border-search: #d3dae0;
     .search-info-text{
       padding-left:10px;
       float: left;
+      .slash{
+        color:$color-gray-lighter;
+      }
     }
     .total-event{
       float:right;
@@ -134,8 +134,10 @@ $color-border-search: #d3dae0;
         .select2-selection--single{
           border: 0 none;
           background-color: #fff;
+          color:$color-gray-dark;
           .select2-selection__placeholder{
-            background-color:$btn-color-gray;
+            background-color:$color-btn-gray;
+            color:$color-gray-light;
             position: absolute;
             top:0;
             left:0;
@@ -149,7 +151,7 @@ $color-border-search: #d3dae0;
         color:$color-gray-light;
         width: 100%;
         height: 100%;
-        background: $btn-color-gray url("/img/select-arrow.png") right center no-repeat;
+        background: $color-btn-gray url("/img/select-arrow.png") right center no-repeat;
         border-left:1px solid $color-border-search;
         border-radius:0;
         box-shadow: none;
@@ -164,7 +166,7 @@ $color-border-search: #d3dae0;
     .icon-date-to{
       width: 34px;
       height:40px;
-      background-color: $btn-color-gray;
+      background-color: $color-btn-gray;
       color: $color-gray-light;
       line-height: 40px;
       text-align: center;
@@ -177,7 +179,7 @@ $color-border-search: #d3dae0;
         padding-left:20px;
         width: 100%;
         height: 100%;
-        background: $btn-color-gray url("/img/icon-calendar.png") no-repeat 92% center;
+        background: $color-btn-gray url("/img/icon-calendar.png") no-repeat 92% center;
         cursor: pointer;
         &.has-value{
           background-color:#fff;
@@ -200,7 +202,7 @@ $color-border-search: #d3dae0;
       }
       .input{
         padding-left: 40px;
-        background-color: $btn-color-gray;
+        background-color: $color-btn-gray;
         width: 100%;
         height: 100%;
         font-size: 14px;
@@ -219,7 +221,7 @@ $color-border-search: #d3dae0;
     input{
       width: 100%;
       height:100%;
-      background-color: $btn-color-blue;
+      background-color: $color-blue;
       margin: 0;
       border-radius: 0;
       &:hover{
@@ -243,98 +245,11 @@ $color-border-search: #d3dae0;
     .btn-group{
       width:916px;
       float: left;
-      .btn-checkbox{
-        background-color: $btn-color-gray;
-        color:$color-gray-light;
-        input{
-          position: absolute;
-          clip: rect(0,0,0,0);
-          pointer-events: none;
-        }
-        &.active{
-          background: $btn-color-blue;
-          color:#fff;
-        }
-        &:hover{
-          background: #fff;
-          color:$color-gray-light;
-        }
-      }
+
     }
     @include clearfix();
   }
 }
-// for datepicker
-.ui-datepicker{
-  padding:10px;
-  border: 1px solid $color-border-search;
-  border-radius: 0;
-  .ui-datepicker-header{
-    padding:0;
-    border:1px solid $color-border-search;
-    height: 30px;
-    border-radius: 0;
-    .ui-datepicker-prev,
-    .ui-datepicker-next{
-      top:0;
-      width:30px;
-      height:28px;
-      cursor: pointer;
-      span{
-        background: none;
-      }
-      &:before{
-        width:100%;
-        height:100%;
-        line-height: 28px;
-        text-align: center;
-        display: block;
-      }
-    }
-    .ui-datepicker-next{
-      right:0;
-       &:before{
-         content:">";
-       }
-     }
-    .ui-datepicker-prev{
-      left:0;
-      &:before{
-        content:"<";
-      }
-    }
-    .ui-datepicker-title{
-      height:28px;
-      line-height: 30px;
-      background-color:#fff;
-      border-left: 1px solid $color-border-search;
-      border-right: 1px solid $color-border-search;
-    }
-  }
-  .ui-datepicker-week-end{
-    color:#3c64d6;
-  }
-  .ui-datepicker-week-end:nth-child(1){
-    color:#ec517c;
-  }
-  .ui-state-default{
-    background-color: $btn-color-gray;
-    text-align: center;
-    border:0 none;
-  }
-  .ui-state-active{
-    background-color: #fff;
-    color:$color-gray-dark;
-  }
-  td{
-    border:1px solid $color-border-search;
-  }
-  .ui-datepicker-unselectable.ui-state-disabled,
-  .ui-state-hover{
-    border:0 none;
-  }
-}
-
 
 
 @include mediaquery-sm(){
