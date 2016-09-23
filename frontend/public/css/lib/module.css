@@ -1107,6 +1107,73 @@ input[type="radio"]:checked {
   border-color: #666;
 }
 
+*:focus {
+  outline: none;
+}
+
+.input-text {
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  padding: 10px 10px;
+  font-size: 14px;
+  background-color: #f5f7fa;
+}
+.input-text::-moz-placeholder {
+  color: #83828c;
+  opacity: 1;
+}
+.input-text:-ms-input-placeholder {
+  color: #83828c;
+}
+.input-text::-webkit-input-placeholder {
+  color: #83828c;
+}
+@media screen and (max-width: 639px) {
+  .input-text {
+    width: 100%;
+  }
+}
+
+.input-label {
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f5f7fa;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.input-label .check-box {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+.input-label .check-box:before {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  content: "";
+  background: #FFF;
+}
+.input-label .check-box:checked:before {
+  background-image: url("/img/ico_checkbox-checked.jpg");
+  width: 16px;
+  height: 15px;
+}
+.input-label:hover, .input-label:active, .input-label:focus {
+  background-color: #dcf5e7;
+}
+@media screen and (max-width: 639px) {
+  .input-label {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+  .input-label .check-box {
+    margin-top: 0;
+    margin-right: 5px;
+  }
+}
+
 .text-vertical {
   -webkit-writing-mode: vertical-rl;
   -moz-writing-mode: vertical-rl;
