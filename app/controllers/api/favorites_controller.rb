@@ -1,14 +1,14 @@
-class Api::FavoritesController < ActionController
+class Api::FavoritesController < ApplicationController
   def destroy
-    render json: { "message": "Unauthorized" } and return unless user_signed_in?
+    render json: { "message": "Unauthorized" }, status: 401 and return unless user_signed_in?
 
-    event_item = Event::Item.get_valid_item(params[:id])
+    event_item = Event::Item.where(id: params[:id]).published.in_time
     render json: { "message": "Not Found" }, status: 404 and return if event_item.blank?
 
-    favorite = event_item.favorites.where("event_user_id = ?", current_user.id)
-    render json: { "message": "Not Found" }, status: 404 and return if favorites.blank?
+    favorite = event_item[0].event_favorites.where(event_user_id: current_user.id)
+    render json: { "message": "Not Found" }, status: 404 and return if favorite.blank?
 
-    favorite.destroy
-    render json: { event_item_id: params[:id], count: event_item.favorites.count() }, status: 200
+    favorite[0].destroy
+    render json: { event_item_id: params[:id], count: event_item[0].event_favorites.count() }, status: 200
   end
 end
