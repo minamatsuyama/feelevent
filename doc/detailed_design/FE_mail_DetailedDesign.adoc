@@ -1,0 +1,18 @@
+= FeelEvent メール 定義書
+:authorinitials: 1PAC. INC.
+:revdate:        2016-09-23
+:revnumber:      0.1.0
+:imagesdir:      src/mail/
+{authorinitials}
+
+include::src/mail/ja/00_introduction.adoc[]
+
+include::src/mail/ja/site_A-3.adoc[]
+
+include::src/mail/ja/site_D-1.adoc[]
+
+include::src/mail/ja/admin_A-1.adoc[]
+
+include::src/mail/ja/admin_B-2.adoc[]
+
+//TODO: バッチのメール定義
