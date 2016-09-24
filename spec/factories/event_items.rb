@@ -13,8 +13,8 @@ FactoryGirl.define do
     preparation_type     { Event::Item.preparation_type.values.sample }
     index_image          { nil }
     detail_image         { nil }
-    publish_started_at   { Faker::Time.between(Time.current - 20.days, Time.current) }
-    publish_ended_at     { publish_started_at + Faker::Number.between(21, 30).days }
+    publish_started_at   { Faker::Time.between(Time.current, Time.current + 1.month) }
+    publish_ended_at     { publish_started_at + Faker::Number.between(1, 10).days }
     published            { Faker::Boolean.boolean }
     title                { Faker::Book.title }
     summary              { Faker::Lorem.paragraph }
