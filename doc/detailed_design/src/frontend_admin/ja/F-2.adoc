@@ -145,4 +145,4 @@ image::_include/F-1_run_button.png[]
 ** 編集画面へ戻る
 
 * *保存ボタン*
-** submit送信を行う
+** submit送信を行う、C-1 記事一覧画面へ遷移する
