@@ -1,9 +1,10 @@
+include::./_include/from_var.adoc[]
 == 管理画面:B-2 パスワード変更
 
 === 基本情報
 [cols="12,80"]
 |=====
-include::./_include/from.adoc[lines=2]
+| From    | {mail_from}
 | To      | 入力されたメールアドレス
 | Subject | [WorldSchool] パスワード再設定
 |=====

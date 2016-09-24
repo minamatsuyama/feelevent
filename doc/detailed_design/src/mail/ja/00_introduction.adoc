@@ -1,9 +1,10 @@
+include::./_include/from_var.adoc[]
 == はじめに
 本アプリケーションのメール定義資料になります。
 
 === 共通箇所
 ==== メールFrom
-include::./_include/from.adoc[lines=1]
+{mail_from}
 
 ==== メール本文共通フッター
 ----

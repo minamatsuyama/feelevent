@@ -1,9 +1,10 @@
+include::./_include/from_var.adoc[]
 == 管理画面:A-1 管理アカウント:新規登録(仮登録完了)
 
 === 基本情報
 [cols="12,80"]
 |=====
-include::./_include/from.adoc[lines=2]
+| From    | {mail_from}
 | To      | 登録されたメールアドレス
 | Subject | [WorldSchool] 仮登録完了
 |=====
