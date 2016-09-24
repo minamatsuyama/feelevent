@@ -1,22 +1,13 @@
 # frozen_string_literal: true
-class AppError403 < StandardError; end
-class AppError404 < StandardError; end
-class AppError500 < StandardError; end
-
 class ApplicationController < ActionController::Base
+  include AppErrors
   protect_from_forgery with: :exception
 
-  # config/environments/**.rb 内の consider_all_requests_local で判断する
-  unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception,                                  with: :render_500
-    rescue_from ActiveRecord::RecordNotFound,               with: :render_404
-    rescue_from ActionView::MissingTemplate,                with: :render_404
-    rescue_from Pundit::NotAuthorizedError,                 with: :render_403
-    rescue_from ActionController::InvalidAuthenticityToken, with: :render_403
-    rescue_from AppError403,                                with: :render_403
-    rescue_from AppError404,                                with: :render_404
-    rescue_from AppError500,                                with: :render_500
-  end
+  rescue_from AppErrors::Error403, with: :render_403
+  rescue_from AppErrors::Error404, with: :render_404
+  rescue_from AppErrors::Error500, with: :render_500
+
+  private
 
   def render_403(e = nil)
     logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
