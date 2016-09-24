@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: {format: :json} do
-    delete "favorites/:id"                           => "favorites#delete", constraints: { id: /\d+/ }
+    delete "favorites/:id"                           => "favorites#destroy", constraints: { id: /\d+/ }
   end
 end
