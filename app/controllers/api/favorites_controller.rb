@@ -1,15 +1,15 @@
 class Api::FavoritesController < ApplicationController
   def create
-    render json: { "message": "Unauthorized" } and return unless user_signed_in?
+    render json: { "message": "Unauthorized" }, status: 401 and return unless user_signed_in?
 
-    event_item = Event::Item.get_valid_item(params[:id])
+    event_item = Event::Item.where(id: params[:id]).published.in_time
     render json: { "message": "Not Found" }, status: 404 and return if event_item.blank?
 
-    favorites = event_item.favorites.where("event_user_id = ?", current_user.id)
-    render json: { "message": "Conflict" }, status: 409 and return if favorites.present?
+    existed_favorite = event_item[0].event_favorites.where(event_user_id: current_user.id)
+    render json: { "message": "Conflict" }, status: 409 and return if existed_favorite.present?
 
-    favorite = Event::Favorite.new({ event_user_id: current_user.id, event_item_id: params[:id] })
-    favorite.save!
-    render json: { event_item_id: params[:id], count: event_item.favorites.count() }, status: 201
+    @favorite = Event::Favorite.new({ event_user_id: current_user.id, event_item_id: params[:id] })
+    @favorite.save!
+    render json: { event_item_id: params[:id], count: event_item[0].event_favorites.length }, status: 201
   end
 end
