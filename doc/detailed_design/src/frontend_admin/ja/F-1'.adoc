@@ -17,4 +17,6 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 |==================
 
 
+F-1と同じ
+
 //TODO F-1を部分的に読み込めるか？

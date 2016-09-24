@@ -261,5 +261,3 @@ image::_include/F-1_run_button.png[]
 
 * *保存ボタン*
 ** submit送信を行う
-
-TODO : 確認画面必要？？
