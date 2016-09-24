@@ -2,17 +2,41 @@ require "rails_helper"
 
 describe Api::FavoritesController do
   describe "POST #create" do
-    before(:each) do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:event_user)
-      sign_in user
+    before(:each) do |testcase|
+      unless testcase.metadata[:skip_before]
+        @request.env["devise.mapping"] = Devise.mappings[:user]
+        user = FactoryGirl.create(:event_user)
+        sign_in user
+      end
     end
-    it "should have a current_user" do
-      expect(subject.current_user).to_not eq(nil)
+    it "is not signed in", skip_before: true do
+      event_item = FactoryGirl.create(:event_item, published: true)
+      post :create, params: { id: event_item[:id] }
+      parsed_body = JSON.parse(response.body)
+      expect(response.status).to eq(401)
+      expect(parsed_body["message"]).to eq("Unauthorized")
     end
-    it "is user signed in"
-    it "get valid event_item"
-    it "is event_favorite not existed"
-    it "create event_favorite"
+    it "is invalid event item" do
+      event_item = FactoryGirl.create(:event_item, publish_started_at: Time.current - 10.days, publish_ended_at: Time.current - 8.days)
+      post :create, params: {id: event_item[:id]}
+      parsed_body = JSON.parse(response.body)
+      expect(response.status).to eq(404)
+      expect(parsed_body["message"]).to eq("Not Found")
+    end
+    it "has existed favorite event" do
+      event_item = FactoryGirl.create(:event_item, published: true)
+      event_favorite = FactoryGirl.create(:event_favorite, event_item_id: event_item[:id], event_user_id: subject.current_user[:id])
+      post :create, params: {id: event_item[:id]}
+      parsed_body = JSON.parse(response.body)
+      expect(response.status).to eq(409)
+      expect(parsed_body["message"]).to eq("Conflict")
+    end
+    it "register new favorite event" do
+      event_item = FactoryGirl.create(:event_item, published: true)
+      post :create, params: {id: event_item[:id]}
+      parsed_body = JSON.parse(response.body)
+      expect(response.status).to eq(201)
+      expect(parsed_body["event_item_id"]).not_to be_empty
+    end
   end
 end
