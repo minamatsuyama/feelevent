@@ -1,0 +1,23 @@
+== サービス画面:D-1 会員登録(仮登録完了)
+
+=== 基本情報
+[cols="12,80a"]
+|=====
+include::./_include/from.adoc[lines=2]
+| To      | 入力されたメールアドレス
+| Subject | [WorldSchool] 仮登録完了
+|=====
+
+=== メール本文
+----
+<%= メールアドレス %> 様
+
+「WorldSchool」の会員仮登録が完了しました。
+以下のURLから本登録を完了させてください。
+
+■本登録URL
+https://worldschool.feelnote.org/users/confirmation?confirmation_token=<%= トークン %>
+※URLの有効時間は30分間です。
+
+include::./_include/body_footer.adoc[]
+----

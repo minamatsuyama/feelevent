@@ -1,0 +1,11 @@
+== はじめに
+本アプリケーションのメール定義資料になります。
+
+=== 共通箇所
+==== メールFrom
+include::./_include/from.adoc[lines=1]
+
+==== メール本文共通フッター
+----
+include::./_include/body_footer.adoc[]
+----

@@ -1,0 +1,22 @@
+== 管理画面:A-1 管理アカウント:新規登録(仮登録完了)
+
+=== 基本情報
+[cols="12,80"]
+|=====
+include::./_include/from.adoc[lines=2]
+| To      | 登録されたメールアドレス
+| Subject | [WorldSchool] 仮登録完了
+|=====
+
+=== メール本文
+----
+<%= メールアドレス %> 様
+
+「WorldSchool」管理画面の会員登録が完了しました。
+以下のURLからパスワードを変更し、本登録を完了させてください。
+
+■パスワード変更URL
+https://worldschool.feelnote.org/admin/password
+
+include::./_include/body_footer.adoc[]
+----

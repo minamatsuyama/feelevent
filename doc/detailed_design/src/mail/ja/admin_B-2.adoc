@@ -1,4 +1,4 @@
-== サービス画面:A-3 パスワード変更
+== 管理画面:B-2 パスワード変更
 
 === 基本情報
 [cols="12,80"]
@@ -12,13 +12,13 @@ include::./_include/from.adoc[lines=2]
 ----
 <%= メールアドレス %> 様
 
-「WorldSchool」へログインするパスワードの変更リクエストを受け付けました。
+「WorldSchool」管理画面へログインするパスワードの変更リクエストを受け付けました。
 
 ■メールアドレス
 <%= メールアドレス %>
 
 パスワードを変更するには、以下をクリックしてください。
-https://worldschool.feelnote.org/password/edit?reset_password_token=<%= トークン %>
+https://worldschool.feelnote.org/admin/password/edit?reset_password_token=<%= トークン %>
 ※URLの有効時間は30分間です。
 
 include::./_include/body_footer.adoc[]
