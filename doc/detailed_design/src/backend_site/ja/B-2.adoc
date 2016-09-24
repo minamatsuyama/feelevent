@@ -1,0 +1,124 @@
+== B-2 イベント詳細
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /events/:id
+| コントローラ,アクション | events#show
+| ルート名                | event
+| ビュー                  | events/show.html.erb
+|=====
+
+=== リクエスト
+* なし
+
+=== 仕様
+. 全体仕様
+** 指定された id に該当するイベント情報(__event_items__)を取得
+*** 該当する情報が無い場合は `404 レスポンス` を返却する
+*** 公開制御フラグ(__event_items.published__) が **false** の場合は `404 レスポンス` を返却する
+*** アクセスした時間が公開予定日(__event_items.publish_started_at__) から公開終了日時(__event_items.publish_ended_at__) の期間外の場合は `404 レスポンス` を返却する
+. 種別
+** イベント種別(__event_types__)を表示する
+. イベントタイトル
+** イベントタイトル(__event_items.title__)を表示する
+. お気に入り
+** 該当イベントのお気に入り(__event_favorites__)の数を表示する
+.. アクセスユーザがログインの場合
+*** 対象のイベントをお気に入り登録してる場合は `data-is-favorited` 属性に **true** をセットする
+*** 対象のイベントをお気に入り登録していない場合は `data-is-favorited` 属性に **false** をセットする
+.. アクセスユーザが未ログインの場合
+*** `data-is-favorited` 属性を出力しない
+. 開催エリア
+** 開催地(__event_held_places.area__)を表示する
+*** 複数存在する場合は全て表示する
+. 開催期間
+** 開催開始日時(__event_items.held_started_at__)と開催終了日時(__event_items.held_ended_at__)を表示する
+. 申込期限
+** 申込期限(__event_items.entry_ended_at__)を表示する
+. 対象者
+** 対象年齡(__event_qualifying_ages.name__)を表示する
+*** 複数存在する場合は全て表示する
+. 参加費
+** 参加料(__event_items.entry_fee__) と通過(__event_items.currency__) から参加費情報を表示する
+** 参加料(__event_items.entry_fee__) が **0** の時は `無料` と表示する
+. 主催者
+** 主催者名(__event_organizers.name__)を表示する
+*** 複数存在する場合は全て表示する
+. 賞
+** 賞(__event_items.prize__)を表示する
+. 画像
+** 詳細カバー画像(__event_items.etail_image__)を表示する
+. セミナー概要
+** 概要(__event_items.summary__)を表示する
+. セミナー詳細ブロック
+** セミナー詳細情報(__event_summary_contents__)をループ表示する
+*** 表示順序(__event_summary_contents.position__)昇順でソートする
+** レコメンドフラグ(__event_summary_contents.recommended__)が **true** の時はレコメンド情報として表示する
+. 口コミブロック
+** 口コミ情報(__event_review_contents__)をループ表示する
+*** 表示順序(__event_review_contents.position__)昇順でソートする
+. セミナー情報ブロック
+** セミナー情報(__event_seminar_contents__)の情報をループ表示する
+*** 表示順序(__event_seminar_contents.position__)昇順でソートする
+** 項目名(__event_seminar_contents.title__)を表示する
+** 内容(__event_seminar_contents.content__)を表示する
+. 地図情報ブロック
+** 開催地(__event_held_places__)から情報を表示する
+*** 複数存在する場合は全て表示する
+*** 住所からGoogleMapを表示する
+**** 地図表示フラグ(__event_held_places.map_enabled__)が **false** の時は地図を非表示にする
+. 申込みボタン
+** アクセスした時間が申込期限(__event_items.entry_ended_at__)を過ぎていなければ表示する
+** ボタン押下でサイトURL(__event_items.site_url__)へ遷移する
+. 新規登録訴求ブロック
+** アクセスユーザが未ログインの時に表示する
+
+
+== B-2-a イベント詳細:おすすめセミナーブロック(Cells)
+
+=== Cells基本情報
+[cols="38,80"]
+|=====
+| コントローラ,アクション | events#recommend
+| ビュー                  | events/recommend.html.erb
+| キャッシュタイム        | 300秒
+|=====
+
+=== パラメータ
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| event_item | イベントオブジェクト | ◯ |
+|=====
+
+=== 仕様
+* パラメータで渡されたイベントオブジェクト(__event_items__)の種別(__event_types__)とキーワード(__event_items_keywords__)からマッチ度が高い順で4件のイベントを表示する
+* 該当するイベント情報が無い場合はおすすめブロック全体を非表示にする
+
+
+
+== B-2-b イベント詳細:プロモーションブロック(Cells)
+
+=== Cells基本情報
+[cols="38,80"]
+|=====
+| コントローラ,アクション | events#footer_promotion
+| ビュー                  | events/footer_promotion.html.erb
+| キャッシュタイム        | 300秒
+|=====
+
+=== パラメータ
+* なし
+
+=== 仕様
+* 枠説明
+** 左から順番に プロモーション情報の枠番号(__event_promotions.frame_number__)が 1, 2, 3, 4 の情報がそれぞれ表示される
+* 枠内のプロモーション情報
+** 各枠で掲載中で、かつ掲載終了日時(__event_promotions.ended_at__)が近いデータを取得
+** 各枠で掲載データがなければ該当枠を非表示にする
+** 全ての枠で掲載データがなければプロモーションブロック全体を非表示にする
+* プロモーションバナー画像
+** イベント詳細ページ用画像(__event_promotion.detail_image__)を表示
+* リンク
+** イベント詳細 `B-2` へのリンクを設置
