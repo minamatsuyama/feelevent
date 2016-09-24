@@ -1,4 +1,5 @@
 include::./_include/from_var.adoc[]
+
 == 管理画面:A-1 管理アカウント:新規登録(仮登録完了)
 
 === 基本情報
