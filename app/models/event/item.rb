@@ -11,6 +11,7 @@ class Event::Item < ApplicationRecord
   has_many :event_summary_contents, foreign_key: 'event_item_id', class_name: 'Event::SummaryContent'
   has_many :event_review_contents, foreign_key: 'event_item_id', class_name: 'Event::ReviewContent'
   has_many :event_seminar_contents, foreign_key: 'event_item_id', class_name: 'Event::SeminarContent'
+  has_many :event_favorites, foreign_key: 'event_item_id', class_name: 'Event::Favorite'
 
   extend Enumerize
 
@@ -18,11 +19,6 @@ class Event::Item < ApplicationRecord
   enumerize :currency, in: %i(yen dollar)
   enumerize :preparation_type, in: %i(needless individual team)
 
-  def self.get_valid_item(id)
-    now = Time.now.utc.strftime("%Y-%m-%d")
-    Event::Item.where("id = ?", id)
-               .where("? BETWEEN DATE_FORMAT(publish_started_at, '%Y-%m-%d') AND DATE_FORMAT(publish_ended_at, '%Y-%m-%d')", now)
-               .where("published = 1")
-  end
-
+  scope :published, -> { where(published: true) }
+  scope :in_time, -> { where(" ? BETWEEN DATE_FORMAT(`event_items`.`publish_started_at`, '%Y-%m-%d') AND DATE_FORMAT(`event_items`.`publish_ended_at`, '%Y-%m-%d')", Time.now.utc.strftime('%Y-%m-%d')) }
 end
