@@ -2,21 +2,26 @@ require "rails_helper"
 
 describe Api::FavoritesController do
   describe "GET #index" do
-    before(:each) do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
-      user = FactoryGirl.create(:event_user)
-      sign_in user
+    before(:each) do |testcase|
+      unless testcase.metadata[:skip_before]
+        @request.env["devise.mapping"] = Devise.mappings[:user]
+        user = FactoryGirl.create(:event_user)
+        sign_in user
+      end
     end
-    it "require login" do
+    it "is not signed in", skip_before: true do
       get :index
-      expect(response.status).not_to eq(401)
+      parsed_body = JSON.parse(response.body)
+      expect(response.status).to eq(401)
+      expect(parsed_body["message"]).to eq("Unauthorized")
     end
     it "get empty event_item result" do
-      get :index, params: { page: 99999, per_page: 100 }
+      get :index
       parsed_body = JSON.parse(response.body)
       expect(parsed_body["data"]).to be_empty
     end
     it "get event_item result" do
+      event_item = FactoryGirl.create(:event_item, published: true)
       get :index
       parsed_body = JSON.parse(response.body)
       expect(parsed_body["data"]).not_to be_empty
