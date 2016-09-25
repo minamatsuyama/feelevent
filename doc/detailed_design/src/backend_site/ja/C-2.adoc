@@ -19,6 +19,8 @@
 . 送信ボタン
 ** `C-2-a` へ POST 送信する
 
+<<<
+
 include::../../form_site/ja/_include/C-2.adoc[]
 
 
