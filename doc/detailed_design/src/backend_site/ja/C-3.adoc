@@ -1,0 +1,16 @@
+== C-3 お気に入り一覧
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /me/favorites
+| コントローラ,アクション | me/favorites#index
+| ルート名                | me_favorites
+| ビュー                  | me/favorites/index.html.erb
+|=====
+
+=== リクエスト
+* なし
+
+=== 仕様
+. 初回ページから API で表示するためバックエンド側の処理は不要

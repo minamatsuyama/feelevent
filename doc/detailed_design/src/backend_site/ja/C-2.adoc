@@ -1,0 +1,48 @@
+== C-2 設定変更
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /me/settings/edit
+| コントローラ,アクション | me/settings#edit
+| ルート名                | edit_me_settings
+| ビュー                  | me/settings/edit.html.erb
+|=====
+
+=== リクエスト
+* 下記フォーム定義を参照
+
+=== 仕様
+. フォーム
+** フォーム定義書の各フィールドを出力する
+*** 存在するデータはプリセットする
+. 送信ボタン
+** `C-2-a` へ POST 送信する
+
+include::../../form_site/ja/_include/C-2.adoc[]
+
+
+== C-2-a 設定変更 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | PATCH /me/settings
+| コントローラ,アクション | me/settings#update
+| ルート名                | なし
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+* `C-2` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** ユーザ情報(__event_users__)を更新する
+*** 下記ユーザ設定情報を更新する
+**** 対象年齢(__event_qualifying_ages_event_users__)
+**** キーワード(__event_users_keywords__)
+**** 種別(__event_types_event_users__)
+*** `C-1` へリダイレクトしフラッシュメッセージを表示する
+* 失敗時(バリデートに引っかかった時)
+** `C-2` の入力画面でエラーを表示する
