@@ -1,0 +1,3 @@
+== C-2 設定変更
+
+include::./_include/C-2.adoc[]
