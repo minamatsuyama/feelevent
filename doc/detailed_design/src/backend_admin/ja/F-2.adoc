@@ -1,0 +1,66 @@
+== F-2 イベント変更 (入力)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/events/:event_item_id/edit
+| コントローラ,アクション | admin/events#edit
+| ルート名                | edit_admin_event
+| ビュー                  | admin/events/edit.html.erb
+|=====
+
+=== リクエスト
+* 下記フォーム定義書を参照
+
+=== 仕様
+. フォーム
+** フォーム定義書の各フィールドを出力する
+. 送信ボタン
+** `F-2-a` へ POST 送信する
+
+include::../../form_admin/ja/_include/F-1.adoc[]
+
+
+
+== F-2-a イベント変更 (確認)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | POST /admin/events/:event_id/edit
+| コントローラ,アクション | admin/events#edit_confirm
+| ルート名                | confirm_edit_admin_event
+| ビュー                  | admin/events/edit_confirm.html.erb
+|=====
+
+=== リクエスト
+* `F-2` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートを通った時)
+*** 定義しているビューの画面を表示する
+* 失敗時(バリデートに引っかかった時)
+** `F-2` の入力画面でエラーを表示する
+
+
+
+== F-2-b イベント変更 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | PATCH /admin/events/:event_id
+| コントローラ,アクション | admin/events#update
+| ルート名                | update_admin_event
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+* `F-2` フォーム定義を参照
+
+=== 仕様
+* 成功時(バリデートを通った時)
+** 該当データをそれぞれ変更
+** `C-1` へリダイレクトする
+* 失敗時(バリデートに引っかかった時)
+** `F-2` の入力画面でエラーを表示する

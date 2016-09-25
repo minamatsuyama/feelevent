@@ -1,0 +1,46 @@
+== C-1 記事一覧
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/events/:state
+| コントローラ,アクション | admin/events#index
+| ルート名                | admin_events
+| ビュー                  | admin/events/index.erb.html
+|=====
+
+=== リクエスト
+[cols="50,35,10,40"]
+|=====
+| パラメータ名 | 説明 | 必須 | 備考
+| state | 公開状態 | ◯ | published(公開), unpublished(非公開)
+|=====
+
+=== 仕様
+. 公開の条件
+** 公開フラグ(__event_items.published__)が *true* で、現在日時が公開開始日時(__event_items.publish_startd_at__)から公開終了日時(__event_items.publish_ended_at__)の範囲内の記事が対象
+. 非公開の条件
+** 上記公開条件以外の記事が対象
+. 最終更新日時
+** 最終更新日時(__event_items.updated_at__)を表示
+. 最終更新担当者
+** 最終更新者ID(__event_items.evnt_admin_user_id__)から担当者名を表示
+. ID
+** イベント記事ID(__event_items.id__)を表示
+. 公開状態
+** 公開フラグ(__event_items.published__)から公開状態を表示
+. タイトル
+** イベント記事タイトル(__event_items.title__)を表示
+. 公開開始日時
+** 公開開始日時(__event_items.publish_started_at__)を表示
+. 公開終了日時
+** 公開終了日時(__event_items.publish_ended_at__)を表示
+. 公開/非公開切り替えボタン
+** `F-3` へ遷移
+** `return_to` パラメータで現在の URL(パス) をセットする
+. 編集ボタン
+** `F-2` へ遷移
+** `return_to` パラメータで現在の URL(パス) をセットする
+. 削除ボタン
+** JavaScript で Confirm 後に `F-4` へ DELETE 送信
+** `return_to` パラメータで現在の URL(パス) をセットする
