@@ -1,0 +1,17 @@
+== D-1 プロモーション一覧
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/promotions
+| コントローラ,アクション | admin/promotions#index
+| ルート名                | admin_promotions
+| ビュー                  | admin/promotions/index.erb.html
+|=====
+
+=== リクエスト
+* なし
+
+=== 仕様
+. 全体仕様
+** プロモーションの管理はすべて API で行う
