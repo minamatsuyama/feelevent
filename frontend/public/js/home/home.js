@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
     mainSlideshowInit();
     datepickerInit();
     select2Init();
-    $(".main-slideshow").on("setPosition", function() {
+    jQuery(".main-slideshow").on("setPosition", function() {
         arrowsPosition();
     });
     arrowsPosition();
@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
 });
 
 function mainSlideshowInit() {
-    $(".main-slideshow").slick({
+    jQuery(".main-slideshow").slick({
         centerMode: true,
         slidesToShow: 1,
         centerPadding: 0,
@@ -21,39 +21,39 @@ function mainSlideshowInit() {
 }
 
 function arrowsPosition() {
-    windowsWidth = $(window).width();
-    centerWidth = $(".slick-center").width();
+    windowsWidth = jQuery(window).width();
+    centerWidth = jQuery(".slick-center").width();
     centerPadding = (windowsWidth - centerWidth) / 2;
-    arrowWidth = $(".slick-arrow").width();
-    $(".slick-prev").css("left", centerPadding - arrowWidth / 2);
-    $(".slick-next").css("right", centerPadding - arrowWidth / 2);
+    arrowWidth = jQuery(".slick-arrow").width();
+    jQuery(".slick-prev").css("left", centerPadding - arrowWidth / 2);
+    jQuery(".slick-next").css("right", centerPadding - arrowWidth / 2);
 }
 
 function datepickerInit() {
-    $(".search-area .date-picker input").datepicker({
+    jQuery(".date-picker").find("input").datepicker({
         regional: "ja",
         dateFormat: "yy.mm.dd",
         onClose: function(arg) {
-            var inputValue = $(this).val();
+            var inputValue = jQuery(this).val();
             if (inputValue.trim()) {
-                $(this).addClass("has-value");
+                jQuery(this).addClass("has-value");
             } else {
-                $(this).removeClass("has-value");
+                jQuery(this).removeClass("has-value");
             }
         }
     });
 }
 
 function select2Init() {
-    $(".held-area select").select2({
+    jQuery(".held-area").find("select").select2({
         placeholder: "開催場所",
         minimumResultsForSearch: Infinity
     });
-    $(".entry-fee-type select").select2({
+    jQuery(".entry-fee-type").find("select").select2({
         placeholder: "参加費",
         minimumResultsForSearch: Infinity
     });
-    $(".qualifying-age select").select2({
+    jQuery(".qualifying-age").find("select").select2({
         placeholder: "対象年齡",
         minimumResultsForSearch: Infinity
     });
@@ -61,19 +61,19 @@ function select2Init() {
 
 function buttonToggle() {
     AddAndRemoveActive(".btn-toggle");
-    $(".btn-toggle").click(function() {
-        boxId = $(this).attr("data-toggle");
-        $("#" + boxId).toggle();
+    jQuery(".btn-toggle").on("click", function() {
+        boxId = jQuery(this).attr("data-toggle");
+        jQuery("#" + boxId).toggle();
     });
 }
 
 function AddAndRemoveActive(btn) {
-    $(btn).click(function(e) {
-        hasActive = $(this).hasClass("active");
+    jQuery(btn).on("click", function() {
+        hasActive = jQuery(this).hasClass("active");
         if (hasActive) {
-            $(this).removeClass("active");
+            jQuery(this).removeClass("active");
         } else {
-            $(this).addClass("active");
+            jQuery(this).addClass("active");
         }
         e.stopPropagation();
         e.preventDefault();
@@ -81,14 +81,14 @@ function AddAndRemoveActive(btn) {
 }
 
 function buttonCheckbox() {
-    $(".btn-checkbox").click(function(evt) {
-        hasActive = $(this).hasClass("active");
+    jQuery(".btn-checkbox").on("click", function(evt) {
+        hasActive = jQuery(this).hasClass("active");
         if (hasActive) {
-            $(this).find("input").prop("checked", false);
-            $(this).removeClass("active");
+            jQuery(this).find("input").prop("checked", false);
+            jQuery(this).removeClass("active");
         } else {
-            $(this).find("input").prop("checked", true);
-            $(this).addClass("active");
+            jQuery(this).find("input").prop("checked", true);
+            jQuery(this).addClass("active");
         }
         evt.stopPropagation();
         evt.preventDefault();
