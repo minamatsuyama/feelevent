@@ -36,14 +36,14 @@
         <img src="/img/top-link.png" alt="top link">
         <p class="link-text">シェア</p>
       </a>
-      <a href="/signin" class="top-login hidden-not-sm">
+      <a href="/signin" class="top-login">
         <img width="19" height="25" src="/img/icon-login.png" alt="icon look">
         <p class="link-text">ログイン</p>
       </a>
       <a href="/users/signup" class="top-flag">
         新規登録
       </a>
-      <a href="#" class="top-user hidden-sm">
+      <a href="#" class="top-user hide">
         <img width="20" height="20" src="/img/top-user.png" alt="top user link">
         <p class="link-text">マイページ</p>
       </a>
@@ -312,9 +312,39 @@
     </div>
   </section>
   <footer id="global-footer">
-    <div class="container"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
+    <div class="main-footer">
+      <div class="footer-link">
+        <ul class="list-links-inline">
+          <li><a href="#" >お問い合わせ</a></li>
+          <li><a href="#" >プライバシーポリシー</a></li>
+          <li><a href="#" >運営会社</a></li>
+        </ul>
+      </div>
+      <div class="info">powered by <img  src="/img/feelnote.png" alt="Feel Note" >
+      </div>
+    </div>
+    <div class="bottom-footer"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
   </footer>
 </section>
-
+<script type="text/javascript" language="JavaScript">
+  function myToggle(elements, specifiedDisplay) {
+    var element, index;
+    elements = elements.length ? elements : [elements];
+    for (index = 0; index < elements.length; index++) {
+      element = elements[index];
+      if (isElementHidden(element)) {
+        element.style.display = '';
+        if (isElementHidden(element)) {
+          element.style.display = specifiedDisplay || 'block';
+        }
+      } else {
+        element.style.display = 'none';
+      }
+    }
+    function isElementHidden (element) {
+      return window.getComputedStyle(element, null).getPropertyValue('display') === 'none';
+    }
+  }
+</script>
 </body>
 </html>
