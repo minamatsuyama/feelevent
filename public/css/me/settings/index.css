@@ -153,20 +153,26 @@
   margin-top: 57px;
   margin-bottom: 35px;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .row.row-setting.message {
     margin-top: 27px;
     margin-bottom: 15px;
+  }
+  .row.row-setting.message .col {
+    margin-left: 0;
   }
 }
 .row.row-setting.receive-news {
   margin-top: 70px;
   margin-bottom: 67px;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .row.row-setting.receive-news {
     margin-top: 35px;
     margin-bottom: 30px;
+  }
+  .row.row-setting.receive-news .col {
+    margin-left: 0;
   }
 }
 
@@ -184,17 +190,20 @@
 .col.col-title {
   margin-top: 10px;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .col.col-title {
     margin-top: 0;
     margin-bottom: 5px;
+    margin-left: 0;
+    width: 100%;
   }
 }
 .col.col-input {
   margin-left: -60px;
 }
-@media screen and (max-width: 679px) {
+@media screen and (max-width: 999px) {
   .col.col-input {
     margin-left: 0;
+    width: 100%;
   }
 }
