@@ -3,10 +3,6 @@ require 'rails_helper'
 
 RSpec.describe ApplicationController, type: :controller do
   controller do
-    def app_error_401
-      raise AppErrors::Error401
-    end
-
     def app_error_403
       raise AppErrors::Error403
     end
@@ -22,7 +18,6 @@ RSpec.describe ApplicationController, type: :controller do
 
   before do
     routes.draw do
-      get 'anonymous/app_error_401'
       get 'anonymous/app_error_403'
       get 'anonymous/app_error_404'
       get 'anonymous/app_error_500'
@@ -50,12 +45,6 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   context 'Json Error Messages' do
-    it '401 Unauthorized' do
-      get :app_error_401, format: :json
-      expect(response.status).to eq 401
-      expect(response.body).to be_json_eql(%({"message":"Unauthorized"}))
-    end
-
     it '403 Forbidden' do
       get :app_error_403, format: :json
       expect(response.status).to eq 403
