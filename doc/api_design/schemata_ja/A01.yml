@@ -1,12 +1,13 @@
 ---
-"$schema": http://json-schema.org/draft-04/hyper-schema
+"$schema":        http://json-schema.org/draft-04/hyper-schema
+id:               schemata/a01
+_doc_id:          "A01"
 title:            "イベントお気に入り"
 description:      "イベントのお気に入り情報"
 stability:        prototype
 strictProperties: true
 type:             object
 definitions:
-  # リクエスト関連
   event_item_id:
     description: "イベントID"
     example:     123
@@ -16,6 +17,12 @@ definitions:
     example:     999
     type:        integer
 
+properties:
+  event_item_id:
+    "$ref": "#/definitions/a01/definitions/event_item_id"
+  count:
+    "$ref": "#/definitions/a01/definitions/count"
+
 links:
   - title:       "登録"
     description: "お気に入りを登録する"
@@ -23,7 +30,7 @@ links:
     href:        "/api/events/{event_item_id}/favorites"
     method:      POST
     mediaType:   application/json
-    rel:         self
+    rel:         create
 
   - title:       "削除"
     description: "お気に入りを削除する"
@@ -32,12 +39,3 @@ links:
     method:      DELETE
     mediaType:   application/json
     rel:         self
-
-properties:
-  event_item_id:
-    "$ref": "#/definitions/favorite/definitions/event_item_id"
-  count:
-    "$ref": "#/definitions/favorite/definitions/count"
-
-_doc_id: "A01"
-id: schemata/favorite

@@ -1,0 +1,119 @@
+== Directory structure
+
+```
+.
+├── frontend    #Development directory
+│   ├── grunt/          #Folder for Task runner setting file  
+│   │   ├── config.css.js
+│   │   ├── config.js
+│   │   ├── config.js.js
+│   │   └── config.watch.js
+│   ├── node_modules/   #Task runner package folder
+│   ├── package.json    #Task runner installation setting file
+│   ├── public/         #Deliver to fg-event.1pac.net (Preview of static HTML only) root directory
+│   │   ├── img/        #Image storage folder
+│   │   ├── css/        #CSS storage folder
+│   │   │   └── lib/    #Common CSS storage folder
+│   │   │       ├── base.css
+│   │   │       └── module.css
+
+│   │   ├── events/     #[B-2] Event details
+│   │   │   └── index.html
+│   │   ├── index.html  #[B-1] Top Page
+│   │   ├── js/         #js storage folder
+│   │   │   └── lib/    #Commonjs storage folder
+│   │   │       ├── module.js
+│   │   │       └── vendor.js
+│   │   ├── events.html     #[B-2] Event details
+│   │   ├── index.html      #[B-1] Top Page
+│   │   ├── term.html       #[E-1] User Policy
+│   │   ├── privacy.html    #[E-2] Privacy Policy
+│   │   ├── js/             #js storage folder
+│   │   │   └── lib/        #Commonjs storage folder
+│   │   │       ├── module.js
+│   │   │       └── vendor.js
+│   │   ├── me/
+│   │   │   ├── index.html  #[C-1] My page
+│   │   │   └── settings    #[C-2] My page Change setting
+│   │   │   └── favorites   #[C-3] My favorite
+│   │   └── users
+│   │       ├── password
+│   │       │   ├── edit.html    #[A-4] Reset password
+│   │       │   └── new.html     #[A-3] Change password
+│   │       ├── signin.html      #[A-1] Log in
+│   │       ├── signout.html     #[A-2] Log out
+│   │       └── signup.html      #[D-1] Sign up
+│   └── src
+│       ├── css
+│       │   ├── shared	#Common style 
+│       │   │   ├── _variables.scss	#partial file that manages variables change such as color value, screen size, the margin 
+│       │   │   ├── _mixins.scss	# partial file which is `@import` below `frontend/css/shared/mixins`  
+│       │   │   ├── mixins
+│       │   │   │   ├── _box.scss	#Box style mixin
+│       │   │   │   ├── _btn.scss	#Button style mixin
+│       │   │   │   ├── _develop.scss	#Development environment mixin
+│       │   │   │   ├── _form.scss	#Form style mixin
+│       │   │   │   ├── _gradients.scss	#Gradation style mixin
+│       │   │   │   ├── _grid.scss	#Grid style mixin
+│       │   │   │   ├── _image.scss	#image style mixin
+│       │   │   │   ├── _link.scss	#Link style mixin
+│       │   │   │   ├── _list.scss	#List style mixin
+│       │   │   │   ├── _mediaquery.scss	#Media queries style mixin
+│       │   │   │   ├── _responsive-utilities.scss	#mixin for generic style of responsive display
+│       │   │   │   ├── _responsive-visibility.scss	#mixin for generic style function of responsive display
+│       │   │   │   ├── _screenreader.scss	#screen reader style function mixin
+│       │   │   │   ├── _table.scss	#table style mixin
+│       │   │   │   ├── _type.scss	#text style mixin
+│       │   │   │   ├── _utilities.scss	#Utility style mixin
+│       │   │   │   └── _vendor-prefixes.scss	#Vendor prefix style mixin
+│       │   └── lib
+│       │       ├── base.scss	# common CSS which `@import` `base` , `develop` , `layout` below `frontend/css/lib/` and output
+│       │       ├── base	#Base layer
+│       │       │   ├── _print.scss	#Print style
+│       │       │   ├── _sanitize.scss	#Sanitize（Successor of Normalize）
+│       │       │   └── _scaffolding.scss	#Define body, primary zoning 
+│       │       ├── develop   #Code for development. **※When release, comment out the @import part of this base.scss**
+│       │       │   ├── _code.scss	#Syntax highlight of code
+│       │       │   ├── _guide.scss	#Guide line
+│       │       │   └── _sample.scss	#Highlights of  column grid, miss visualization
+│       │       ├── layout
+│       │       │   ├── _breadcrumb.scss	#Breadcrumb
+│       │       │   ├── _global-footer.scss	#Global header
+│       │       │   ├── _global-header.scss	#Global footer
+│       │       │   └── _grid.scss	#Responsive grid system
+│       │       ├── module.scss	#common CSS which `@import` `frontend/css/lib/module` and output
+│       │       └── module
+│       │           ├── _accordion.scss	#Accordion style CSS
+│       │           ├── _btn.scss	#Button style CSS
+│       │           ├── _carousel.scss	#Carousel style CSS
+│       │           ├── _form.scss	#Form style CSS
+│       │           ├── _image.scss	#image style CSS
+│       │           ├── _link.scss	#Link style CSS
+│       │           ├── _list.scss	#List style CSS
+│       │           ├── _media.scss	#Media layoutCSS
+│       │           ├── _tab.scss	#Tab style CSS
+│       │           ├── _table.scss	#Table style CSS
+│       │           ├── _type.scss	#Format setting style CSS
+│       │           └── _utilities.scss	#Utility class CSS
+│       └── js
+│           └── lib
+│               └── vendor    #To store a third-party library（ Bind as `/public/js/lib/vendor.js` and output）
+├── public    #Deliver to fg-event.1pac.net (operates as a Rails application) root directory
+│   ├── 404.html
+│   ├── 422.html
+│   ├── 500.html
+│   ├── apple-touch-icon-precomposed.png
+│   ├── apple-touch-icon.png
+│   ├── img
+│   ├── css
+│   │   ├── lib
+│   │   │   ├── base.css     #Basic layout, common layout CSS
+│   │   │   └── module.css   #Module CSS
+│   ├── favicon.ico
+│   ├── js
+│   │   └── lib
+│   │       ├── module.js    #Module JS
+│   │       └── vendor.js    #vendorJS
+│   └── robots.txt
+
+```

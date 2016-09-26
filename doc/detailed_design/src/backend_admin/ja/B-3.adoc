@@ -1,0 +1,53 @@
+== B-3 パスワード再発行 (入力)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/password/edit
+| コントローラ,アクション | admin/users/passwords#edit
+| ルート名                | edit_admin_user_password
+| ビュー                  | admin/users/passwords/edit.html.erb
+|=====
+
+=== リクエスト
+* 下記フォーム定義書を参照
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+. 全体仕様
+** トークンチェックなどの処理は `Devise` の処理に任せる
+. パスワード
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+. パスワード(確認)
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+
+
+include::../../form_admin/ja/_include/B-3.adoc[]
+
+
+== B-3-a パスワード再発行 (処理)
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | PATCH /admin/password
+| コントローラ,アクション | admin/users/passwords#update
+| ルート名                | (default)
+| ビュー                  | なし
+|=====
+
+=== リクエスト
+* `B-3` フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
+
+=== 仕様
+* 成功時(バリデートを通った時)
+** パスワード再設定準備などの処理は `Devise` の処理に任せる
+*** メール送信処理も `Devise` に含まれる
+*** テンプレートは適宜文言の差し替え処理を行う
+* 失敗時(バリデートに引っかかった時)
+** `B-3` の入力画面でエラーを表示する

@@ -1,0 +1,24 @@
+== A-2 管理アカウント:一覧
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/users
+| コントローラ,アクション | admin/users#index
+| ルート名                | admin_users
+| ビュー                  | admin/users/index.html.erb
+|=====
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== リクエスト
+* なし
+
+=== 仕様
+. 一覧
+** ID、指名、メールアドレスを表示する
+** 編集ボタン
+*** `A-3` へ遷移する
+** 削除ボタン
+*** JavaScript でConfirmを表示し、OKの場合は `A-4` へ DELETE 送信する

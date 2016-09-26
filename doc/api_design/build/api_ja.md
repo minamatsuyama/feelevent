@@ -137,7 +137,7 @@ HTTP/1.1 503 Service Unavailable
 
 ***
 
-## <a name="resource-favorite"></a>ID:A01 イベントお気に入り
+## <a name="resource-a01"></a>ID:A01 イベントお気に入り
 
 イベントのお気に入り情報
 
@@ -146,7 +146,7 @@ HTTP/1.1 503 Service Unavailable
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **count** | *integer* | お気に入り数 | `999` |
-| **event_item_id** | *integer* | イベントID | `123` |
+| **event\_item\_id** | *integer* | イベントID | `123` |
 
 ***
 
@@ -170,7 +170,7 @@ $ curl -n -X POST https://worldschool.feelnote.org/api/events/$EVENT_ITEM_ID/fav
 #### Response Example
 
 ```
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 ```
 
 ```json
@@ -209,6 +209,245 @@ HTTP/1.1 200 OK
 {
   "event_item_id": 123,
   "count": 999
+}
+```
+
+
+## <a name="resource-a02"></a>ID:A02 イベント
+
+イベント情報
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **data/entry\_ended\_at** | *string* | 申込締切日 | `"2016-03-19T12:34:56+0900"` |
+| **data/entry\_fee** | *array* | 参加費(無料:free, 有料:pay) | `{"value":"free","text":"無料"}` |
+| **data/event\_type** | *array* | 種別(参加型: participatory, 講義型: lecture, 評価型: evaluation) | `{"value":"participatory","text":"参加型"}` |
+| **[data/favorite\_count](#resource-meta\_pagination)** | *integer* | お気に入り数 | `123` |
+| **data/favorited** | *boolean* | お気に入りフラグ(ログイン時に有効)<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/held\_areas** | *array* | 開催場所(TODO: 関西:kansai, 関東:kanto, 海外:overseas) | `[{"value":"kanto","text":"関東"},{"value":"kansai","text":"関西"}]` |
+| **data/held\_ended\_at** | *string* | 開催終了日 | `"2016-08-12T09:17:45+0900"` |
+| **data/held\_started\_at** | *string* | 開催開始日 | `"2016-05-01T09:03:02+0900"` |
+| **data/id** | *integer* | ID | `344` |
+| **data/index\_image** | *string* | 一覧用画像 | `"http://dummyimage.com/300x200/ccc/fff.jpg"` |
+| **data/keywords** | *array* | キーワード | `[{"id":100,"name":"コミュニケーション"},{"id":102,"name":"アート"},{"id":233,"name":"ビジネス"}]` |
+| **data/preparation\_type** | *array* | 事前準備(準備不要: needless、個人で: individual準備、チームで準備: team) | `{"value":"needless","text":"準備不要"}` |
+| **data/recommended** | *boolean* | リコメンドフラグ<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/reviewed** | *boolean* | 口コミフラグ<br/> **pattern:** <code>(true&#124;false)</code> | `true` |
+| **data/title** | *string* | イベントタイトル | `"イベントのタイトル"` |
+| **pagination:current\_page** | *integer* | 現ページ番号 | `2` |
+| **pagination:next\_page** | *integer* | 次のページ (ページが存在しない場合は null) | `3` |
+| **pagination:per\_page** | *integer* | 1ページの件数<br/> **default:** `10`<br/> **Range:** `1 <= value <= 20` | `5` |
+| **pagination:prev\_page** | *integer* | 前のページ (ページが存在しない場合は null) | `1` |
+| **pagination:total\_count** | *integer* | 記事総数 | `100` |
+
+***
+
+### ID:A0201 イベント:検索
+
+イベント情報を検索する
+
+```
+GET /api/events
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **entry\_fee** | *string* | 参加費(無料:free, 有料:pay)<br/> **pattern:** <code>(pay&#124;free)</code> | `"free"` |
+| **event\_types** | *array* | 種別(参加型: participatory, 講義型: lecture, 評価型: evaluation)<br/> **pattern:** <code>(participatory&#124;lecture&#124;evaluation)</code> | `["participatory","evaluation"]` |
+| **held\_area** | *string* | 開催場所(TODO: 関西:kansai, 関東:kanto, 海外:overseas) | `"kanto"` |
+| **held\_ended\_on** | *string* | 開催終了日 | `"2016-03-03"` |
+| **held\_started\_on** | *string* | 開催開始日 | `"2016-01-02"` |
+| **keyword\_ids** | *array* | キーワードID(FeelnoteDBのkeywords.id) | `[100,102]` |
+| **page** | *integer* | ページ番号 (存在しないページが指定された時は0件とする)<br/> **default:** `1` | `2` |
+| **per\_page** | *integer* | 1ページの件数<br/> **default:** `10`<br/> **Range:** `1 <= value <= 20` | `5` |
+| **qualifying\_age\_id** | *integer* | 対象年齡(event\_qualifying\_ages.id) | `33` |
+| **word** | *string* | フリーワード | `"サッカー"` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://worldschool.feelnote.org/api/events
+ -G \
+  -d keyword_ids[]=100 \
+  -d keyword_ids[]=102 \
+  -d event_types[]=participatory \
+  -d event_types[]=evaluation \
+  -d held_area=kanto \
+  -d held_started_on=2016-01-02 \
+  -d held_ended_on=2016-03-03 \
+  -d entry_fee=free \
+  -d qualifying_age_id=33 \
+  -d word=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC \
+  -d page=2 \
+  -d per_page=5
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "pagination": {
+    "current_page": 2,
+    "next_page": 3,
+    "prev_page": 1,
+    "per_page": 5,
+    "total_count": 100
+  },
+  "data": [
+    {
+      "id": 344,
+      "title": "イベントのタイトル",
+      "event_type": {
+        "value": "participatory",
+        "text": "参加型"
+      },
+      "preparation_type": {
+        "value": "needless",
+        "text": "準備不要"
+      },
+      "index_image": "http://dummyimage.com/300x200/ccc/fff.jpg",
+      "entry_fee": {
+        "value": "free",
+        "text": "無料"
+      },
+      "held_started_at": "2016-05-01T09:03:02+0900",
+      "held_ended_at": "2016-08-12T09:17:45+0900",
+      "entry_ended_at": "2016-03-19T12:34:56+0900",
+      "held_areas": [
+        {
+          "value": "kanto",
+          "text": "関東"
+        },
+        {
+          "value": "kansai",
+          "text": "関西"
+        }
+      ],
+      "keywords": [
+        {
+          "id": 100,
+          "name": "コミュニケーション"
+        },
+        {
+          "id": 102,
+          "name": "アート"
+        },
+        {
+          "id": 233,
+          "name": "ビジネス"
+        }
+      ],
+      "recommended": true,
+      "reviewed": true,
+      "favorite_count": 123,
+      "favorited": true
+    }
+  ]
+}
+```
+
+***
+
+### ID:A0202 イベント:お気に入り一覧
+
+イベントお気に入り情報の一覧を取得する
+
+```
+GET /api/events/favorites
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **page** | *integer* | ページ番号 (存在しないページが指定された時は0件とする)<br/> **default:** `1` | `2` |
+| **per\_page** | *integer* | 1ページの件数<br/> **default:** `10`<br/> **Range:** `1 <= value <= 20` | `5` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://worldschool.feelnote.org/api/events/favorites
+ -G \
+  -d page=2 \
+  -d per_page=5
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "pagination": {
+    "current_page": 2,
+    "next_page": 3,
+    "prev_page": 1,
+    "per_page": 5,
+    "total_count": 100
+  },
+  "data": [
+    {
+      "id": 344,
+      "title": "イベントのタイトル",
+      "event_type": {
+        "value": "participatory",
+        "text": "参加型"
+      },
+      "preparation_type": {
+        "value": "needless",
+        "text": "準備不要"
+      },
+      "index_image": "http://dummyimage.com/300x200/ccc/fff.jpg",
+      "entry_fee": {
+        "value": "free",
+        "text": "無料"
+      },
+      "held_started_at": "2016-05-01T09:03:02+0900",
+      "held_ended_at": "2016-08-12T09:17:45+0900",
+      "entry_ended_at": "2016-03-19T12:34:56+0900",
+      "held_areas": [
+        {
+          "value": "kanto",
+          "text": "関東"
+        },
+        {
+          "value": "kansai",
+          "text": "関西"
+        }
+      ],
+      "keywords": [
+        {
+          "id": 100,
+          "name": "コミュニケーション"
+        },
+        {
+          "id": 102,
+          "name": "アート"
+        },
+        {
+          "id": 233,
+          "name": "ビジネス"
+        }
+      ],
+      "recommended": true,
+      "reviewed": true,
+      "favorite_count": 123
+    }
+  ]
 }
 ```
 

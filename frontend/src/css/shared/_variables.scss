@@ -79,6 +79,7 @@ $color-brand-main:       #4078c0 !default;
 //グレースケール
 $color-white:                #fff    !default;
 $color-almost-white:         #f6f6f6 !default;
+
 // ↓
 $color-gray-lightest:        #f0f0f0 !default;
 $color-gray-lighter:         #ccc    !default;
@@ -116,8 +117,17 @@ $color-border-light:         #e5e5e5 !default;
 $color-btn-base:             #4c4c4c !default;
 $color-btn-blue:             $color-link-main-dark !default;
 
-
-
+//color for Feelevent
+$color-bg:              #e3e3e3 !default;
+$color-yellow-main:     #ffbf00 !default;
+$color-yellow-light:    #fff8e5 !default;
+$color-th-table:        #f5f7fa !default;
+$color-border-table:    #aaa    !default;
+$color-blue:            #187fc4 !default;
+$color-orange:          #fa8500 !default;
+$color-red:             #ef0155 !default;
+$color-divide-line:     #e6edf2 !default;
+$color-gray-slightly-lighter:  #888 !default;
 // ベジエ曲線
 // Original：http://easings.net/
 // ---------------------------------------------------

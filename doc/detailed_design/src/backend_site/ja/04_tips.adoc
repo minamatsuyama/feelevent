@@ -27,3 +27,46 @@ end
 [NOTE]
 Draper については下記 Github を参考 +
 https://github.com/drapergem/draper
+
+<<<
+
+=== ActiveModelSerializers
+ActiveModel を Serialize し、API の JSON 出力を整形するためのライブラリです。
+
+==== Example
+===== app/models/book.rb
+[source, ruby]
+----
+class Book < ActiveRecord::Base
+  belongs_to :publisher
+  has_and_belongs_to_many :authors
+end
+----
+
+===== app/serializers/book_serializer.rb
+出力したい項目を、attributes に指定することで出力するデータを制御する
+[source, ruby]
+----
+class BookSerializer < ActiveModel::Serializer
+  attributes :id, :title, :price, :published_at, :publisher_id
+end
+----
+
+===== app/controllers/books_controller.rb
+[source, ruby]
+----
+def index
+  @books = Book.all
+  respond_to do |format|
+    format.html
+    format.json { render json: @books }
+  end
+end
+----
+
+上記サンプルの他に、条件に応じて出力内容を変えたり、Association の解決などさまざまな機能がありますので
+適宜公式サイト等で使い方を確認してください。
+
+[NOTE]
+ActiveModelSerializers については下記 Github を参考 +
+https://github.com/rails-api/active_model_serializers
