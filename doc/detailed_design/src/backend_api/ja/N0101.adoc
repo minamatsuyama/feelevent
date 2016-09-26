@@ -1,0 +1,19 @@
+== N0101 イベント公開状態切替
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| JSON Schema             | api_design/build/unit/ja/N01.md
+| コントローラ,アクション | admin/api/events#change_state
+|=====
+
+=== 仕様
+. 事前処理
+** 管理画面アカウントでログイン状態であること
+*** ログインしていない場合は `401 Unauthorized` を返却する
+. 処理成功時
+** 対象のイベント記事の公開フラグ(__event_items.published__)を *true(stateがpublishedの場合)* , *false(stateがunpublishedの場合)* に変更する
+** 併せて最終更新者ID(__event_items.event_admin_user_id__)も更新する
+. 処理失敗時
+** 存在しないイベント記事の場合は `404 レスポンス` を返却する
+** 対象のイベント記事が既に指定された公開状態の場合は `404 レスポンス` を返却する
