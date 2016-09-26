@@ -1,6 +1,6 @@
 //Carousel for events detail page
 
-$(document).ready(function () {
+$(function () {
 
   initSlick();
   initLoadMore();
