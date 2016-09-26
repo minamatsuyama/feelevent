@@ -65,6 +65,22 @@ input[type="search"].input-sm {
   .select2-selection--single{
     height:40px;
     border-radius:0;
+    border: 0 none;
+    background-color: #fff;
+    color:$color-gray-dark;
+    .select2-selection__placeholder{
+      background-color:$color-btn-gray;
+      color:$color-gray-light;
+      position: absolute;
+      top:0;
+      left:0;
+      padding-left:20px;
+      width:100%;
+      &:hover{
+        background-color: #fff;
+        color:$color-gray-dark;
+      }
+    }
     .select2-selection__arrow{
       background: url("/img/select-arrow.png") right center no-repeat;
       height: 40px;
