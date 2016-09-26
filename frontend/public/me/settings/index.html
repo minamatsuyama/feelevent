@@ -23,15 +23,35 @@
 <script src="/js/lib/vendor.js"></script>
 </head>
 <body>
+
 <header id="global-header">
-<div class="container">
-<a href="#" class="top-link">
-<img src="/img/top-link.gif" alt="top link" />
-</a>
-<a href="#" class="top-user">
-<img src="/img/top-user.gif" alt="top user link" />
-</a>
-</div><!-- End container -->
+  <div class="container">
+    <h1 class="logo"><a href="/"><img src="/img/logo.png" alt="WorldSchool"></a></h1>
+    <div class="powered-by">powered by Feelnote</div>
+    <div class="share-box ">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" class="top-fb-link">
+        <img width="30" height="30" src="/img/icon-facebook.png" alt="facebook link">
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=URL&text=TEXT" target="_blank" class="top-tw-link">
+        <img width="30" height="30" src="/img/icon-twitter.png" alt="twitter link">
+      </a>
+    </div>
+    <a href="#" class="top-link hidden-not-sm" onclick="myToggle(document.getElementsByClassName('share-box'));">
+      <img src="/img/top-link.png" alt="top link">
+      <p class="link-text">シェア</p>
+    </a>
+    <a href="/signin" class="top-login hidden-not-sm">
+      <img width="19" height="25" src="/img/icon-login.png" alt="icon look">
+      <p class="link-text">ログイン</p>
+    </a>
+    <a href="/users/signup" class="top-flag">
+      新規登録
+    </a>
+    <a href="#" class="top-user hidden-sm">
+      <img width="20" height="20" src="/img/top-user.png" alt="top user link">
+      <p class="link-text">マイページ</p>
+    </a>
+  </div><!-- End container -->
 </header>
 <section id="content">
 <section class="settings">
