@@ -82,32 +82,6 @@
     font-size: 12px;
   }
 }
-.btn-cancel {
-  width: 150px;
-  padding: 10px;
-  color: $color-gray-dark;
-  background: #f5f7fa;
-  border: 1px solid #e4e4e4;
-  &:hover,
-  &:active,
-  &.active {
-    background: $color-white;
-  }
-}
-
-.btn-submit {
-  width: 150px;
-  padding: 10px;
-  color: $color-white;
-  background: #187fc4;
-  border: 1px solid #2c7996;
-  &:hover,
-  &:active,
-  &.active {
-    background: #0088e3;
-  }
-}
-
 
 .terms {
   margin-bottom: 10px;
