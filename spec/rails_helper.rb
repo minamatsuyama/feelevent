@@ -7,6 +7,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'rspec/its'
+require 'devise'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -59,4 +60,5 @@ RSpec.configure do |config|
 
   config.include JsonSpec::Helpers
   config.include RSpec::RequestDescriber, type: :request
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

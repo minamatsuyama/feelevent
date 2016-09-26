@@ -52,7 +52,9 @@ body {
   }
 }
 
-
+.container{
+  max-width:100%;
+}
 a {
   color: $color-link-main;
   &:hover {

@@ -3,7 +3,7 @@
   padding-top: 40px;
   padding-bottom: 60px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   #content {
     padding-top: 22px;
     font-size: 12px;
@@ -14,7 +14,7 @@
   background-color: #fff;
   padding: 48px 85px 33px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 679px) {
   .box-main {
     padding: 15px 15px 30px;
   }
