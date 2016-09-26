@@ -1,0 +1,33 @@
+== E-1 記事検索
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/events/search
+| コントローラ,アクション | admin/events#search
+| ルート名                | admin_events_search
+| ビュー                  | admin/events/search.erb.html
+|=====
+
+=== リクエスト
+* 下記フォーム定義書を参照
+
+=== 仕様
+. 検索条件
+** すべての検索条件は検索項目単位で `AND` でつなげる
+** 公開フラグ
+*** 公開フラグ(__event_items.published__)を元に検索する
+** ID
+*** イベント記事ID(__event_items.id__)を元に検索する
+** フリーワード
+*** イベント情報(__event_items__)のタイトル(__title__)と概要(__summary__)を対象に LIKE で部分一致検索する
+** 開催開始日
+*** 開催開始日(__event_items.held_started_at__)が指定された日付以降の情報を対象とする
+** 開催終了日
+*** 開催終了日(__event_items.held_ended_at__)が指定された日付以前の情報を対象とする
+** 最終更新者
+*** 最終更新者(__event_items.event_admin_user_id__)を元に検索する
+. 例外処理
+** 該当の記事が0件の場合は検索結果、ページャを非表示にする
+
+include::../../form_admin/ja/_include/E-1.adoc[]
