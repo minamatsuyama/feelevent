@@ -95,6 +95,12 @@
       }
     }
   }
+  &.col-input {
+    margin-left: -100px;
+    @include mediaquery-sm() {
+      margin-left: 0;
+    }
+  }
 }
 
 .input-text {

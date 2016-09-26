@@ -89,6 +89,14 @@
     margin-bottom: 5px;
   }
 }
+.col.col-input {
+  margin-left: -100px;
+}
+@media screen and (max-width: 679px) {
+  .col.col-input {
+    margin-left: 0;
+  }
+}
 
 .input-text.percent-90 {
   width: 100%;
