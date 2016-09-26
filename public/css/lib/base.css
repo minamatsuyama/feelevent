@@ -978,8 +978,9 @@ kbd kbd {
   display: block;
 }
 
-#contents {
+#content {
   min-height: 545px;
+  background-color: #e3e3e3;
 }
 
 .container {
