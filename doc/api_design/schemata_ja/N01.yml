@@ -1,0 +1,94 @@
+---
+"$schema":       http://json-schema.org/draft-04/hyper-schema
+id:              schemata/n01
+_doc_id:         "N01"
+title:            "管理画面用イベント"
+description:      "管理画面用イベント情報"
+stability:        prototype
+strictProperties: true
+type:             object
+definitions:
+  state:
+    description: "公開状態 (published:公開, unpublished:非公開)"
+    example:     "published"
+    pattern:     (published|unpublished)
+    type:        string
+  event_item_id:
+    description: "イベント記事ID"
+    example:     1357
+    type:        integer
+  title:
+    description: "タイトル"
+    example:     "記事タイトル"
+    type:        string
+  published:
+    description: "公開フラグ"
+    example:     true
+    type:        boolean
+  publish_started_at:
+    description: "公開開始日時"
+    example:     "2016-05-01T09:03:02+0900"
+    type:        string
+  publish_ended_at:
+    description: "公開終了日時"
+    example:     "2016-06-23T09:03:02+0900"
+    type:        string
+
+properties:
+  state:
+    "$ref": "#/definitions/n01/definitions/state"
+  event_item_id:
+    "$ref": "#/definitions/n01/definitions/event_item_id"
+  title:
+    "$ref": "#/definitions/n01/definitions/title"
+  published:
+    "$ref": "#/definitions/n01/definitions/published"
+  publish_started_at:
+    "$ref": "#/definitions/n01/definitions/publish_started_at"
+  publish_ended_at:
+    "$ref": "#/definitions/n01/definitions/publish_ended_at"
+
+links:
+  - title:       "イベント公開切替え"
+    description: "イベントの公開状態を切替える"
+    _doc_id:     "A0201"
+    href:        "/admin/api/events/{event_item_id}/{state}"
+    method:      PATCH
+    mediaType:   application/json
+    rel:         self
+    schema:
+      properties: []
+    targetSchema:
+      properties:
+        id:
+          "$ref": "#/definitions/n01/definitions/event_item_id"
+        title:
+          "$ref": "#/definitions/n01/definitions/title"
+        published:
+          "$ref": "#/definitions/n01/definitions/published"
+        publish_started_at:
+          "$ref": "#/definitions/n01/definitions/publish_started_at"
+        publish_ended_at:
+          "$ref": "#/definitions/n01/definitions/publish_ended_at"
+
+  - title:       "イベント削除"
+    description: "イベントを削除する"
+    _doc_id:     "N0102"
+    href:        "/admin/api/events/{event_item_id}"
+    method:      DELETE
+    mediaType:   application/json
+    rel:         self
+    schema:
+      properties: []
+    targetSchema:
+      properties:
+        id:
+          "$ref": "#/definitions/n01/definitions/event_item_id"
+        title:
+          "$ref": "#/definitions/n01/definitions/title"
+        published:
+          "$ref": "#/definitions/n01/definitions/published"
+        publish_started_at:
+          "$ref": "#/definitions/n01/definitions/publish_started_at"
+        publish_ended_at:
+          "$ref": "#/definitions/n01/definitions/publish_ended_at"
