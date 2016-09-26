@@ -29,6 +29,7 @@
   border-radius: 3px;
   margin-bottom: 195px;
   @include mediaquery-sm {
+    border-top: 5px solid #2c7996;
     padding: 15px 15px 30px;
     margin-bottom: 0;
   }

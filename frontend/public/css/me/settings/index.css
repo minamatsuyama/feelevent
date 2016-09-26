@@ -27,6 +27,7 @@
 }
 @media screen and (max-width: 679px) {
   .box-main {
+    border-top: 5px solid #2c7996;
     padding: 15px 15px 30px;
     margin-bottom: 0;
   }
