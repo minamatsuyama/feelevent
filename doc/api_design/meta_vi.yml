@@ -1,0 +1,62 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+id: api
+title:       "FeelEvent API v1"
+description: "Chi tiết interface của FeelEvent API v1(Viết theo mẫu JSON Hyper Schema draft v4)"
+type:
+  - object
+links:
+  - href: https://worldschool.feelnote.org
+    rel:  self
+
+# グローバル変数として定義する
+definitions:
+  site:
+    description: "Site (công ty)"
+    definitions:
+      code:
+        description: Mã phân biệt site (công ty)
+        type:        string
+        example:     1pac
+    type: object
+
+  meta_pagination:
+    description: "Pagination"
+    properties:
+      page:
+        description: "**Chỉ định trang** (Nếu trang chỉ định không tồn tại trả về số trang là 0)"
+        example:     2
+        type:        integer
+        default:     1
+      per_page:
+        description: "**số event mỗi trang**"
+        example:     5
+        type:        integer
+        default:     5
+        minimum:     1
+        maximum:     20
+
+  meta_pagination_response:
+    description: Thông tin pagination của response
+    properties:
+      current_page:
+        description: Trang hiện tại (current page)
+        example:     2
+        type:        integer
+      next_page:
+        description: Trang kế tiếp (nếu không có sẽ có giá trị null)
+        example:     3
+        type:        integer
+      prev_page:
+        description: Trang trước (nếu không có sẽ có giá trị null)
+        example:     1
+        type:        integer
+      per_page:
+        description: Số lượng event cho mỗi trang
+        example:     20
+        type:        integer
+      total_count:
+        description: Tổng số event
+        example:     100
+        type:        integer
+    type: object

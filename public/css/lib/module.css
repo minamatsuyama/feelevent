@@ -609,6 +609,23 @@ ol li,
   color: #83828c;
 }
 
+.btn-filled {
+  background-color: #187fc4;
+  font-size: 18px;
+  padding: 15px;
+}
+.btn-filled:hover {
+  background-color: #1b91df;
+}
+.btn-filled:active, .btn-filled.active {
+  background-color: #187fc4;
+}
+@media screen and (max-width: 679px) {
+  .btn-filled {
+    font-size: 13px;
+  }
+}
+
 .btn-more {
   color: #187fc4;
   background-color: #fff;
@@ -620,6 +637,19 @@ ol li,
 }
 .btn-more:active, .btn-more.active {
   background-color: #f0f0f0;
+}
+
+.btn-like {
+  color: #aaa;
+  background-color: #f6f6f6;
+  padding: 5px;
+  min-width: 70px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.btn-like:hover {
+  color: #ef0155;
+  background-color: #f6f6f6;
 }
 
 .img-liquid, .article img,
@@ -794,6 +824,16 @@ ol li,
   height: 100%;
 }
 
+.box-main {
+  background-color: #fff;
+  padding: 40px 85px;
+}
+@media screen and (max-width: 679px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
 .media-right:before, .media-right:after,
 .media-left:before,
 .media-left:after {
@@ -884,7 +924,7 @@ ol li,
 }
 a[href^="tel:"],
 a[href^="mailto:"] {
-  color: #000;
+  color: #187fc4;
 }
 a[href^="tel:"]:hover,
 a[href^="mailto:"]:hover {
@@ -1085,6 +1125,77 @@ html.pointer .link-card.light:hover .image img, html.touch .link-card.light.touc
   }
 }
 
+.table-none-bordered {
+  width: 100%;
+  color: #83828c;
+  font-size: 14px;
+}
+.table-none-bordered th, .table-none-bordered td {
+  text-align: left;
+  width: 50%;
+  padding-bottom: 8px;
+}
+@media screen and (max-width: 679px) {
+  .table-none-bordered {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-none-bordered tbody, .table-none-bordered tr, .table-none-bordered th, .table-none-bordered td {
+    display: block;
+    width: 100%;
+  }
+}
+
+.table-block {
+  width: 100%;
+}
+.table-block th, .table-block td {
+  border: solid 1px #aaa;
+  padding: 10px;
+}
+.table-block th {
+  background-color: #f5f7fa;
+}
+@media screen and (max-width: 679px) {
+  .table-block {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-block tbody, .table-block tr, .table-block th, .table-block td {
+    display: block;
+  }
+  .table-block tbody {
+    width: 100%;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #aaa;
+  }
+  .table-block th, .table-block td {
+    padding: 5px 10px;
+  }
+  .table-block tr:last-child td {
+    border-bottom-width: 0;
+  }
+  .table-block th {
+    text-align: left;
+    border-top-width: 0;
+    border-bottom-width: 0;
+  }
+}
+
+.label {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.label-orange {
+  background-color: #fa8500;
+}
+
 input[type="submit"] {
   letter-spacing: 0.05em;
 }
@@ -1161,6 +1272,73 @@ input[type="radio"] {
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
   border-color: #666;
+}
+
+*:focus {
+  outline: none;
+}
+
+.input-text {
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  padding: 10px 10px;
+  font-size: 14px;
+  background-color: #f5f7fa;
+}
+.input-text::-moz-placeholder {
+  color: #83828c;
+  opacity: 1;
+}
+.input-text:-ms-input-placeholder {
+  color: #83828c;
+}
+.input-text::-webkit-input-placeholder {
+  color: #83828c;
+}
+@media screen and (max-width: 679px) {
+  .input-text {
+    width: 100%;
+  }
+}
+
+.input-label {
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f5f7fa;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.input-label .check-box {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+.input-label .check-box:before {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  content: "";
+  background: #FFF;
+}
+.input-label .check-box:checked:before {
+  background-image: url("/img/ico_checkbox-checked.jpg");
+  width: 16px;
+  height: 15px;
+}
+.input-label:hover, .input-label:active, .input-label:focus {
+  background-color: #dcf5e7;
+}
+@media screen and (max-width: 679px) {
+  .input-label {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+  .input-label .check-box {
+    margin-top: 0;
+    margin-right: 5px;
+  }
 }
 
 .eventcards .eventcard {
@@ -1782,4 +1960,18 @@ html.pointer .hidden-pointer {
 
 .border-left {
   border-left: 1px solid #e5e5e5;
+}
+
+.pop {
+  width: 100%;
+  position: absolute;
+  top: 43%;
+  background-color: #187fc4;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-align: center;
+  display: none;
 }

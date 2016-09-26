@@ -1,0 +1,23 @@
+== A-4 管理アカウント:削除
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | DELETE /admin/users/:event_admin_user_id
+| コントローラ,アクション | admin/users#destroy
+| ルート名                | destroy_admin_user
+| ビュー                  | なし
+|=====
+
+=== 特記事項
+include::./_include/note_admin_super_user.adoc[]
+
+=== リクエスト
+* なし
+
+=== 仕様
+* 成功時(バリデートが通った時)
+** 対象レコード(__event_admin_users__)を論理削除する
+** `A-2` へリダイレクトし、フラッシュメッセージを表示する
+* 失敗時(バリデートに引っかかった時)
+** `A-2` へリダイレクトし、フラッシュメッセージを表示する

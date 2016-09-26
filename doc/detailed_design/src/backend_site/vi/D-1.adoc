@@ -41,8 +41,12 @@ include::../../form_site/vi/_include/D-1.adoc[]
 
 === Chi tiết
 * Khi xử lý thành công (kiểm tra dữ liệu nhập, validate, không bị lỗi)
-** Dùng `Devise`  trong xửlý đăng kí tạm thời.
-**** Xử lý gửi mail cũng dùng chức năng có sẵn của `Devise`
+** Dùng `Devise`  trong xử lý đăng kí tạm thời.
+*** Xử lý gửi mail cũng dùng chức năng có sẵn của `Devise`
+*** Tạo các thông tin sau cho User
+**** Lứa tuổi đối tượng(__event_qualifying_ages_event_users__)
+**** Keyword(__event_users_keywords__)
+**** Hình thức event(__event_types_event_users__)
 **** Hiển thị màn hình thông báo đã thành công trong đăng kí tạm thời
 * Khi có lỗi(dữ liệu nhập có lỗi, validate không thành công)
 ** Chuyển về màn hình nhập dữ liệu `D-1` và hiển thị các thông tin lỗi cần thiết

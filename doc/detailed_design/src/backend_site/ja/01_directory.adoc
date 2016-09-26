@@ -16,6 +16,7 @@
 │   ├── helpers/     # ヘルパーを格納するディレクトリ
 │   ├── mailers/     # メール用コントローラを格納するディレクトリ
 │   ├── models/      # モデルを格納するディレクトリ
+│   ├── serializers/ # ActiveModelSerializers gem 用のディレクトリ
 │   └── views/       # ビューを格納するディレクトリ
 ├── config/ # プロジェクトの設定ファイルを格納するディレクトリ
 │   ├── application.rb # すべての環境で共通の設定ファイル

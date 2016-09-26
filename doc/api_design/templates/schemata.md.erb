@@ -27,7 +27,7 @@
 <%- else %>
 <%- name = key %>
 <%- end %>
-| **<%= name %>** | *<%= type %>* | <%= description %> | <%= example %> |
+| **<%= name.gsub('_', '\_') %>** | *<%= type.gsub('_', '\_') %>* | <%= description.gsub('_', '\_') %> | <%= example.gsub('_', '\_') %> |
 <%- end %>
 
 <%- end %>

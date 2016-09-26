@@ -1,0 +1,48 @@
+== A0201 イベント検索
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| JSON Schema             | api_design/build/unit/ja/A02.md
+| コントローラ,アクション | api/events#index
+|=====
+
+=== 仕様
+. 事前処理
+** 特に無し
+. 検索条件
+** すべての検索条件は検索項目単位で `AND` でつなげる
+*** ただし、`キーワード` などの同項目で複数選択されたものは `OR` でつなげる
+*** ex) `WHERE (event_type = 'lecture' OR event_type = 'evaluation') AND `
+** キーワード
+*** イベントキーワード情報(__event_items_keywords__)を元に検索する
+** 対象年齡
+*** イベント対象年齡情報(__event_qualifying_ages_event_items__)を元に検索する
+** 開催場所
+*** イベント開催場所情報(__event_held_areas__)を元に検索する
+** 開催開始日
+*** 開催開始日が指定された日付以降の情報を対象とする
+** 開催終了日
+*** 開催終了日が指定された日付以前の情報を対象とする
+** フリーワード
+*** イベント情報(__event_items__)のタイトル(__title__)と概要(__summary__)を対象に LIKE で部分一致検索する
+. 検索ソート条件
+** 申し込み締め切り日(__event_items.entry_ended_at__)が近い順でソートする
+. 正常処理
+** 対象のイベント情報(__event_items__)と関連テーブルから整形したデータとページング情報を JSON で出力する
+** 開催場所
+*** イベント開催場所情報(__event_held_areas__)のエリア(__area__)情報を返す
+** リコメンドフラグ (data.recommended)
+*** イベント概要情報(__event_summary_contents__)でおすすめフラグ(__recommended__)が `true` になっている情報が存在している時に `true` を返す
+** 口コミフラグ (data.reviewed)
+*** イベント口コミ情報(__event_review_contents__)が存在している時に `true` を返す
+** お気に入り数 (data.favorite_count)
+*** イベントお気に入り情報(__event_favorites__)から対象のイベントのお気に入り数を返す
+** お気に入りフラグ (data.favorited)
+*** クッキーセッションからログインしている時に処理を行う
+*** 未ログインの時は一律 `false` を返す
+*** イベントお気に入り情報(__event_favorites__)を対象にお気に入りに登録されているときは `true` を返す
+. 例外処理
+** 検索条件に該当するイベント情報が無い場合は `200 OK` で `data` を空の配列で返す
+*** `pagination` も空のオブジェクトで返す
+*** ex) { data: [], pagination: {} }

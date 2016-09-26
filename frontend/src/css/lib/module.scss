@@ -12,11 +12,13 @@
 @import "module/list";
 @import "module/btn";
 @import "module/image";
+@import "module/box";
 
 //入れ物系
 @import "module/media";
 @import "module/link";
 @import "module/table";
+@import "module/label";
 
 //コンポーネント
 //@import "module/accordion";
@@ -41,3 +43,5 @@
 // Block Contents
 // --------------------------------------------------
 //@import "module/block-content";
+//Flash message
+@import "module/pop";

@@ -43,6 +43,10 @@ include::../../form_site/ja/_include/D-1.adoc[]
 * 成功時(バリデートが通った時)
 ** 仮登録処理は `Devise` の処理に任せる
 *** メール送信処理も `Devise` に含まれる
+*** 下記ユーザ設定情報を作成する
+**** 対象年齢(__event_qualifying_ages_event_users__)
+**** キーワード(__event_users_keywords__)
+**** 種別(__event_types_event_users__)
 *** 仮登録完了画面を表示する
 * 失敗時(バリデートに引っかかった時)
 ** `D-1` の入力画面でエラーを表示する

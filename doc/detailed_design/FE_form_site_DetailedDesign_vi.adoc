@@ -1,0 +1,20 @@
+= Bảng chi tiết các Form của trang người dùng FeelEvent
+:authorinitials: 1PAC. INC.
+:revdate:        2016-09-25
+:revnumber:      0.2.0
+:imagesdir:      src/form_site/
+{authorinitials}
+
+include::src/form_site/vi/00_introduction.adoc[]
+
+include::src/form_site/vi/A-1.adoc[]
+
+include::src/form_site/vi/A-3.adoc[]
+
+include::src/form_site/vi/A-4.adoc[]
+
+include::src/form_site/vi/B-1.adoc[]
+
+include::src/form_site/vi/C-2.adoc[]
+
+include::src/form_site/vi/D-1.adoc[]
