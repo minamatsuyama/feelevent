@@ -1,0 +1,28 @@
+ifdef::env-github[]
+== E-1 記事検索
+endif::[]
+
+=== フォーム定義
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 公開フラグ +
+__q[published]__ | checkbox | |
+
+| 02 | ID +
+__q[id]__ | text | |
+
+| 03 | フリーワード +
+__q[word]__ | text | |
+
+| 04 | 開催開始日時 +
+__q[held_started_at]__ | date | |
+
+| 05 | 開催終了日時 +
+__q[held_ended_at]__ | date | |
+
+| 09 | 最終更新者 +
+__q[event_admin_user_id]__ | select(single) | |
+
+|=====

@@ -1,0 +1,172 @@
+ifdef::env-github[]
+== F-1 イベント新規作成 (入力)、F-2 イベント変更 (入力)
+endif::[]
+
+=== フォーム定義
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 公開開始日時 +
+__event_item[publish_started_at]__ | datetime | ◯ |
+
+| 02 | 公開終了日時 +
+__event_item[publish_ended_at]__ | datetime | ◯ |
+
+| 03 | タイトル +
+__event_item[title]__ | text | ◯ |
+
+| 04 | 主催者(複数可) +
+__event_organizers[name]__ | text | ◯ |
+
+| 05 | キーワード(複数可) +
+__event_keywords[id]__ | checkbox | ◯ |
+
+| 06 | 種別 +
+__event_type[id]__ | select(single) | ◯ |
+
+| 07 | 開催開始日時 +
+__event_item[held_started_at]__ | date | ◯ |
+
+| 08 | 開催終了日時 +
+__event_item[held_ended_at]__ | date | ◯ |
+
+| 09 | 申込開始日時 +
+__event_item[entry_started_at]__ | date | ◯ |
+
+| 10 | 申込終了日時 +
+__event_item[entry_ended_at]__ | date | ◯ |
+
+| 11 | 参加費用 +
+__event_item[entry_fee]__ | text | ◯ |
+
+| 12 | 通過 +
+__event_item[currency]__ | select(single) | ◯ |
+
+| 13 | 対象者(複数可) +
+__event_qualifying_ages[id]__ | checkbox | ◯ |
+
+| 14 | 賞 +
+__event_item[prize]__ | text | |
+
+| 15 | 一覧用画像 +
+__event_item[index_image]__ | file | ◯ |
+
+| 16 | 詳細用カバー画像 +
+__event_item[detail_image]__ | file | ◯ |
+
+| 17 | 概要文 +
+__event_item[summary]__ | textarea | ◯ |
+
+|=====
+
+
+=== 開催エリア情報のフォーム定義
+※JavaScript側で下記セットを複数出力
+
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | エリア +
+__event_places[area]__ | select(single) | ◯ |
+
+| 02 | GoogleMap表示フラグ +
+__event_places[map_enabled]__ | checkbox | |
+
+| 03 | タイトル +
+__event_places[title]__ | text | |
+
+| 04 | 郵便番号 +
+__event_places[zip_code]__ | text | |
+
+| 05 | 国(海外の時) +
+__event_places[country]__ | text | |
+
+| 06 | 州(海外の時) +
+__event_places[state]__ | text | |
+
+| 07 | 都道府県 +
+__event_places[prefecture]__ | select(single) | |
+
+| 08 | 市区町村 +
+__event_places[city]__ | text | |
+
+| 09 | 住所1 +
+__event_places[address1]__ | text | |
+
+| 10 | 住所2 +
+__event_places[address2]__ | text | |
+
+|=====
+
+
+=== 概要文モジュールのフォーム定義
+※JavaScript側で下記セットを複数出力
+
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 小見出し +
+__event_summary_contents[headline]__ | text | |
+
+| 02 | 本文 +
+__event_summary_contents[content]__ | textarea | |
+
+| 03 | 画像 +
+__event_summary_contents[image]__ | file | |
+
+| 04 | レイアウト +
+__event_summary_contents[layout]__ | select(single) | |
+
+| 05 | おすすめフラグ +
+__event_summary_contents[recommended]__ | checkbox | |
+
+|=====
+
+
+
+=== 口コミモジュールのフォーム定義
+※JavaScript側で下記セットを複数出力
+
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 小見出し +
+__event_review_contents[headline]__ | text | |
+
+| 02 | 本文 +
+__event_review_contents[content]__ | textarea | |
+
+| 03 | 画像 +
+__event_review_contents[image]__ | file | |
+
+| 04 | レイアウト +
+__event_review_contents[layout]__ | select(single) | |
+
+| 05 | プロフィール氏名 +
+__event_review_contents[profile_name]__ | text | |
+
+| 06 | プロフィール画像 +
+__event_review_contents[profile_image]__ | file | |
+
+|=====
+
+
+
+=== セミナー情報モジュールのフォーム定義
+※JavaScript側で下記セットを複数出力
+
+[cols="1,4a,2,^1,4a",options="header"]
+|=====
+| ID | 項目名/フィールド名 | フォーム種別 | 必須 | 備考
+
+| 01 | 項目名 +
+__event_seminar_contents[title]__ | text | |
+
+| 02 | 内容 +
+__event_seminar_contents[content]__ | textarea | |
+
+|=====
