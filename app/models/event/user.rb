@@ -39,4 +39,5 @@ class Event::User < ApplicationRecord
   has_many :keywords, through: :event_users_keywords
   has_many :event_qualifying_ages_event_users, foreign_key: 'event_user_id', class_name: 'Event::QualifyingAgesEventUser'
   has_many :event_qualifying_age, through: :event_qualifying_ages_event_users, class_name: 'Event::QualifyingAge'
+  has_many :event_type, through: :event_types_event_users, class_name: 'Event::Type'
 end

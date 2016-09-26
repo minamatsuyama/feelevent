@@ -27,4 +27,8 @@ class Event::Admin::User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :registerable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+
+  extend Enumerize
+  enumerize :user_type, in: %i(super_user normal_user), predicates: { prefix: 'is' }
+  validates :user_type, presence: true
 end

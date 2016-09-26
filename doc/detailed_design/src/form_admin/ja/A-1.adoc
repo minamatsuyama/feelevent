@@ -1,0 +1,3 @@
+== A-1 管理アカウント:新規登録
+
+include::./_include/A-1.adoc[]

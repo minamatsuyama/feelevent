@@ -1,0 +1,38 @@
+== B-1 ログイン
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET\|POST /signin
+| コントローラ,アクション | admin/users/sessions#new, create
+| ルート名                | new_admin_user_session
+| ビュー                  | admin/users/sessions/new.html.erb
+|=====
+
+=== リクエスト
+* 下記フォーム定義を参照
+
+include::./_include/note_devise.adoc[]
+
+<<<
+
+=== 仕様
+image::../assets/A-1.png[]
+. メールアドレス
+** `email` フィールドとして input タグを出力
+. パスワード
+** `password` フィールドとして input タグを出力
+** エラーで同画面に戻ってきた際は値を保持しない
+. 自動ログイン
+** `checkbox` として input タグを出力
+** デフォルトは未選択状態
+. ログインボタン
+** ログイン成功時
+*** セッション発行などの処理は `Devise` の処理に任せる
+*** `B-1` へリダイレクトする
+** ログイン失敗時
+*** 同画面を表示し、適宜エラーを表示する
+
+<<<
+
+include::../../form_site/ja/_include/A-1.adoc[]
