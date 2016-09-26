@@ -30,7 +30,6 @@ RSpec.describe ApplicationController, type: :controller do
   end
 
   context 'HTML Error Pages' do
-
     it '403 Forbidden' do
       get :app_error_403
       expect(response).to render_template('html/errors/403')
