@@ -23,7 +23,7 @@ function initInputLabel() {
 
 function initSelect2() {
   $('.selectpicker select').select2({
-    placeholder: "年齢を選択",
+    placeholder: "小学校低学年",
     minimumResultsForSearch: Infinity
   });
 }
