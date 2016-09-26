@@ -79,7 +79,6 @@ $color-brand-main:       #4078c0 !default;
 //グレースケール
 $color-white:                #fff    !default;
 $color-almost-white:         #f6f6f6 !default;
-
 // ↓
 $color-gray-lightest:        #f0f0f0 !default;
 $color-gray-lighter:         #ccc    !default;
@@ -117,6 +116,9 @@ $color-border-light:         #e5e5e5 !default;
 $color-btn-base:             #4c4c4c !default;
 $color-btn-blue:             $color-link-main-dark !default;
 
+$color-btn-gray:              #f5f7fa;
+$color-border-search:         #d3dae0;
+$color-blue-light:            #0088e3;
 //color for Feelevent
 $color-bg:              #e3e3e3 !default;
 $color-yellow-main:     #ffbf00 !default;

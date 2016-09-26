@@ -64,7 +64,13 @@
       margin-left:-50%;
     }
   }
-
+  @include mediaquery-sm() {
+    .container{
+      .copyright {
+        font-size: 8px;
+      }
+    }
+  }
   [role=contentinfo] small {
     font-family: $font-family-alphanumeric;
   }
