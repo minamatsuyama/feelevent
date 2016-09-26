@@ -1,7 +1,7 @@
 = FeelEvent バックエンド 管理画面詳細設計
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-16
-:revnumber:      0.1.0
+:revdate:        2016-09-25
+:revnumber:      0.2.0
 :imagesdir:      src/backend_admin/
 {authorinitials}
 
@@ -28,3 +28,17 @@ include::src/backend_admin/ja/B-1.adoc[]
 include::src/backend_admin/ja/B-2.adoc[]
 
 include::src/backend_admin/ja/B-3.adoc[]
+
+include::src/backend_admin/ja/B-4.adoc[]
+
+include::src/backend_admin/ja/C-1.adoc[]
+
+include::src/backend_admin/ja/E-1.adoc[]
+
+include::src/backend_admin/ja/F-1.adoc[]
+
+include::src/backend_admin/ja/F-2.adoc[]
+
+include::src/backend_admin/ja/F-3.adoc[]
+
+include::src/backend_admin/ja/F-4.adoc[]

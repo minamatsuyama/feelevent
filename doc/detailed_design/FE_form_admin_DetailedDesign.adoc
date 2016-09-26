@@ -1,7 +1,7 @@
 = FeelEvent 管理画面 フォーム定義書
 :authorinitials: 1PAC. INC.
-:revdate:        2016-09-19
-:revnumber:      0.1.0
+:revdate:        2016-09-25
+:revnumber:      0.2.0
 :imagesdir:      src/form_admin/
 {authorinitials}
 
@@ -16,3 +16,7 @@ include::src/form_admin/ja/B-1.adoc[]
 include::src/form_admin/ja/B-2.adoc[]
 
 include::src/form_admin/ja/B-3.adoc[]
+
+include::src/form_admin/ja/E-1.adoc[]
+
+include::src/form_admin/ja/F-1.adoc[]
