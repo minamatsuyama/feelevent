@@ -3,19 +3,11 @@ class ApplicationController < ActionController::Base
   include AppErrors
   protect_from_forgery with: :exception
 
-  rescue_from AppErrors::Error401, with: :render_401
   rescue_from AppErrors::Error403, with: :render_403
   rescue_from AppErrors::Error404, with: :render_404
   rescue_from AppErrors::Error500, with: :render_500
 
   private
-
-  def render_401(e = nil)
-    logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
-    respond_to do |format|
-      format.json { render json: { message: 'Unauthorized' }, status: :unauthorized }
-    end
-  end
 
   def render_403(e = nil)
     logger.error "exception(#{e.class}): #{e.message} #{e.backtrace.first}" if e
