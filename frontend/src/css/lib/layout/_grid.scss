@@ -209,3 +209,12 @@
     margin-right: (-$col-gutter-sm);
   }
 }
+
+
+@include mediaquery-not-lg() {
+  .container {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

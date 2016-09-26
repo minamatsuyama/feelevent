@@ -1703,6 +1703,13 @@ kbd kbd {
   }
 }
 
+@media screen and (max-width: 999px) {
+  .container {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 .skip-navigation {
   position: absolute;
   width: 1px;
