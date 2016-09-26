@@ -25,7 +25,7 @@
 .box-main {
   border-top: 10px solid #2c7996;
   background-color: $color-white;
-  padding: 60px 85px 33px;
+  padding: 55px 85px 33px;
   border-radius: 3px;
   margin-bottom: 195px;
   @include mediaquery-sm {
@@ -202,7 +202,7 @@
   &.btn-setting-container {
     text-align: center;
     .btn {
-      margin: 0px 8px;
+      margin: 7px 8px;
       @include mediaquery-sm() {
         margin: 5px auto;
       }
