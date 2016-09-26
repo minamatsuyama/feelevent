@@ -13,7 +13,7 @@
 
 ### For PC
 
-#### En ter free word, area, period, participation fees, target age and search
+#### Enter free word, area, period, participation fees, target age and search
 
 - When you enter the conditions and click Search button, access search API and re-display search results.
 - Re-display filter conditions and the number of searches
@@ -74,3 +74,14 @@ http://kenwheeler.github.io/slick/
 - If you flick to the right from the left, slide to the right 1 event card 
 - When you reach the end of the event card, go back to the first card and click to the left, the first event card is slided from left
 - When you click the left in the initial display, the last event card is displayed in the right as slide
+
+# WorldSchool Spec:C-1: My Page, B-2: Detail screen
+
+## Event information  もっと見る button
+
+- Displayable item number is from 0-9 items 
+- Initial display is up to 3 events 
+- If click on もっと見る button, display next 3 events（If less than 3 display that number of events）
+- Case when we do not display もっと見る button
+
+-- When there is 0 event info, when event info is displayed MAX9
