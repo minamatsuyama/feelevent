@@ -550,6 +550,371 @@
           }
         }
       ]
+    },
+    "m01": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "_doc_id": "M01",
+      "title": "管理画面用プロモーション",
+      "description": "管理画面用プロモーション情報",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "promotion": {
+          "description": "プロモーション",
+          "properties": {
+            "id": {
+              "description": "プロモーションID",
+              "example": 1122,
+              "type": [
+                "integer"
+              ]
+            },
+            "event_item": {
+              "description": "イベント記事",
+              "properties": {
+                "id": {
+                  "description": "イベント記事ID",
+                  "example": 1357,
+                  "type": [
+                    "integer"
+                  ]
+                },
+                "title": {
+                  "description": "タイトル",
+                  "example": "記事タイトル",
+                  "type": [
+                    "string"
+                  ]
+                },
+                "published": {
+                  "description": "公開フラグ",
+                  "example": true,
+                  "type": [
+                    "boolean"
+                  ]
+                },
+                "publish_started_at": {
+                  "description": "公開開始日時",
+                  "example": "2016-05-01T09:03:02+0900",
+                  "type": [
+                    "string"
+                  ]
+                },
+                "publish_ended_at": {
+                  "description": "公開終了日時",
+                  "example": "2016-06-23T09:03:02+0900",
+                  "type": [
+                    "string"
+                  ]
+                }
+              }
+            },
+            "frame_number": {
+              "description": "枠番号",
+              "example": 1,
+              "type": [
+                "integer"
+              ]
+            },
+            "started_at": {
+              "description": "掲載開始日時",
+              "example": "2016-05-01T09:03:02+0900",
+              "type": [
+                "string"
+              ]
+            },
+            "ended_at": {
+              "description": "掲載終了日時",
+              "example": "2016-06-23T09:03:02+0900",
+              "type": [
+                "string"
+              ]
+            },
+            "top_image": {
+              "description": "TOPページ用画像",
+              "example": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+              "type": [
+                "string"
+              ]
+            },
+            "detail_image": {
+              "description": "詳細ページ用画像",
+              "example": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150",
+              "type": [
+                "string"
+              ]
+            }
+          }
+        }
+      },
+      "properties": {
+        "promotion": {
+          "$ref": "#/definitions/m01/definitions/promotion"
+        }
+      },
+      "links": [
+        {
+          "title": "一覧",
+          "description": "各枠毎のプロモーション一覧情報を取得する",
+          "_doc_id": "M0101",
+          "href": "/admin/api/promotions",
+          "method": "GET",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": [
+            ]
+          },
+          "targetSchema": {
+            "items": {
+              "properties": {
+                "frame_number": {
+                  "$ref": "#/definitions/m01/definitions/promotion/properties/frame_number"
+                },
+                "promotions": {
+                  "items": {
+                    "$ref": "#/definitions/m01/definitions/promotion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "登録",
+          "description": "指定枠にプロモーションを登録する",
+          "_doc_id": "M0102",
+          "href": "/admin/api/promotions",
+          "method": "POST",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": {
+              "frame_number": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/frame_number"
+              },
+              "event_item_id": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/event_item/properties/id"
+              },
+              "started_at": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/started_at"
+              },
+              "ended_at": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/ended_at"
+              },
+              "top_image": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/top_image"
+              },
+              "detail_image": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/detail_image"
+              }
+            },
+            "required": [
+              "frame_number",
+              "event_item_id",
+              "started_at",
+              "ended_at",
+              "top_image",
+              "detail_image"
+            ]
+          },
+          "targetSchema": {
+            "$ref": "#/definitions/m01/definitions/promotion"
+          }
+        },
+        {
+          "title": "編集",
+          "description": "指定プロモーションを編集する",
+          "_doc_id": "M0103",
+          "href": "/admin/api/promotions/{promotion_id}",
+          "method": "PATCH",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": {
+              "event_item_id": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/event_item/properties/id"
+              },
+              "started_at": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/started_at"
+              },
+              "ended_at": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/ended_at"
+              },
+              "top_image": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/top_image"
+              },
+              "detail_image": {
+                "$ref": "#/definitions/m01/definitions/promotion/properties/detail_image"
+              }
+            }
+          },
+          "targetSchema": {
+            "$ref": "#/definitions/m01/definitions/promotion"
+          }
+        },
+        {
+          "title": "削除",
+          "description": "指定プロモーションを削除する",
+          "_doc_id": "M0104",
+          "href": "/admin/api/promotions/{promotion_id}",
+          "method": "DELETE",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": [
+            ]
+          },
+          "targetSchema": {
+            "$ref": "#/definitions/m01/definitions/promotion"
+          }
+        }
+      ]
+    },
+    "n01": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "_doc_id": "N01",
+      "title": "管理画面用イベント",
+      "description": "管理画面用イベント情報",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "state": {
+          "description": "公開状態 (published:公開, unpublished:非公開)",
+          "example": "published",
+          "pattern": "(published|unpublished)",
+          "type": [
+            "string"
+          ]
+        },
+        "event_item_id": {
+          "description": "イベント記事ID",
+          "example": 1357,
+          "type": [
+            "integer"
+          ]
+        },
+        "title": {
+          "description": "タイトル",
+          "example": "記事タイトル",
+          "type": [
+            "string"
+          ]
+        },
+        "published": {
+          "description": "公開フラグ",
+          "example": true,
+          "type": [
+            "boolean"
+          ]
+        },
+        "publish_started_at": {
+          "description": "公開開始日時",
+          "example": "2016-05-01T09:03:02+0900",
+          "type": [
+            "string"
+          ]
+        },
+        "publish_ended_at": {
+          "description": "公開終了日時",
+          "example": "2016-06-23T09:03:02+0900",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "state": {
+          "$ref": "#/definitions/n01/definitions/state"
+        },
+        "event_item_id": {
+          "$ref": "#/definitions/n01/definitions/event_item_id"
+        },
+        "title": {
+          "$ref": "#/definitions/n01/definitions/title"
+        },
+        "published": {
+          "$ref": "#/definitions/n01/definitions/published"
+        },
+        "publish_started_at": {
+          "$ref": "#/definitions/n01/definitions/publish_started_at"
+        },
+        "publish_ended_at": {
+          "$ref": "#/definitions/n01/definitions/publish_ended_at"
+        }
+      },
+      "links": [
+        {
+          "title": "イベント公開切替え",
+          "description": "イベントの公開状態を切替える",
+          "_doc_id": "A0201",
+          "href": "/admin/api/events/{event_item_id}/{state}",
+          "method": "PATCH",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": [
+            ]
+          },
+          "targetSchema": {
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/n01/definitions/event_item_id"
+              },
+              "title": {
+                "$ref": "#/definitions/n01/definitions/title"
+              },
+              "published": {
+                "$ref": "#/definitions/n01/definitions/published"
+              },
+              "publish_started_at": {
+                "$ref": "#/definitions/n01/definitions/publish_started_at"
+              },
+              "publish_ended_at": {
+                "$ref": "#/definitions/n01/definitions/publish_ended_at"
+              }
+            }
+          }
+        },
+        {
+          "title": "イベント削除",
+          "description": "イベントを削除する",
+          "_doc_id": "N0102",
+          "href": "/admin/api/events/{event_item_id}",
+          "method": "DELETE",
+          "mediaType": "application/json",
+          "rel": "self",
+          "schema": {
+            "properties": [
+            ]
+          },
+          "targetSchema": {
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/n01/definitions/event_item_id"
+              },
+              "title": {
+                "$ref": "#/definitions/n01/definitions/title"
+              },
+              "published": {
+                "$ref": "#/definitions/n01/definitions/published"
+              },
+              "publish_started_at": {
+                "$ref": "#/definitions/n01/definitions/publish_started_at"
+              },
+              "publish_ended_at": {
+                "$ref": "#/definitions/n01/definitions/publish_ended_at"
+              }
+            }
+          }
+        }
+      ]
     }
   },
   "properties": {
@@ -558,6 +923,12 @@
     },
     "a02": {
       "$ref": "#/definitions/a02"
+    },
+    "m01": {
+      "$ref": "#/definitions/m01"
+    },
+    "n01": {
+      "$ref": "#/definitions/n01"
     }
   },
   "id": "api",

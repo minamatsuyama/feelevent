@@ -452,5 +452,335 @@ HTTP/1.1 200 OK
 ```
 
 
+## <a name="resource-m01"></a>ID:M01 管理画面用プロモーション
+
+管理画面用プロモーション情報
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **promotion:detail\_image** | *string* | 詳細ページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"` |
+| **promotion:ended\_at** | *string* | 掲載終了日時 | `"2016-06-23T09:03:02+0900"` |
+| **promotion:event\_item:id** | *integer* | イベント記事ID | `1357` |
+| **promotion:event\_item:publish\_ended\_at** | *string* | 公開終了日時 | `"2016-06-23T09:03:02+0900"` |
+| **promotion:event\_item:publish\_started\_at** | *string* | 公開開始日時 | `"2016-05-01T09:03:02+0900"` |
+| **promotion:event\_item:published** | *boolean* | 公開フラグ | `true` |
+| **promotion:event\_item:title** | *string* | タイトル | `"記事タイトル"` |
+| **promotion:frame\_number** | *integer* | 枠番号 | `1` |
+| **promotion:id** | *integer* | プロモーションID | `1122` |
+| **promotion:started\_at** | *string* | 掲載開始日時 | `"2016-05-01T09:03:02+0900"` |
+| **promotion:top\_image** | *string* | TOPページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200"` |
+
+***
+
+### ID:M0101 管理画面用プロモーション:一覧
+
+各枠毎のプロモーション一覧情報を取得する
+
+```
+GET /admin/api/promotions
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://worldschool.feelnote.org/admin/api/promotions
+ -G \
+  -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+[
+  {
+    "frame_number": 1,
+    "promotions": [
+      {
+        "id": 1122,
+        "event_item": {
+          "id": 1357,
+          "title": "記事タイトル",
+          "published": true,
+          "publish_started_at": "2016-05-01T09:03:02+0900",
+          "publish_ended_at": "2016-06-23T09:03:02+0900"
+        },
+        "frame_number": 1,
+        "started_at": "2016-05-01T09:03:02+0900",
+        "ended_at": "2016-06-23T09:03:02+0900",
+        "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+        "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+      }
+    ]
+  }
+]
+```
+
+***
+
+### ID:M0102 管理画面用プロモーション:登録
+
+指定枠にプロモーションを登録する
+
+```
+POST /admin/api/promotions
+```
+
+#### Required Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **detail\_image** | *string* | 詳細ページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"` |
+| **ended\_at** | *string* | 掲載終了日時 | `"2016-06-23T09:03:02+0900"` |
+| **event\_item\_id** | *integer* | イベント記事ID | `1357` |
+| **frame\_number** | *integer* | 枠番号 | `1` |
+| **started\_at** | *string* | 掲載開始日時 | `"2016-05-01T09:03:02+0900"` |
+| **top\_image** | *string* | TOPページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200"` |
+
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X POST https://worldschool.feelnote.org/admin/api/promotions \
+  -d '{
+  "frame_number": 1,
+  "event_item_id": 1357,
+  "started_at": "2016-05-01T09:03:02+0900",
+  "ended_at": "2016-06-23T09:03:02+0900",
+  "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+  "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+}' \
+  -H "Content-Type: application/json"
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "id": 1122,
+  "event_item": {
+    "id": 1357,
+    "title": "記事タイトル",
+    "published": true,
+    "publish_started_at": "2016-05-01T09:03:02+0900",
+    "publish_ended_at": "2016-06-23T09:03:02+0900"
+  },
+  "frame_number": 1,
+  "started_at": "2016-05-01T09:03:02+0900",
+  "ended_at": "2016-06-23T09:03:02+0900",
+  "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+  "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+}
+```
+
+***
+
+### ID:M0103 管理画面用プロモーション:編集
+
+指定プロモーションを編集する
+
+```
+PATCH /admin/api/promotions/{promotion_id}
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **detail\_image** | *string* | 詳細ページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"` |
+| **ended\_at** | *string* | 掲載終了日時 | `"2016-06-23T09:03:02+0900"` |
+| **event\_item\_id** | *integer* | イベント記事ID | `1357` |
+| **started\_at** | *string* | 掲載開始日時 | `"2016-05-01T09:03:02+0900"` |
+| **top\_image** | *string* | TOPページ用画像 | `"//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200"` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X PATCH https://worldschool.feelnote.org/admin/api/promotions/$PROMOTION_ID \
+  -d '{
+  "event_item_id": 1357,
+  "started_at": "2016-05-01T09:03:02+0900",
+  "ended_at": "2016-06-23T09:03:02+0900",
+  "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+  "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+}' \
+  -H "Content-Type: application/json"
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "id": 1122,
+  "event_item": {
+    "id": 1357,
+    "title": "記事タイトル",
+    "published": true,
+    "publish_started_at": "2016-05-01T09:03:02+0900",
+    "publish_ended_at": "2016-06-23T09:03:02+0900"
+  },
+  "frame_number": 1,
+  "started_at": "2016-05-01T09:03:02+0900",
+  "ended_at": "2016-06-23T09:03:02+0900",
+  "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+  "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+}
+```
+
+***
+
+### ID:M0104 管理画面用プロモーション:削除
+
+指定プロモーションを削除する
+
+```
+DELETE /admin/api/promotions/{promotion_id}
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X DELETE https://worldschool.feelnote.org/admin/api/promotions/$PROMOTION_ID \
+  -d '{
+}' \
+  -H "Content-Type: application/json"
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "id": 1122,
+  "event_item": {
+    "id": 1357,
+    "title": "記事タイトル",
+    "published": true,
+    "publish_started_at": "2016-05-01T09:03:02+0900",
+    "publish_ended_at": "2016-06-23T09:03:02+0900"
+  },
+  "frame_number": 1,
+  "started_at": "2016-05-01T09:03:02+0900",
+  "ended_at": "2016-06-23T09:03:02+0900",
+  "top_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=500&h=200",
+  "detail_image": "//placeholdit.imgix.net/~text?txtsize=33&txt=sample&w=150&h=150"
+}
+```
+
+
+## <a name="resource-n01"></a>ID:N01 管理画面用イベント
+
+管理画面用イベント情報
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **event\_item\_id** | *integer* | イベント記事ID | `1357` |
+| **publish\_ended\_at** | *string* | 公開終了日時 | `"2016-06-23T09:03:02+0900"` |
+| **publish\_started\_at** | *string* | 公開開始日時 | `"2016-05-01T09:03:02+0900"` |
+| **published** | *boolean* | 公開フラグ | `true` |
+| **state** | *string* | 公開状態 (published:公開, unpublished:非公開)<br/> **pattern:** <code>(published&#124;unpublished)</code> | `"published"` |
+| **title** | *string* | タイトル | `"記事タイトル"` |
+
+***
+
+### ID:A0201 管理画面用イベント:イベント公開切替え
+
+イベントの公開状態を切替える
+
+```
+PATCH /admin/api/events/{event_item_id}/{state}
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X PATCH https://worldschool.feelnote.org/admin/api/events/$EVENT_ITEM_ID/$STATE \
+  -d '{
+}' \
+  -H "Content-Type: application/json"
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "id": 1357,
+  "title": "記事タイトル",
+  "published": true,
+  "publish_started_at": "2016-05-01T09:03:02+0900",
+  "publish_ended_at": "2016-06-23T09:03:02+0900"
+}
+```
+
+***
+
+### ID:N0102 管理画面用イベント:イベント削除
+
+イベントを削除する
+
+```
+DELETE /admin/api/events/{event_item_id}
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X DELETE https://worldschool.feelnote.org/admin/api/events/$EVENT_ITEM_ID \
+  -d '{
+}' \
+  -H "Content-Type: application/json"
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "id": 1357,
+  "title": "記事タイトル",
+  "published": true,
+  "publish_started_at": "2016-05-01T09:03:02+0900",
+  "publish_ended_at": "2016-06-23T09:03:02+0900"
+}
+```
+
+
 ***
 ©1PAC. INC.
