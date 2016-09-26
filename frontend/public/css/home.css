@@ -211,6 +211,7 @@
   left: 0;
 }
 .search-area .search-select .search-text .input {
+  color: #333;
   padding-left: 40px;
   background-color: #f5f7fa;
   width: 100%;

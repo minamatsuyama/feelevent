@@ -45,6 +45,7 @@ function datepickerInit(){
 }
 function select2Init(){
   $('.held-area select').select2({
+    placeholder:"開催場所",
     minimumResultsForSearch: Infinity
   });
   $('.entry-fee-type select').select2({
