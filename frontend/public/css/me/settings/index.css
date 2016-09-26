@@ -146,6 +146,9 @@
 .row.row-setting {
   margin-bottom: 20px;
 }
+.row.row-setting input[type=email] {
+  background: #fff;
+}
 .row.row-setting.message {
   margin-top: 57px;
   margin-bottom: 35px;

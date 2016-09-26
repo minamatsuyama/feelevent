@@ -154,6 +154,10 @@
 .row {
   &.row-setting {
     margin-bottom: 20px;
+
+    input[type=email] {
+      background: $color-white;
+    }
     &.message {
       margin-top: 57px;
       margin-bottom: 35px;
