@@ -143,6 +143,10 @@
             left:0;
             padding-left:20px;
             width:100%;
+            &:hover{
+              background-color: #fff;
+              color:$color-gray-dark;
+            }
           }
         }
       }
@@ -184,6 +188,10 @@
         &.has-value{
           background-color:#fff;
         }
+        &:hover{
+          background-color: #fff;
+          color:$color-gray-dark;
+        }
       }
     }
     .search-text{
@@ -210,6 +218,11 @@
         margin:0;
         border: 0 none;
         border-radius: 0;
+        &:hover{
+            background-color: #fff;
+            color:$color-gray-dark;
+            box-shadow: none;
+        }
       }
     }
   }

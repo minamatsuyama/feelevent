@@ -156,6 +156,10 @@
   padding-left: 20px;
   width: 100%;
 }
+.search-area .search-select .selectpicker .select2-container .select2-selection--single .select2-selection__placeholder:hover {
+  background-color: #fff;
+  color: #333;
+}
 .search-area .search-select .selectpicker select {
   font-size: 14px;
   color: #83828c;
@@ -195,6 +199,10 @@
 .search-area .search-select .date-picker input.has-value {
   background-color: #fff;
 }
+.search-area .search-select .date-picker input:hover {
+  background-color: #fff;
+  color: #333;
+}
 .search-area .search-select .search-text {
   width: 100%;
   height: 40px;
@@ -220,6 +228,11 @@
   margin: 0;
   border: 0 none;
   border-radius: 0;
+}
+.search-area .search-select .search-text .input:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: none;
 }
 .search-area .btn-eventsearch {
   width: 84px;
