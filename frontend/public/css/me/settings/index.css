@@ -80,6 +80,33 @@
   background: #fff;
   color: #83828c;
 }
+@media screen and (max-width: 679px) {
+  .btn-checkbox {
+    font-size: 12px;
+  }
+}
+
+.btn-cancel {
+  width: 150px;
+  padding: 10px;
+  color: #333;
+  background: #f5f7fa;
+  border: 1px solid #e4e4e4;
+}
+.btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
+  background: #fff;
+}
+
+.btn-submit {
+  width: 150px;
+  padding: 10px;
+  color: #fff;
+  background: #187fc4;
+  border: 1px solid #2c7996;
+}
+.btn-submit:hover, .btn-submit:active, .btn-submit.active {
+  background: #0088e3;
+}
 
 .terms {
   margin-bottom: 10px;
