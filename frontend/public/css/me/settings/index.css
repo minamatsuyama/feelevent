@@ -21,27 +21,28 @@
 .box-main {
   border-top: 10px solid #2c7996;
   background-color: #fff;
-  padding: 55px 85px 33px;
+  padding: 47px 85px 33px;
   border-radius: 3px;
   margin-bottom: 195px;
 }
 @media screen and (max-width: 679px) {
   .box-main {
     border-top: 5px solid #2c7996;
-    padding: 15px 15px 30px;
+    padding: 20px 15px 30px;
     margin-bottom: 0;
   }
 }
 
 .setting-header {
   font-size: 24px;
-  padding-bottom: 3px;
+  padding-bottom: 11px;
   margin-bottom: 5px;
   border-bottom: 1px solid #e6edf2;
 }
 @media screen and (max-width: 679px) {
   .setting-header {
     font-size: 12px;
+    padding-bottom: 3px;
   }
 }
 

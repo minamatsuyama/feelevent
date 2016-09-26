@@ -25,22 +25,23 @@
 .box-main {
   border-top: 10px solid #2c7996;
   background-color: $color-white;
-  padding: 55px 85px 33px;
+  padding: 47px 85px 33px;
   border-radius: 3px;
   margin-bottom: 195px;
   @include mediaquery-sm {
     border-top: 5px solid #2c7996;
-    padding: 15px 15px 30px;
+    padding: 20px 15px 30px;
     margin-bottom: 0;
   }
 }
 .setting-header {
   font-size: 24px;
-  padding-bottom: 3px;
+  padding-bottom: 11px;
   margin-bottom: 5px;
   border-bottom: 1px solid #e6edf2;
   @include mediaquery-sm() {
       font-size: $font-size-small;
+    padding-bottom: 3px;
   }
 }
 
