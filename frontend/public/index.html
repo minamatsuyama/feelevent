@@ -84,9 +84,9 @@
           </div>
     </div>
     <div class="container">
-          <div class="toggle event-types">
+          <div class="toggle active event-types">
             <div class="lbl-text">種別</div>
-            <div class="btn-group hide">
+            <div class="btn-group">
               <label class="btn btn-checkbox">
                 <input type="checkbox" checked name="keyword_ids" value="1"> 参加型
               </label>
@@ -103,30 +103,50 @@
           </div>
     </div>
     <div class="container">
-      <div class="toggle">
+      <div class="toggle active held-area selectpicker">
         <div class="lbl-text">開催場所</div>
-        <div class="btn-group hide">
+        <div class="btn-group">
+            <select name="held_area" class="select">
+              <option value="開催場所">開催場所 </option>
+              <option value="北海道">北海道 </option>
+              <option value="関東">関東 </option>
+              <option value="関西">関西 </option>
+              <option value="九州">九州 </option>
+            </select>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="toggle">
+      <div class="toggle active datepicker">
         <div class="lbl-text">開催期間</div>
-        <div class="btn-group hide">
+        <div class="btn-group">
+            <input type="text" class="held-started-on" value="" name="held_started_on" placeholder="開催開始日">
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="toggle">
+      <div class="toggle active entry-fee-type selectpicker">
         <div class="lbl-text">参加費</div>
-        <div class="btn-group hide">
+        <div class="btn-group">
+            <select name="entry_fee_type" class="select">
+              <option></option>
+              <option value="free">無料</option>
+              <option value="pay">有料</option>
+            </select>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="toggle">
+      <div class="toggle active qualifying-age selectpicker">
         <div class="lbl-text">対象年齢</div>
-        <div class="btn-group hide">
+        <div class="btn-group">
+            <select name="qualifying_age_id" class="select">
+              <option value=""></option>
+              <option value="10歳〜20歳">10歳〜20歳</option>
+              <option value="21歳〜30歳">21歳〜30歳</option>
+              <option value="31歳〜40歳">31歳〜40歳</option>
+              <option value="41歳〜50歳">41歳〜50歳</option>
+            </select>
         </div>
       </div>
     </div>
@@ -136,7 +156,6 @@
   </div>
 </section>
 <script src="/js/lib/vendor.js" type="text/javascript"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script type="text/javascript" src="/js/home/searchmenu.js"></script>
 </body>
 </html>
