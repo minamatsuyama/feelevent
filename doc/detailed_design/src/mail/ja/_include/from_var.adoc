@@ -1,1 +1,1 @@
-:mail_from: WorldSchool <noreply@feelnote.org>
+:mail_from: WorldSchool <noreply@worldschool.feelnote.org>
