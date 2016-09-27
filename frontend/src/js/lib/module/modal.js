@@ -3,45 +3,45 @@
  */
 
 !function(definition){
-  define('modal', ['vendor', 'backbone_uiview'], definition);
-}(function(vendor, BackboneUIView){
+  define('modal', ['vendor'], definition);
+}(function(vendor){
   'use strict';
 
   var $body = $('body');
   var callbackString = 'webkitTransitionEnd transitionend oTransitionEnd';
 
-  var Modal = BackboneUIView.extend({
-    ui:{
-      closeButton:'.modal-close',
-      modalInner:'.modal-inner',
-      modalBackground:'.modal-bg'
-    },
+
+  var Modal = Backbone.View.extend({
+
+    closeButton :     ".modal-close",
+    modalInner :      ".modal-inner",
+    modalBackground:  ".modal-bg",
+
     initialize:function(options){
       this.options = $.extend(true, {
         'onComplete': function() {}
       }, options || {});
     },
     render:function(){
-
     },
     destroy:function(){
       this._unbindObject();
-      this.unbindUIElements();
+      //this.unbindUIElements();
       if(this.isTemplate){
         $(this.el).remove();
       }
     },
     _bindObject:function(){
       this.onCloseButtonClick = _.bind(this._onCloseButtonClick, this);
-      this.ui.closeButton.on('click', this.onCloseButtonClick);
-      this.ui.modalBackground.on('click', this.onCloseButtonClick);
+      this.$el.find(this.closeButton).on('click', this.onCloseButtonClick);
+      this.$el.find(this.modalBackground).on('click', this.onCloseButtonClick);
     },
     _unbindObject:function(){
-      if(this.ui.closeButton.off){
-        this.ui.closeButton.off('click', this.onCloseButtonClick);
+      if(this.$el.find(this.closeButton).off){
+        this.$el.find(this.closeButton).off('click', this.onCloseButtonClick);
       }
-      if(this.ui.modalBackground.off){
-        this.ui.modalBackground.off('click', this.onCloseButtonClick);
+      if(this.$el.find(this.modalBackground).off){
+        this.$el.find(this.modalBackground).off('click', this.onCloseButtonClick);
       }
     },
     open:function(elementOrSelector, json){
@@ -64,10 +64,10 @@
         this.$el.show();
 
         $.requestAnimationFrame(_.bind(function(){
-          this.bindUIElements();
+          //this.bindUIElements();
           this._bindObject();
           this.$el.addClass('open');
-          this.ui.modalInner.addClass('open');
+          this.$el.find(this.modalInner).addClass('open');
 
           this.$el.one(callbackString, _.bind(function(){
             this.trigger(Modal.events.OPEN_COMPLETE);

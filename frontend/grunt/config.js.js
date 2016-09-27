@@ -13,6 +13,9 @@ module.exports = {
           '<%= srcPath %>/js/lib/vendor/backbone-min.js',
           '<%= srcPath %>/js/lib/vendor/velocity.min.js',
           '<%= srcPath %>/js/lib/vendor/slick.min.js',
+          '<%= srcPath %>/js/lib/vendor/select2.full.min.js',
+          '<%= srcPath %>/js/lib/vendor/jquery-ui.1.min.js',
+          '<%= srcPath %>/js/lib/vendor/jquery-ui.2.datepicker-ja.js',
           '<%= srcPath %>/js/lib/vendor/vendor_setting.js'
         ]
       }
