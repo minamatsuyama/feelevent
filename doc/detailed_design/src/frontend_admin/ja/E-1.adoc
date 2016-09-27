@@ -46,11 +46,9 @@ image::_include/E-1_search_module.png[]
 
 * *検索ボタン*
 ** 検索を実行する
-** // TODO:使用するAPIを確認する
 
 .検索モジュールフォーム
 include::../../form_admin/ja/_include/E-1.adoc[]
-
 
 ==== 検索結果
 
@@ -60,44 +58,16 @@ image::_include/E-1_search_result_module.png[]
 
 ** 検索結果件数を表示する
 
-==== ページネーション
-
-.次ページ、前ページ
-
-* *戻るボタン*
-** 現在のページが1ページ目のときは、disable状態 //TODO:disable状態でよいか
-** 押下にて(現在のページ-1)ページへ遷移する
-
-* *次へボタン*
-** 現在のページが最終ページのときは、disable状態 //TODO:disable状態でよいか
-** 押下にて(現在のページ+1)ページへ遷移する
-
-.ページャー //TODO:ページャーの表示範囲は±1でよいか？
-
-* *ページ選択ボタン*
-** 押下にて選択ページへ遷移する
-** 現在のページ、カレント表示状態の見た目を作る
-** 現在のページによって表示パターンが存在する link:http://www.morisawa.co.jp/fonts/specimen/[参考ページ]
-.. 現在のページが(3)以下のとき
-*** 123･･･最終ページ
-.. 現在のページが(最終ページ-3)以上のとき
-*** 1･･･(最終ページ-2)(最終ページ-1)(最終ページ)
-.. 上記以外のとき
-*** 1･･･(該当ページ-1)(該当ページ)(該当ページ+1)･･･最終ページ
-
-例
-
-image::_include/pagenation_start.png[]
-image::_include/pagenation_end.png[]
-image::_include/pagenation_between.png[]
-
-
+//ページネーション
+include::_include/_pagenation.adoc[]
 
 ===== 検索結果一覧
 
-TODO: 0件のときを確認する
+* *共通*
+** 0件のときはページャーを外して0件時の文言を出す。
+*** 検索結果はありませんでした。　の表示
 
-TODO: 使用するAPIを確認する
+TODO : フォーム定義書の maxlength を追記。
 
 .検索結果記事モジュール
 
