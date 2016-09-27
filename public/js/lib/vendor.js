@@ -2616,6 +2616,7 @@ if(e&&1===a.nodeType)while(c=e[d++])a.removeAttribute(c)}}),hb={set:function(a,b
   }(), c = b.require("jquery.select2");
   return a.fn.select2.amd = b, c
 });
+
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
