@@ -14,7 +14,7 @@ include::./_include/from_var.adoc[]
 ----
 <%= メールアドレス %> 様
 
-「WorldSchool」管理画面の会員登録が完了しました。
+「WorldSchool」管理画面のアカウント登録が完了しました。
 以下のURLからパスワードを変更し、本登録を完了させてください。
 
 ■パスワード変更URL
