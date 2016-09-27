@@ -71,17 +71,23 @@
   .search-menu-area .search-result-info:after {
     clear: both;
   }
-  .search-menu-area .search-select {
-    border: 1px solid #d3dae0;
-    border-radius: 4px 0 0 4px;
-    overflow: hidden;
+  .search-menu-area .selectpicker {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #d3dae0;
   }
-  .search-menu-area .search-select .selectpicker {
-    width: 170px;
-    height: 40px;
-    position: relative;
+  .search-menu-area .selectpicker .select2-container .select2-selection--single {
+    height: 50px;
+    border: 0 none;
   }
-  .search-menu-area .search-select .selectpicker select {
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__rendered,
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
+    line-height: 50px;
+    height: 100%;
+    right: 18px;
+    font-size: 12px;
+  }
+  .search-menu-area .selectpicker select {
     font-size: 14px;
     color: #83828c;
     width: 100%;
@@ -92,64 +98,33 @@
     box-shadow: none;
     padding-left: 20px;
   }
-  .search-menu-area .search-select .selectpicker.held-area {
-    width: 150px;
-  }
-  .search-menu-area .search-select .selectpicker.held-area .select {
-    border-left-width: 0;
-  }
-  .search-menu-area .search-select .icon-date-to {
+  .search-menu-area .icon-date-to {
     width: 34px;
-    height: 40px;
+    height: 50px;
     background-color: #f5f7fa;
     color: #83828c;
-    line-height: 40px;
+    line-height: 50px;
     text-align: center;
   }
-  .search-menu-area .search-select .date-picker {
-    width: 195px;
-    height: 40px;
+  .search-menu-area .date-picker {
+    width: 100%;
+    height: 50px;
     position: relative;
   }
-  .search-menu-area .search-select .date-picker:before {
+  .search-menu-area .date-picker:before {
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 0;
     right: 0;
     background: url("/img/icon-calendar.png") no-repeat center center;
   }
-  .search-menu-area .search-select .date-picker input {
+  .search-menu-area .date-picker input {
     padding-left: 20px;
     width: 100%;
     height: 100%;
     background-color: #fff;
-  }
-  .search-menu-area .search-select .search-text {
-    width: 100%;
-    height: 40px;
-    position: relative;
-    border-bottom: 1px solid #d3dae0;
-  }
-  .search-menu-area .search-select .search-text:before {
-    content: "";
-    height: 40px;
-    width: 40px;
-    background: url("/img/icon-search.png") no-repeat center center;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .search-menu-area .search-select .search-text .input {
-    padding-left: 40px;
-    background-color: #f5f7fa;
-    width: 100%;
-    height: 100%;
-    font-size: 14px;
-    margin: 0;
-    border: 0 none;
-    border-radius: 0;
   }
   .search-menu-area .btn-eventsearch {
     width: 84px;
@@ -167,9 +142,6 @@
   }
   .search-menu-area .toggle {
     margin: 0;
-  }
-  .search-menu-area .toggle.active {
-    padding-bottom: 20px;
   }
   .search-menu-area .toggle.active .lbl-text:before {
     background-position: right -10px;
@@ -199,6 +171,7 @@
   }
   .search-menu-area .toggle .btn-group {
     float: left;
+    padding-bottom: 20px;
   }
   .search-menu-area .toggle .btn-group .btn-checkbox {
     background-color: #f5f7fa;
