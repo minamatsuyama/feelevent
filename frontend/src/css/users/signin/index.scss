@@ -101,3 +101,13 @@
     width: 100%;
   }
 }
+
+@include mediaquery-not-lg() {
+  .col {
+    &.col-offset-1 {
+      &.col-title {
+        text-align: left;
+      }
+    }
+  }
+}

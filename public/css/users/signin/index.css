@@ -94,3 +94,9 @@
 .input-text.percent-90 {
   width: 100%;
 }
+
+@media screen and (max-width: 999px) {
+  .col.col-offset-1.col-title {
+    text-align: left;
+  }
+}

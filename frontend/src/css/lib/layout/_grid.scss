@@ -217,4 +217,16 @@
     padding-left: 5px;
     padding-right: 5px;
   }
+  #content {
+    .col {
+      &.col-title {
+        margin-left: 0;
+        width: 100%;
+      }
+      &.col-input {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
 }
