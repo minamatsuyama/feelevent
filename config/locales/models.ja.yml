@@ -1,5 +1,9 @@
 ja:
   enumerize:
+    event/admin/user:
+      user_type:
+        super_user:  "スーパーユーザ"
+        normal_user: "一般ユーザ"
     event/item:
       currency:
         yen:    "円"

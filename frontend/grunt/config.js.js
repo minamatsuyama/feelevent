@@ -7,7 +7,14 @@ module.exports = {
     //create modules.js
     js_lib_vendor : {
       files : {
-        '<%= destPath %>/js/lib/vendor.js': ['<%= srcPath %>/js/lib/vendor/*.js']
+        '<%= destPath %>/js/lib/vendor.js': [
+          '<%= srcPath %>/js/lib/vendor/jquery-3.1.0.min.js',
+          '<%= srcPath %>/js/lib/vendor/underscore.min.js',
+          '<%= srcPath %>/js/lib/vendor/backbone-min.js',
+          '<%= srcPath %>/js/lib/vendor/velocity.min.js',
+          '<%= srcPath %>/js/lib/vendor/slick.min.js',
+          '<%= srcPath %>/js/lib/vendor/vendor_setting.js'
+        ]
       }
     },
     //create module.js
