@@ -4,30 +4,31 @@
 @import "../shared/variables";
 @import "../shared/mixins";
 
-h2 {
-  font-size: 28px;
-  @include mediaquery-sm() {
-    font-size: 16px;
-  }
-}
-h3 {
-  font-size: 20px;
-  @include mediaquery-sm() {
-    font-size: 14px;
-  }
-}
-p {
-  font-size: 15px;
-  @include mediaquery-sm() {
-    font-size: 13px;
-  }
-}
+
 
 #content {
   padding-top:40px;
   padding-bottom: 40px;
   @include mediaquery-sm() {
     padding-top:20px;
+  }
+  h2 {
+    font-size: 28px;
+    @include mediaquery-sm() {
+      font-size: 16px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    @include mediaquery-sm() {
+      font-size: 14px;
+    }
+  }
+  p {
+    font-size: 15px;
+    @include mediaquery-sm() {
+      font-size: 13px;
+    }
   }
 }
 .row {
@@ -100,6 +101,7 @@ p {
 .detail-tags {
   margin-top: 15px;
   margin-bottom: 5px;
+  padding-bottom: 5px;
   @include mediaquery-sm() {
     margin-top: 5px;
     margin-bottom: 8px;
@@ -147,6 +149,7 @@ p {
   font-size: 14px;
   margin-top: 14px;
   margin-bottom: 12px;
+  padding-bottom: 13px;
   .keyword {
     padding-right:10px;
     position: relative;
@@ -328,9 +331,6 @@ hr {
   .mobile-br {
     display: none;
   }
-  .recommend-list .eventcard:nth-child(n+4) {
-    display:none;
-  }
 }
 
 .slick-slide
@@ -338,3 +338,14 @@ hr {
   width: 325px;
 }
 
+@include mediaquery-not-lg() {
+  .btn-more {
+    display: none;
+  }
+}
+
+@include mediaquery-lg() {
+  .recommend-list .eventcard:nth-child(n+4) {
+    display:none;
+  }
+}

@@ -144,6 +144,7 @@
   &:active,
   &.active {
     background: $color-white;
+    color: $color-gray-dark;
   }
 }
 
@@ -157,5 +158,6 @@
   &:active,
   &.active {
     background: #0088e3;
+    color: $color-white
   }
 }

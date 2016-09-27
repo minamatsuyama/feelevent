@@ -1,30 +1,3 @@
-h2 {
-  font-size: 28px;
-}
-@media screen and (max-width: 679px) {
-  h2 {
-    font-size: 16px;
-  }
-}
-
-h3 {
-  font-size: 20px;
-}
-@media screen and (max-width: 679px) {
-  h3 {
-    font-size: 14px;
-  }
-}
-
-p {
-  font-size: 15px;
-}
-@media screen and (max-width: 679px) {
-  p {
-    font-size: 13px;
-  }
-}
-
 #content {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -32,6 +5,30 @@ p {
 @media screen and (max-width: 679px) {
   #content {
     padding-top: 20px;
+  }
+}
+#content h2 {
+  font-size: 28px;
+}
+@media screen and (max-width: 679px) {
+  #content h2 {
+    font-size: 16px;
+  }
+}
+#content h3 {
+  font-size: 20px;
+}
+@media screen and (max-width: 679px) {
+  #content h3 {
+    font-size: 14px;
+  }
+}
+#content p {
+  font-size: 15px;
+}
+@media screen and (max-width: 679px) {
+  #content p {
+    font-size: 13px;
   }
 }
 
@@ -108,6 +105,7 @@ p {
 .detail-tags {
   margin-top: 15px;
   margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 @media screen and (max-width: 679px) {
   .detail-tags {
@@ -160,6 +158,7 @@ p {
   font-size: 14px;
   margin-top: 14px;
   margin-bottom: 12px;
+  padding-bottom: 13px;
 }
 .keywords .keyword {
   padding-right: 10px;
@@ -366,11 +365,18 @@ hr {
   .mobile-br {
     display: none;
   }
-
-  .recommend-list .eventcard:nth-child(n+4) {
-    display: none;
-  }
 }
 .slick-slide {
   width: 325px;
+}
+
+@media screen and (max-width: 999px) {
+  .btn-more {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .recommend-list .eventcard:nth-child(n+4) {
+    display: none;
+  }
 }

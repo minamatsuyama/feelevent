@@ -649,6 +649,7 @@ ol li,
 }
 .btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
   background: #fff;
+  color: #333;
 }
 
 .btn-submit {
@@ -660,6 +661,7 @@ ol li,
 }
 .btn-submit:hover, .btn-submit:active, .btn-submit.active {
   background: #0088e3;
+  color: #fff;
 }
 
 .img-liquid, .article img,
@@ -2029,19 +2031,19 @@ html.pointer .hidden-pointer {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e6edf2;
 }
 
 .border-right {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #e6edf2;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e6edf2;
 }
 
 .border-left {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #e6edf2;
 }
 
 .pop {
