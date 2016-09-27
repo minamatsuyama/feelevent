@@ -27,20 +27,6 @@ http://getbootstrap.com/[BootStrap]を用いる
 ** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
 *** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
 
-==== フォーム
-
-* 必須チェック
-
-http://caniuse.com/#search=required +
-required属性を使用する
-
-==== タブ
-
-bootstrap の nav-tabsを用いる
-
-==== 他
-
-
 ==== API
 
 前提の仕様としてプロモーション管理はすべて API で操作する。 +
