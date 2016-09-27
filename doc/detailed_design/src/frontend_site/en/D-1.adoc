@@ -1,0 +1,38 @@
+== D-1 Signup screen design
+
+=== Overview
+
+Display signup screen 
+
+=== Basic info
+
+|=================================
+|1       |Input form area    |Publish signup form 
+|2       |Terms of Use link   |Move to Terms of Use page
+|3       |Signup button   |Display button 
+|=================================
+
+
+<<<
+
+=== Spec
+
+image::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/frontend_site/assets/D-1.png[]
+
+
+==== 1.Input form area 
+
+** Input form
+
+https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/form_site/vi/_include/D-1.adoc
+
+==== 2.Terms of Use link
+
+** Terms of Use link /term.html
+
+==== 3.Signup button
+
+** Signup address /users
+
+https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_site/vi/D-1.adoc#d-1-a-Đăng-k%C3%AD-thành-viên-mới-xử-lý
+

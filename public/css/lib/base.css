@@ -140,6 +140,7 @@ body {
   color: #000;
   font-size: 14px;
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  background-color: #e3e3e3;
   letter-spacing: 0.05em;
   vertical-align: top;
 }
@@ -162,6 +163,10 @@ body {
 }
 #content-main.no-padding-bottom {
   padding-bottom: 0;
+}
+
+.container {
+  max-width: 100%;
 }
 
 a {
@@ -974,10 +979,6 @@ kbd kbd {
   display: block;
 }
 
-#content {
-  min-height: 545px;
-}
-
 .container {
   position: relative;
   -webkit-box-sizing: border-box;
@@ -987,8 +988,8 @@ kbd kbd {
   max-height: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
   -webkit-text-size-adjust: none;
 }
 .container .container,
@@ -1001,8 +1002,8 @@ kbd kbd {
 @media screen and (max-width: 679px) {
   .container {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1202,8 +1203,8 @@ kbd kbd {
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
     -webkit-text-size-adjust: none;
   }
   .container-md .container,
@@ -1217,8 +1218,8 @@ kbd kbd {
 @media screen and (min-width: 680px) and (max-width: 999px) and (max-width: 679px) {
   .container-md {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1389,8 +1390,8 @@ kbd kbd {
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
     -webkit-text-size-adjust: none;
   }
   .container-sm .container,
@@ -1404,8 +1405,8 @@ kbd kbd {
 @media screen and (max-width: 679px) and (max-width: 679px) {
   .container-sm {
     width: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -1738,26 +1739,79 @@ kbd kbd {
 #global-header {
   line-height: 1;
   width: 100%;
-  border-bottom: 1px solid #e5e5e5;
-  background: #ffbf00 url("/img/bg-header.gif") no-repeat center bottom;
+  background-color: #ffcc00;
   height: 60px;
   -webkit-transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   -o-transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+#global-header .powered-by {
+  font-size: 8px;
+}
 #global-header .container {
   height: 100%;
+  max-width: 100%;
   position: relative;
+  padding: 0 15px;
+  text-align: center;
+}
+#global-header .container .link-text {
+  padding: 5px 0 0 0;
+  color: #333;
+}
+#global-header .container .logo {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 8px 0 3px 0;
+}
+#global-header .container .logo img {
+  width: 100%;
+  height: auto;
+}
+#global-header .container .top-fb-link, #global-header .container .top-tw-link {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+#global-header .container .top-fb-link img, #global-header .container .top-tw-link img {
+  border-radius: 4px;
+}
+#global-header .container .top-tw-link {
+  left: 55px;
+}
+#global-header .container .top-link, #global-header .container .top-user, #global-header .container .top-login {
+  position: absolute;
+  bottom: 11px;
+}
+#global-header .container .top-link img, #global-header .container .top-user img, #global-header .container .top-login img {
+  height: auto;
+}
+#global-header .container .top-login {
+  right: 103px;
+  font-size: 10px;
+}
+#global-header .container .top-flag {
+  position: absolute;
+  width: 70px;
+  height: 75px;
+  top: 0;
+  line-height: 65px;
+  text-align: center;
+  right: 15px;
+  z-index: 2020;
+  font-size: 12px;
+  color: #fff;
+  background: url("/img/top-flag.png") no-repeat bottom left;
 }
 #global-header .container .top-link {
-  position: absolute;
-  left: 0;
-  bottom: 11px;
+  left: 15px;
+}
+#global-header .container .top-link img {
+  width: 29px;
 }
 #global-header .container .top-user {
-  position: absolute;
-  right: 0;
-  bottom: 11px;
+  right: 15px;
 }
 
 .global-navigation h1 {
@@ -1773,6 +1827,68 @@ kbd kbd {
   margin-left: 0;
 }
 
+@media screen and (max-width: 679px) {
+  #global-header {
+    height: 60px;
+    background-size: 22%;
+  }
+  #global-header .container .share-box {
+    display: none;
+    height: 55px;
+    width: 125px;
+    background-color: #ffcc00;
+    border-top: 1px solid #e6b800;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 20px;
+    z-index: 1010;
+  }
+  #global-header .container .share-box .top-fb-link, #global-header .container .share-box .top-tw-link {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+  }
+  #global-header .container .share-box .top-fb-link img, #global-header .container .share-box .top-tw-link img {
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+  }
+  #global-header .container .share-box .top-tw-link {
+    margin-left: 15px;
+  }
+  #global-header .container .logo {
+    width: 166px;
+    padding: 12px 0 5px 0;
+  }
+  #global-header .container .link-text {
+    font-size: 9px;
+  }
+  #global-header .container .top-link,
+  #global-header .container .top-user {
+    bottom: 12px;
+    font-size: 9px;
+  }
+  #global-header .container .top-link {
+    left: 15px;
+  }
+  #global-header .container .top-link img {
+    width: 29px;
+  }
+  #global-header .container .top-flag {
+    line-height: normal;
+    height: 56px;
+    top: 60px;
+    right: 0;
+    font-size: 10px;
+    padding: 15px 0;
+  }
+  #global-header .container .top-user,
+  #global-header .container .top-login {
+    right: 15px;
+  }
+}
 /* STRUCTURE
 
 #global-footer
@@ -1783,22 +1899,54 @@ kbd kbd {
 #global-footer {
   border-top: 1px solid #e5e5e5;
   color: #666;
-  height: 120px;
   text-align: center;
   background: #2c7996;
-  padding: 12px 0;
-}
-#global-footer .container {
-  height: 100%;
+  padding-bottom: 40px;
+  color: #f1f6f8;
   position: relative;
 }
-#global-footer .container .copyright {
+#global-footer .main-footer .footer-link {
+  padding: 30px 0;
+}
+#global-footer .main-footer .footer-link a {
+  color: #f1f6f8;
+}
+#global-footer .main-footer .info {
+  padding: 15px 0;
+  font-size: 12px;
+}
+#global-footer .main-footer .info img {
+  vertical-align: bottom;
+  padding-left: 10px;
+}
+#global-footer .main-footer ul li {
+  border: 0 none;
+}
+#global-footer .main-footer ul li a {
+  font-size: 12px;
+}
+#global-footer .bottom-footer {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  background-color: #1b2226;
+  bottom: 0;
+  left: 0;
+}
+#global-footer .bottom-footer .copyright {
   position: absolute;
   width: 100%;
   display: block;
   font-size: 10px;
   color: #b1c3cc;
-  bottom: 0;
+  bottom: 7px;
+  left: 50%;
+  margin-left: -50%;
+}
+@media screen and (max-width: 679px) {
+  #global-footer .container .copyright {
+    font-size: 8px;
+  }
 }
 #global-footer [role=contentinfo] small {
   font-family: Helvetica, arial, sans-serif;

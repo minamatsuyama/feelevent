@@ -1,0 +1,12 @@
+.pop {
+  width: 100%;
+  position: absolute;
+  top:43%;
+  background-color: #187fc4;
+  color: $color-white;
+  font-size: 18px;
+  padding: 15px;
+  @include opacity(0.8);
+  text-align: center;
+  display: none;
+}

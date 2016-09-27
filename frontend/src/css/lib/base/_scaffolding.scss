@@ -2,6 +2,7 @@ body {
   color: $font-color-basic;
   font-size: $font-size-base;
   font-family: $font-family-base;
+  background-color:$body-bg;
   //word-wrap: break-word;
   //word-break: break-all;
 
@@ -52,7 +53,9 @@ body {
   }
 }
 
-
+.container{
+  max-width:100%;
+}
 a {
   color: $color-link-main;
   &:hover {
