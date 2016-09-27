@@ -614,12 +614,15 @@ ol li,
   background-color: #187fc4;
   font-size: 18px;
   padding: 15px;
+  color: #fff;
 }
 .btn-filled:hover {
   background-color: #1b91df;
+  color: #fff;
 }
 .btn-filled:active, .btn-filled.active {
   background-color: #187fc4;
+  color: #fff;
 }
 @media screen and (max-width: 679px) {
   .btn-filled {
