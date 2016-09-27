@@ -1,0 +1,121 @@
+// event-card
+// ---------------------------------------------------
+
+
+.eventcards{
+  .eventcard{
+    margin: 15px 0;
+    border-radius: $border-radius-small;
+    padding-bottom:6px;
+    &:hover{
+      .eventcard-warpper{
+        border: 1px solid #ffbf00;
+        border-bottom:0;
+      }
+      .event-likebox{
+        border: 1px solid #ffbf00;
+        border-top:1px solid #e6edf2;
+      }
+    }
+    &.recommended:after{
+      content: "Recommended";
+      background: url("/img/recommend.png") no-repeat left top;
+      background-size: 100% 100%;
+      height: 34px;
+      width: 151px;
+      position: absolute;
+      right: 10px;
+      top: 11px;
+      z-index: $zindex-flow-content;
+      padding: 8px 33px 8px 0;
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 0;
+      @include mediaquery-sm(){
+        right: 5px;
+      }
+    }
+    .eventcard-warpper{
+      font-size: $font-size-small;
+      box-shadow: 0 0 10px 0 rgba(0,0,0,0.05);
+      background:#fff;
+      border: 1px solid #e3e3e3;
+      border-bottom-width:0;
+      color:$color-gray-light;
+      padding:15px 15px 6px 15px;
+      .event-img-warpper{
+        width:100%;
+        height:163px;
+        position:relative;
+        overflow:hidden;
+        img{
+          width:100%;
+        }
+      }
+      .clearfix{
+        padding:15px 0;
+      }
+      .event-type{
+        float:left;
+      }
+      .event-pm-paid{
+        float:right;
+        color: #fff;
+        background-color:#ff9500;
+        border-radius:$border-radius-base;
+        padding:0 5px;
+        &.free{
+          background:#1bb297;
+        }
+      }
+      .event-title{
+        padding:15px 0 0 ;
+        a{
+          color: $color-gray-dark;
+          font-size: 14px;
+          font-family: $font-family-base;
+          font-weight: bold;
+        }
+      }
+      table{
+        width:100%;
+        border-top:1px solid #e6edf2;
+        td{
+          padding-top:6px;
+        }
+      }
+    }
+    .event-likebox{
+      background: #fff;
+      border:1px solid #e3e3e3;
+      border-top:1px solid #e6edf2;
+      .btn-comment-box {
+        float:left;
+        margin:10px 0 0 15px;
+        font-size: 12px;
+        color: $color-gray-dark;
+        font-weight: bold;
+      }
+      .btn-like-box{
+        color:#aaa;
+        background-color: $color-almost-white;
+        padding: 5px;
+        min-width: 70px;
+        float:right;
+        margin-right:15px;
+        &:hover,
+        &.active{
+          color: #ef0155;
+        }
+      }
+      @include clearfix();
+    }
+  }
+}
+@include mediaquery-md(){
+  .eventcards{
+    .container{
+      width:660px;
+    }
+  }
+}
