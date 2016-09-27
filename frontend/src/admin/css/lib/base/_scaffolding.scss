@@ -6,3 +6,23 @@ body {
   letter-spacing: $letter-spacing-base;
   vertical-align: top;
 }
+
+//layout
+.chapter {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.subchapter{
+  max-width: 1000px;
+  margin: 20px auto;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+
