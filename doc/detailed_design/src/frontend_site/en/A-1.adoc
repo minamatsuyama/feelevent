@@ -23,7 +23,7 @@ image::../assets/A-1.png[]
 
 ==== 1.Input form area 
 
-include::../../form_site/ja/_include/A-1.adoc[]
+include::../../form_site/vi/_include/A-1.adoc[]
 
 ==== 2.Link when forgot password
 
