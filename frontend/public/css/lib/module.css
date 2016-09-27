@@ -652,6 +652,28 @@ ol li,
   background-color: #f6f6f6;
 }
 
+.btn-cancel {
+  width: 150px;
+  padding: 10px;
+  color: #333;
+  background: #f5f7fa;
+  border: 1px solid #e4e4e4;
+}
+.btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
+  background: #fff;
+}
+
+.btn-submit {
+  width: 150px;
+  padding: 10px;
+  color: #fff;
+  background: #187fc4;
+  border: 1px solid #2c7996;
+}
+.btn-submit:hover, .btn-submit:active, .btn-submit.active {
+  background: #0088e3;
+}
+
 .img-liquid, .article img,
 .block-content img {
   max-width: 100%;
@@ -1362,6 +1384,54 @@ input[type="radio"]:checked {
   .input-label .check-box {
     margin-top: 0;
     margin-right: 5px;
+  }
+}
+
+.row.message {
+  margin-top: 57px;
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 999px) {
+  .row.message {
+    margin-top: 27px;
+    margin-bottom: 15px;
+  }
+  .row.message .col {
+    margin-left: 0;
+  }
+}
+.row.receive-news {
+  margin-top: 70px;
+  margin-bottom: 67px;
+}
+@media screen and (max-width: 999px) {
+  .row.receive-news {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+  .row.receive-news .col {
+    margin-left: 0;
+  }
+}
+
+.col.col-title {
+  margin-top: 10px;
+}
+@media screen and (max-width: 999px) {
+  .col.col-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.col.col-input {
+  margin-left: -60px;
+}
+@media screen and (max-width: 999px) {
+  .col.col-input {
+    margin-left: 0;
+    width: 100%;
   }
 }
 

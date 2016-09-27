@@ -45,6 +45,20 @@
   }
 }
 
+.reset-password {
+  .col {
+    &.col-input {
+      margin-left: -100px;
+      @include mediaquery-sm() {
+        margin-left: 0;
+      }
+      @include mediaquery-not-lg() {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 .text-link {
   color: #187fc4;
 }
@@ -53,7 +67,6 @@
   text-align: center;
   margin-top: 5px;
 }
-
 
 .row {
   &.row-pw {

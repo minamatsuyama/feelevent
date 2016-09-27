@@ -7,7 +7,7 @@
 <meta name="format-detection" content="telephone=no">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/img/shared/apple-touch-icon.png">
-<title>パスワード再発行 | WorldSchool</title>
+<title>パスワード変更 | WorldSchool</title>
 <meta name="description" content="">
 <meta property="og:title" content="">
 <meta property="og:site_name" content="">
@@ -52,7 +52,7 @@
 </div><!-- End container -->
 </header>
 <section id="content">
-<section class="change-password">
+<section class="reset-password">
 <div class="container">
 <div class="box-main">
 <div class="row">
@@ -61,32 +61,25 @@
 </div>
 </div>
 
-<form action="" id="change-pw" name="change-pw">
+<form action="" id="reset-pw" name="reset-pw">
 
 <div class="row row-pw">
-<div class="col col-10 col-offset-1">
-パスワードのリセット方法を数分以内にメールでご連絡します。
+<div class="col col-10 col-offset-1 col-title">
+パスワードを再設定するユーザのメールアドレスを入力してください。
+リセット後、指定されたアドレスにパスワード設定のURLを送信します。
 </div>
 </div>
 <div class="row row-pw">
 <div class="col col-3 col-offset-1 col-title">
-パスワード
+E-mail
 </div>
-<div class="col col-7 col-input">
-<input type="password" id="password" name="password" placeholder="パスワードを入力" class="input-text percent-90">
-</div>
-</div>
-<div class="row row-pw">
-<div class="col col-3 col-offset-1 col-title">
-パスワード（確認用）
-</div>
-<div class="col col-7 col-input">
-<input type="password" id="password_confirmation" name="password_confirmation" placeholder="パスワード（確認用）を入力" class="input-text percent-90">
+<div class="col col-8 col-input">
+<input type="email" id="email" name="email" placeholder="E-mailアドレスを入力" class="input-text percent-90">
 </div>
 </div>
-
 <div class="row row-pw">
 <div class="col col-10 col-offset-1 btn-password-container">
+<a href="" class="btn btn-md btn-cancel">キャンセル</a>
 <a href="" class="btn btn-md btn-submit">送信</a>
 </div>
 </div>

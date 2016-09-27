@@ -42,6 +42,20 @@
   }
 }
 
+.reset-password .col.col-input {
+  margin-left: -100px;
+}
+@media screen and (max-width: 679px) {
+  .reset-password .col.col-input {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 999px) {
+  .reset-password .col.col-input {
+    margin-left: 0;
+  }
+}
+
 .text-link {
   color: #187fc4;
 }
