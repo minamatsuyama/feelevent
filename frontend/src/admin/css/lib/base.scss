@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+// library
+@import "../shared/variables";
+@import "../shared/mixins";
+
+// ---------------------------------------------------
+// BASE
+@import "../../../css/lib/base/sanitize";
+@import "base/scaffolding";
+
+// ---------------------------------------------------
+// DEVELOP - 開発時のみ
+
+// ---------------------------------------------------
+// LAYOUT
+@import "layout/global-header";
+@import "layout/global-footer";
+@import "layout/breadcrumb";
+
+
+
