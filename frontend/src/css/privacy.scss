@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
 // library
-@import "../shared/variables";
-@import "../shared/mixins";
+@import "./shared/variables";
+@import "./shared/mixins";
 
 #content {
-  background-color: #e3e3e3;
   padding-top: 40px;
   padding-bottom: 60px;
   @include mediaquery-sm() {
@@ -15,9 +14,20 @@
 }
 
 .box-main {
-  background-color: $color-white;
   padding: 48px 85px 33px;
   @include mediaquery-sm {
     padding: 15px 15px 30px;
+  }
+}
+
+.privacy {
+  h2 {
+    font-size: 20px;
+  }
+  ol {
+    li {
+      line-height: 2;
+      margin-bottom: 20px;
+    }
   }
 }
