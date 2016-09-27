@@ -19,48 +19,41 @@ function mainSlideshowInit(){
 }
 
 function arrowsPosition(){
-	windowsWidth = jQuery(window).width();
-  centerWidth = jQuery(".slick-center").width();
-	centerPadding = (windowsWidth - centerWidth)/2;
-  arrowWidth = jQuery(".slick-arrow").width();
+	var windowsWidth = jQuery(window).width();
+  var centerWidth = jQuery(".slick-center").width();
+	var centerPadding = (windowsWidth - centerWidth)/2;
+  var arrowWidth = jQuery(".slick-arrow").width();
   jQuery(".slick-prev").css("left",centerPadding-(arrowWidth/2));
   jQuery(".slick-next").css("right",centerPadding-(arrowWidth/2));
 }
 
 function datepickerInit(){
-  from = $( "#held-started-on" ).find('input')
+  var from = $( "#held-started-on" ).find('input')
     .datepicker({
       regional: "ja",
-      dateFormat: "yy.mm.dd",
-      onClose: function(arg) {
-        var inputValue = this.value;
-        if(inputValue.trim()){
-          jQuery(this).addClass("has-value");
-        }else{
-          jQuery(this).removeClass("has-value");
-        }
-      }
+      dateFormat: "yy.mm.dd"
     })
     .on( "change", function() {
+      datepickerChange(this);
       to.datepicker( "option", "minDate", this.value );
     }),
     to = $( "#held-ended-on" ).find('input').datepicker({
       regional: "ja",
-      dateFormat: "yy.mm.dd",
-      onClose: function(arg) {
-        var inputValue = this.value;
-        if(inputValue.trim()){
-          jQuery(this).addClass("has-value");
-        }else{
-          jQuery(this).removeClass("has-value");
-        }
-      }
+      dateFormat: "yy.mm.dd"
     })
       .on( "change", function() {
+        datepickerChange(this);
         from.datepicker( "option", "maxDate", this.value );
       });
 }
-
+function datepickerChange(obj){
+  var inputValue = obj.value;
+  if(inputValue.trim()){
+    jQuery(obj).addClass("has-value");
+  }else{
+    jQuery(obj).removeClass("has-value");
+  }
+}
 function buttonLikeboxInit(){
   AddAndRemoveActive('.btn-like-box');
 }

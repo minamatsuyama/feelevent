@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 });
 
 function SpDatepickerInit() {
-    var dateFormat = "yy.mm.dd", from = $("#sp-held-started-on").find("input").datepicker({
+    var from = $("#sp-held-started-on").find("input").datepicker({
         regional: "ja",
         dateFormat: "yy.mm.dd",
         onClose: function(arg) {
@@ -21,7 +21,7 @@ function SpDatepickerInit() {
                     jQuery(this).removeClass("has-value");
                 }
                 jQuery("." + this.id).val(inputValue);
-                ToValue = to[0].value;
+                var ToValue = to[0].value;
                 to.datepicker("option", "minDate", jQuery("." + this.id).val());
                 to[0].value = ToValue;
             }
@@ -39,7 +39,7 @@ function SpDatepickerInit() {
                     jQuery(this).removeClass("has-value");
                 }
                 jQuery("." + this.id).val(inputValue);
-                FromValue = from[0].value;
+                var FromValue = from[0].value;
                 from.datepicker("option", "maxDate", jQuery("." + this.id).val());
                 from[0].value = FromValue;
             }
