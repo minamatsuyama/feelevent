@@ -225,3 +225,48 @@ input[type="radio"] {
    }
 
  }
+
+.row {
+  &.message {
+    margin-top: 57px;
+    margin-bottom: 35px;
+    @include mediaquery-not-lg() {
+      margin-top: 27px;
+      margin-bottom: 15px;
+      .col {
+        margin-left: 0;
+      }
+    }
+  }
+  &.receive-news {
+    margin-top: 70px;
+    margin-bottom: 67px;
+    @include mediaquery-not-lg() {
+      margin-top: 35px;
+      margin-bottom: 30px;
+      .col {
+        margin-left: 0;
+      }
+    }
+  }
+}
+.col {
+  &.col-title {
+    margin-top: 10px;
+    @include mediaquery-not-lg() {
+      margin-top: 0;
+      margin-bottom: 5px;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  &.col-input {
+    margin-left: -60px;
+    @include mediaquery-not-lg() {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+
