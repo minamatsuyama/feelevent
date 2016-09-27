@@ -13,7 +13,6 @@ class Event::Item < ApplicationRecord
   has_many :event_seminar_contents, foreign_key: 'event_item_id', class_name: 'Event::SeminarContent'
   has_many :event_favorites, foreign_key: 'event_item_id', class_name: 'Event::Favorite'
 
-
   extend Enumerize
 
   # TODO: set types
@@ -21,5 +20,5 @@ class Event::Item < ApplicationRecord
   enumerize :preparation_type, in: %i(needless individual team)
 
   scope :published, -> { where(published: true) }
-  scope :in_time, -> { where(" ? BETWEEN DATE_FORMAT(`event_items`.`publish_started_at`, '%Y-%m-%d') AND DATE_FORMAT(`event_items`.`publish_ended_at`, '%Y-%m-%d')", Time.now.utc.strftime('%Y-%m-%d')) }
+  scope :in_time, -> { where(" ? BETWEEN DATE_FORMAT(`event_items`.`publish_started_at`, '%Y-%m-%d %H:%i:%s') AND DATE_FORMAT(`event_items`.`publish_ended_at`, '%Y-%m-%d %H:%i:%s')", Time.now.utc.strftime('%Y-%m-%d %H:%i:%s')) }
 end
