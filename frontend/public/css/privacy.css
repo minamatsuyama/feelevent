@@ -13,40 +13,17 @@
   line-height: 1.7;
   color: inherit;
 }
-#content h1 small,
-#content h1 .small, #content h2 small,
-#content h2 .small, #content h3 small,
-#content h3 .small, #content h4 small,
-#content h4 .small, #content h5 small,
-#content h5 .small, #content h6 small,
-#content h6 .small {
-  font-size: 60%;
-  line-height: 1;
-  color: #83828c;
-}
 #content h1 {
   font-size: 30px;
   margin-bottom: 20px;
 }
 #content h2 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 20px 0;
 }
 #content h3 {
   font-size: 20px;
   margin: 20px 0 15px;
-}
-#content h4 {
-  font-size: 18px;
-  margin: 15px 0;
-}
-#content h5 {
-  font-size: 14px;
-  margin: 10px 0;
-}
-#content h6 {
-  font-size: 14px;
-  margin: 10px 0;
 }
 #content p {
   font-size: 15px;
@@ -89,9 +66,6 @@
   }
 }
 
-.privacy h2 {
-  font-size: 20px;
-}
 .privacy ol li {
   line-height: 2;
   margin-bottom: 20px;
