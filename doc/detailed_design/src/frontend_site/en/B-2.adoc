@@ -48,7 +48,7 @@ image::../assets/B-2.png[]
 
 ** Favorite API
 
-link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/vi/A0101.adochttps://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/vi/A0101.adoc#a0101-lưu-event-yêu-th%C3%ADch-register-favorite-event[]
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_api/vi/A0101.adoc#a0101-lưu-event-yêu-th%C3%ADch-register-favorite-event[]
 
 ** SNS
 *** facebook
