@@ -1,13 +1,13 @@
 module.exports = {
   watch : {
-    js_admin: {
+    js : {
       files: [
         '<%= srcPath %>/admin/js/**/*.js',
         '<%= srcPath %>/admin/js/*.js'
       ],
       tasks: ['js']
     },
-    css_admin : {
+    css : {
       options: {
         livereload: true
       },
