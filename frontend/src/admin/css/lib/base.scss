@@ -8,17 +8,12 @@
 // BASE
 @import "../../../css/lib/base/sanitize";
 @import "base/scaffolding";
-@import "../../../css/lib/base/print";
 
 // ---------------------------------------------------
 // DEVELOP - 開発時のみ
-@import "../../../css/lib/develop/guide";
-@import "../../../css/lib/develop/sample";
-@import "../../../css/lib/develop/code";
 
 // ---------------------------------------------------
 // LAYOUT
-@import "../../../css/lib/layout/grid";
 @import "layout/global-header";
 @import "layout/global-footer";
 @import "layout/breadcrumb";

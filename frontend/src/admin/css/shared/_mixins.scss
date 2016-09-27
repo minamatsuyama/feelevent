@@ -7,22 +7,5 @@
 
 // ---------------------------------------------------
 
-
-// BASE
-@import "../../../css/shared/mixins/utilities";
-@import "../../../css/shared/mixins/screenreader";
-
-// LAYOUT
-@import "../../../css/shared/mixins/mediaquery";
-@import "../../../css/shared/mixins/grid";
-
-// DEVELOP
-@import "../../../css/shared/mixins/develop";
-
-// MODULE
-@import "../../../css/shared/mixins/vendor-prefixes";
-@import "../../../css/shared/mixins/gradients";
-
-// OVERRIDE
 @import "mixins/utilities";
 
