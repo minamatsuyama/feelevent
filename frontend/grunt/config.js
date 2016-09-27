@@ -2,8 +2,8 @@ var _ = require('lodash');
 var config = {};
 
 var grunt = global.grunt;
-var target = grunt.option('target') || 'world school';
-console.log('target',target);
+var target = grunt.option('target') || 'user';
+console.log('target', target);
 
 /*
  CSS
@@ -33,7 +33,10 @@ config = _.merge(config, {
 /*
  Watch
  */
-config = _.merge(config, require('./config.watch.js'));
-config = _.merge(config, require('./admin/config.watch.js'));
+if(target !== 'admin'){
+  config = _.merge(config, require('./config.watch.js'));
+}else{
+  config = _.merge(config, require('./admin/config.watch.js'));
+}
 
 module.exports = config;

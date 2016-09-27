@@ -2,6 +2,6 @@
   'use strict';
 
   $(function(){
-    console.log('fsjfsjgdfsjgh');
+    console.log('hello world');
   });
 })(jQuery);

@@ -9,17 +9,20 @@
 
 
 // BASE
-@import "mixins/utilities";
-@import "mixins/screenreader";
+@import "../../../css/shared/mixins/utilities";
+@import "../../../css/shared/mixins/screenreader";
 
 // LAYOUT
-@import "mixins/mediaquery";
-@import "mixins/grid";
+@import "../../../css/shared/mixins/mediaquery";
+@import "../../../css/shared/mixins/grid";
 
 // DEVELOP
-@import "mixins/develop";
+@import "../../../css/shared/mixins/develop";
 
 // MODULE
+@import "../../../css/shared/mixins/vendor-prefixes";
+@import "../../../css/shared/mixins/gradients";
 
-//@import "mixins/responsive-visibility";
-//@import "mixins/responsive-utilities";
+// OVERRIDE
+@import "mixins/utilities";
+
