@@ -66,4 +66,10 @@ image::_include/basic_layout.png[]
 
 === フォーム
 
-* 必須項目には `required` 属性をつける
+* 必須項目には `required` 属性をつけること
+
+==== 日付
+
+* yyyy-MM-dd
+
+==== フォームのエラー
