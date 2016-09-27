@@ -21,7 +21,7 @@
   }
 }
 
-.reset-password {
+.reset-password, .change-password {
   h2 {
     font-size: 24px;
     text-align: center;
@@ -38,10 +38,24 @@
 }
 
 
-#reset-pw {
+#reset-pw, #change-pw {
   margin-top: 35px;
   @include mediaquery-sm() {
     margin-top: 20px;
+  }
+}
+
+.reset-password {
+  .col {
+    &.col-input {
+      margin-left: -100px;
+      @include mediaquery-sm() {
+        margin-left: 0;
+      }
+      @include mediaquery-not-lg() {
+        margin-left: 0;
+      }
+    }
   }
 }
 
@@ -70,12 +84,6 @@
         margin-top: 0;
         margin-bottom: 5px;
       }
-    }
-  }
-  &.col-input {
-    margin-left: -100px;
-    @include mediaquery-sm() {
-      margin-left: 0;
     }
   }
 }

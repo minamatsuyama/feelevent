@@ -1343,6 +1343,9 @@ input[type="radio"]:checked {
     width: 100%;
   }
 }
+.input-text:hover, .input-text:active, .input-text:focus {
+  background-color: #fff;
+}
 
 .input-label {
   color: #333;

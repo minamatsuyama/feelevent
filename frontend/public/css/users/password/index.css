@@ -19,7 +19,7 @@
   }
 }
 
-.reset-password h2 {
+.reset-password h2, .change-password h2 {
   font-size: 24px;
   text-align: center;
   padding-bottom: 3px;
@@ -27,18 +27,32 @@
   border-bottom: 1px solid #e6edf2;
 }
 @media screen and (max-width: 679px) {
-  .reset-password .container {
+  .reset-password .container, .change-password .container {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
 
-#reset-pw {
+#reset-pw, #change-pw {
   margin-top: 35px;
 }
 @media screen and (max-width: 679px) {
-  #reset-pw {
+  #reset-pw, #change-pw {
     margin-top: 20px;
+  }
+}
+
+.reset-password .col.col-input {
+  margin-left: -100px;
+}
+@media screen and (max-width: 679px) {
+  .reset-password .col.col-input {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 999px) {
+  .reset-password .col.col-input {
+    margin-left: 0;
   }
 }
 
@@ -64,14 +78,6 @@
     text-align: left;
     margin-top: 0;
     margin-bottom: 5px;
-  }
-}
-.col.col-input {
-  margin-left: -100px;
-}
-@media screen and (max-width: 679px) {
-  .col.col-input {
-    margin-left: 0;
   }
 }
 
