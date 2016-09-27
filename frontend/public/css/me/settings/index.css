@@ -59,33 +59,11 @@
   color: #187fc4;
 }
 
-.btn-checkbox {
-  background-color: #f5f7fa;
-  color: #83828c;
-  min-width: auto;
+.btn-group .btn {
+  min-width: inherit;
   padding: 5px;
-}
-.btn-checkbox input {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-}
-.btn-checkbox.active {
-  background: #187fc4;
-  color: #fff;
-}
-.btn-checkbox.active:hover {
-  background-color: #0088e3;
-  color: #fff;
-}
-.btn-checkbox:hover {
-  background: #fff;
-  color: #83828c;
-}
-@media screen and (max-width: 679px) {
-  .btn-checkbox {
-    font-size: 12px;
-  }
+  font-size: 12px;
+  margin-right: 5px;
 }
 
 .terms {
@@ -103,29 +81,17 @@
     padding: 2px;
   }
 }
-.selectpicker .select2-container .select2-results__option--highlighted[aria-selected] {
-  background-color: #f5f7fa;
-  color: #333;
-}
-.selectpicker .select2-container .select2-selection--single {
+.select2-container--default .select2-selection--single {
   height: 40px;
   border-radius: 3px;
-  border-color: #d3dae0;
+  border: 1px solid #d3dae0;
 }
-.selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
-  background: url("/img/select-arrow.jpg") right center no-repeat;
-  height: 40px;
-  top: 0;
-  right: 20px;
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  background: transparent;
 }
-.selectpicker .select2-container .select2-selection--single .select2-selection__arrow b {
-  display: none;
+.select2-container--default .select2-selection--single .select2-selection__placeholder:hover {
+  background: transparent;
 }
-.selectpicker .select2-container .select2-selection--single .select2-selection__rendered {
-  line-height: 40px;
-  color: #83828c;
-}
-
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
   background-color: white;
 }
@@ -137,10 +103,6 @@
   border-style: solid;
   border-color: #d3dae0;
   padding: 9px;
-}
-.select2-container--default .select2-results__option.select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option.select2-results__option[aria-selected=true] {
-  background-color: #f5f7fa;
-  color: #333;
 }
 
 .row-setting {

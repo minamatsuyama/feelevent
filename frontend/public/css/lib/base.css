@@ -1943,6 +1943,11 @@ kbd kbd {
   left: 50%;
   margin-left: -50%;
 }
+@media screen and (max-width: 679px) {
+  #global-footer .container .copyright {
+    font-size: 8px;
+  }
+}
 #global-footer [role=contentinfo] small {
   font-family: Helvetica, arial, sans-serif;
 }

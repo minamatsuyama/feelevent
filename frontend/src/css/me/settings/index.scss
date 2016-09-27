@@ -56,33 +56,11 @@
 .text-link {
   color: #187fc4;
 }
-
-.btn-checkbox{
-  background-color: #f5f7fa;
-  color:$color-gray-light;
-  min-width: auto;
+.btn-group .btn {
+  min-width: inherit;
   padding: 5px;
-  input{
-    position: absolute;
-    clip: rect(0,0,0,0);
-    pointer-events: none;
-  }
-  &.active{
-    background: $color-blue;
-    color:#fff;
-    &:hover{
-      background-color: #0088e3;
-      color:#fff;
-    }
-  }
-  &:hover{
-    background: #fff;
-    color:$color-gray-light;
-  }
-
-  @include mediaquery-sm() {
-    font-size: 12px;
-  }
+  font-size: 12px;
+  margin-right: 5px;
 }
 
 .terms {
@@ -99,34 +77,20 @@
   }
 }
 
-.selectpicker {
-  .select2-container {
-    .select2-results__option--highlighted[aria-selected] {
-      background-color: #f5f7fa;
-      color: $color-gray-dark;
-    }
-    .select2-selection--single {
-      height: 40px;
-      border-radius: 3px;
-      border-color: #d3dae0;
-      .select2-selection__arrow {
-        background: url("/img/select-arrow.jpg") right center no-repeat;
-        height: 40px;
-        top: 0;
-        right: 20px;
-        b {
-          display: none;
-        }
-      }
-      .select2-selection__rendered {
-        line-height: 40px;
-        color: #83828c;
+.select2-container--default{
+
+  .select2-selection--single {
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #d3dae0;
+    .select2-selection__placeholder{
+      background: transparent;
+      &:hover {
+        background: transparent;
       }
     }
   }
-}
 
-.select2-container--default{
   &.select2-container--open {
     &.select2-container--below {
       .select2-selection--single {
@@ -137,26 +101,24 @@
       border-width: 0;
     }
   }
+
   .select2-results__option {
     border-width: 0 1px 1px;
     border-style :solid;
     border-color: #d3dae0;
     padding: 9px;
-    &.select2-results__option--highlighted[aria-selected],
-    &.select2-results__option[aria-selected=true] {
-      background-color: #f5f7fa;
-      color: #333;
-    }
+
   }
 
 }
+
 
 .row-setting {
     margin-bottom: 20px;
     input[type=email] {
       background: $color-white;
     }
-  }
+}
 
 .btn-setting-container {
   text-align: center;
