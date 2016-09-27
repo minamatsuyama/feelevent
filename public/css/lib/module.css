@@ -1131,6 +1131,48 @@ input[type="search"].input-sm {
   padding: 0.6em 30px 0.6em 1em;
 }
 
+.select2-container .select2-results__option--highlighted[aria-selected],
+.select2-container .select2-results__option[aria-selected=true] {
+  background-color: #fff;
+  color: #333;
+}
+.select2-container .select2-selection--single {
+  height: 40px;
+  border-radius: 0;
+  border: 0 none;
+  background-color: #fff;
+  color: #333;
+}
+.select2-container .select2-selection--single .select2-selection__placeholder {
+  background-color: #f5f7fa;
+  color: #83828c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 20px;
+  width: 100%;
+}
+.select2-container .select2-selection--single .select2-selection__placeholder:hover {
+  background-color: #fff;
+  color: #333;
+}
+.select2-container .select2-selection--single .select2-selection__arrow {
+  background: url("/img/select-arrow.png") right center no-repeat;
+  height: 40px;
+  top: 0;
+  right: 0;
+}
+.select2-container .select2-selection--single .select2-selection__arrow b {
+  border: 0 none;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+}
+.select2-container .select2-results__option {
+  background-color: #f5f7fa;
+  border-top: 1px solid #d3dae0;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   border: 1px solid #83828c;
@@ -1140,6 +1182,73 @@ input[type="radio"] {
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
   border-color: #666;
+}
+
+*:focus {
+  outline: none;
+}
+
+.input-text {
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  padding: 10px 10px;
+  font-size: 14px;
+  background-color: #f5f7fa;
+}
+.input-text::-moz-placeholder {
+  color: #83828c;
+  opacity: 1;
+}
+.input-text:-ms-input-placeholder {
+  color: #83828c;
+}
+.input-text::-webkit-input-placeholder {
+  color: #83828c;
+}
+@media screen and (max-width: 679px) {
+  .input-text {
+    width: 100%;
+  }
+}
+
+.input-label {
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f5f7fa;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.input-label .check-box {
+  margin-top: -5px;
+  margin-right: 10px;
+}
+.input-label .check-box:before {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #d3dae0;
+  border-radius: 3px;
+  content: "";
+  background: #FFF;
+}
+.input-label .check-box:checked:before {
+  background-image: url("/img/ico_checkbox-checked.jpg");
+  width: 16px;
+  height: 15px;
+}
+.input-label:hover, .input-label:active, .input-label:focus {
+  background-color: #dcf5e7;
+}
+@media screen and (max-width: 679px) {
+  .input-label {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+  .input-label .check-box {
+    margin-top: 0;
+    margin-right: 5px;
+  }
 }
 
 .text-vertical {
