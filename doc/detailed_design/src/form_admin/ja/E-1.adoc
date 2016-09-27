@@ -1,4 +1,0 @@
-== E-1 検索
-=== フォーム定義
-
-include::./_include/B-3.adoc[]
