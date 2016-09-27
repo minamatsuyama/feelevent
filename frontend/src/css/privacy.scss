@@ -4,6 +4,7 @@
 @import "./shared/variables";
 @import "./shared/mixins";
 
+
 #content {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -11,6 +12,83 @@
     padding-top: 22px;
     font-size: 12px;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: $line-height-narrow;
+    color: $headings-color;
+
+    small,
+    .small {
+      font-size: 60%;
+      line-height: 1;
+      color: $color-gray-light;
+    }
+  }
+
+  h1 {
+    font-size: $font-size-h1;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: $font-size-h2;
+    margin: 20px 0;
+  }
+
+  h3 {
+    font-size: $font-size-h3;
+    margin: 20px 0 15px;
+  }
+
+  h4 {
+    font-size: $font-size-h4;
+    margin: $margin-v-paragraph+5 0;
+  }
+
+  h5 {
+    font-size: $font-size-h5;
+    margin: $margin-v-paragraph 0;
+  }
+
+  h6 {
+    font-size: $font-size-h6;
+    margin: $margin-v-paragraph 0;
+  }
+
+  //通常の段落
+  p {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    @include mediaquery-sm() {
+      font-size: 12px;
+    }
+  }
+
+  .paragraph {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  @include mediaquery-sm() {
+    h1 {
+      font-size: $font-size-h1-sm;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: $font-size-h2-sm;
+      margin: 10px 0;
+    }
+    h3 {
+      font-size: $font-size-h3-sm;
+      margin: 10px 0;
+    }
+    .paragraph {
+      margin-top: $margin-v-paragraph-sm;
+      margin-bottom: $margin-v-paragraph-sm;
+    }
+
+  }
+
 }
 
 .box-main {
