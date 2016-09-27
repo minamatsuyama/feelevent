@@ -13,7 +13,7 @@ https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075
 [options="header"]
 |==================
 |項目|内容|備考
-|URL||
+|URL|/admin/events/search|
 |==================
 
 === 仕様
