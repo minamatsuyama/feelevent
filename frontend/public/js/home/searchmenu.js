@@ -22,7 +22,7 @@ function SpDatepickerInit() {
                 }
                 jQuery("." + this.id).val(inputValue);
                 var ToValue = to[0].value;
-                to.datepicker("option", "minDate", jQuery("." + this.id).val());
+                to.datepicker("option", "minDate", inputValue);
                 to[0].value = ToValue;
             }
         }
@@ -40,7 +40,7 @@ function SpDatepickerInit() {
                 }
                 jQuery("." + this.id).val(inputValue);
                 var FromValue = from[0].value;
-                from.datepicker("option", "maxDate", jQuery("." + this.id).val());
+                from.datepicker("option", "maxDate", inputValue);
                 from[0].value = FromValue;
             }
         }
