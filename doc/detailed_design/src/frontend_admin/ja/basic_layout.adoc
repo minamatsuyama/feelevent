@@ -7,23 +7,10 @@
 image::_include/basic_layout.png[]
 
 * ヘッダー
-** タグ：header
-** id：global-header
-
-ヘッダー内にはメニューのナビゲーションが入る。
-
 * コンテンツ
-** タグ：section
-** class：content
-
-*** chapter
-**** チャプター要素：モジュールやフォーム同士のセクショニングを行う
-
+** chapter
+*** チャプター要素：モジュールやフォーム同士のセクショニングを行う
 * フッター
-** タグ：footer
-** id：global-footer
-
-コピーライト等の付加情報が入る
 
 === コンテンツレイアウト
 
@@ -66,10 +53,8 @@ image::_include/basic_layout.png[]
 
 === フォーム
 
-* 必須項目には `required` 属性をつけること
-
-==== 日付
-
-* yyyy-MM-dd
-
-==== フォームのエラー
+* 必須項目には `required` 属性をつける
+* エラー時
+** フォームの下にエラー時の文言を配置する
+* 日付
+** yyyy-MM-dd形式で挿入する
