@@ -51,29 +51,6 @@
   margin-top: 5px;
 }
 
-.btn-submit {
-  background-color: #187fc4;
-  color: #fff;
-  border: 1px solid #075386;
-  width: 150px;
-  padding: 10px;
-}
-.btn-submit:hover, .btn-submit:active, .btn-submit.active {
-  background-color: #1b91df;
-  border: 1px solid #187fc4;
-}
-
-.btn-cancel {
-  background-color: #f5f7fa;
-  color: #83828c;
-  border: 1px solid #d3dae0;
-  width: 150px;
-  padding: 10px;
-}
-.btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
-  background-color: white;
-}
-
 .row.row-pw {
   margin-bottom: 20px;
 }
