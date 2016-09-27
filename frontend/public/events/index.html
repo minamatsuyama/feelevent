@@ -40,11 +40,30 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <header id="global-header">
 <div class="container">
-<a href="#" class="top-link">
-<img src="/img/top-link.gif" alt="top link" />
+<h1 class="logo"><a href="/"><img src="/img/logo.png" alt="WorldSchool"></a></h1>
+<div class="powered-by">powered by Feelnote</div>
+<div class="share-box ">
+<a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" class="top-fb-link">
+<img width="30" height="30" src="/img/icon-facebook.png" alt="facebook link">
 </a>
-<a href="#" class="top-user">
-<img src="/img/top-user.gif" alt="top user link" />
+<a href="https://twitter.com/intent/tweet?url=URL&text=TEXT" target="_blank" class="top-tw-link">
+<img width="30" height="30" src="/img/icon-twitter.png" alt="twitter link">
+</a>
+</div>
+<a href="#" class="top-link hidden-not-sm" onclick="myToggle(document.getElementsByClassName('share-box'));">
+<img src="/img/top-link.png" alt="top link">
+<p class="link-text">シェア</p>
+</a>
+<a href="/signin" class="top-login">
+<img width="19" height="25" src="/img/icon-login.png" alt="icon look">
+<p class="link-text">ログイン</p>
+</a>
+<a href="/users/signup" class="top-flag">
+新規登録
+</a>
+<a href="#" class="top-user hide">
+<img width="20" height="20" src="/img/top-user.png" alt="top user link">
+<p class="link-text">マイページ</p>
 </a>
 </div><!-- End container -->
 </header>
@@ -602,8 +621,20 @@ fjs.parentNode.insertBefore(js, fjs);
 </section>
 </section>
 <footer id="global-footer">
-<div class="container"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
+<div class="main-footer">
+<div class="footer-link">
+<ul class="list-links-inline">
+<li><a href="#" >お問い合わせ</a></li>
+<li><a href="#" >プライバシーポリシー</a></li>
+<li><a href="#" >運営会社</a></li>
+</ul>
+</div>
+<div class="info">powered by <img  src="/img/feelnote.png" alt="Feel Note" >
+</div>
+</div>
+<div class="bottom-footer"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
 </footer>
+
 
 <script src="/js/events/index.js"></script>
 
