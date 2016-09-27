@@ -1,0 +1,17 @@
+== F-3 イベントプレビュー
+
+=== 基本情報
+[cols="38,80"]
+|=====
+| メソッド,URL            | GET /admin/events/:event_item_id/preview
+| コントローラ,アクション | admin/events#preview
+| ルート名                | preview_admin_event
+| ビュー                  | events/show.html.erb
+|=====
+
+=== リクエスト
+* なし
+
+=== 仕様
+* サービス画面側の `B-2 イベント詳細` で公開状態の処理を外したコントローラを作成
+* ビューはサービス画面で利用している erb を流用する
