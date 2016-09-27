@@ -1,0 +1,32 @@
+== A-4 Reset password screen 
+
+=== Overview
+
+Display Reset password screen
+
+=== Basic info
+
+|=================================
+|1       |Input form area    |Display input element of password, confirm password 
+|2       |OK button area   |Dislay button
+|=================================
+
+
+<<<
+
+=== Spec
+
+image::../assets/A-4.png[]
+
+
+==== 1.Input form area
+
+include::../../form_site/vi/_include/A-4.adoc[]
+
+==== 2.OK button area
+
+** Display OK button 
+** Call link URL /password
+
+link::https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_site/vi/A-4.adoc[]
+
