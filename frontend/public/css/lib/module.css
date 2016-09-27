@@ -609,6 +609,23 @@ ol li,
   color: #83828c;
 }
 
+.btn-filled {
+  background-color: #187fc4;
+  font-size: 18px;
+  padding: 15px;
+}
+.btn-filled:hover {
+  background-color: #1b91df;
+}
+.btn-filled:active, .btn-filled.active {
+  background-color: #187fc4;
+}
+@media screen and (max-width: 679px) {
+  .btn-filled {
+    font-size: 13px;
+  }
+}
+
 .btn-more {
   color: #187fc4;
   background-color: #fff;
@@ -620,6 +637,19 @@ ol li,
 }
 .btn-more:active, .btn-more.active {
   background-color: #f0f0f0;
+}
+
+.btn-like {
+  color: #aaa;
+  background-color: #f6f6f6;
+  padding: 5px;
+  min-width: 70px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.btn-like:hover {
+  color: #ef0155;
+  background-color: #f6f6f6;
 }
 
 .img-liquid, .article img,
@@ -794,6 +824,16 @@ ol li,
   height: 100%;
 }
 
+.box-main {
+  background-color: #fff;
+  padding: 40px 85px;
+}
+@media screen and (max-width: 679px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
 .media-right:before, .media-right:after,
 .media-left:before,
 .media-left:after {
@@ -884,7 +924,7 @@ ol li,
 }
 a[href^="tel:"],
 a[href^="mailto:"] {
-  color: #000;
+  color: #187fc4;
 }
 a[href^="tel:"]:hover,
 a[href^="mailto:"]:hover {
@@ -1085,6 +1125,77 @@ html.pointer .link-card.light:hover .image img, html.touch .link-card.light.touc
   }
 }
 
+.table-none-bordered {
+  width: 100%;
+  color: #83828c;
+  font-size: 14px;
+}
+.table-none-bordered th, .table-none-bordered td {
+  text-align: left;
+  width: 50%;
+  padding-bottom: 8px;
+}
+@media screen and (max-width: 679px) {
+  .table-none-bordered {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-none-bordered tbody, .table-none-bordered tr, .table-none-bordered th, .table-none-bordered td {
+    display: block;
+    width: 100%;
+  }
+}
+
+.table-block {
+  width: 100%;
+}
+.table-block th, .table-block td {
+  border: solid 1px #aaa;
+  padding: 10px;
+}
+.table-block th {
+  background-color: #f5f7fa;
+}
+@media screen and (max-width: 679px) {
+  .table-block {
+    overflow-x: auto;
+    display: block;
+    font-size: 13px;
+  }
+  .table-block tbody, .table-block tr, .table-block th, .table-block td {
+    display: block;
+  }
+  .table-block tbody {
+    width: 100%;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #aaa;
+  }
+  .table-block th, .table-block td {
+    padding: 5px 10px;
+  }
+  .table-block tr:last-child td {
+    border-bottom-width: 0;
+  }
+  .table-block th {
+    text-align: left;
+    border-top-width: 0;
+    border-bottom-width: 0;
+  }
+}
+
+.label {
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.label-orange {
+  background-color: #fa8500;
+}
+
 input[type="submit"] {
   letter-spacing: 0.05em;
 }
@@ -1249,6 +1360,213 @@ input[type="radio"]:checked {
     margin-top: 0;
     margin-right: 5px;
   }
+}
+
+.eventcards .eventcard {
+  margin: 15px 0;
+  border-radius: 2px;
+  padding-bottom: 6px;
+}
+.eventcards .eventcard:hover .eventcard-warpper {
+  border: 1px solid #ffbf00;
+  border-bottom: 0;
+}
+.eventcards .eventcard:hover .event-likebox {
+  border: 1px solid #ffbf00;
+  border-top: 1px solid #e6edf2;
+}
+.eventcards .eventcard.recommended:after {
+  content: "Recommended";
+  background: url("/img/recommend.png") no-repeat left top;
+  background-size: 100% 100%;
+  height: 34px;
+  width: 151px;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  z-index: 1010;
+  padding: 8px 33px 8px 0;
+  font-size: 14px;
+  text-align: right;
+  letter-spacing: 0;
+}
+@media screen and (max-width: 679px) {
+  .eventcards .eventcard.recommended:after {
+    right: 5px;
+  }
+}
+.eventcards .eventcard .eventcard-warpper {
+  font-size: 12px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-bottom-width: 0;
+  color: #83828c;
+  padding: 15px 15px 6px 15px;
+}
+.eventcards .eventcard .eventcard-warpper .event-img-warpper {
+  width: 100%;
+  height: 163px;
+  position: relative;
+  overflow: hidden;
+}
+.eventcards .eventcard .eventcard-warpper .event-img-warpper img {
+  width: 100%;
+}
+.eventcards .eventcard .eventcard-warpper .clearfix {
+  padding: 15px 0;
+}
+.eventcards .eventcard .eventcard-warpper .event-type {
+  float: left;
+}
+.eventcards .eventcard .eventcard-warpper .event-pm-paid {
+  float: right;
+  color: #fff;
+  background-color: #ff9500;
+  border-radius: 4px;
+  padding: 0 5px;
+}
+.eventcards .eventcard .eventcard-warpper .event-pm-paid.free {
+  background: #1bb297;
+}
+.eventcards .eventcard .eventcard-warpper .event-title {
+  padding: 15px 0 0;
+}
+.eventcards .eventcard .eventcard-warpper .event-title a {
+  color: #333;
+  font-size: 14px;
+  font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-weight: bold;
+}
+.eventcards .eventcard .eventcard-warpper table {
+  width: 100%;
+  border-top: 1px solid #e6edf2;
+}
+.eventcards .eventcard .eventcard-warpper table td {
+  padding-top: 6px;
+}
+.eventcards .eventcard .event-likebox {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-top: 1px solid #e6edf2;
+}
+.eventcards .eventcard .event-likebox .btn-comment-box {
+  float: left;
+  margin: 10px 0 0 15px;
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+.eventcards .eventcard .event-likebox .btn-like-box {
+  color: #aaa;
+  background-color: #f6f6f6;
+  padding: 5px;
+  min-width: 70px;
+  float: right;
+  margin-right: 15px;
+}
+.eventcards .eventcard .event-likebox .btn-like-box:hover, .eventcards .eventcard .event-likebox .btn-like-box.active {
+  color: #ef0155;
+}
+.eventcards .eventcard .event-likebox:before, .eventcards .eventcard .event-likebox:after {
+  content: " ";
+  display: table;
+}
+.eventcards .eventcard .event-likebox:after {
+  clear: both;
+}
+
+@media screen and (min-width: 680px) and (max-width: 999px) {
+  .eventcards .container {
+    width: 660px;
+  }
+}
+.ui-datepicker {
+  padding: 10px;
+  border: 1px solid #d3dae0;
+  border-radius: 0;
+  color: #83828c;
+}
+.ui-datepicker a {
+  color: #83828c;
+}
+.ui-datepicker a:hover {
+  background-color: #fff;
+}
+.ui-datepicker .ui-datepicker-calendar th {
+  font-weight: normal;
+}
+.ui-datepicker .ui-datepicker-header {
+  padding: 0;
+  border: 1px solid #d3dae0;
+  height: 30px;
+  border-radius: 0;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+  top: 0;
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: normal;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next span {
+  background: none;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before,
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next:before {
+  width: 100%;
+  height: 100%;
+  line-height: 28px;
+  text-align: center;
+  display: block;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+  right: 0;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next:before {
+  content: ">";
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+  left: 0;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before {
+  content: "<";
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+  height: 28px;
+  line-height: 30px;
+  background-color: #fff;
+  border-left: 1px solid #d3dae0;
+  border-right: 1px solid #d3dae0;
+}
+.ui-datepicker .ui-datepicker-week-end {
+  color: #3c64d6;
+}
+.ui-datepicker .ui-datepicker-week-end:nth-child(1) {
+  color: #ec517c;
+}
+.ui-datepicker .ui-state-default {
+  background-color: #f5f7fa;
+  text-align: center;
+  border: 0 none;
+}
+.ui-datepicker .ui-state-active {
+  background-color: #fff;
+  color: #333;
+}
+.ui-datepicker table {
+  margin: 0;
+}
+.ui-datepicker td {
+  border: 1px solid #d3dae0;
+}
+.ui-datepicker .ui-datepicker-unselectable.ui-state-disabled,
+.ui-datepicker .ui-state-hover {
+  border: 0 none;
 }
 
 .text-vertical {
@@ -1663,4 +1981,18 @@ html.pointer .hidden-pointer {
 
 .border-left {
   border-left: 1px solid #e5e5e5;
+}
+
+.pop {
+  width: 100%;
+  position: absolute;
+  top: 43%;
+  background-color: #187fc4;
+  color: #fff;
+  font-size: 18px;
+  padding: 15px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-align: center;
+  display: none;
 }

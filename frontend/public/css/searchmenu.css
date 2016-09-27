@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 1000px) {
   .search-menu-area {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (max-width: 679px) {
@@ -12,13 +12,28 @@
     margin: 10px 0;
   }
 
+  .select2-container {
+    z-index: 3010;
+  }
+
   .search-menu-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    z-index: 3010;
     padding-top: 10px;
     background-color: #fff;
   }
   .search-menu-area .container {
     padding: 0 20px;
     border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .toggle-box {
+    display: none;
   }
   .search-menu-area .modal-close {
     border-width: 0;
@@ -30,6 +45,11 @@
     border-top: 1px solid #d3dae0;
     padding: 20px 0;
     text-align: center;
+    display: block;
+  }
+  .search-menu-area .submit:focus {
+    background-color: #187fc4;
+    color: #fff;
   }
   .search-menu-area .btn {
     min-width: inherit;
@@ -76,6 +96,10 @@
     height: 50px;
     border-top: 1px solid #d3dae0;
   }
+  .search-menu-area .selectpicker .select2-container {
+    min-width: 100%;
+    z-index: 3010;
+  }
   .search-menu-area .selectpicker .select2-container .select2-selection--single {
     height: 50px;
     border: 0 none;
@@ -98,18 +122,11 @@
     box-shadow: none;
     padding-left: 20px;
   }
-  .search-menu-area .icon-date-to {
-    width: 34px;
-    height: 50px;
-    background-color: #f5f7fa;
-    color: #83828c;
-    line-height: 50px;
-    text-align: center;
-  }
   .search-menu-area .date-picker {
     width: 100%;
     height: 50px;
     position: relative;
+    font-size: 12px;
   }
   .search-menu-area .date-picker:before {
     content: "";
@@ -117,7 +134,7 @@
     height: 50px;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 8px;
     background: url("/img/icon-calendar.png") no-repeat center center;
   }
   .search-menu-area .date-picker input {
@@ -199,13 +216,28 @@
     margin: 10px 0;
   }
 
+  .select2-container {
+    z-index: 3010;
+  }
+
   .search-menu-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    z-index: 3010;
     padding-top: 10px;
     background-color: #fff;
   }
   .search-menu-area .container {
     padding: 0 20px;
     border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .toggle-box {
+    display: none;
   }
   .search-menu-area .modal-close {
     border-width: 0;
@@ -217,6 +249,11 @@
     border-top: 1px solid #d3dae0;
     padding: 20px 0;
     text-align: center;
+    display: block;
+  }
+  .search-menu-area .submit:focus {
+    background-color: #187fc4;
+    color: #fff;
   }
   .search-menu-area .btn {
     min-width: inherit;
@@ -258,17 +295,26 @@
   .search-menu-area .search-result-info:after {
     clear: both;
   }
-  .search-menu-area .search-select {
-    border: 1px solid #d3dae0;
-    border-radius: 4px 0 0 4px;
-    overflow: hidden;
+  .search-menu-area .selectpicker {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #d3dae0;
   }
-  .search-menu-area .search-select .selectpicker {
-    width: 170px;
-    height: 40px;
-    position: relative;
+  .search-menu-area .selectpicker .select2-container {
+    min-width: 100%;
   }
-  .search-menu-area .search-select .selectpicker select {
+  .search-menu-area .selectpicker .select2-container .select2-selection--single {
+    height: 50px;
+    border: 0 none;
+  }
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__rendered,
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
+    line-height: 50px;
+    height: 100%;
+    right: 18px;
+    font-size: 12px;
+  }
+  .search-menu-area .selectpicker select {
     font-size: 14px;
     color: #83828c;
     width: 100%;
@@ -279,47 +325,34 @@
     box-shadow: none;
     padding-left: 20px;
   }
-  .search-menu-area .search-select .selectpicker.held-area {
-    width: 150px;
-  }
-  .search-menu-area .search-select .selectpicker.held-area .select {
-    border-left-width: 0;
-  }
-  .search-menu-area .search-select .icon-date-to {
-    width: 34px;
-    height: 40px;
-    background-color: #f5f7fa;
-    color: #83828c;
-    line-height: 40px;
-    text-align: center;
-  }
-  .search-menu-area .search-select .date-picker {
-    width: 195px;
-    height: 40px;
+  .search-menu-area .date-picker {
+    width: 100%;
+    height: 50px;
     position: relative;
+    font-size: 12px;
   }
-  .search-menu-area .search-select .date-picker:before {
+  .search-menu-area .date-picker:before {
     content: "";
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 8px;
     background: url("/img/icon-calendar.png") no-repeat center center;
   }
-  .search-menu-area .search-select .date-picker input {
+  .search-menu-area .date-picker input {
     padding-left: 20px;
     width: 100%;
     height: 100%;
     background-color: #fff;
   }
-  .search-menu-area .search-select .search-text {
+  .search-menu-area .search-text {
     width: 100%;
     height: 40px;
     position: relative;
     border-bottom: 1px solid #d3dae0;
   }
-  .search-menu-area .search-select .search-text:before {
+  .search-menu-area .search-text:before {
     content: "";
     height: 40px;
     width: 40px;
@@ -328,7 +361,7 @@
     top: 0;
     left: 0;
   }
-  .search-menu-area .search-select .search-text .input {
+  .search-menu-area .search-text .input {
     padding-left: 40px;
     background-color: #f5f7fa;
     width: 100%;
@@ -338,37 +371,39 @@
     border: 0 none;
     border-radius: 0;
   }
-  .search-menu-area .btn-eventsearch {
+
+  .btn-eventsearch {
     width: 84px;
     height: 82px;
     border: 1px solid #d3dae0;
     border-left-width: 0;
     border-radius: 0 4px 4px 0;
   }
-  .search-menu-area .btn-eventsearch input {
+  .btn-eventsearch input {
     width: 100%;
     height: 100%;
     background-color: #187fc4;
     margin: 0;
     border-radius: 0;
   }
-  .search-menu-area .toggle {
+
+  .toggle {
     margin: 0;
   }
-  .search-menu-area .toggle.active {
+  .toggle.active {
     padding-bottom: 20px;
   }
-  .search-menu-area .toggle.active .lbl-text:before {
+  .toggle.active .lbl-text:before {
     background-position: right top;
   }
-  .search-menu-area .toggle .lbl-text {
+  .toggle .lbl-text {
     font-size: 16px;
     font-weight: normal;
     color: #83828c;
     padding: 19px 0 15px 0;
     position: relative;
   }
-  .search-menu-area .toggle .lbl-text:before {
+  .toggle .lbl-text:before {
     content: "";
     position: absolute;
     top: 50%;
@@ -381,30 +416,30 @@
     background-position: right -6px;
     background-size: 100%;
   }
-  .search-menu-area .toggle .lbl-text.keyword-group {
+  .toggle .lbl-text.keyword-group {
     height: 70px;
   }
-  .search-menu-area .toggle .btn-group {
+  .toggle .btn-group {
     float: left;
   }
-  .search-menu-area .toggle .btn-group .btn-checkbox {
+  .toggle .btn-group .btn-checkbox {
     background-color: #f5f7fa;
     color: #83828c;
   }
-  .search-menu-area .toggle .btn-group .btn-checkbox input {
+  .toggle .btn-group .btn-checkbox input {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
   }
-  .search-menu-area .toggle .btn-group .btn-checkbox.active {
+  .toggle .btn-group .btn-checkbox.active {
     background-color: #187fc4;
     color: #fff;
   }
-  .search-menu-area .toggle:before, .search-menu-area .toggle:after {
+  .toggle:before, .toggle:after {
     content: " ";
     display: table;
   }
-  .search-menu-area .toggle:after {
+  .toggle:after {
     clear: both;
   }
 }

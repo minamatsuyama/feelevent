@@ -9,17 +9,31 @@ $color-border-search: #d3dae0;
 }
 @include mediaquery-lg(){
   .search-menu-area{
-    display: none;
+    display: none !important;
   }
 }
 @include mediaquery-sm(){
   .search > div{
     margin:10px 0;
   }
+  .select2-container{
+    z-index: $zindex-popup;
+  }
   .search-menu-area{
+    display: none;
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    overflow: scroll;
+    z-index: $zindex-popup;
     .container{
       padding: 0 20px;
       border-top:1px solid $color-border-search;
+    }
+    .toggle-box{
+      display: none;
     }
     .modal-close{
       border-width: 0;
@@ -31,6 +45,11 @@ $color-border-search: #d3dae0;
       border-top: 1px solid $color-border-search;
       padding:20px 0;
       text-align: center;
+      display: block;
+      &:focus{
+        background-color: $color-blue;
+        color:#fff;
+      }
     }
     padding-top: 10px;
     background-color: #fff;
@@ -70,6 +89,8 @@ $color-border-search: #d3dae0;
         height: 50px;
         border-top: 1px solid $color-border-search;
         .select2-container{
+          min-width: 100%;
+          z-index: $zindex-popup;
           .select2-selection--single{
             height:50px;
             border:0 none;
@@ -193,10 +214,24 @@ $color-border-search: #d3dae0;
   .search > div{
     margin:10px 0;
   }
+  .select2-container{
+    z-index: $zindex-popup;
+  }
   .search-menu-area{
+    display: none;
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    overflow: scroll;
+    z-index: $zindex-popup;
     .container{
       padding: 0 20px;
       border-top:1px solid $color-border-search;
+    }
+    .toggle-box{
+      display: none;
     }
     .modal-close{
       border-width: 0;
@@ -208,6 +243,11 @@ $color-border-search: #d3dae0;
       border-top: 1px solid $color-border-search;
       padding:20px 0;
       text-align: center;
+      display: block;
+      &:focus{
+        background-color: $color-blue;
+        color:#fff;
+      }
     }
     padding-top: 10px;
     background-color: #fff;
@@ -241,51 +281,49 @@ $color-border-search: #d3dae0;
       }
       @include clearfix();
     }
-    .search-select{
-      border: 1px solid $color-border-search;
-      border-radius: 4px 0 0 4px;
-      overflow: hidden;
-      .selectpicker{
-        width:170px;
-        height: 40px;
-        position: relative;
-        select{
-          font-size: $font-size-base;
-          color:$color-gray-light;
-          width: 100%;
-          height: 100%;
-          background: $btn-color-gray url("/img/select-arrow.png") right center no-repeat;
-          border-left:1px solid $color-border-search;
-          border-radius:0;
-          box-shadow: none;
-          padding-left:20px;
-        }
-        &.held-area{
-          width:150px;
-          .select{
-            border-left-width: 0;
+    .selectpicker{
+      width:100%;
+      height: 50px;
+      border-top: 1px solid $color-border-search;
+      .select2-container{
+        min-width:100%;
+        .select2-selection--single{
+          height:50px;
+          border:0 none;
+          .select2-selection__rendered,
+          .select2-selection__arrow{
+            line-height: 50px;
+            height: 100%;
+            right:18px;
+            font-size: 12px;
           }
         }
       }
-      .icon-date-to{
-        width: 34px;
-        height:40px;
-        background-color: $btn-color-gray;
-        color: $color-gray-light;
-        line-height: 40px;
-        text-align: center;
+      select{
+        font-size: $font-size-base;
+        color:$color-gray-light;
+        width: 100%;
+        height: 100%;
+        background: $btn-color-gray url("/img/select-arrow.png") right center no-repeat;
+        border-left:1px solid $color-border-search;
+        border-radius:0;
+        box-shadow: none;
+        padding-left:20px;
       }
+
+    }
       .date-picker{
-        width:195px;
-        height:40px;
+        width:100%;
+        height:50px;
         position: relative;
+        font-size: 12px;
         &:before{
           content: "";
-          width:40px;
-          height: 40px;
+          width:50px;
+          height: 50px;
           position: absolute;
           top:0;
-          right:0;
+          right:8px;
           background: url("/img/icon-calendar.png") no-repeat center center;
         }
         input{
@@ -390,4 +428,3 @@ $color-border-search: #d3dae0;
       @include clearfix();
     }
   }
-}

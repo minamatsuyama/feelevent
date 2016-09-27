@@ -1,50 +1,72 @@
 jQuery(document).ready(function() {
-    datepickerInit();
-    select2Init();
+    SpDatepickerInit();
+    select2Init(".held-area", "開催場所");
+    select2Init(".entry-fee-type", "参加費");
+    select2Init(".qualifying-age", "対象年齡");
     buttonToggle();
     buttonCheckbox();
 });
 
-function datepickerInit() {
-    jQuery(".date-picker").find("input").datepicker({
+function SpDatepickerInit() {
+    var dateFormat = "yy.mm.dd", from = $("#sp-held-started-on").find("input").datepicker({
         regional: "ja",
         dateFormat: "yy.mm.dd",
         onClose: function(arg) {
-            var inputValue = jQuery(this).val();
-            if (inputValue.trim()) {
-                jQuery(this).addClass("has-value");
-            } else {
-                jQuery(this).removeClass("has-value");
+            var inputValue = this.value;
+            if (inputValue.indexOf("~") == -1) {
+                if (inputValue.trim()) {
+                    jQuery(this).addClass("has-value");
+                    this.value = "開始日 : " + this.value + " ~";
+                } else {
+                    jQuery(this).removeClass("has-value");
+                }
+                jQuery("." + this.id).val(inputValue);
+                ToValue = to[0].value;
+                to.datepicker("option", "minDate", jQuery("." + this.id).val());
+                to[0].value = ToValue;
+            }
+        }
+    }), to = $("#sp-held-ended-on").find("input").datepicker({
+        regional: "ja",
+        dateFormat: "yy.mm.dd",
+        onClose: function(arg) {
+            var inputValue = this.value;
+            if (inputValue.indexOf("~") == -1) {
+                if (inputValue.trim()) {
+                    jQuery(this).addClass("has-value");
+                    this.value = "終了日 : ~ " + this.value;
+                } else {
+                    jQuery(this).removeClass("has-value");
+                }
+                jQuery("." + this.id).val(inputValue);
+                FromValue = from[0].value;
+                from.datepicker("option", "maxDate", jQuery("." + this.id).val());
+                from[0].value = FromValue;
             }
         }
     });
 }
 
-function select2Init() {
-    jQuery(".held-area").find("select").select2({
-        placeholder: "開催場所",
-        minimumResultsForSearch: Infinity
-    });
-    jQuery(".entry-fee-type").find("select").select2({
-        placeholder: "参加費",
-        minimumResultsForSearch: Infinity
-    });
-    jQuery(".qualifying-age").find("select").select2({
-        placeholder: "対象年齡",
+function select2Init(className, placeholder) {
+    jQuery(className).find("select").select2({
+        placeholder: placeholder,
         minimumResultsForSearch: Infinity
     });
 }
 
 function buttonToggle() {
     AddAndRemoveActive(".btn-toggle");
-    jQuery(".btn-toggle").on("click", function() {
+    jQuery(".btn-toggle").on("click", function(e) {
         boxId = jQuery(this).attr("data-toggle");
+        console.log(boxId);
         jQuery("#" + boxId).toggle();
+        e.stopPropagation();
+        e.preventDefault();
     });
 }
 
 function AddAndRemoveActive(btn) {
-    jQuery(btn).on("click", function() {
+    jQuery(btn).on("click", function(e) {
         hasActive = jQuery(this).hasClass("active");
         if (hasActive) {
             jQuery(this).removeClass("active");

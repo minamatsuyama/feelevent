@@ -10,6 +10,7 @@
 <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/lib/vendor/jquery-ui.css"/>
 <link rel="stylesheet" type="text/css" href="/css/lib/vendor/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/css/lib/vendor/slick.css"/>
 <link rel="stylesheet" type="text/css" href="/css/home.css" />
 <link href="/css/lib/base.css" rel="stylesheet">
 <link href="/css/lib/module.css" rel="stylesheet">
@@ -104,13 +105,13 @@
 <option value="九州">九州 </option>
 </select>
 </li>
-<li class="date-picker">
+<li class="date-picker" id="held-started-on">
 <input type="text" class="held-started-on" value="" name="held_started_on" placeholder="開催開始日">
 </li>
 <li class="icon-date-to">
 <span>~</span>
 </li>
-<li class="date-picker">
+<li class="date-picker" id="held-ended-on">
 <input type="text" class="held-ended-on" value="" name="held_ended_on" placeholder="開催終了日">
 </li>
 <li class="entry-fee-type selectpicker">
@@ -220,7 +221,7 @@
 <div class="total-event hidden-sm">99999 件</div>
 </div>
 <div class="btn-searchmenu hidden-lg">
-<a href="#">絞り込み検索</a>
+<a href="#" onclick='jQuery("#sp-search-menu").show();'>絞り込み検索</a>
 </div>
 </div>
 </div>
@@ -621,14 +622,14 @@
     }
   }
 </script>
-<div class="search-menu-area " >
+<div class="search-menu-area" id="sp-search-menu">
   <div class="container modal-close">
-    <a href="#" id="menu-close">キャンセル</a>
+    <a href="#" id="menu-close" onclick='jQuery("#sp-search-menu").hide();'>キャンセル</a>
   </div>
   <div class="container">
-    <div class="toggle active keyword-group">
+    <div class="btn-toggle toggle keyword-group" data-toggle="keywords-box">
       <div class="lbl-text">キーワード</div>
-      <div class="btn-group" data-toggle="buttons">
+      <div class="btn-group toggle-box" id="keywords-box">
         <label class="btn btn-checkbox active">
           <input type="checkbox" checked name="keyword_ids" value="1"> 基礎・教養
         </label>
@@ -687,9 +688,9 @@
     </div>
   </div>
   <div class="container">
-    <div class="toggle active event-types">
+    <div class="btn-toggle toggle  event-types" data-toggle="event-types-box">
       <div class="lbl-text">種別</div>
-      <div class="btn-group">
+      <div class="btn-group toggle-box" id="event-types-box">
         <label class="btn btn-checkbox">
           <input type="checkbox" checked name="keyword_ids" value="1"> 参加型
         </label>
@@ -706,11 +707,11 @@
     </div>
   </div>
   <div class="container">
-    <div class="toggle active">
+    <div class="btn-toggle toggle " data-toggle="held-area-box">
       <div class="lbl-text">開催場所</div>
     </div>
   </div>
-  <div class="selectpicker held-area" id="held-area-box">
+  <div class="selectpicker toggle-box held-area" id="held-area-box">
     <select name="held_area" class="select">
       <option value=""></option>
       <option value="北海道">北海道 </option>
@@ -720,24 +721,26 @@
     </select>
   </div>
   <div class="container">
-    <div class="toggle active">
+    <div class="btn-toggle toggle " data-toggle="datepicker-box">
       <div class="lbl-text">開催期間</div>
     </div>
   </div>
-  <div id="datepicker-container">
-    <div id="held-started-on" class="date-picker">
-      <input type="text" class="held-started-on" value="" name="held_started_on" placeholder="開催開始日">
+  <div id="datepicker-box" class="toggle-box">
+    <div id="sp-held-started-on" class="date-picker">
+      <input type="text" class="held-started-on" id="hidden-held-started-on" value="" name="held_started_on_txt" placeholder="開始日 :">
     </div>
-    <div id="held-ended-on" class="date-picker">
-      <input type="text" class="held-ended-on" value="" name="held_ended_on" placeholder="開催開始日">
+    <div id="sp-held-ended-on" class="date-picker">
+      <input type="text" class="held-ended-on" id="hidden-held-ended-on" value="" name="held_ended_on_txt" placeholder="終了日 :">
     </div>
+    <input type="hidden" name="held_started_on" class="hidden-held-started-on">
+    <input type="hidden" name="held_ended_on" class="hidden-held-ended-on">
   </div>
   <div class="container">
-    <div class="toggle active">
+    <div class="btn-toggle toggle " data-toggle="entry-fee-type-box">
       <div class="lbl-text">参加費</div>
     </div>
   </div>
-  <div class="btn-group entry-fee-type selectpicker">
+  <div class="toggle-box entry-fee-type selectpicker" id="entry-fee-type-box">
     <select name="entry_fee_type" class="select">
       <option></option>
       <option value="free">無料</option>
@@ -745,11 +748,11 @@
     </select>
   </div>
   <div class="container">
-    <div class="toggle active qualifying-age selectpicker">
+    <div class="btn-toggle toggle " data-toggle="qualifying-age-box">
       <div class="lbl-text">対象年齢</div>
     </div>
   </div>
-  <div class="btn-group qualifying-age selectpicker">
+  <div class="toggle-box qualifying-age selectpicker" id="qualifying-age-box">
     <select name="qualifying_age_id" class="select">
       <option value=""></option>
       <option value="10歳〜20歳">10歳〜20歳</option>
@@ -758,11 +761,12 @@
       <option value="41歳〜50歳">41歳〜50歳</option>
     </select>
   </div>
-  <div class="submit">
-    <a href="#" >検 索</a>
-  </div>
+  <a class="submit" href="#">
+    検 索
+  </a>
 </div>
 <script src="/js/lib/vendor.js" type="text/javascript"></script>
-<script type="text/javascript" src="/js/home/searchmenu.js"></script>
+<script src="/js/lib/module.js"></script>
+<script type="text/javascript" src="/js/home/home.js"></script>
 </body>
 </html>
