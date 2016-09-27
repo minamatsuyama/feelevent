@@ -130,7 +130,7 @@
 @media screen and (max-width: 679px) {
   .btn-to-top.btn {
     display: block;
-    margin: 10px 5px 30px;
+    margin: 10px auto 30px;
     width: auto;
   }
 }
@@ -141,15 +141,12 @@
 
 @media screen and (max-width: 999px) {
   .container {
-    padding: 0;
     width: auto;
-  }
-
-  .event-group {
-    margin: 0 5px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .userinfo-inner {
-    margin: 20px 5px 25px;
+    margin: 20px auto 25px;
   }
 }
