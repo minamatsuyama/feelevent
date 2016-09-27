@@ -6,5 +6,5 @@ class Event::HeldPlace < ApplicationRecord
 
   enumerize :area, in: %i(hokkaido tohoku kanto chubu kinki shikoku kyushu overseas)
 
-  scope :area, ->(area) { where(area: area) }
+  scope :in_area, ->(area) { where(area: area) }
 end

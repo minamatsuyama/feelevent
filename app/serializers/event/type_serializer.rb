@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Event::TypeSerializer < ActiveModel::Serializer
   attributes :value, :text
 

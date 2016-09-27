@@ -5,6 +5,6 @@ FactoryGirl.define do
     password              { Faker::Internet.password }
     password_confirmation { password }
     subscribe_newsletter  { Faker::Boolean.boolean }
-    confirmed_at          Date.today
+    confirmed_at          Time.zone.today
   end
 end

@@ -4,7 +4,7 @@ FactoryGirl.define do
     event_item_id { Faker::Number.between(1, 10000) }
     title         { Faker::Address.state }
     area          { Event::HeldPlace.area.values.sample }
-    map_enable    { Faker::Boolean.boolean }
+    map_enabled   { Faker::Boolean.boolean }
     country       { Faker::Address.country }
     zip_code      { Faker::Address.zip_code }
     prefecture    { Faker::Number.between(1, 47) }

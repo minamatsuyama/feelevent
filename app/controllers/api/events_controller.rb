@@ -1,7 +1,6 @@
-class Api::EventsController < ApplicationController
+# frozen_string_literal: true
+class Api::EventsController < Api::BaseController
   def index
-    current_page = params[:page] ? params[:page] : 1
-    per_page = params[:per_page] ? params[:per_page] : 5
     query = Event::Item.page(current_page).per(per_page).order(entry_ended_at: :desc)
     if params[:keyword_ids].present? && params[:keyword_ids].is_a?(Array)
       query = query.keyword_ids(params[:keyword_ids])
@@ -27,15 +26,8 @@ class Api::EventsController < ApplicationController
     if params[:word].present?
       query = query.word(params[:word])
     end
-    @data = query.includes(:event_favorites, :event_type, :event_held_places, :event_summary_contents, :event_review_contents, :keywords)
-    render json: { data: [], pagination: {} }, status: 200 and return if @data.blank?
-    pagination = {
-      current_page: current_page,
-      next_page: @data.next_page,
-      prev_page: @data.prev_page,
-      per_page: per_page,
-      total_count: @data.total_count
-    }
-    render json: @data, adapter: :json, root: "data", meta: pagination, meta_key: "pagination", status: 200
+    data = query.includes(:event_favorites, :event_type, :event_held_places, :event_summary_contents, :event_review_contents, :keywords)
+    (render json: { data: [], pagination: {} }, status: 200) && return if data.blank?
+    render json: data, adapter: :json, root: 'data', meta: pagination(data), meta_key: 'pagination', status: 200
   end
 end
