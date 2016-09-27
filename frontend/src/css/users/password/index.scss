@@ -54,28 +54,6 @@
   margin-top: 5px;
 }
 
-.btn-submit {
-  background-color: #187fc4;
-  color: $color-white;
-  border: 1px solid #075386;
-  width: 150px;
-  padding: 10px;
-  &:hover,&:active, &.active {
-    background-color: lighten(#187fc4, 6%);
-    border: 1px solid #187fc4;
-  }
-}
-
-.btn-cancel {
-  background-color: #f5f7fa;
-  color: #83828c;
-  border: 1px solid #d3dae0;
-  width: 150px;
-  padding: 10px;
-  &:hover,&:active, &.active {
-    background-color: lighten(#f5f7fa, 6%);
-  }
-}
 
 .row {
   &.row-pw {

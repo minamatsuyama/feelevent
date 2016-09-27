@@ -84,6 +84,9 @@ input[type="radio"] {
   @include mediaquery-sm() {
     width: 100%;
   }
+  &:hover, &:active, &:focus {
+    background-color: $color-white;
+  }
 }
 
 .input-label {
