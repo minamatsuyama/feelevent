@@ -614,12 +614,15 @@ ol li,
   background-color: #187fc4;
   font-size: 18px;
   padding: 15px;
+  color: #fff;
 }
 .btn-filled:hover {
   background-color: #1b91df;
+  color: #fff;
 }
 .btn-filled:active, .btn-filled.active {
   background-color: #187fc4;
+  color: #fff;
 }
 @media screen and (max-width: 679px) {
   .btn-filled {
@@ -640,19 +643,6 @@ ol li,
   background-color: #f0f0f0;
 }
 
-.btn-like {
-  color: #aaa;
-  background-color: #f6f6f6;
-  padding: 5px;
-  min-width: 70px;
-  margin-right: 5px;
-  font-weight: bold;
-}
-.btn-like:hover {
-  color: #ef0155;
-  background-color: #f6f6f6;
-}
-
 .btn-cancel {
   width: 150px;
   padding: 10px;
@@ -662,6 +652,7 @@ ol li,
 }
 .btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
   background: #fff;
+  color: #333;
 }
 
 .btn-submit {
@@ -673,6 +664,7 @@ ol li,
 }
 .btn-submit:hover, .btn-submit:active, .btn-submit.active {
   background: #0088e3;
+  color: #fff;
 }
 
 .img-liquid, .article img,
@@ -2042,19 +2034,19 @@ html.pointer .hidden-pointer {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e6edf2;
 }
 
 .border-right {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #e6edf2;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e6edf2;
 }
 
 .border-left {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #e6edf2;
 }
 
 .pop {

@@ -176,9 +176,6 @@ a:hover {
   color: #187fc4;
   text-decoration: underline;
 }
-a:visited {
-  color: #065ac1;
-}
 
 .sr-only {
   position: absolute;
