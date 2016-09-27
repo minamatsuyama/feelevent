@@ -1,52 +1,39 @@
-== A-1 Screen detailed design sample
+== A-1 Login screen design
 
 === Overview
 
-I write overview of the design 
+Display login screen 
 
-=== Wireframe
-
-https://docs.google.com/presentation/d/1c4xtvmtKfRsK2KOW7EMndIF1t2zH41a5xZhXg546TOY/edit#slide=id.g165019e56f_0_172
 
 === Basic info
 
-**TODO** Described if there is structure of the page-specific zoning and HTML (Insert picture if necessary)
+|=================================
+|1       |Input form area    |Display ID, password, input element if auto login is possible/ impossible 
+|2       |Link when forgot password   |Link when forgot password
+|3       |Login button area  |Dislay button
+|=================================
 
-* Promotion area
-** ※I will write explanation 
-* Search form
-** ※I will write explanation 
-* Search result
-** ※I will write explanation 
-* Pagination
-** ※I will write explanation 
 
 <<<
 
 === Spec
 
-//image::../assets/A-1.png[]
+image::../assets/A-1.png[]
 
-**TODO** Describe elements of each zone (if there is any specific thing when you login / not log in, describe in each case)
 
-==== Search form
+==== 1.Input form area 
 
-Set search condition 
+include::../../form_site/ja/_include/A-1.adoc[]
 
-* Keyword
-* Type
-* Participation fee
-* Area
-* Target
-* Period
-* Free word
-* Search button
+==== 2.Link when forgot password
 
-==== Search result
+** [A-3]Move to change password screen /users/password/new
 
-* Event info
+==== 3.Login button area
 
-==== Pagination
+**Display Login button 
+** Call link is /signin
 
-* もっと見る (See more) button 
-** If click, call `api/***` and add search result
+link:https://github.com/1pac/fg-event/blob/master/doc/detailed_design/src/backend_site/vi/A-1.adoc[backend:A-1 Login]
+
+
