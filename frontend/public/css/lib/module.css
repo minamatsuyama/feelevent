@@ -1598,7 +1598,9 @@ input[type="radio"]:checked {
 
 @media screen and (min-width: 680px) and (max-width: 999px) {
   .eventcards .container {
-    width: 660px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .ui-datepicker {
