@@ -51,13 +51,6 @@ image::_include/basic_layout.png[]
 </section>
 ```
 
-=== コンテンツテンプレートページ
-
-* http://fg-event-pv.1pac.net/admin/_dev/design_template.html
-
-上記のコンテンツレイアウトを用意しましたので +
-こちらを参照して制作を開始してください。
-
 === フォーム
 
 * 必須項目には `required` 属性をつける
