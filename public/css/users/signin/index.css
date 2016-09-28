@@ -94,6 +94,11 @@
   margin-left: -50px;
 }
 
-.input-text.percent-90 {
-  width: 100%;
+.input-text {
+  width: 450px;
+}
+@media screen and (max-width: 999px) {
+  .input-text {
+    width: 100%;
+  }
 }

@@ -98,7 +98,8 @@
 }
 
 .input-text {
-  &.percent-90 {
+  width: 450px;
+  @include mediaquery-not-lg{
     width: 100%;
   }
 }
