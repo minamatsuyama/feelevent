@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     devise_for :users, class_name: 'Event::Admin::User'
   end
 
-  namespace :api, defaults: {format: :json} do
-    delete "favorites/:id"                           => "favorites#destroy", constraints: { id: /\d+/ }
+  namespace :api, defaults: { format: :json } do
+    delete 'favorites/:id' => 'favorites#destroy', constraints: { id: /\d+/ }
   end
 end
