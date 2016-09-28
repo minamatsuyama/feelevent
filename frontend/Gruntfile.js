@@ -8,7 +8,19 @@
       srcPath:  './src',
       specPath: './spec',
       destPath: './public',
-      exportPath: '../public'
+      exportPath: '../public',
+      copy: {
+        images: {
+          files: [
+            {
+              expand: true,
+              cwd: 'public/img/',
+              src: ['**/*.{png,jpg}'],
+              dest: '../public/img'
+            }
+          ]
+        }
+      }
     },  require('./grunt/config.js'));
 
     grunt.initConfig(config);
