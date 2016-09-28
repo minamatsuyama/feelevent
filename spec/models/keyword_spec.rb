@@ -3,8 +3,8 @@ require 'rails_helper'
 
 RSpec.describe Keyword, type: :model do
   describe 'scopes' do
-    describe '#owner_managed' do
-      it { expect(Keyword.owner_managed.to_sql).to eq Keyword.where(company_id: nil).to_sql }
+    describe '.managed_by_owner' do
+      it { expect(Keyword.managed_by_owner.to_sql).to eq Keyword.where(company_id: nil).to_sql }
     end
   end
 end
