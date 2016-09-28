@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'seed-fu'
 
 gem 'active_model_serializers', '~> 0.10.0'
-gem 'acts-as-list'
+gem 'acts_as_list'
 gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'draper', '>= 3.0.0.pre1'
