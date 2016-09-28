@@ -23,7 +23,7 @@
     .ui-datepicker-prev,
     .ui-datepicker-next{
       top:0;
-      width:32px;
+      width:30px;
       height:28px;
       cursor: pointer;
       text-decoration: none;
@@ -55,6 +55,7 @@
     .ui-datepicker-title{
       height:28px;
       line-height: 30px;
+      margin: 0 30px;
       background-color:#fff;
       border-left: 1px solid $color-border-search;
       border-right: 1px solid $color-border-search;

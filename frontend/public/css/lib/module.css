@@ -1627,7 +1627,7 @@ input[type="radio"]:checked {
 .ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
   top: 0;
-  width: 32px;
+  width: 30px;
   height: 28px;
   cursor: pointer;
   text-decoration: none;
@@ -1661,6 +1661,7 @@ input[type="radio"]:checked {
 .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
   height: 28px;
   line-height: 30px;
+  margin: 0 30px;
   background-color: #fff;
   border-left: 1px solid #d3dae0;
   border-right: 1px solid #d3dae0;
