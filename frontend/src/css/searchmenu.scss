@@ -376,7 +376,6 @@ $color-border-search: #d3dae0;
     .toggle{
       margin:0;
       &.active{
-        padding-bottom: 20px;
         .lbl-text{
           &:before{
             background-position: right top;
@@ -408,6 +407,7 @@ $color-border-search: #d3dae0;
       }
       .btn-group{
         float: left;
+        padding-bottom: 20px;
         .btn-checkbox{
           background-color: $btn-color-gray;
           color:$color-gray-light;

@@ -390,9 +390,6 @@
   .toggle {
     margin: 0;
   }
-  .toggle.active {
-    padding-bottom: 20px;
-  }
   .toggle.active .lbl-text:before {
     background-position: right top;
   }
@@ -421,6 +418,7 @@
   }
   .toggle .btn-group {
     float: left;
+    padding-bottom: 20px;
   }
   .toggle .btn-group .btn-checkbox {
     background-color: #f5f7fa;
