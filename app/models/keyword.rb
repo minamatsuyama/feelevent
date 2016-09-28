@@ -13,4 +13,5 @@
 #
 
 class Keyword < ApplicationRecord
+  scope :managed_by_owner, -> { where(company_id: nil) }
 end
