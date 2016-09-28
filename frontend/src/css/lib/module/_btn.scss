@@ -108,12 +108,15 @@
   background-color: $color-blue;
   font-size: 18px;
   padding: 15px;
+  color: $color-white;
   &:hover {
     background-color: lighten($color-blue, 6%);
+    color: $color-white;
   }
   &:active,
   &.active {
     background-color: $color-blue;
+    color: $color-white;
   }
   @include mediaquery-sm() {
     font-size: 13px;
@@ -134,19 +137,6 @@
   }
 }
 
-.btn-like{
-  color:$color-border-table;
-  background-color: $color-almost-white;
-  padding: 5px;
-  min-width: 70px;
-  margin-right:5px;
-  font-weight: bold;
-  &:hover {
-    color: $color-red;
-    background-color: $color-almost-white;
-  }
-}
-
 .btn-cancel {
   width: 150px;
   padding: 10px;
@@ -157,6 +147,7 @@
   &:active,
   &.active {
     background: $color-white;
+    color: $color-gray-dark;
   }
 }
 
@@ -170,5 +161,6 @@
   &:active,
   &.active {
     background: #0088e3;
+    color: $color-white
   }
 }

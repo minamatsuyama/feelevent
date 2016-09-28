@@ -138,7 +138,7 @@ table {
 }
 body {
   color: #000;
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Noto Sans Japanese", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   background-color: #e3e3e3;
   letter-spacing: 0.05em;
@@ -170,9 +170,10 @@ body {
 }
 
 a {
-  color: #4078c0;
+  color: #187fc4;
 }
 a:hover {
+  color: #187fc4;
   text-decoration: underline;
 }
 
@@ -399,7 +400,7 @@ h2._red code {
 }
 
 h3._red {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 0;
 }
 
@@ -417,7 +418,7 @@ h2:hover ._heading-anchor, h3:hover ._heading-anchor {
   outline: none;
   opacity: 1;
   text-decoration: none;
-  color: #4078c0;
+  color: #187fc4;
 }
 ._heading-anchor::before {
   content: "¶";
@@ -1081,7 +1082,7 @@ kbd kbd {
   vertical-align: top;
   text-align: left;
   letter-spacing: 0.05em;
-  font-size: 14px;
+  font-size: 15px;
 }
 @media screen and (max-width: 679px) {
   .col {
@@ -1831,7 +1832,7 @@ kbd kbd {
 }
 
 .global-navigation h1 {
-  font-size: 18px;
+  font-size: 20px;
   font-family: Helvetica, arial, sans-serif;
   margin: 1em 0;
 }

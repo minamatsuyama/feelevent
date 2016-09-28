@@ -1,0 +1,21 @@
+== A-1 管理ユーザ一覧
+
+=== 概要
+
+管理ユーザー一覧を表示する
+
+=== ワイヤーフレーム
+
+https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075AnI/edit#slide=id.g165272825b_2_781
+
+=== 基本情報
+
+[options="header"]
+|==================
+|項目|内容|備考
+|URL|/admin/users|法人スーパーユーザーのみが利用可能
+|==================
+
+=== 仕様
+
+==== 管理ユーザ一覧

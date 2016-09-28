@@ -1,3 +1,4 @@
-== B-3 パスワード再発行 (入力)
+== D-1 プロモーション一覧
+=== フォーム定義
 
-include::./_include/B-3.adoc[]
+include::./_include/D-1.adoc[]

@@ -61,6 +61,7 @@
 .btn-login:hover, .btn-login:active, .btn-login.active {
   background-color: #1b91df;
   border: 1px solid #187fc4;
+  color: #fff;
 }
 
 .row.row-login {
