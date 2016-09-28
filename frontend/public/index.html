@@ -7,269 +7,622 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="/favicon.ico">
-<!--<link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">-->
+<link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/lib/vendor/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="/css/lib/vendor/select2.css"/>
+<link rel="stylesheet" type="text/css" href="/css/lib/vendor/slick.css"/>
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
 <link href="/css/lib/base.css" rel="stylesheet">
 <link href="/css/lib/module.css" rel="stylesheet">
 <title>WorldSchool</title>
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+</head>
 </head>
 <body>
 <section id="page">
-  <div class="eventcards l-grid">
-    <div class="container">
-      <div class="row">
-        <div class="eventcard col-md-6 col-4 col recommended">
-          <div class="eventcard-warpper">
-            <div class="event-img-warpper">
-              <a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
-            </div>
-            <div class="event-info">
-              <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+<header id="global-header">
+<div class="container">
+<h1 class="logo"><a href="/"><img src="/img/logo.png" alt="WorldSchool"></a></h1>
+<div class="powered-by">powered by Feelnote</div>
+<div class="share-box ">
+<a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" class="top-fb-link">
+<img width="30" height="30" src="/img/icon-facebook.png" alt="facebook link">
+</a>
+<a href="https://twitter.com/intent/tweet?url=URL&text=TEXT" target="_blank" class="top-tw-link">
+<img width="30" height="30" src="/img/icon-twitter.png" alt="twitter link">
+</a>
+</div>
+<a href="#" class="top-link hidden-not-sm" onclick="myToggle(document.getElementsByClassName('share-box'));">
+<img src="/img/top-link.png" alt="top link">
+<p class="link-text">シェア</p>
+</a>
+<a href="/signin" class="top-login">
+<img width="19" height="25" src="/img/icon-login.png" alt="icon look">
+<p class="link-text">ログイン</p>
+</a>
+<a href="/users/signup" class="top-flag">
+新規登録
+</a>
+<a href="#" class="top-user hide">
+<img width="20" height="20" src="/img/top-user.png" alt="top user link">
+<p class="link-text">マイページ</p>
+</a>
+</div><!-- End container -->
+</header>
+<section id="content">
+<div class="promotions">
+<div class="main-slideshow">
+<div class="slideshow-item">
+<img src="/img/main-img01.jpg" alt="[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)" />
+<div class="slideshow-info">
+[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)
+</div>
+</div>
+<div class="slideshow-item">
+<img src="/img/main-img01.jpg" alt="[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)" />
+<div class="slideshow-info">
+[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)
+</div>
+</div>
+<div class="slideshow-item">
+<img src="/img/main-img01.jpg" alt="[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)" />
+<div class="slideshow-info">
+[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)
+</div>
+</div>
+<div class="slideshow-item">
+<img src="/img/main-img01.jpg" alt="[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)" />
+<div class="slideshow-info">
+[9/14]Pepper 開発体験 ワークショップ（SDK 基本編 #4 -タブレットの高度な活用-)
+</div>
+</div>
+</div>
+</div>
+<div class="search-area " >
+<div class="container">
+<form class="search" method="post" action="">
+<div class="form-wrapper">
+<div>
+<ul>
+<li class="search-select">
+<ul>
+<li class="search-text">
+  <input type="text" name="word" class="input input-block input-lg" placeholder="イベント名、キーワードで検索 ...">
+</li>
+<li class="hidden-sm hidden-md">
+  <ul>
+    <li class="held-area selectpicker">
+      <select name="held_area" class="select">
+        <option value=""></option>
+        <option value="北海道">北海道 </option>
+        <option value="関東">関東 </option>
+        <option value="関西">関西 </option>
+        <option value="九州">九州 </option>
+      </select>
+    </li>
+    <li class="date-picker">
+      <input type="text" class="held-started-on" value="" name="held_started_on" placeholder="開催開始日">
+    </li>
+    <li class="icon-date-to">
+      <span>~</span>
+    </li>
+    <li class="date-picker">
+      <input type="text" class="held-ended-on" value="" name="held_ended_on" placeholder="開催終了日">
+    </li>
+    <li class="entry-fee-type selectpicker">
+      <select name="entry_fee_type" class="select">
+        <option></option>
+        <option value="free">無料</option>
+        <option value="pay">有料</option>
+      </select>
+    </li>
+    <li class="qualifying-age selectpicker">
+      <select name="qualifying_age_id" class="select">
+        <option value=""></option>
+        <option value="10歳〜20歳">10歳〜20歳</option>
+        <option value="21歳〜30歳">21歳〜30歳</option>
+        <option value="31歳〜40歳">31歳〜40歳</option>
+        <option value="41歳〜50歳">41歳〜50歳</option>
+      </select>
+    </li>
+  </ul>
+</li>
+</ul>
+</li>
+<li class="btn-eventsearch"><input type="submit" value="検 索" name="search-submit" class="btn btn-blue btn-lg"></li>
+</ul>
+</div>
+<div class="toggle keyword-group hidden-md hidden-sm">
+<div class="lbl-text">キーワード</div>
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-checkbox active">
+<input type="checkbox" checked name="keyword_ids" value="1"> 基礎・教養
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 文学
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 言語・コミュニケーション
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 政治・法
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 経済・ビジネス
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 社会・コミュニティ
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 国際関係
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 数理
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 工学
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> IT
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> デザイン・ものづくり
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 生物・農業
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 看護・保健・福祉
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 医・歯・薬
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 教育
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> アート・表現
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> ファッション・生活
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 心・身体
+</label>
+</div>
+</div>
+<div class="toggle event-types hidden-md hidden-sm">
+<div class="lbl-text">種別</div>
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-checkbox active">
+<input type="checkbox" checked name="keyword_ids" value="1"> 参加型
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 聴講型
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 資格・公募
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 大学体感
+</label>
+</div>
+</div>
+</div>
+</form>
+<div class="search-result-info">
+<div class="lbl-text">絞り込み条件</div>
+<div class="search-info-text">関東  <span class="slash">/</span>  2016.12.12~2016.12.13</div>
+<div class="total-event hidden-sm">99999 件</div>
+</div>
+<div class="btn-searchmenu hidden-lg">
+<a href="#">絞り込み検索</a>
+</div>
+</div>
+</div>
+<div class="eventcards l-grid">
+<div class="container">
+<div class="row">
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
 
-              <div class="clearfix">
-                <span class="event-type"> 参加型 ・ 事前準備なし </span>
-                <span class="event-pm-paid">有料 </span>
-              </div>
-              <table>
-                <tbody>
-                <tr>
-                  <td width="25%">申込締切</td>
-                  <td>2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催期間</td>
-                  <td>2016年12月12日 ~ 2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催エリア</td>
-                  <td>関東</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="event-likebox">
-            <a class="btn-comment-box" href="#">
-              <img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
-            </a>
-            <a class="btn-like-box btn" href="#">
-              &#x2665 9999
-            </a>
-          </div>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
 
-        </div>
-        <div class="eventcard recommended col-md-6 col-4 col">
-        <div class="eventcard-warpper">
-          <div class="event-img-warpper">
-            <a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
-          </div>
-          <div class="event-info">
-            <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+</div>
+<div class="eventcard recommended col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
 
-            <div class="clearfix">
-              <span class="event-type"> 参加型 ・ 事前準備なし </span>
-              <span class="event-pm-paid free">無料 </span>
-            </div>
-            <table>
-              <tbody>
-              <tr>
-                <td width="25%">申込締切</td>
-                <td>2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催期間</td>
-                <td>2016年12月12日 ~ 2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催エリア</td>
-                <td>関東</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="event-likebox">
-          <a class="btn-comment-box" href="#">
-            <img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
-          </a>
-          <a class="btn-like-box btn" href="#">
-            &#x2665 9999
-          </a>
-        </div>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid free">無料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
 
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+</div>
+<div class="eventcard col-md-6 col-4 col">
+<div class="eventcard-warpper">
+<div class="event-img-warpper">
+<a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
+</div>
+<div class="event-info">
+<h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
+<div class="clearfix">
+<span class="event-type"> 参加型 ・ 事前準備なし </span>
+<span class="event-pm-paid">有料 </span>
+</div>
+<table>
+<tbody>
+<tr>
+<td width="25%">申込締切</td>
+<td>2016年12月12日</td>
+</tr>
+<tr>
+<td>開催期間</td>
+<td>2016年12月12日 ~ 2016年12月12日</td>
+</tr>
+<tr>
+<td>開催エリア</td>
+<td>関東</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="event-likebox">
+<a class="btn-comment-box" href="#">
+<img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
+</a>
+<a class="btn-like-box btn" href="#">
+&#x2665 9999
+</a>
+</div>
+</div>
+</div>
+<a class="btn btn-full btn-more btn-container" href="#">もっと見る</a>
+</div>
+</div>
+</section>
+  <footer id="global-footer">
+    <div class="main-footer">
+      <div class="footer-link">
+        <ul class="list-links-inline">
+          <li><a href="#" >お問い合わせ</a></li>
+          <li><a href="#" >プライバシーポリシー</a></li>
+          <li><a href="#" >運営会社</a></li>
+        </ul>
       </div>
-        <div class="eventcard col-md-6 col-4 col">
-        <div class="eventcard-warpper">
-          <div class="event-img-warpper">
-            <a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
-          </div>
-          <div class="event-info">
-            <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
-
-            <div class="clearfix">
-              <span class="event-type"> 参加型 ・ 事前準備なし </span>
-              <span class="event-pm-paid">有料 </span>
-            </div>
-            <table>
-              <tbody>
-              <tr>
-                <td width="25%">申込締切</td>
-                <td>2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催期間</td>
-                <td>2016年12月12日 ~ 2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催エリア</td>
-                <td>関東</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="event-likebox">
-          <a class="btn-comment-box" href="#">
-            <img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
-          </a>
-          <a class="btn-like-box btn" href="#">
-            &#x2665 9999
-          </a>
-        </div>
-
-      </div>
-        <div class="eventcard col-md-6 col-4 col">
-        <div class="eventcard-warpper">
-          <div class="event-img-warpper">
-            <a href="#">               <img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/>                 </a>
-          </div>
-          <div class="event-info">
-            <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
-
-            <div class="clearfix">
-              <span class="event-type"> 参加型 ・ 事前準備なし </span>
-              <span class="event-pm-paid">有料 </span>
-            </div>
-            <table>
-              <tbody>
-              <tr>
-                <td width="25%">申込締切</td>
-                <td>2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催期間</td>
-                <td>2016年12月12日 ~ 2016年12月12日</td>
-              </tr>
-              <tr>
-                <td>開催エリア</td>
-                <td>関東</td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="event-likebox">
-          <a class="btn-comment-box" href="#">
-            <img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
-          </a>
-          <a class="btn-like-box btn" href="#">
-            &#x2665 9999
-          </a>
-        </div>
-
-      </div>
-        <div class="eventcard col-md-6 col-4 col">
-          <div class="eventcard-warpper">
-            <div class="event-img-warpper">
-              <a href="#">               <img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/>                 </a>
-            </div>
-            <div class="event-info">
-              <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
-
-              <div class="clearfix">
-                <span class="event-type"> 参加型 ・ 事前準備なし </span>
-                <span class="event-pm-paid">有料 </span>
-              </div>
-              <table>
-                <tbody>
-                <tr>
-                  <td width="25%">申込締切</td>
-                  <td>2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催期間</td>
-                  <td>2016年12月12日 ~ 2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催エリア</td>
-                  <td>関東</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-
-
-          </div>
-          <div class="event-likebox">
-            <a class="btn-comment-box" href="#">
-              <img src="/img/btn-comment.png" alt="口コミあり!" /> 口コミあり!
-            </a>
-            <a class="btn-like-box btn" href="#">
-              &#x2665 9999
-            </a>
-          </div>
-
-        </div>
-        <div class="eventcard col-md-6 col-4 col">
-          <div class="eventcard-warpper">
-            <div class="event-img-warpper">
-              <a href="#"><img src="/img/event-img.jpg" alt="【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～"/></a>
-            </div>
-            <div class="event-info">
-              <h4 class="event-title"><a href="#">【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</a></h4>
-
-              <div class="clearfix">
-                <span class="event-type"> 参加型 ・ 事前準備なし </span>
-                <span class="event-pm-paid">有料 </span>
-              </div>
-              <table>
-                <tbody>
-                <tr>
-                  <td width="25%">申込締切</td>
-                  <td>2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催期間</td>
-                  <td>2016年12月12日 ~ 2016年12月12日</td>
-                </tr>
-                <tr>
-                  <td>開催エリア</td>
-                  <td>関東</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-
-
-
-          </div>
-          <div class="event-likebox">
-            <a class="btn-comment-box" href="#">
-              <img src="/img/btn-comment.png" alt="口コミあり!" />
-            </a>
-            <a class="btn-like-box btn" href="#">
-              &#x2665 9999
-            </a>
-          </div>
-
-        </div>
+      <div class="info">powered by <img  src="/img/feelnote.png" alt="Feel Note" >
       </div>
     </div>
-
-
-  </div>
-
+    <div class="bottom-footer"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
+  </footer>
 </section>
-
+<script type="text/javascript" language="JavaScript">
+  function myToggle(elements, specifiedDisplay) {
+    var element, index;
+    elements = elements.length ? elements : [elements];
+    for (index = 0; index < elements.length; index++) {
+      element = elements[index];
+      if (isElementHidden(element)) {
+        element.style.display = '';
+        if (isElementHidden(element)) {
+          element.style.display = specifiedDisplay || 'block';
+        }
+      } else {
+        element.style.display = 'none';
+      }
+    }
+    function isElementHidden (element) {
+      return window.getComputedStyle(element, null).getPropertyValue('display') === 'none';
+    }
+  }
+</script>
+<script src="/js/lib/vendor.js" type="text/javascript"></script>
+<script src="/js/lib/module.js"></script>
+<script type="text/javascript" src="/js/home/home.js"></script>
 </body>
 </html>

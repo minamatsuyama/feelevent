@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     initSlick();
     initLoadMore();
 });
@@ -6,12 +6,12 @@ $(document).ready(function() {
 function initSlick() {
     var $window = $(window), $card = $(".recommend-list"), toggleSlick;
     toggleSlick = function() {
-        if ($(window).width() < 480) {
+        if ($(window).width() < 1e3) {
             if ($card.hasClass("slick-initialized")) {
                 $card.slick("unslick");
             }
             $card.slick({
-                infinite: true,
+                infinite: false,
                 speed: 600,
                 dots: false,
                 arrows: false,

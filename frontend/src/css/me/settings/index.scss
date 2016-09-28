@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+// library
+@import "../../shared/variables";
+@import "../../shared/mixins";
+
+#content {
+  background-color: #e3e3e3;
+  color: #333;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  @include mediaquery-sm() {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+@include mediaquery-not-lg() {
+  .container {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.box-main {
+  border-top: 10px solid #2c7996;
+  background-color: $color-white;
+  padding: 50px 85px 33px;
+  border-radius: 3px;
+  margin-bottom: 195px;
+  @include mediaquery-sm {
+    border-top: 5px solid #2c7996;
+    padding: 20px 15px 30px;
+    margin-bottom: 0;
+  }
+}
+.setting-header {
+  font-size: 24px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e6edf2;
+  @include mediaquery-sm() {
+      font-size: $font-size-small;
+    padding-bottom: 3px;
+  }
+}
+
+#setting-form {
+  margin: 35px 35px 0 27px;
+  @include mediaquery-sm() {
+    margin: 15px 0 0;
+  }
+}
+
+.text-link {
+  color: #187fc4;
+}
+.btn-group .btn {
+  min-width: inherit;
+  padding: 5px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.terms {
+  margin-bottom: 10px;
+  @include mediaquery-sm() {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+}
+
+@include mediaquery-sm() {
+  .input-label {
+    padding: 2px;
+  }
+}
+
+.select2-container--default{
+
+  .select2-selection--single {
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #d3dae0;
+    .select2-selection__placeholder{
+      background: transparent;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  &.select2-container--open {
+    &.select2-container--below {
+      .select2-selection--single {
+        background-color: lighten(#f5f7fa, 6%);
+      }
+    }
+    .select2-dropdown--below {
+      border-width: 0;
+    }
+  }
+
+  .select2-results__option {
+    border-width: 0 1px 1px;
+    border-style :solid;
+    border-color: #d3dae0;
+    padding: 9px;
+
+  }
+
+}
+
+
+.row-setting {
+    margin-bottom: 20px;
+    input[type=email] {
+      background: $color-white;
+    }
+}
+
+.btn-setting-container {
+  text-align: center;
+  .btn {
+    margin: 7px 8px;
+    @include mediaquery-sm() {
+      margin: 5px auto;
+    }
+  }
+}
