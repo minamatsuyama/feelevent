@@ -1,0 +1,443 @@
+.container {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+  .search-menu-area {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 679px) {
+  .search > div {
+    margin: 10px 0;
+  }
+
+  .select2-container {
+    z-index: 3010;
+  }
+
+  .search-menu-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    z-index: 3010;
+    padding-top: 10px;
+    background-color: #fff;
+  }
+  .search-menu-area .container {
+    padding: 0 20px;
+    border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .toggle-box {
+    display: none;
+  }
+  .search-menu-area .modal-close {
+    border-width: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: right;
+  }
+  .search-menu-area .submit {
+    border-top: 1px solid #d3dae0;
+    padding: 20px 0;
+    text-align: center;
+    display: block;
+  }
+  .search-menu-area .submit:focus {
+    background-color: #187fc4;
+    color: #fff;
+  }
+  .search-menu-area .btn {
+    min-width: inherit;
+    padding: 10px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .search-menu-area ul li {
+    float: left;
+  }
+  .search-menu-area ul:before, .search-menu-area ul:after {
+    content: " ";
+    display: table;
+  }
+  .search-menu-area ul:after {
+    clear: both;
+  }
+  .search-menu-area .form-wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d3dae0;
+  }
+  .search-menu-area .search-result-info {
+    padding: 10px 0;
+  }
+  .search-menu-area .search-result-info .lbl-text {
+    float: left;
+    color: #83828c;
+  }
+  .search-menu-area .search-result-info .search-info-text {
+    float: left;
+  }
+  .search-menu-area .search-result-info .total-event {
+    float: right;
+  }
+  .search-menu-area .search-result-info:before, .search-menu-area .search-result-info:after {
+    content: " ";
+    display: table;
+  }
+  .search-menu-area .search-result-info:after {
+    clear: both;
+  }
+  .search-menu-area .selectpicker {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .selectpicker .select2-container {
+    min-width: 100%;
+    z-index: 3010;
+  }
+  .search-menu-area .selectpicker .select2-container .select2-selection--single {
+    height: 50px;
+    border: 0 none;
+  }
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__rendered,
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
+    line-height: 50px;
+    height: 100%;
+    right: 18px;
+    font-size: 12px;
+  }
+  .search-menu-area .selectpicker select {
+    font-size: 15px;
+    color: #83828c;
+    width: 100%;
+    height: 100%;
+    background: #f5f7fa url("/img/select-arrow.png") right center no-repeat;
+    border-left: 1px solid #d3dae0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 20px;
+  }
+  .search-menu-area .date-picker {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    font-size: 12px;
+  }
+  .search-menu-area .date-picker:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    background: url("/img/icon-calendar.png") no-repeat center center;
+  }
+  .search-menu-area .date-picker input {
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+  .search-menu-area .btn-eventsearch {
+    width: 84px;
+    height: 82px;
+    border: 1px solid #d3dae0;
+    border-left-width: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .search-menu-area .btn-eventsearch input {
+    width: 100%;
+    height: 100%;
+    background-color: #187fc4;
+    margin: 0;
+    border-radius: 0;
+  }
+  .search-menu-area .toggle {
+    margin: 0;
+  }
+  .search-menu-area .toggle.active .lbl-text:before {
+    background-position: right -10px;
+  }
+  .search-menu-area .toggle .lbl-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #83828c;
+    padding: 19px 0 15px 0;
+    position: relative;
+  }
+  .search-menu-area .toggle .lbl-text:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 7px;
+    height: 10px;
+    width: 10px;
+    background-image: url("/img/searchmenu-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 100%;
+  }
+  .search-menu-area .toggle .lbl-text.keyword-group {
+    height: 70px;
+  }
+  .search-menu-area .toggle .btn-group {
+    float: left;
+    padding-bottom: 20px;
+  }
+  .search-menu-area .toggle .btn-group .btn-checkbox {
+    background-color: #f5f7fa;
+    color: #83828c;
+  }
+  .search-menu-area .toggle .btn-group .btn-checkbox input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .search-menu-area .toggle .btn-group .btn-checkbox.active {
+    background-color: #187fc4;
+    color: #fff;
+  }
+  .search-menu-area .toggle:before, .search-menu-area .toggle:after {
+    content: " ";
+    display: table;
+  }
+  .search-menu-area .toggle:after {
+    clear: both;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 999px) {
+  .search > div {
+    margin: 10px 0;
+  }
+
+  .select2-container {
+    z-index: 3010;
+  }
+
+  .search-menu-area {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    z-index: 3010;
+    padding-top: 10px;
+    background-color: #fff;
+  }
+  .search-menu-area .container {
+    padding: 0 20px;
+    border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .toggle-box {
+    display: none;
+  }
+  .search-menu-area .modal-close {
+    border-width: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: right;
+  }
+  .search-menu-area .submit {
+    border-top: 1px solid #d3dae0;
+    padding: 20px 0;
+    text-align: center;
+    display: block;
+  }
+  .search-menu-area .submit:focus {
+    background-color: #187fc4;
+    color: #fff;
+  }
+  .search-menu-area .btn {
+    min-width: inherit;
+    padding: 10px;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .search-menu-area ul li {
+    float: left;
+  }
+  .search-menu-area ul:before, .search-menu-area ul:after {
+    content: " ";
+    display: table;
+  }
+  .search-menu-area ul:after {
+    clear: both;
+  }
+  .search-menu-area .form-wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d3dae0;
+  }
+  .search-menu-area .search-result-info {
+    padding: 10px 0;
+  }
+  .search-menu-area .search-result-info .lbl-text {
+    float: left;
+    color: #83828c;
+  }
+  .search-menu-area .search-result-info .search-info-text {
+    float: left;
+  }
+  .search-menu-area .search-result-info .total-event {
+    float: right;
+  }
+  .search-menu-area .search-result-info:before, .search-menu-area .search-result-info:after {
+    content: " ";
+    display: table;
+  }
+  .search-menu-area .search-result-info:after {
+    clear: both;
+  }
+  .search-menu-area .selectpicker {
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #d3dae0;
+  }
+  .search-menu-area .selectpicker .select2-container {
+    min-width: 100%;
+  }
+  .search-menu-area .selectpicker .select2-container .select2-selection--single {
+    height: 50px;
+    border: 0 none;
+  }
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__rendered,
+  .search-menu-area .selectpicker .select2-container .select2-selection--single .select2-selection__arrow {
+    line-height: 50px;
+    height: 100%;
+    right: 18px;
+    font-size: 12px;
+  }
+  .search-menu-area .selectpicker select {
+    font-size: 15px;
+    color: #83828c;
+    width: 100%;
+    height: 100%;
+    background: #f5f7fa url("/img/select-arrow.png") right center no-repeat;
+    border-left: 1px solid #d3dae0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 20px;
+  }
+  .search-menu-area .date-picker {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    font-size: 12px;
+  }
+  .search-menu-area .date-picker:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 8px;
+    background: url("/img/icon-calendar.png") no-repeat center center;
+  }
+  .search-menu-area .date-picker input {
+    padding-left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+  .search-menu-area .search-text {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    border-bottom: 1px solid #d3dae0;
+  }
+  .search-menu-area .search-text:before {
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: url("/img/icon-search.png") no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .search-menu-area .search-text .input {
+    padding-left: 40px;
+    background-color: #f5f7fa;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    margin: 0;
+    border: 0 none;
+    border-radius: 0;
+  }
+
+  .btn-eventsearch {
+    width: 84px;
+    height: 82px;
+    border: 1px solid #d3dae0;
+    border-left-width: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .btn-eventsearch input {
+    width: 100%;
+    height: 100%;
+    background-color: #187fc4;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .toggle {
+    margin: 0;
+  }
+  .toggle.active .lbl-text:before {
+    background-position: right top;
+  }
+  .toggle .lbl-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #83828c;
+    padding: 19px 0 15px 0;
+    position: relative;
+  }
+  .toggle .lbl-text:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 7px;
+    height: 6px;
+    width: 12px;
+    background-image: url("/img/searchmenu-arrow.jpg");
+    background-repeat: no-repeat;
+    background-position: right -6px;
+    background-size: 100%;
+  }
+  .toggle .lbl-text.keyword-group {
+    height: 70px;
+  }
+  .toggle .btn-group {
+    float: left;
+    padding-bottom: 20px;
+  }
+  .toggle .btn-group .btn-checkbox {
+    background-color: #f5f7fa;
+    color: #83828c;
+  }
+  .toggle .btn-group .btn-checkbox input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+  }
+  .toggle .btn-group .btn-checkbox.active {
+    background-color: #187fc4;
+    color: #fff;
+  }
+  .toggle:before, .toggle:after {
+    content: " ";
+    display: table;
+  }
+  .toggle:after {
+    clear: both;
+  }
+}

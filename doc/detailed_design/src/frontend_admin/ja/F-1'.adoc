@@ -1,0 +1,22 @@
+== F-1' イベント編集
+
+=== 概要
+
+イベントの編集を行う
+
+=== ワイヤーフレーム
+
+https://docs.google.com/presentation/d/1FioO81AzrWux_G0IQnMI-RIIVhNFcKCN64hdf075AnI/edit#slide=id.g165272825b_2_541
+
+=== 基本情報
+
+[options="header"]
+|==================
+|項目|内容|備考
+|URL|/admin/events/:event_id/edit|編集
+|==================
+
+
+F-1と同じ
+
+//TODO F-1を部分的に読み込めるか？

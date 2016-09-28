@@ -86,7 +86,6 @@ input[type="search"].input::-moz-placeholder {
   box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
   display: inline-block;
   padding: 0.3em 30px 0.3em 0.6em;
-  background: #fff url(/img/shared/icon_arrow_select.png) right center no-repeat;
   background-size: 24px auto;
   font-size: 16px;
   vertical-align: middle;
@@ -614,12 +613,15 @@ ol li,
   background-color: #187fc4;
   font-size: 18px;
   padding: 15px;
+  color: #fff;
 }
 .btn-filled:hover {
   background-color: #1b91df;
+  color: #fff;
 }
 .btn-filled:active, .btn-filled.active {
   background-color: #187fc4;
+  color: #fff;
 }
 @media screen and (max-width: 679px) {
   .btn-filled {
@@ -640,19 +642,6 @@ ol li,
   background-color: #f0f0f0;
 }
 
-.btn-like {
-  color: #aaa;
-  background-color: #f6f6f6;
-  padding: 5px;
-  min-width: 70px;
-  margin-right: 5px;
-  font-weight: bold;
-}
-.btn-like:hover {
-  color: #ef0155;
-  background-color: #f6f6f6;
-}
-
 .btn-cancel {
   width: 150px;
   padding: 10px;
@@ -662,6 +651,7 @@ ol li,
 }
 .btn-cancel:hover, .btn-cancel:active, .btn-cancel.active {
   background: #fff;
+  color: #333;
 }
 
 .btn-submit {
@@ -673,6 +663,7 @@ ol li,
 }
 .btn-submit:hover, .btn-submit:active, .btn-submit.active {
   background: #0088e3;
+  color: #fff;
 }
 
 .img-liquid, .article img,
@@ -1213,10 +1204,18 @@ html.pointer .link-card.light:hover .image img, html.touch .link-card.light.touc
   font-size: 12px;
   border-radius: 3px;
   padding: 0 10px;
+  display: inline-block;
 }
 
 .label-orange {
   background-color: #fa8500;
+}
+
+.label-gray {
+  color: #83828c;
+  border: 1px solid #d3dae0;
+  background-color: #f5f7fa;
+  padding: 6px 8px;
 }
 
 .modal-inner {
@@ -1537,6 +1536,53 @@ input[type="radio"]:checked {
   }
 }
 
+.selectpicker.picker .select2-container {
+  border-radius: 3px;
+  border: 1px solid #d3dae0;
+}
+.selectpicker.picker .select2-container .select2-results__option--highlighted[aria-selected] {
+  background-color: #fff;
+  color: #333;
+}
+.selectpicker.picker .select2-container .select2-selection--single {
+  height: 40px;
+  background-color: #f5f7fa;
+}
+.selectpicker.picker .select2-container .select2-selection--single .select2-selection__arrow {
+  background: url("/img/select-arrow.jpg") right center no-repeat;
+  height: 40px;
+  top: 0;
+  right: 20px;
+}
+.selectpicker.picker .select2-container .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+.selectpicker.picker .select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: 40px;
+  color: #83828c;
+}
+.selectpicker.picker .select2-container .select2-selection--single:hover {
+  background-color: #fff;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
+  background-color: white;
+}
+.select2-container--default.select2-container--open .select2-dropdown--below {
+  border-width: 0;
+}
+.select2-container--default .select2-results__option {
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: #d3dae0;
+  padding: 9px;
+  background-color: #f5f7fa;
+}
+.select2-container--default .select2-results__option.select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option.select2-results__option[aria-selected=true] {
+  background-color: #fff;
+  color: #333;
+}
+
 .row.message {
   margin-top: 57px;
   margin-bottom: 35px;
@@ -1701,7 +1747,9 @@ input[type="radio"]:checked {
 
 @media screen and (min-width: 680px) and (max-width: 999px) {
   .eventcards .container {
-    width: 660px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .ui-datepicker {
@@ -1728,7 +1776,7 @@ input[type="radio"]:checked {
 .ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
   top: 0;
-  width: 32px;
+  width: 30px;
   height: 28px;
   cursor: pointer;
   text-decoration: none;
@@ -1762,6 +1810,7 @@ input[type="radio"]:checked {
 .ui-datepicker .ui-datepicker-header .ui-datepicker-title {
   height: 28px;
   line-height: 30px;
+  margin: 0 30px;
   background-color: #fff;
   border-left: 1px solid #d3dae0;
   border-right: 1px solid #d3dae0;
@@ -2191,19 +2240,19 @@ html.pointer .hidden-pointer {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e6edf2;
 }
 
 .border-right {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #e6edf2;
 }
 
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e6edf2;
 }
 
 .border-left {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #e6edf2;
 }
 
 .pop {

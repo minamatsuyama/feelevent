@@ -1,0 +1,132 @@
+#content {
+  background-color: #e3e3e3;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 679px) {
+  #content {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.box-main {
+  background-color: #fff;
+  padding: 62px 85px 33px;
+  border-radius: 3px;
+}
+@media screen and (max-width: 679px) {
+  .box-main {
+    padding: 15px 15px 30px;
+  }
+}
+
+.signup h2 {
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e6edf2;
+}
+@media screen and (max-width: 679px) {
+  .signup .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+#signup-form {
+  margin-top: 35px;
+}
+@media screen and (max-width: 679px) {
+  #signup-form {
+    margin-top: 15px;
+  }
+}
+
+.text-link {
+  color: #187fc4;
+}
+
+.keywords .label-gray {
+  margin-bottom: 10px;
+  margin-right: 3px;
+}
+@media screen and (max-width: 679px) {
+  .keywords .label-gray {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+}
+
+.terms {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 679px) {
+  .terms {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+}
+
+.btn-signup {
+  background-color: #187fc4;
+  color: #fff;
+  border: 1px solid #075386;
+  width: 150px;
+  padding: 10px;
+}
+.btn-signup:hover, .btn-signup:active, .btn-signup.active {
+  background-color: #1b91df;
+  border: 1px solid #187fc4;
+}
+
+@media screen and (max-width: 679px) {
+  .input-label {
+    padding: 2px;
+  }
+}
+.row.row-register {
+  margin-bottom: 20px;
+}
+.row.row-register.message {
+  margin-top: 57px;
+  margin-bottom: 35px;
+}
+@media screen and (max-width: 679px) {
+  .row.row-register.message {
+    margin-top: 27px;
+    margin-bottom: 15px;
+  }
+}
+.row.row-register.receive-news {
+  margin-top: 70px;
+  margin-bottom: 67px;
+}
+@media screen and (max-width: 679px) {
+  .row.row-register.receive-news {
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+}
+
+.col.btn-signup-container {
+  text-align: center;
+}
+.col.col-title {
+  margin-top: 10px;
+}
+@media screen and (max-width: 679px) {
+  .col.col-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+}
+.col.col-input {
+  margin-left: -60px;
+}
+@media screen and (max-width: 679px) {
+  .col.col-input {
+    margin-left: 0;
+  }
+}

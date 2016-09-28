@@ -40,11 +40,30 @@ fjs.parentNode.insertBefore(js, fjs);
 
 <header id="global-header">
 <div class="container">
-<a href="#" class="top-link">
-<img src="/img/top-link.gif" alt="top link" />
+<h1 class="logo"><a href="/"><img src="/img/logo.png" alt="WorldSchool"></a></h1>
+<div class="powered-by">powered by Feelnote</div>
+<div class="share-box ">
+<a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" class="top-fb-link">
+<img width="30" height="30" src="/img/icon-facebook.png" alt="facebook link">
 </a>
-<a href="#" class="top-user">
-<img src="/img/top-user.gif" alt="top user link" />
+<a href="https://twitter.com/intent/tweet?url=URL&text=TEXT" target="_blank" class="top-tw-link">
+<img width="30" height="30" src="/img/icon-twitter.png" alt="twitter link">
+</a>
+</div>
+<a href="#" class="top-link hidden-not-sm" onclick="myToggle(document.getElementsByClassName('share-box'));">
+<img src="/img/top-link.png" alt="top link">
+<p class="link-text">シェア</p>
+</a>
+<a href="/signin" class="top-login">
+<img width="19" height="25" src="/img/icon-login.png" alt="icon look">
+<p class="link-text">ログイン</p>
+</a>
+<a href="/users/signup" class="top-flag">
+新規登録
+</a>
+<a href="#" class="top-user hide">
+<img width="20" height="20" src="/img/top-user.png" alt="top user link">
+<p class="link-text">マイページ</p>
 </a>
 </div><!-- End container -->
 </header>
@@ -56,7 +75,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <img src="/img/events/img_event-detail-img.png" class="img-full" alt=""/>
 <h2>【大好評につき再演】企業のWeb担当者の疑問を一刀両断！～『徳丸浩のWebセキュリティ教室』から学ぶ夜（第4回）～</h2>
 </div>
-<div class="detail-tags">
+<div class="detail-tags border-bottom">
 
 <div class="row align-rtl">
 <div class="col col-6 sns-btns">
@@ -78,14 +97,13 @@ fjs.parentNode.insertBefore(js, fjs);
 </div>
 </div>
 </div>
-<hr>
-<div class="keywords">
+
+<div class="keywords border-bottom">
 <span class="keyword">アート・表現・コミュニケーション</span>
 <span class="keyword">心と体・コミュニティ・教育</span>
 </div>
-<hr>
 <div class="detail-summary">
-<table class="table-none-bordered">
+<table class="table-none-bordered border-bottom">
 <tbody>
 <tr>
 <td>主催者　　：団体名</td>
@@ -105,7 +123,6 @@ fjs.parentNode.insertBefore(js, fjs);
 </tr>
 </tbody>
 </table>
-<hr/>
 <h3>好評につき再演</h3>
 <p>前回、第3回開催があいにく台風と重なり、残念ながらキャンセルを選択された方も多かったようです。<br>
 第1回、第2回と好評のため参加できなかった方、及び第3回にこれなくなってしまわれた方々も是非ご参加ください！<br>
@@ -188,7 +205,7 @@ fjs.parentNode.insertBefore(js, fjs);
 <a href="#" class="btn btn-full btn-filled">申込先ウェブサイトへ</a>
 </div>
 </section>
-<section class="registers">
+<a href="#" class="registers">
 <div class="container">
 <div class="register-box">
 <div class="row">
@@ -203,13 +220,13 @@ fjs.parentNode.insertBefore(js, fjs);
 </div>
 </div>
 </div>
-</section>
+</a>
 <section class="event-group">
-<div class="container">
-<h3>おすすめ</h3>
-</div>
+
 <div class="recommends eventcards l-grid">
 <div class="container">
+<h3>おすすめ</h3>
+
 <div class="row recommend-list">
 <div class="eventcard col-md-4 col-4 col">
 <div class="eventcard-warpper">
@@ -602,8 +619,20 @@ fjs.parentNode.insertBefore(js, fjs);
 </section>
 </section>
 <footer id="global-footer">
-<div class="container"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
+<div class="main-footer">
+<div class="footer-link">
+<ul class="list-links-inline">
+<li><a href="#" >お問い合わせ</a></li>
+<li><a href="#" >プライバシーポリシー</a></li>
+<li><a href="#" >運営会社</a></li>
+</ul>
+</div>
+<div class="info">powered by <img  src="/img/feelnote.png" alt="Feel Note" >
+</div>
+</div>
+<div class="bottom-footer"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
 </footer>
+
 
 <script src="/js/events/index.js"></script>
 
