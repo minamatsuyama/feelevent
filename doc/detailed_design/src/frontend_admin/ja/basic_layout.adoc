@@ -77,3 +77,5 @@ http://getbootstrap.com/css/#helper-classes-backgrounds
 ページ表示時に、特定のクラスタグに文言が入っていた場合 +
 エリアを表示させます。 +
 表示後、5秒経過で消えます。
+
+* `position:fixed` を使う
