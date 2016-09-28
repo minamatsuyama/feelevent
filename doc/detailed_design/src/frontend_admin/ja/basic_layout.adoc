@@ -51,14 +51,29 @@ image::_include/basic_layout.png[]
 </section>
 ```
 
+=== コンテンツテンプレートページ
+
+* http://fg-event-pv.1pac.net/admin/_dev/design_template.html
+
+上記のコンテンツレイアウトを用意しましたので +
+こちらを参照して制作を開始してください。
+
 === フォーム
 
 * 必須項目には `required` 属性をつける
 * エラー時
-** フォームの下にエラー時の文言を配置する
-** http://getbootstrap.com/css/#helper-classes-colors
-** http://getbootstrap.com/css/#helper-classes-backgrounds
+** フォームの下にエラー時の文言を配置する +
+http://getbootstrap.com/css/#helper-classes-backgrounds
+を使用する
 * 日付
 ** yyyy-MM-dd形式で挿入する
 ** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
 *** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
+
+
+=== フラッシュメッセージ
+
+ヘッダー上部にお知らせエリアを設けます。
+ページ表示時に、特定のクラスタグに文言が入っていた場合 +
+エリアを表示させます。 +
+表示後、5秒経過で消えます。
