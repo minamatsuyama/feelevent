@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :events, only: %i(show)
   resource :me, only: %i(show)
+  namespace :me do
+    resource :settings, only: %i(edit update)
+  end
 
   namespace :admin do
     devise_for :users, class_name: 'Event::Admin::User'
