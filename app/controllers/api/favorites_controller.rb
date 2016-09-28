@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Api::FavoritesController < ApplicationController
   # A0202
   def index
