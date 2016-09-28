@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja" id="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/img/shared/apple-touch-icon.png">
+<title>新規登録 | WorldSchool</title>
+<meta name="description" content="">
+<meta property="og:title" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<meta property="og:type" content="website">
+<link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+<link href="/css/lib/base.css" rel="stylesheet">
+<link href="/css/lib/module.css" rel="stylesheet">
+<link href="/css/users/signup/index.css" rel="stylesheet">
+<link href="/css/lib/vendor/select2.css" rel="stylesheet">
+
+
+<script src="/js/lib/vendor.js"></script>
+</head>
+<body>
+<header id="global-header">
+<div class="container">
+<h1 class="logo"><a href="/"><img src="/img/logo.png" alt="WorldSchool"></a></h1>
+<div class="powered-by">powered by Feelnote</div>
+<div class="share-box ">
+<a href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank" class="top-fb-link">
+<img width="30" height="30" src="/img/icon-facebook.png" alt="facebook link">
+</a>
+<a href="https://twitter.com/intent/tweet?url=URL&text=TEXT" target="_blank" class="top-tw-link">
+<img width="30" height="30" src="/img/icon-twitter.png" alt="twitter link">
+</a>
+</div>
+<a href="#" class="top-link hidden-not-sm" onclick="myToggle(document.getElementsByClassName('share-box'));">
+<img src="/img/top-link.png" alt="top link">
+<p class="link-text">シェア</p>
+</a>
+<a href="/signin" class="top-login">
+<img width="19" height="25" src="/img/icon-login.png" alt="icon look">
+<p class="link-text">ログイン</p>
+</a>
+<a href="/users/signup" class="top-flag">
+新規登録
+</a>
+<a href="#" class="top-user hide">
+<img width="20" height="20" src="/img/top-user.png" alt="top user link">
+<p class="link-text">マイページ</p>
+</a>
+</div><!-- End container -->
+</header>
+<section id="content">
+<section class="signup">
+<div class="container">
+<div class="box-main">
+<div class="row">
+<div class="col col-12">
+<h2>新規登録</h2></div>
+</div>
+
+<form action="" id="signup-form" name="signup-form">
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+年齢
+</div>
+<div class="col col-8 col-input">
+<div class="selectpicker picker">
+<select id="qualifying_age_id" name="qualifying_age_id" class="percent-100">
+<option></option>
+<option value="/">10歳〜20歳</option>
+<option value="/">21歳〜30歳</option>
+<option value="/">31歳〜40歳</option>
+<option value="/">41歳〜50歳</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+メールアドレス
+</div>
+<div class="col col-8 col-input">
+<input type="email" id="email" name="email" placeholder="メールアドレスを入力" class="input-text percent-100">
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+パスワード
+</div>
+<div class="col col-8 col-input">
+<input type="password" id="password" name="password" placeholder="パスワードを入力" class="input-text percent-100">
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+パスワード（確認）
+</div>
+<div class="col col-8 col-input">
+<input type="password" id="password_confirmation" name="password_confirmation" placeholder="再度パスワードを入力" class="input-text percent-100">
+</div>
+</div>
+
+<div class="row row-register message">
+<div class="col col-10 col-offset-1 col-title">
+気になるキーワード、種別を選択すると、おすすめのセミナー・イベントをマイページやメールで確認できるようになります。
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+キーワード
+</div>
+<div class="col col-8 col-input">
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-checkbox active">
+<input type="checkbox" checked name="keyword_ids" value="1"> 基礎・教養
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 文学
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 言語・コミュニケーション
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 政治・法
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 経済・ビジネス
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 社会・コミュニティ
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 国際関係
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 数理
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 工学
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> IT
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> デザイン・ものづくり
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 生物・農業
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 看護・保健・福祉
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 医・歯・薬
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 教育
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> アート・表現
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> ファッション・生活
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 心・身体
+</label>
+</div>
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-3 col-offset-1 col-title">
+種別
+</div>
+<div class="col col-8 col-input">
+<div class="btn-group" data-toggle="buttons">
+<label class="btn btn-checkbox active">
+<input type="checkbox" checked name="keyword_ids" value="1"> 参加型
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 聴講型
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 資格・公募
+</label>
+<label class="btn btn-checkbox">
+<input type="checkbox" name="keyword_ids"> 大学体感
+</label>
+</div>
+</div>
+</div>
+
+<div class="row row-register receive-news">
+<div class="col col-10 col-offset-1 ">
+<label class="input-label">
+<input type="checkbox" id="subscribe_newsletter" name="subscribe_newsletter" class="check-box"/>
+<span>WorldSchoolからのイベントに関するニュースレターを受け取る</span>
+</label>
+</div>
+</div>
+
+<div class="row row-register">
+<div class="col col-12 btn-signup-container">
+<p class="terms">※アカウントを作成することで<a href="/terms.html" class="text-link">利用規約</a>に同意したことになります。</p>
+<a href="" class="btn btn-md btn-submit">新規登録</a>
+</div>
+</div>
+
+</form>
+</div>
+</div>
+</section>
+</section>
+<footer id="global-footer">
+<div class="main-footer">
+<div class="footer-link">
+<ul class="list-links-inline">
+<li><a href="#" >お問い合わせ</a></li>
+<li><a href="#" >プライバシーポリシー</a></li>
+<li><a href="#" >運営会社</a></li>
+</ul>
+</div>
+<div class="info">powered by <img  src="/img/feelnote.png" alt="Feel Note" >
+</div>
+</div>
+<div class="bottom-footer"><span class="copyright">© 2016 Admissions Office Inc. All rights reserved.</span></div>
+</footer>
+
+<script src="/js/users/signup/index.js"></script>
+
+</body>
+</html>

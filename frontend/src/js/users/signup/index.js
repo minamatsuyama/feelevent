@@ -1,6 +1,8 @@
 
 $(function () {
+
   initInputLabel();
+  initSelect2();
 });
 
 function initInputLabel() {
@@ -16,5 +18,12 @@ function initInputLabel() {
     }
   }).mouseenter(function() {
     $input.css("background-color", activeColor);
+  });
+}
+
+function initSelect2() {
+  $('.selectpicker select').select2({
+    placeholder: "年齢を選択",
+    minimumResultsForSearch: Infinity
   });
 }

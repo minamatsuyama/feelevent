@@ -79,19 +79,26 @@
   margin-top: -5px;
 }
 
-.col.col-offset-1.col-title {
+.col.col-title {
   margin-top: 10px;
-  text-align: right;
   padding-right: 5px;
 }
 @media screen and (max-width: 679px) {
-  .col.col-offset-1.col-title {
+  .col.col-title {
     text-align: left;
     margin-top: 0;
     margin-bottom: 5px;
   }
 }
+.col.col-input {
+  margin-left: -50px;
+}
 
-.input-text.percent-90 {
-  width: 100%;
+.input-text {
+  width: 450px;
+}
+@media screen and (max-width: 999px) {
+  .input-text {
+    width: 100%;
+  }
 }

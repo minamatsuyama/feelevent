@@ -83,10 +83,8 @@
 }
 
 .col {
-  &.col-offset-1 {
     &.col-title {
       margin-top: 10px;
-      text-align: right;
       padding-right: 5px;
       @include mediaquery-sm() {
         text-align: left;
@@ -94,11 +92,14 @@
         margin-bottom: 5px;
       }
     }
+  &.col-input {
+    margin-left: -50px;
   }
 }
 
 .input-text {
-  &.percent-90 {
+  width: 450px;
+  @include mediaquery-not-lg{
     width: 100%;
   }
 }

@@ -1704,10 +1704,22 @@ kbd kbd {
   }
 }
 
-body {
-  background-color: #e3e3e3;
-}
+@media screen and (max-width: 999px) {
+  .container {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
+  #content .col.col-title {
+    margin-left: 0;
+    width: 100%;
+  }
+  #content .col.col-input {
+    margin-left: 0;
+    width: 100%;
+  }
+}
 .skip-navigation {
   position: absolute;
   width: 1px;
