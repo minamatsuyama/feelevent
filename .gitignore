@@ -89,3 +89,7 @@ pickle-email-*.html
 .rubocop_todo.yml
 
 config/unicorn/local.rb.
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
