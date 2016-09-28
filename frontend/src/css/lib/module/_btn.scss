@@ -81,3 +81,86 @@
     background-color: $color-gray-lightest;
   }
 }
+
+.btn-checkbox{
+  background-color: $color-btn-gray;
+  color:$color-gray-light;
+  input{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+  }
+  &.active{
+    background: $color-blue;
+    color:#fff;
+    &:hover{
+      background-color:$color-blue-light;
+      color:#fff;
+    }
+  }
+  &:hover{
+    background: #fff;
+    color:$color-gray-light;
+  }
+}
+
+.btn-filled {
+  background-color: $color-blue;
+  font-size: 18px;
+  padding: 15px;
+  color: $color-white;
+  &:hover {
+    background-color: lighten($color-blue, 6%);
+    color: $color-white;
+  }
+  &:active,
+  &.active {
+    background-color: $color-blue;
+    color: $color-white;
+  }
+  @include mediaquery-sm() {
+    font-size: 13px;
+  }
+}
+
+.btn-more {
+  color: $color-blue;
+  background-color: $color-white;
+  font-size: 13px;
+  padding: 15px;
+  &:hover {
+    background-color: $color-gray-lightest;
+  }
+  &:active,
+  &.active {
+    background-color: $color-gray-lightest;
+  }
+}
+
+.btn-cancel {
+  width: 150px;
+  padding: 10px;
+  color: $color-gray-dark;
+  background: #f5f7fa;
+  border: 1px solid #e4e4e4;
+  &:hover,
+  &:active,
+  &.active {
+    background: $color-white;
+    color: $color-gray-dark;
+  }
+}
+
+.btn-submit {
+  width: 150px;
+  padding: 10px;
+  color: $color-white;
+  background: #187fc4;
+  border: 1px solid #2c7996;
+  &:hover,
+  &:active,
+  &.active {
+    background: #0088e3;
+    color: $color-white
+  }
+}

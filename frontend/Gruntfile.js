@@ -2,6 +2,8 @@
   var _ = require('lodash');
 
   module.exports = function(grunt) {
+    global.grunt = grunt;
+
     var config = _.merge({
       srcPath:  './src',
       specPath: './spec',

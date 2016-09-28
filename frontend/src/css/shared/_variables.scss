@@ -7,23 +7,23 @@
 //   640〜1031   : md
 //        1032〜 : lg
 
-$screen-md:   640px !default; //この数値以上で md 表示
-$screen-lg:  1032px !default; //この数値以上で lg 表示
+$screen-md:   680px !default; //この数値以上で md 表示
+$screen-lg:  1000px !default; //この数値以上で lg 表示
 
 
 
 // グリッドシステム
 // ---------------------------------------------------
 
-$container-width-inner:    984px !default;
-$container-padding-side:    12px !default;
-$container-padding-side-sm: 20px !default;
+$container-width-inner:    1000px !default;
+$container-padding-side:    0 !default;
+$container-padding-side-sm: 10px !default;
 $container-width:          $container-width-inner + $container-padding-side * 2; //全カラム幅 12 + 984 + 12
 
 
-$col-num:         12   !default;
+$col-num:         12  !default;
 $col-width:       84px !default;
-$col-gutter:      24px !default;
+$col-gutter:      20px !default;
 $col-gutter-half: $col-gutter / 2 !default;
 
 $col-gutter-sm:   10px !default;
@@ -82,7 +82,7 @@ $color-almost-white:         #f6f6f6 !default;
 // ↓
 $color-gray-lightest:        #f0f0f0 !default;
 $color-gray-lighter:         #ccc    !default;
-$color-gray-light:           #999    !default;
+$color-gray-light:           #83828c !default;
 $color-gray-slightly-light:  #7f7f7f !default;
 // ↑
 $color-gray:                 #666    !default; //ベース色
@@ -96,9 +96,9 @@ $color-black:                #000    !default;
 
 
 //
-$color-link-main:            #4078c0 !default;
+$color-link-main:            #187fc4 !default;
 $color-link-main-dark:       #2e60a5 !default;
-$color-link-visited:         #634AB9 !default;
+$color-link-visited:         #065ac1 !default;
 
 //警告色
 $color-attention:            #df0100 !default;
@@ -116,8 +116,20 @@ $color-border-light:         #e5e5e5 !default;
 $color-btn-base:             #4c4c4c !default;
 $color-btn-blue:             $color-link-main-dark !default;
 
-
-
+$color-btn-gray:              #f5f7fa;
+$color-border-search:         #d3dae0;
+$color-blue-light:            #0088e3;
+//color for Feelevent
+$color-bg:              #e3e3e3 !default;
+$color-yellow-main:     #ffbf00 !default;
+$color-yellow-light:    #fff8e5 !default;
+$color-th-table:        #f5f7fa !default;
+$color-border-table:    #aaa    !default;
+$color-blue:            #187fc4 !default;
+$color-orange:          #fa8500 !default;
+$color-red:             #ef0155 !default;
+$color-divide-line:     #e6edf2 !default;
+$color-gray-slightly-lighter:  #888 !default;
 // ベジエ曲線
 // Original：http://easings.net/
 // ---------------------------------------------------
@@ -161,29 +173,29 @@ $easeInOutBack:  cubic-bezier(0.68, -0.55,  0.265, 1.55 );
 // 書式
 // ---------------------------------------------------
 
-$body-bg:                  #fff !default;
+$body-bg:                  #e3e3e3 !default;
 $font-color-basic:         $color-black !default;
 $link-color:               $color-link-main !default;
 
 
-$font-family-sans-serif:   'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3'Meiryo, メイリオ, sans-serif !default;
+$font-family-sans-serif:   'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
 $font-family-serif:        Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:    Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-alphanumeric: Helvetica, arial, sans-serif !default;
 $font-family-base:         $font-family-sans-serif !default;
 
-$font-size-base:           14px !default;
+$font-size-base:           15px !default;
 $font-size-large:          16px !default;
 $font-size-small:          12px !default;
 $font-size-xsmall:         10px !default;
 
-$font-size-h1:             36px !default;
-$font-size-h1-sm:          28px !default;
-$font-size-h2:             24px !default;
-$font-size-h2-sm:          22px !default;
-$font-size-h3:             18px !default;
-$font-size-h3-sm:          16px !default;
-$font-size-h4:             14px !default;
+$font-size-h1:             30px !default;
+$font-size-h1-sm:          20px !default;
+$font-size-h2:             28px !default;
+$font-size-h2-sm:          16px !default;
+$font-size-h3:             20px !default;
+$font-size-h3-sm:          14px !default;
+$font-size-h4:             18px !default;
 $font-size-h5:             14px !default;
 $font-size-h6:             14px !default;
 

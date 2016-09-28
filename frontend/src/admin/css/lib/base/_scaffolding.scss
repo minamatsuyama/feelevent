@@ -1,0 +1,28 @@
+body {
+  color: $font-color-basic;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  background-color:$body-bg;
+  letter-spacing: $letter-spacing-base;
+  vertical-align: top;
+}
+
+//layout
+.chapter {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.subchapter{
+  max-width: 1000px;
+  margin: 20px auto;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+

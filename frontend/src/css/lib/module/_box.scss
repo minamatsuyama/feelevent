@@ -1,0 +1,8 @@
+
+.box-main {
+  background-color: $color-white;
+  padding: 40px 85px;
+  @include mediaquery-sm {
+    padding: 15px 15px 30px;
+  }
+}
