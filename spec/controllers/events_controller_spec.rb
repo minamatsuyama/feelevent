@@ -7,4 +7,12 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "GET #show" do
+    let(:event_item) { create :event_item }
+    it "returns http success" do
+      get :show, id: event_item.id
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     sign_up: 'signup'
   }
 
+  resources :events, only: %i(show)
   resource :me, only: %i(show)
 
   namespace :admin do
