@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resource :me, only: %i(show)
   namespace :me do
     resource :settings, only: %i(edit update)
+    resources :favorites, only: %i(index)
   end
 
   namespace :admin do
