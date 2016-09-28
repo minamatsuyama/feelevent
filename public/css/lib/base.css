@@ -1704,6 +1704,10 @@ kbd kbd {
   }
 }
 
+body {
+  background-color: #e3e3e3;
+}
+
 .skip-navigation {
   position: absolute;
   width: 1px;

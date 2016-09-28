@@ -115,7 +115,9 @@
 @include mediaquery-md(){
   .eventcards{
     .container{
-      width:660px;
+      width:auto;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
