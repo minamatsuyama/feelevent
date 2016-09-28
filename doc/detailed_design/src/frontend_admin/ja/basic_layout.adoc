@@ -1,0 +1,79 @@
+== 基礎レイアウト設計書
+
+=== 構造
+
+image::_include/basic_layout.png[]
+
+* header：ヘッダー
+* section：メインコンテンツ
+** section
+*** chapter：モジュールやフォーム同士のセクショニングを行う
+// **** subchapter：chapterの中で更に内容のセクショニングを行う
+* footer：フッター
+
+=== コンテンツレイアウト
+
+* gridのセクショニングは link::http://getbootstrap.com/css/#grid[Bootatrapのgrid]を使用する
+* http://getbootstrap.com/css/#forms[Bootstrapのforums]の中にあるような `.form-group` 等のレイアウトタグを用いて +
+適切にを組むこと。
+* モジュールごとに `.chapter` で区切る
+
+```
+<section id="content">
+  <section>
+    <div class="chapter">
+      <div class="container">
+        <h2>World School Management screen</h2>
+        <p>please refer to : <a href="http://getbootstrap.com/css/">http://getbootstrap.com/css/</a></p>
+      </div>
+    </div>
+
+    <div class="chapter">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </section>
+</section>
+```
+
+=== コンテンツテンプレートページ
+
+* http://fg-event-pv.1pac.net/admin/_dev/design_template.html
+
+上記のコンテンツレイアウトを用意しましたので +
+こちらを参照して制作を開始してください。
+
+=== フォーム
+
+* 必須項目には `required` 属性をつける
+* エラー時
+** フォームの下にエラー時の文言を配置する +
+http://getbootstrap.com/css/#helper-classes-backgrounds
+を使用する
+* 日付
+** yyyy-MM-dd形式で挿入する
+** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
+*** link:http://frogstech.com/blog/2015/08/28/bootstrap-datepicker/[使い方や日本語化の方法(日本語)]
+
+
+=== フラッシュメッセージ
+
+ヘッダー上部にお知らせエリアを設けます。
+ページ表示時に、特定のクラスタグに文言が入っていた場合 +
+エリアを表示させます。 +
+表示後、5秒経過で消えます。
