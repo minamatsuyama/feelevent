@@ -13,7 +13,8 @@ image::_include/basic_layout.png[]
 
 === コンテンツレイアウト
 
-* http://getbootstrap.com/css/#forms[Bootstrapの例]の中にあるような `.form-group` 等のレイアウトタグを用いて +
+* gridのセクショニングは link::http://getbootstrap.com/css/#grid[Bootatrapのgrid]を使用する
+* http://getbootstrap.com/css/#forms[Bootstrapのforums]の中にあるような `.form-group` 等のレイアウトタグを用いて +
 適切にを組むこと。
 * モジュールごとに `.chapter` で区切る
 
@@ -55,6 +56,8 @@ image::_include/basic_layout.png[]
 * 必須項目には `required` 属性をつける
 * エラー時
 ** フォームの下にエラー時の文言を配置する
+** http://getbootstrap.com/css/#helper-classes-colors
+** http://getbootstrap.com/css/#helper-classes-backgrounds
 * 日付
 ** yyyy-MM-dd形式で挿入する
 ** link:https://github.com/eternicode/bootstrap-datepicker[bootstrap-datepicker]を用いる
