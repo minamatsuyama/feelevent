@@ -1321,9 +1321,10 @@ input[type="radio"]:checked {
   right: 10px;
   top: 11px;
   z-index: 1010;
-  padding: 8px 28px 8px 0;
+  padding: 8px 33px 8px 0;
   font-size: 14px;
   text-align: right;
+  letter-spacing: 0;
 }
 @media screen and (max-width: 679px) {
   .eventcards .eventcard.recommended:after {
@@ -1374,6 +1375,7 @@ input[type="radio"]:checked {
   font-weight: bold;
 }
 .eventcards .eventcard .eventcard-warpper table {
+  width: 100%;
   border-top: 1px solid #e6edf2;
 }
 .eventcards .eventcard .eventcard-warpper table td {
@@ -1399,7 +1401,7 @@ input[type="radio"]:checked {
   float: right;
   margin-right: 15px;
 }
-.eventcards .eventcard .event-likebox .btn-like-box:hover {
+.eventcards .eventcard .event-likebox .btn-like-box:hover, .eventcards .eventcard .event-likebox .btn-like-box.active {
   color: #ef0155;
 }
 .eventcards .eventcard .event-likebox:before, .eventcards .eventcard .event-likebox:after {
@@ -1412,7 +1414,9 @@ input[type="radio"]:checked {
 
 @media screen and (min-width: 680px) and (max-width: 999px) {
   .eventcards .container {
-    width: 660px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .text-vertical {
