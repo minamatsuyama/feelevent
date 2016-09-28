@@ -1,0 +1,7 @@
+carrierwave:
+  storage: fog
+  provider: AWS
+  access_key: ABCDEFGHIJKLMNOPQRST # TODO: set access-key
+  secret_key: asdfASDFasdfASDF1234567890qwertyQWERTYGG # TODO: set secret-key
+  region: ap-northeast-1
+  bucket_name: fg-event # TODO: set bucket-name
