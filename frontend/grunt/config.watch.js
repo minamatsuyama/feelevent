@@ -1,18 +1,18 @@
 module.exports = {
   watch : {
-    js : {
+    js_admin: {
       files: [
-        '<%= srcPath %>/js/**/*.js',
-        '<%= srcPath %>/js/*.js'
+        '<%= srcPath %>/admin/js/**/*.js',
+        '<%= srcPath %>/admin/js/*.js'
       ],
-      tasks: ['js_debug']
+      tasks: ['js']
     },
-    css : {
+    css_admin : {
       options: {
         livereload: true
       },
       files: [
-        '<%= srcPath %>/css/**/*.scss'
+        '<%= srcPath %>/admin/css/**/*.scss'
       ],
       tasks: ['css']
     }

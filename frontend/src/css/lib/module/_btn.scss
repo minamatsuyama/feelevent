@@ -108,12 +108,15 @@
   background-color: $color-blue;
   font-size: 18px;
   padding: 15px;
+  color: $color-white;
   &:hover {
     background-color: lighten($color-blue, 6%);
+    color: $color-white;
   }
   &:active,
   &.active {
     background-color: $color-blue;
+    color: $color-white;
   }
   @include mediaquery-sm() {
     font-size: 13px;
@@ -134,15 +137,30 @@
   }
 }
 
-.btn-like{
-  color:$color-border-table;
-  background-color: $color-almost-white;
-  padding: 5px;
-  min-width: 70px;
-  margin-right:5px;
-  font-weight: bold;
-  &:hover {
-    color: $color-red;
-    background-color: $color-almost-white;
+.btn-cancel {
+  width: 150px;
+  padding: 10px;
+  color: $color-gray-dark;
+  background: #f5f7fa;
+  border: 1px solid #e4e4e4;
+  &:hover,
+  &:active,
+  &.active {
+    background: $color-white;
+    color: $color-gray-dark;
+  }
+}
+
+.btn-submit {
+  width: 150px;
+  padding: 10px;
+  color: $color-white;
+  background: #187fc4;
+  border: 1px solid #2c7996;
+  &:hover,
+  &:active,
+  &.active {
+    background: #0088e3;
+    color: $color-white
   }
 }
